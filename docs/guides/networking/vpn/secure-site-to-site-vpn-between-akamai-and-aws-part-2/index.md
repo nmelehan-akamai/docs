@@ -3,7 +3,7 @@ slug: secure-site-to-site-vpn-between-akamai-and-aws-part-2
 title: "Configure a Site-to-Site VPN Between Akamai and AWS Part 2: Implementation"
 description: "Step-by-step implementation guide for setting up StrongSwan VPN server on Linode with dual-NIC configuration to connect securely with AWS. Includes automation scripts and monitoring setup."
 authors: ["Sandip Gangdhar"]
-contributors: ["Linode"]
+contributors: ["Sandip Gangdhar"]
 published: 2025-07-16
 keywords: ['vpn setup', 'strongswan', 'aws vpn', 'linode networking', 'ipsec configuration', 'vpn automation', 'dual nic']
 license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'

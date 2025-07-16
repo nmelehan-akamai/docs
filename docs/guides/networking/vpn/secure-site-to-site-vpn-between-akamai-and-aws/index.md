@@ -3,7 +3,7 @@ slug: secure-site-to-site-vpn-between-akamai-and-aws
 title: "Create a Secure Site-to-Site VPN Between Akamai and AWS"
 description: "Learn how to set up a secure site-to-site VPN connection between AWS and Linode using StrongSwan. This guide covers VPC and VLAN networking with dual-NIC configuration for hybrid cloud deployments."
 authors: ["Sandip Gangdhar"]
-contributors: ["Linode"]
+contributors: ["Sandip Gangdhar"]
 published: 2025-07-16
 keywords: ['vpn', 'aws', 'linode', 'strongswan', 'ipsec', 'site-to-site', 'vpc', 'vlan', 'hybrid cloud']
 license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
