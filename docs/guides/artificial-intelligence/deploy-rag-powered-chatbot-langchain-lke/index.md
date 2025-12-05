@@ -1,5 +1,5 @@
 ---
-slug: deploy-chatbot-rag-pipeline-langchain-lke
+slug: deploy-rag-powered-chatbot-langchain-lke
 title: "Deploy a RAG-Powered Chatbot with LangChain on LKE"
 description: "Deploy a LangChain-powered RAG chatbot to Linode Kubernetes Engine. This comprehensive tutorial covers containerization with Docker, Kubernetes manifest creation for Deployments and Services, PostgreSQL configuration for vector embeddings and conversation history, and production deployment with high availability, automatic failover, and horizontal scaling."
 authors: ["Akamai"]

@@ -1,5 +1,5 @@
 ---
-slug: deploy-chatbot-rag-pipeline-langchain-akamai-compute-instance
+slug: deploy-rag-powered-chatbot-langchain-akamai-compute-instance
 title: "Deploy a RAG-Powered Chatbot with LangChain on an Akamai Compute Instance"
 description: "Deploy a conversational AI chatbot that answers questions from your documents using RAG, LangChain, and FastAPI on Akamai infrastructure. Follow step-by-step instructions to configure PostgreSQL with vector embeddings, set up object storage for document ingestion, create a stateful chat API with LangGraph, and run the application as a systemd service."
 authors: ["Akamai"]

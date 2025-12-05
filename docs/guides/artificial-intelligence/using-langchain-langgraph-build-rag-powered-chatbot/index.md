@@ -1,5 +1,5 @@
 ---
-slug: using-langchain-create-chatbot-rag-pipeline
+slug: using-langchain-langgraph-build-rag-powered-chatbot
 title: "Using LangChain and LangGraph to Build a RAG-Powered Chatbot"
 description: "Learn how to build a RAG-powered chatbot using LangChain and LangGraph in this comprehensive code walkthrough. This guide explains the complete workflow from document indexing with vector embeddings to stateful conversation management, including detailed explanations of key LangGraph concepts like StateGraph, persistent checkpointing, and thread-based configuration for managing conversation sessions."
 authors: ["Akamai"]
