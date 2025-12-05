@@ -1,218 +1,243 @@
 ---
 slug: deploy-chatbot-rag-pipeline-langchain-lke
-title: "Deploy Chatbot Rag Pipeline Langchain on LKE"
-description: "Two to three sentences describing your guide."
-og_description: "Optional two to three sentences describing your guide when shared on social media. If omitted, the `description` parameter is used within social links."
+title: "Deploy a RAG-Powered Chatbot with LangChain on LKE"
+description: "Deploy a LangChain-powered RAG chatbot to Linode Kubernetes Engine. This comprehensive tutorial covers containerization with Docker, Kubernetes manifest creation for Deployments and Services, PostgreSQL configuration for vector embeddings and conversation history, and production deployment with high availability, automatic failover, and horizontal scaling."
 authors: ["Akamai"]
 contributors: ["Akamai"]
-published: 2025-11-24
-keywords: ['list','of','keywords','and key phrases']
+published: 2025-12-05
+keywords: ['RAG chatbot','retrieval augmented generation','LangChain','LangGraph','FastAPI','Python chatbot','Kubernetes chatbot','LKE deployment','Linode Kubernetes Engine','Docker chatbot','container deployment','vector database','pgvector','PostgreSQL','OpenAI API','document embeddings','semantic search','conversational AI','LLM chatbot','Kubernetes deployment','kubectl','Docker Hub','container registry','Kubernetes manifests','Kubernetes secrets','ConfigMap','chatbot pods','NodeBalancer','load balancer','stateless pods','production Kubernetes']
 license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 external_resources:
-- '[Link Title 1](http://www.example.com)'
-- '[Link Title 2](http://www.example.net)'
+- '[Akamai LKE documentation](https://techdocs.akamai.com/cloud-computing/docs/linode-kubernetes-engine)'
+- '[Akamai: Manage a cluster with kubectl](https://techdocs.akamai.com/cloud-computing/docs/manage-a-cluster-with-kubectl)'
+- '[Akamai: Load balancing on LKE](https://techdocs.akamai.com/cloud-computing/docs/get-started-with-load-balancing-on-an-lke-cluster)'
+- '[Docker: .dockerignore files](https://docs.docker.com/build/concepts/context/#dockerignore-files)'
+- '[Docker: Writing a Dockerfile](https://docs.docker.com/get-started/docker-concepts/building-images/writing-a-dockerfile/)'
+- '[Docker: Build and push your first image to Docker Hub](https://docs.docker.com/get-started/introduction/build-and-push-first-image/)'
+- '[Docker: Building best practices](https://docs.docker.com/build/building/best-practices/)'
+- '[Kubernetes official documentation](https://kubernetes.io/docs/)'
+- '[Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/)'
+- '[Kubernetes ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/)'
+- '[Kubernetes Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)'
+- '[Kubernetes Service](https://kubernetes.io/docs/concepts/services-networking/service/)'
 ---
 
-This guide takes the chatbot you built in Guide 1 and deploys it to Linode Kubernetes Engine (LKE). You'll containerize your Python application, create Kubernetes manifests for managing configuration and secrets, and deploy multiple replicas behind a load balancer. While Kubernetes is overkill for a single stateless application with external databases, learning these patterns prepares you for enterprise environments and more complex systems.
+This guide demonstrates deploying a Python-based RAG chatbot to Linode Kubernetes Engine. The chatbot uses retrieval-augmented generation to ground its responses in your documents, LangChain to build the RAG pipeline and query the LLM, LangGraph to maintain conversation history in PostgreSQL, and FastAPI to expose a REST API for chat interactions. This architecture separates application logic from state storage, making it well-suited for containerized deployments.
 
-Your application code and database schemas remain largely unchanged—the main work involves containerization, understanding stateless pod design, and creating the infrastructure definitions that Kubernetes uses to manage your deployment. By the end, you'll have a production-ready chatbot running on LKE with auto-healing, rolling updates, and horizontal scaling capabilities.
+Deploying to Kubernetes unlocks production capabilities essential for reliable applications. LKE distributes your chatbot across multiple pods for high availability, automatically replaces failed instances, performs rolling updates without downtime, and scales horizontally under load. This guide covers containerizing your application, creating Kubernetes manifests for secrets and configuration, and deploying to a managed cluster.
 
-[RAG Chatbot Langchain Compute Instance](/docs/guides/deploy-chatbot-rag-pipeline-langchain-linode)
+The [RAG Chatbot Langchain Workflow](/docs/guides/using-langchain-create-chatbot-rag-pipeline) guide explains the workflow of the application in more detail and provides a walkthrough of relevant code that leverages the LangChain, LangGraph, and FastAPI frameworks.
 
-[RAG Chatbot Langchain Workflow](/docs/guides/using-langchain-create-chatbot-rag-pipeline)
+If you prefer a simpler deployment, the [RAG Chatbot Langchain Compute Instance](/docs/guides/deploy-chatbot-rag-pipeline-langchain-linode) guide shows how to run the chatbot on a single compute instance.
 
-### Prerequisites
+## Systems and Components
 
-Before you begin, make sure you have:
+This diagram describes which systems and components are present in the chatbot deployment on LKE:
 
-* Completed Guide 1 with a working chatbot deployed on a single Linode via systemd
-* Basic Docker knowledge (helpful but not required)
-* A Linode account with permissions to manage LKE resources
-* [kubectl](https://kubernetes.io/docs/reference/kubectl/introduction/) installed locally
-* OpenAI API account and managed PostgreSQL databases provisioned, from Guide 1
+![RAG chatbot with Langchain deployed on LKE](rag-chatbot-langchain-lke.svg)
 
-### Architecture
+- **LKE Cluster**: A [Linode Kubernetes Engine](https://www.linode.com/products/kubernetes/) cluster in Akamai Cloud.
 
-Your deployment strategy shifts from a single Linode instance to a distributed container orchestration platform:
+- **Nodes**: Akamai compute instances that form the worker machines in your LKE cluster. Nodes provide the CPU, memory, and storage resources that run your chatbot application pods. Kubernetes schedules pods across available nodes and can automatically move pods between nodes for load balancing and fault tolerance.
 
-* LKE cluster (3+ nodes)
-* Multiple containerized app replicas (stateless pods)
-* LoadBalancer service for external access
-* Same external managed PostgreSQL databases
-* Same OpenAI API
+- **Pods**: Containerized instances of your Python chatbot application running inside the LKE cluster. Each pod contains a single container built from a Docker image, which this guide shows how to build and push to a container repository. Multiple pod replicas are created for high availability, and Kubernetes automatically distributes them across nodes.
 
+- **Python Application**: Your chatbot application, built with LangChain, LangGraph, and FastAPI.
 
-![RAG diagram](rag-chatbot-langchain-lke.svg)
+- **Source Documents**: Akamai Object Storage, an S3-compatible object storage is used to store source documents that form the chatbot's knowledge base.
 
-### Is Kubernetes necessary for this chatbot?
+- **OpenAI API**: External LLM service providing both the embedding model (text-embedding-3-small) for document vectorization and the chat model (gpt-4o-mini) for generating responses.
 
-For a single stateless application with external databases, Kubernetes may be overkill. You could scale Guide 1 horizontally with a few Linode instances behind an [Akamai NodeBalancer](https://techdocs.akamai.com/cloud-computing/docs/nodebalancer).
+- **Vector Embeddings**: [Akamai's Managed Database](https://www.akamai.com/products/databases) running PostgreSQL with the pgvector extension enabled. Used for storing document embeddings and performing vector similarity searches whenever a user queries your chatbot's knowledge base.
 
-However, this guide walks you through production Kubernetes patterns valuable for enterprise environments and cloud-native architecture skills that transfer broadly. Even if you don't need Kubernetes today, understanding how to deploy containerized applications prepares you for complex production systems.
+- **Conversation State**: Akamai's Managed Database running PostgreSQL. Used by LangGraph to persist conversation history across chatbot sessions.
 
-## Part 1: Preparing Your Application for Containerization
-
-Your chatbot from Guide 1 has a well-organized structure that's already container-friendly. Refer to that guide or clone the application's [GitHub repository](https://github.com/alvinslee/linode-langchain-rag-chatbot).
-
-```output
-PROJECT_ROOT/
-├── app/
-│   ├── api/
-│   │   ├── chat.py
-│   │   └── health.py
-│   ├── core/
-│   │   ├── config.py
-│   │   ├── memory.py
-│   │   └── rag.py
-│   ├── scripts/
-│   │   ├── init_db.py
-│   │   └── index_documents.py
-│   └── main.py
-├── requirements.txt
-└── .env.template
-```
-
-In addition to the application code, you have the following infrastructure already configured from Guide 1:
-
-* **Vector database**: Akamai Managed PostgreSQL instance, with pgvector extension, for storing document embeddings
-* **State database**: Separate Akamai Managed PostgreSQL instance, for storing conversation history with LangGraph
-* **Object Storage bucket**: Linode Object Storage bucket containing your documents
-* **OpenAI API access**: API key for embedding generation (text-embedding-3-small) and chat completions (gpt-4o-mini)
-
-All configuration comes from environment variables in a local copy of .env, which means no hardcoded credentials or paths.
-
-### Understanding stateless pod design
+### Understanding Stateless Pod Design
 
 Kubernetes pods are ephemeral—they can be killed and recreated at any time due to node failures, scaling operations, or rolling updates. This means pods must be stateless: they can't store important data locally.
 
 Your chatbot is stateful in that it remembers conversations, but the pods themselves are stateless because all state lives in external PostgreSQL databases:
 
-* **Conversation state** uses the PostgreSQL state database with LangGraph checkpointing.
-* **Vector embeddings** are stored in the PostgreSQL vector database, with the help of pgvector.
+* **Conversation state** uses the PostgreSQL state database with [LangGraph checkpointing](https://docs.langchain.com/oss/python/langgraph/persistence).
+* **Vector embeddings** are stored in the PostgreSQL vector database, with the help of [pgvector](https://github.com/pgvector/pgvector).
 * **No local file storage**, as all documents are stored in a Linode Object Storage bucket.
 * **Configuration** is set via environment variables.
 
-This design means you can destroy any pod without losing data. A replacement pod connects to the same databases and picks up where the previous one left off. Your application code and database schemas from Guide 1 remain unchanged—you're just changing how and where the application runs.
+This design means you can destroy any pod without losing data. A replacement pod connects to the same databases and picks up where the previous one left off.
 
-### Audit your configuration
+## Before You Begin
 
-Review the environment variables in your .env file from Guide 1. The following variables will move into Kubernetes Secrets and ConfigMaps, with names remaining the same.
+1. [Sign up for an Akamai Cloud Manager account](https://techdocs.akamai.com/cloud-computing/docs/getting-started#sign-up-for-an-account) if you do not already have one.
 
-* OPENAI_API_KEY
-* VECTOR_DB_URL
-* STATE_DB_URL
-* LINODE_OBJECT_STORAGE_ACCESS_KEY
-* LINODE_OBJECT_STORAGE_SECRET_KEY
-* LINODE_OBJECT_STORAGE_ENDPOINT
-* LINODE_OBJECT_STORAGE_BUCKET
+1. [Sign up for an OpenAI account](https://auth.openai.com/create-account) if you do not already have one.
 
-Ensure that access control for the two managed databases allows for connections from your local machine's IP address. You will be testing your containerized application from your local machine, and this will require connecting to the database.
+    OpenAI charges per token used. For all development and testing of this application, expect total charges to be less than $10.
 
-### Prepare your code repository
+1. [Sign up for a Docker account](https://app.docker.com/signup), if you do not already have one.
 
-In the root folder of your project, create a .dockerignore file to exclude unnecessary files from your Docker image:
+## Environment Setup
 
-```file {title="project/.dockerignore"}
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
+### Set Up an LKE Cluster
 
-# Virtual environments
-venv/
-env/
-ENV/
-.venv
+1. Follow the [Create a cluster](https://techdocs.akamai.com/cloud-computing/docs/create-a-cluster) guide to create a new LKE cluster. Use these values for the LKE cluster creation form:
 
-# Environment variables and secrets
-.env
-.env.local
-*.env
+    - **Cluster Label**: Suggested name for this guide is `langchain-chatbot-cluster`
 
-# Git
-.git/
-.gitignore
+    - **Region**: Choose a region for the instance that's geographically close to you
 
-# Documentation
-README.md
-*.md
+    - **Akamai App Platform**: Select **No**
 
-# Logs
-*.log
+    - **HA Control Plane**: Select **No**, which is appropriate for testing/development
 
-# Temporary files
-tmp/
-temp/
-*.tmp
-```
+    - **Plan**: Dedicated 4GB is recommended
 
-Ensure your requirements.txt is up to date. If you've added dependencies since Guide 1, regenerate it:
+    - **Add Node Pools**: Choose a type with at least 4GB RAM. Configure the node pool to use at least three nodes.
 
-```command {title="Regenerate and freeze requirements file"}
-(venv) pip freeze > requirements.txt
-```
+    Akamai provisions the nodes, installs Kubernetes, and configures networking. Cluster creation may take several minutes.
 
-Your application is now ready for containerization.
+1. Follow the [Install kubectl](https://techdocs.akamai.com/cloud-computing/docs/manage-a-cluster-with-kubectl#install-kubectl) guide to install kubectl on your workstation.
 
-## Part 2: Containerizing Your Application
+1. Follow the [Connect to a cluster with kubectl](https://techdocs.akamai.com/cloud-computing/docs/manage-a-cluster-with-kubectl#connect-to-a-cluster-with-kubectl) guide, including the [Access and download your kubeconfig](https://techdocs.akamai.com/cloud-computing/docs/manage-a-cluster-with-kubectl#access-and-download-your-kubeconfig) section, to verify the connection to your cluster.
 
-Before building your container, understand what you'll create for Kubernetes:
+## Set Up the Code Repository, Object Storage, Databases, and OpenAI API Key
 
-* **Secret**: Stores sensitive data like API keys and database connection strings
-* **ConfigMap**: Stores non-sensitive configuration like model names and settings
-* **Deployment**: Defines your application pods, replicas, and container specifications
-* **Service**: Exposes your application to the internet via a LoadBalancer
+Follow these sections from the [RAG Chatbot Langchain Compute Instance](/docs/guides/deploy-chatbot-rag-pipeline-langchain-linode) guide:
 
-Your Python code from Guide 1 requires minimal changes—the main work is containerization and creating these Kubernetes manifests.
+{{< note >}}
+Wherever an instruction says to run a command on an Akamai compute instance, run that command locally on your workstation instead.
+{{< /note >}}
 
-### Create your Dockerfile
+1. [Clone the Chatbot Codebase](/docs/guides/deploy-chatbot-rag-pipeline-langchain-linode/#clone-the-chatbot-codebase)
 
-Create a Dockerfile in your project root folder:
+1. [Start a Python Virtual Environment](/docs/guides/deploy-chatbot-rag-pipeline-langchain-linode/#start-a-python-virtual-environment)
 
-```file {title="project/Dockerfile" lang="dockerfile"}
-FROM python:3.11-slim
+1. [Copy the .env.example Template](/docs/guides/deploy-chatbot-rag-pipeline-langchain-linode/#copy-the-envexample-template)
 
-# Set working directory
-WORKDIR /app
+1. [Install Python Dependencies](/docs/guides/deploy-chatbot-rag-pipeline-langchain-linode/#install-python-dependencies)
 
-# Copy requirements first for layer caching
-COPY requirements.txt .
+1. [Create an OpenAI API Key](/docs/guides/deploy-chatbot-rag-pipeline-langchain-linode/#create-an-openai-api-key)
 
-# Install dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+1. [Provision Managed PostgreSQL Databases](/docs/guides/deploy-chatbot-rag-pipeline-langchain-linode/#provision-managed-postgresql-databases)
 
-# Copy application code
-COPY app/ ./app/
+   - When selecting a region for your databases, use the same region as your LKE cluster.
 
-# Create non-root user for security
-RUN useradd -m appuser && chown -R appuser:appuser /app
+   - When configuring network access for the database, add your workstation's IP address to the allowed list of IPs.
 
-# Switch to non-root user
-USER appuser
+1. [Set Up Linode Object Storage](/docs/guides/deploy-chatbot-rag-pipeline-langchain-linode/#set-up-linode-object-storage)
 
-# Expose application port
-EXPOSE 8000
+   - When selecting a region for your object storage bucket, use the same region as your LKE cluster.
 
-# Run the application
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
-```
+1. [Upload Documents to the Object Storage Bucket](/docs/guides/deploy-chatbot-rag-pipeline-langchain-linode/#upload-documents-to-the-object-storage-bucket)
 
-This Dockerfile follows container best practices:
+### Verify Database Access from LKE
 
-* **Slim base image**: Uses [python:3.11-slim](https://hub.docker.com/layers/library/python/3.11-slim) to minimize image size
-* **Layer caching**: Copies requirements.txt first so dependency installation is cached
-* **Non-root user**: Creates and switches to appuser for security
-* **Single process**: Runs uvicorn directly, removing the need for a shell script wrapper
+Your Kubernetes nodes need network access to your managed PostgreSQL databases. [Akamai Cloud documentation](https://techdocs.akamai.com/cloud-computing/docs/aiven-manage-database#lke-and-database-clusters-connectivity) provides this note:
 
-### Build your Docker image locally
+*Each Managed Database cluster in your account automatically updates its ACL every 10 minutes to include the IP address (IPv4 and IPv6) from all LKE nodes in your account, ensuring that newly created, recycled, or auto-scaled nodes can connect to your databases without requiring manual IP access list changes.*
 
-Build the image and tag it with a version number:
+1. In the Akamai Cloud Manager, take note of the IP addresses for each of the nodes in your Kubernetes cluster. Then, navigate to the two managed databases for your application to verify in network access controls that those IP addresses are included in the allowlist.
 
-```command {title="Build Docker image"}
+1. Test database connectivity from a temporary pod:
+
+    ```command {title="Test database connectivity from a pod in a node"}
+    kubectl run -it \
+    --rm debug \
+    --image=postgres:18 \
+    --restart=Never -- \
+    psql {{< placeholder "PSQL_CONNECTION_STRING_URI" >}}
+    ```
+
+    For the `PSQL_CONNECTION_STRING_URI` placeholder, insert a string with this format, where the [connection details correspond to your database in the Cloud Manager](https://techdocs.akamai.com/cloud-computing/docs/aiven-postgresql#view-connection-details):
+
+    ```
+    "host={{< placeholder "YOUR_POSTGRESQL_HOSTNAME" >}} port={{< placeholder "YOUR_POSTGRESQL_PORT" >}} user={{< placeholder "YOUR_POSTGRESQL_USERNAME" >}} password={{< placeholder "YOUR_POSTGRESQL_PASSWORD" >}} dbname={{< placeholder "YOUR_POSTGRESQL_DB_NAME" >}}"
+    ```
+
+    The output should resemble:
+
+    ```output
+    psql (18.0 (Debian 18.0-1.pgdg13+3))
+    SSL connection (protocol: TLSv1.3, cipher: TLS_AES_256_GCM_SHA384, compression: off, ALPN: postgresql)
+    Type "help" for help.
+
+    defaultdb=>
+    ```
+
+1. Enter `\q` to quit the PostgreSQL session.
+
+Your cluster can now reach your databases.
+
+### Index Documents with LangChain
+
+Follow the [Index Documents with LangChain](/docs/guides/deploy-chatbot-rag-pipeline-langchain-linode/#index-documents-with-langchain) section of the [RAG Chatbot Langchain Compute Instance](/docs/guides/deploy-chatbot-rag-pipeline-langchain-linode) guide to initialize your vector database and generate the vector embeddings of your documents.
+
+## Containerize your Chatbot Application
+
+The cloned GitHub repository for your chatbot has two files that are used to create a Docker image for your app:
+
+- The [`.dockerignore` file](https://github.com/linode/docs-cloud-projects/blob/rag-pipeline-chatbot-langchain/.dockerignore) excludes unnecessary files from your Docker image.
+
+- The [`Dockerfile`](https://github.com/linode/docs-cloud-projects/blob/rag-pipeline-chatbot-langchain/Dockerfile) builds your image by including the chatbot application code and running it with the `uvicorn` command:
+
+    ```file {title="project/Dockerfile" lang="dockerfile"}
+    FROM python:3.11-slim
+
+    # Set working directory
+    WORKDIR /app
+
+    # Copy requirements first for layer caching
+    COPY requirements.txt .
+
+    # Install dependencies
+    RUN pip install --no-cache-dir -r requirements.txt
+
+    # Copy application code
+    COPY app/ ./app/
+
+    # Create non-root user for security
+    RUN useradd -m appuser && chown -R appuser:appuser /app
+
+    # Switch to non-root user
+    USER appuser
+
+    # Expose application port
+    EXPOSE 8000
+
+    # Run the application
+    CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+    ```
+
+    This Dockerfile follows container best practices:
+
+    * **Slim base image**: Uses [python:3.11-slim](https://hub.docker.com/layers/library/python/3.11-slim) to minimize image size
+    * **Layer caching**: Copies requirements.txt first so dependency installation is cached
+    * **Non-root user**: Creates and switches to appuser for security
+    * **Single process**: Runs uvicorn directly, removing the need for a shell script wrapper
+
+
+### Audit your Configuration
+
+Before proceeding, review the environment variables in your `.env` file. The following variables are later used in Kubernetes Secrets and ConfigMaps, with names remaining the same.
+
+* `OPENAI_API_KEY`
+* `VECTOR_DB_URL`
+* `STATE_DB_URL`
+* `LINODE_OBJECT_STORAGE_ACCESS_KEY`
+* `LINODE_OBJECT_STORAGE_SECRET_KEY`
+* `LINODE_OBJECT_STORAGE_ENDPOINT`
+* `LINODE_OBJECT_STORAGE_BUCKET`
+
+Ensure that access control for the two managed databases allows for connections from your workstations's IP address. Instructions in this section test your containerized application from your local machine, and this requires connecting to the database.
+
+### Build your Chatbot Docker Image Locally
+
+Because the Dockerfile already exists, you can immediately build the image and tag it with a version number:
+
+```command
 docker build -t langchain-chatbot:1.0.0 ./
 ```
+
+The output should resemble:
 
 ```output
 [+] Building 198.8s (11/11) FINISHED                                                                                                                                                                                                                                  docker:default
@@ -234,232 +259,159 @@ docker build -t langchain-chatbot:1.0.0 ./
  => => naming to docker.io/library/langchain-chatbot:1.0.0
 ```
 
-### Test your container locally
+### Test your Chatbot Container Locally
 
 Before pushing to a registry, verify your container works.
 
-EDITOR: you may need to add your IPv4 address to network allow list of database
+1. Run this command and replace the variable values with the corresponding values from your `.env` file:
 
-```command {title="Run Docker container locally"}
-$ docker run --rm \
-  -e OPENAI_API_KEY=[REPLACE-WITH-API-KEY] \
-  -e VECTOR_DB_URL=[REPLACE-WITH-PSQL-URI] \
-  -e STATE_DB_URL=[REPLACE-WITH-PSQL-URI] \
-  -e LINODE_OBJECT_STORAGE_ACCESS_KEY=[REPLACE-WITH-ACCESS-KEY] \
-  -e LINODE_OBJECT_STORAGE_SECRET_KEY=[REPLACE-WITH-SECRET-KEY] \
-  -e LINODE_OBJECT_STORAGE_ENDPOINT=[REPLACE-WITH-ENDPOINT-URL] \
-  -e LINODE_OBJECT_STORAGE_BUCKET=[REPLACE-WITH-BUCKET-NAME] \
-  -e APP_HOST=0.0.0.0 \
-  -e APP_PORT=8000 \
-  -e LOG_LEVEL=INFO \
-  -p 8000:8000 \
-  langchain-chatbot:1.0.0
+    ```command {title="Run Docker container locally"}
+    docker run --rm \
+    -e OPENAI_API_KEY={{< placeholder "YOUR_OPENAI_API_KEY" >}} \
+    -e VECTOR_DB_URL={{< placeholder "YOUR_VECTOR_DB_URL" >}} \
+    -e STATE_DB_URL={{< placeholder "YOUR_STATE_DB_URL" >}} \
+    -e LINODE_OBJECT_STORAGE_ACCESS_KEY={{< placeholder "YOUR_LINODE_OBJECT_STORAGE_ACCESS_KEY" >}} \
+    -e LINODE_OBJECT_STORAGE_SECRET_KEY={{< placeholder "YOUR_LINODE_OBJECT_STORAGE_SECRET_KEY" >}} \
+    -e LINODE_OBJECT_STORAGE_ENDPOINT={{< placeholder "YOUR_LINODE_OBJECT_STORAGE_ENDPOINT" >}} \
+    -e LINODE_OBJECT_STORAGE_BUCKET={{< placeholder "YOUR_LINODE_OBJECT_STORAGE_BUCKET" >}} \
+    -e APP_HOST=0.0.0.0 \
+    -e APP_PORT=8000 \
+    -e LOG_LEVEL=INFO \
+    -p 8000:8000 \
+    langchain-chatbot:1.0.0
+    ```
+
+    The output should resemble:
+
+    ```output
+    INFO:     Started server process [1]
+    INFO:     Waiting for application startup.
+    2025-10-18 15:08:58,440 - app.main - INFO - Starting LangChain RAG Chatbot application
+    2025-10-18 15:08:58,440 - app.main - INFO - Initializing RAG pipeline...
+    2025-10-18 15:08:59,902 - app.core.rag - INFO - Vector store initialized successfully
+    2025-10-18 15:08:59,905 - app.core.rag - INFO - RAG chain created successfully
+    2025-10-18 15:08:59,905 - app.main - INFO - RAG pipeline initialized successfully
+    2025-10-18 15:08:59,905 - app.main - INFO - Initializing conversation memory...
+    2025-10-18 15:08:59,906 - app.core.memory - INFO - Attempting to initialize PostgreSQL checkpointer...
+    2025-10-18 15:09:00,243 - app.core.memory - INFO - Calling checkpointer.setup()...
+    2025-10-18 15:09:00,517 - app.core.memory - INFO - PostgreSQL checkpointer schema set up successfully
+    2025-10-18 15:09:00,517 - app.core.memory - INFO - PostgreSQL checkpointer initialized successfully
+    2025-10-18 15:09:00,518 - app.core.memory - INFO - Conversation graph created successfully
+    2025-10-18 15:09:00,519 - app.main - INFO - Conversation memory initialized successfully
+    2025-10-18 15:09:00,519 - app.main - INFO - Application startup completed successfully
+    INFO:     Application startup complete.
+    INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+    ```
+
+1. You can test your container with a curl request to the health check endpoint:
+
+    ```command
+    curl localhost:8000/api/health | jq
+    ```
+
+    The output should resemble:
+
+    ```output
+    {
+        "status": "healthy",
+        "vector_db": "connected",
+        "state_db": "connected",
+        "openai_api": "available",
+        "timestamp": "2025-10-11T12:11:08.285338"
+    }
+    ```
+
+1. Stop the container with `ctrl-C`. Your container is ready for deployment.
+
+### Push to a Container Registry
+
+You need a container registry so Kubernetes can pull your image. This guide uses [Docker Hub](https://hub.docker.com/).
+
+1. Log into Docker Hub and [create a repository](https://docs.docker.com/docker-hub/repos/create/) named `langchain-chatbot`.
+
+    For simplicity, this guide uses a public repository. If you create a private repository instead, you'll need to configure image pull secrets in Kubernetes.
+
+1. Log in to your Docker account from the command line on your local machine.
+
+    ```command
+    docker login
+    ```
+
+    You'll be prompted to open your browser to complete the authentication flow.
+
+1. Tag your image and push it to Docker Hub. Replace `{{< placeholder "DOCKER_HUB_USERNAME" >}}` with your username:
+
+    ```command
+    docker tag langchain-chatbot:1.0.0 \
+      {{< placeholder "DOCKER_HUB_USERNAME" >}}/langchain-chatbot:1.0.0
+    docker push {{< placeholder "DOCKER_HUB_USERNAME" >}}/langchain-chatbot:1.0.0
+    ```
+
+    The output should resemble:
+
+    ```output
+    The push refers to repository [docker.io/[DOCKER_HUB_USERNAME]/langchain-chatbot]
+    7f99e52b7e54: Pushed
+    240b4a608545: Pushed
+    9dda7ddeb4e1: Pushed
+    fb91e312c4de: Pushed
+    ad3453264194: Pushed
+    b2738b04de4b: Mounted from library/python
+    dba5cbed1e08: Mounted from library/python
+    c9cf0647c388: Mounted from library/python
+    1d46119d249f: Mounted from library/python
+    1.0.0: digest: sha256:cd3cf4aece1ebb1dcf301446132c586f61011641da94aef69e5a7209aefdbb8b size: 2204
+    ```
+
+## Creating Kubernetes Manifests
+
+This section describes how to create four manifests that tell Kubernetes how to run your application:
+
+- A [Secret](https://kubernetes.io/docs/concepts/configuration/secret/): Stores sensitive data like API keys and database connection strings
+
+- A [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/): Stores non-sensitive configuration like model names and settings
+
+- A [Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/): Defines your application pods, replicas, and container specifications
+
+- A [Service](https://kubernetes.io/docs/concepts/services-networking/service/): Exposes your application to the internet via a LoadBalancer
+
+Before proceeding, create a directory called `manifests` under your cloned Github chatbot repository:
+
+```command
+mkdir manifests
 ```
 
-```output
-INFO:     Started server process [1]
-INFO:     Waiting for application startup.
-2025-10-18 15:08:58,440 - app.main - INFO - Starting LangChain RAG Chatbot application
-2025-10-18 15:08:58,440 - app.main - INFO - Initializing RAG pipeline...
-2025-10-18 15:08:59,902 - app.core.rag - INFO - Vector store initialized successfully
-2025-10-18 15:08:59,905 - app.core.rag - INFO - RAG chain created successfully
-2025-10-18 15:08:59,905 - app.main - INFO - RAG pipeline initialized successfully
-2025-10-18 15:08:59,905 - app.main - INFO - Initializing conversation memory...
-2025-10-18 15:08:59,906 - app.core.memory - INFO - Attempting to initialize PostgreSQL checkpointer...
-2025-10-18 15:09:00,243 - app.core.memory - INFO - Calling checkpointer.setup()...
-2025-10-18 15:09:00,517 - app.core.memory - INFO - PostgreSQL checkpointer schema set up successfully
-2025-10-18 15:09:00,517 - app.core.memory - INFO - PostgreSQL checkpointer initialized successfully
-2025-10-18 15:09:00,518 - app.core.memory - INFO - Conversation graph created successfully
-2025-10-18 15:09:00,519 - app.main - INFO - Conversation memory initialized successfully
-2025-10-18 15:09:00,519 - app.main - INFO - Application startup completed successfully
-INFO:     Application startup complete.
-INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-```
+### Create a Secret for Sensitive Data
 
-You can test your container with a curl request to the health check endpoint:
+Kubernetes Secrets store sensitive information like API keys and database passwords. Create a file named `secret.yaml` inside the `manifests/` directory with this file snippet. Replace the placeholder secret values with the corresponding values in your `.env` file:
 
-```command {title="Send health check request to containerized application"}
-~$ curl localhost:8000/api/health | jq
-```
-
-```output
-{
-    "status": "healthy",
-    "vector_db": "connected",
-    "state_db": "connected",
-    "openai_api": "available",
-    "timestamp": "2025-10-11T12:11:08.285338"
-}
-```
-
-Stop the container with ctrl-C. Your container is ready for deployment.
-
-### Push to container registry
-
-You need a container registry so Kubernetes can pull your image. This guide will use Docker Hub.
-
-Create a Docker Hub account at [https://hub.docker.com](https://hub.docker.com) if you don't have one. Create a repository named langchain-chatbot.
-
-![][image3]
-
-For simplicity, this guide assumes a public repository on Docker Hub. If you create a private repository instead, you'll need to configure image pull secrets in Kubernetes.
-
-Log in to your Docker account from the command line on your local machine.
-
-```command {title="Authenticate with Docker"}
-docker login
-```
-
-You'll be prompted to open your browser to complete the authentication flow.
-
-```output
-USING WEB-BASED LOGIN        Your one-time device confirmation code is: ACDE-FGHI Press ENTER to open your browser or submit your device code here: https://login.docker.com/activate Waiting for authentication in the browser… Login Succeeded
-```
-
-On your local machine, tag your image for Docker Hub. Then, push it to the repository.
-
-```command {title="Tag image for Docker Hub"}
-docker tag langchain-chatbot:1.0.0 \
-  [DOCKER_HUB_USERNAME]/langchain-chatbot:1.0.0
-docker push [DOCKER_HUB_USERNAME]/langchain-chatbot:1.0.0
-```
-
-```output
-The push refers to repository [docker.io/[DOCKER_HUB_USERNAME]/langchain-chatbot]
-7f99e52b7e54: Pushed
-240b4a608545: Pushed
-9dda7ddeb4e1: Pushed
-fb91e312c4de: Pushed
-ad3453264194: Pushed
-b2738b04de4b: Mounted from library/python
-dba5cbed1e08: Mounted from library/python
-c9cf0647c388: Mounted from library/python
-1d46119d249f: Mounted from library/python
-1.0.0: digest: sha256:cd3cf4aece1ebb1dcf301446132c586f61011641da94aef69e5a7209aefdbb8b size: 2204
-```
-
-## Part 3: Setting Up Your LKE Cluster
-
-With your application containerized and pushed to a registry, you're ready to provision the Kubernetes infrastructure that will run it.
-
-### Create LKE cluster
-
-Create a new Kubernetes cluster in the Akamai Cloud Manager:
-
-1. Navigate to **Kubernetes**. Click **Create Cluster**.
-2. Specify a label for your cluster. For example: langchain-chatbot-cluster
-3. Select the same region as your managed databases for lower latency.
-4. For enabling Akamai App Platform, select **No**.
-5. For testing/development, select **No** for the HA Control Plane.
-6. Select the Linode instance types to use for your node pool. Choose a type with at least 4GB RAM. Configure the node pool to use at least three nodes.
-7. Click **Create Cluster** to submit the request.
-
-![][image4]
-
-Akamai will provision nodes, install Kubernetes, and configure networking. Cluster creation may take several minutes.
-
-![][image5]
-
-### Configure kubectl access
-
-Once your cluster is ready, download the kubeconfig file. In your list of Kubernetes clusters, click **Download Kubeconfig**.
-
-![][image6]
-
-This will download a file (Example: langchain-chatbot-cluster-kubeconfig.yaml) to your local machine. Configure kubectl to use this cluster:
-
-```command {title="Configure kubectl to use cluster's kubeconfig file"}
-export KUBECONFIG=[PATH-TO-KUBECONFIG-YAML-FILE]
-```
-
-Test your connection with the following command:
-
-```command {title="Use kubectl to get cluster nodes"}
-kubectl get nodes
-```
-
-```output
-NAME                            STATUS   ROLES    AGE  VERSION
-lke525573-759963-28d8bdfe0000   Ready    <none>   1m   v1.34.0
-lke525573-759963-2db7d3ab0000   Ready    <none>   1m   v1.34.0
-lke525573-759963-5b4330b90000   Ready    <none>   1m   v1.34.0
-```
-
-You're now connected to your LKE cluster.
-
-### Verify database access from LKE
-
-Your Kubernetes nodes need network access to your managed PostgreSQL databases. [Akamai Cloud documentation](https://techdocs.akamai.com/cloud-computing/docs/aiven-manage-database#lke-and-database-clusters-connectivity) provides this note:
-
-*Each Managed Database cluster in your account automatically updates its ACL every 10 minutes to include the IP address (IPv4 and IPv6) from all LKE nodes in your account, ensuring that newly created, recycled, or auto-scaled nodes can connect to your databases without requiring manual IP access list changes.*
-
-In the Akamai Cloud Manager, take note of the IP addresses for each of the nodes in your Kubernetes cluster. Then, navigate to the two managed databases for your application to verify in network access controls that those IP addresses are included in the allowlist.
-
-Test database connectivity from a temporary pod:
-
-```command {title="Test database connectivity from a pod in a node"}
-kubectl run -it \
-  --rm debug \
-  --image=postgres:18 \
-  --restart=Never -- \
-  psql [PSQL-CONNECTION-STRING-URI]
-```
-
-EDITOR: use connection string like, don't use ssl verification
-
-```
-"host=a393531-akamai-prod-137166-default.g2a.akamaidb.net port=12078 user=akmadmin password=PASSWORD dbname=defaultdb"
-```
-
-```output
-psql (18.0 (Debian 18.0-1.pgdg13+3))
-SSL connection (protocol: TLSv1.3, cipher: TLS_AES_256_GCM_SHA384, compression: off, ALPN: postgresql)
-Type "help" for help.
-
-defaultdb=>
-```
-
-EDITOR: Enter `\q` to quit
-
-Your cluster can now reach your databases.
-
-
-## Part 4: Creating Kubernetes Manifests
-
-Next, you will create four manifests that tell Kubernetes how to run your application:
-
-1. A [Secret](https://kubernetes.io/docs/concepts/configuration/secret/) for sensitive credentials
-2. A [ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/) for application settings
-3. A [Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) to manage your pods
-4. A [Service](https://kubernetes.io/docs/concepts/services-networking/service/) to expose them to the internet
-
-### Create Secret for sensitive data
-
-Kubernetes Secrets store sensitive information like API keys and database passwords. Create a file named secret.yaml.
-
-```yaml {title="Secret (secret.yaml) to store sensitive information"}
+```file {title="manifests/secret.yaml", lang="yaml"}
 apiVersion: v1
 kind: Secret
 metadata:
   name: chatbot-secrets
 type: Opaque
 stringData:
-  openai-api-key: [REPLACE-WITH-API-KEY]
-  vector-db-url: [REPLACE-WITH-PSQL-URI]
-  state-db-url: [REPLACE-WITH-PSQL-URI]
-  linode-object-storage-access-key: [REPLACE-WITH-ACCESS-KEY]
-  linode-object-storage-secret-key: [REPLACE-WITH-SECRET-KEY]
+  openai-api-key: {{< placeholder "YOUR_OPENAI_API_KEY" >}}
+  vector-db-url: {{< placeholder "YOUR_VECTOR_DB_URL" >}}
+  state-db-url: {{< placeholder "YOUR_STATE_DB_URL" >}}
+  linode-object-storage-access-key: {{< placeholder "YOUR_OBJECT_STORAGE_ACCESS_KEY" >}}
+  linode-object-storage-secret-key: {{< placeholder "YOUR_OBJECT_STORAGE_SECRET_KEY" >}}
 ```
 
 Although you provide the values in plain text, Kubernetes automatically base64-encodes them when storing. Note that this encoding is for storage format, not security. Anyone with cluster access can retrieve and decode these values.
 
-Never commit secret.yaml with real values to version control. Add it to .gitignore or use a template file with placeholder values.
+{{< note type="warning" >}}
+Never commit `secret.yaml` with real values to version control. Add it to `.gitignore` or use a template file with placeholder values.
 
-### Create ConfigMap for non-sensitive configuration
+The [`.gitignore` in the example chatbot repository](https://github.com/linode/docs-cloud-projects/blob/rag-pipeline-chatbot-langchain/.gitignore#L112-L115) is set to ignore `manifests/secret.yaml`
+{{< /note >}}
 
-Create configmap.yaml for non-sensitive settings:
+### Create a ConfigMap for Non-Sensitive Configuration
 
-```yaml {title="ConfigMap (configmap.yaml) to store non-sensitive settings"}
+Create `configmap.yaml` inside the `manifests/` directory for non-sensitive settings with this file snippet. Replace the placeholder configuration values with the corresponding values in your `.env` file:
+
+```file {title="manifests/configmap.yaml", lang="yaml"}
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -468,17 +420,17 @@ data:
   APP_PORT: "8000"
   LLM_MODEL: "gpt-4o-mini"
   EMBEDDING_MODEL: "text-embedding-3-small"
-  LINODE_OBJECT_STORAGE_ENDPOINT: [REPLACE-WITH-ENDPOINT-URL]
-  LINODE_OBJECT_STORAGE_BUCKET: [REPLACE-WITH-BUCKET-NAME]
+  LINODE_OBJECT_STORAGE_ENDPOINT: {{< placeholder "YOUR_OBJECT_STORAGE_ENDPOINT" >}}
+  LINODE_OBJECT_STORAGE_BUCKET: {{< placeholder "YOUR_OBJECT_STORAGE_BUCKET" >}}
 ```
 
 ConfigMaps separate configuration from code, making it easy to change settings without rebuilding containers.
 
-### Create Deployment manifest
+### Create a Deployment Manifest
 
-The Deployment defines how Kubernetes runs your application. Create deployment.yaml:
+The Deployment defines how Kubernetes runs your application. Create `deployment.yaml` inside the `manifests/` directory with this file snippet:
 
-```yaml {title="Deployment (deployment.yaml) manifest"}
+```file {title="manifests/deployment.yaml", lang="yaml"}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -572,17 +524,17 @@ spec:
 
 Note the following key configurations:
 
-* replicas: 3 – Runs three copies of your application for high availability
-* resources – Requests guarantee minimum resources; limits cap maximum usage
-* livenessProbe – Kubernetes restarts the pod if health checks fail
-* readinessProbe – Pod doesn't receive traffic until it's ready
-* env – Environment variables populated from Secret and ConfigMap
+* `replicas: 3`: Runs three copies of your application for high availability
+* `resources`: Requests guarantee minimum resources; limits cap maximum usage
+* `livenessProbe`: Kubernetes restarts the pod if health checks fail
+* `readinessProbe`: Pod doesn't receive traffic until it's ready
+* `env`: Environment variables populated from Secret and ConfigMap
 
-### Create Service manifest
+### Create a Service Manifest
 
-The Service exposes your application to the internet. Create service.yaml:
+The Service exposes your application to the internet. Create `service.yaml` inside the `manifests/` directory from this file snippet:
 
-```yaml {title="Service (service.yaml) manifest"}
+```file {title="manifests/service.yaml", lang="yaml"}
 apiVersion: v1
 kind: Service
 metadata:
@@ -597,23 +549,24 @@ spec:
     targetPort: 8000
 ```
 
-Setting type: LoadBalancer tells LKE to provision a NodeBalancer that distributes traffic across your pods. The selector matches pods with the label app: chatbot from your Deployment.
+Setting `type: LoadBalancer` tells LKE to provision a NodeBalancer that distributes traffic across your pods. The `selector` matches pods with the label `app: chatbot` from your Deployment.
 
-
-## Part 5: Deploying to LKE
+## Deploy to LKE
 
 With your manifests ready, you'll apply them to your cluster. Each manifest builds on the previous one, so the sequence matters.
 
-### Apply manifests
+### Apply Manifests
 
 Deploy your resources in dependency order.
 
-```command {title="Apply Kubernetes manifests"}
-kubectl apply -f secret.yaml
-kubectl apply -f configmap.yaml
-kubectl apply -f deployment.yaml
-kubectl apply -f service.yaml
+```command
+kubectl apply -f manifests/secret.yaml
+kubectl apply -f manifests/configmap.yaml
+kubectl apply -f manifests/deployment.yaml
+kubectl apply -f manifests/service.yaml
 ```
+
+The output should resemble:
 
 ```output
 secret/chatbot-secrets created configmap/chatbot-config created deployment.apps/chatbot-deployment created service/chatbot-service created
@@ -621,106 +574,106 @@ secret/chatbot-secrets created configmap/chatbot-config created deployment.apps/
 
 Kubernetes now creates your pods and provisions a LoadBalancer.
 
-### Monitor deployment progress
+### Monitor Deployment Progress
 
-Watch your pods start:
+1. Watch your pods start:
 
-```command {title="Use kubectl to watch status of pods"}
-kubectl get pods -w
-```
+    ```command
+    kubectl get pods -w
+    ```
 
-The above command will watch the pods progress from ContainerCreating to Running states.
+    The above command will watch the pods progress from ContainerCreating to Running states.
 
-```output
-NAME                                  READY   STATUS    RESTARTS   AGE
-chatbot-deployment-598f6cbd78-2n8js   1/1     Running   0          3m31s
-chatbot-deployment-598f6cbd78-jj4nz   1/1     Running   0          3m31s
-chatbot-deployment-598f6cbd78-p9nnz   1/1     Running   0          3m31s
-```
+    ```output
+    NAME                                  READY   STATUS    RESTARTS   AGE
+    chatbot-deployment-598f6cbd78-2n8js   1/1     Running   0          3m31s
+    chatbot-deployment-598f6cbd78-jj4nz   1/1     Running   0          3m31s
+    chatbot-deployment-598f6cbd78-p9nnz   1/1     Running   0          3m31s
+    ```
 
-Check detailed pod status, using a specific pod name:
+1. Check detailed pod status, using a specific pod name:
 
-```command {title="Check detailed pod status"}
-kubectl describe pod chatbot-deployment-598f6cbd78-2n8js
-```
+    ```command
+    kubectl describe pod chatbot-deployment-598f6cbd78-2n8js
+    ```
 
-```output
-Name:             chatbot-deployment-598f6cbd78-2n8js
-Namespace:        default
-Priority:         0
-Service Account:  default
-Node:             lke525573-759963-5b4330b90000/192.168.144.171 Status:           Running
-… Containers:
-  chatbot:
-    Container ID:   containerd://1b0e7cca693b8196fa64e5594e34c5d70d83209cf5e4b82fb9138f518419c9cb
-    Image:          [DOCKER-HUB-USERNAME]/langchain-chatbot:1.0.0
-    Image ID:       docker.io/[DOCKER-HUB-USERNAME]/langchain-chatbot@sha256:cd3cf4aece1ebb1dcf301446132c586f61011641da94aef69e5a7209aefdbb8b
-    Port:           8000/TCP
-    Host Port:      0/TCP
-    State:          Running
-    Ready:          True
-    Restart Count:  0
-    Limits:
-      cpu:     500m
-      memory:  1Gi
-    Requests:
-      cpu:      250m
-      memory:   512Mi
-    Liveness:   http-get http://:8000/api/health delay=30s timeout=1s period=10s #success=1 #failure=3
-    Readiness:  http-get http://:8000/api/health delay=5s timeout=1s period=5s #success=1 #failure=3
-    Environment:
-      OPENAI_API_KEY:                    <set to the key 'openai-api-key' in secret 'chatbot-secrets'>                     Optional: false
-      VECTOR_DB_URL:                     <set to the key 'vector-db-url' in secret 'chatbot-secrets'>                      Optional: false …
-Conditions:
-  Type                        Status
-  PodReadyToStartContainers   True
-  Initialized                 True
-  Ready                       True
-  ContainersReady             True
-  PodScheduled                True
-…
-```
+    ```output
+    Name:             chatbot-deployment-598f6cbd78-2n8js
+    Namespace:        default
+    Priority:         0
+    Service Account:  default
+    Node:             lke525573-759963-5b4330b90000/192.168.144.171 Status:           Running
+    … Containers:
+    chatbot:
+        Container ID:   containerd://1b0e7cca693b8196fa64e5594e34c5d70d83209cf5e4b82fb9138f518419c9cb
+        Image:          [DOCKER-HUB-USERNAME]/langchain-chatbot:1.0.0
+        Image ID:       docker.io/[DOCKER-HUB-USERNAME]/langchain-chatbot@sha256:cd3cf4aece1ebb1dcf301446132c586f61011641da94aef69e5a7209aefdbb8b
+        Port:           8000/TCP
+        Host Port:      0/TCP
+        State:          Running
+        Ready:          True
+        Restart Count:  0
+        Limits:
+        cpu:     500m
+        memory:  1Gi
+        Requests:
+        cpu:      250m
+        memory:   512Mi
+        Liveness:   http-get http://:8000/api/health delay=30s timeout=1s period=10s #success=1 #failure=3
+        Readiness:  http-get http://:8000/api/health delay=5s timeout=1s period=5s #success=1 #failure=3
+        Environment:
+        OPENAI_API_KEY:                    <set to the key 'openai-api-key' in secret 'chatbot-secrets'>                     Optional: false
+        VECTOR_DB_URL:                     <set to the key 'vector-db-url' in secret 'chatbot-secrets'>                      Optional: false …
+    Conditions:
+    Type                        Status
+    PodReadyToStartContainers   True
+    Initialized                 True
+    Ready                       True
+    ContainersReady             True
+    PodScheduled                True
+    …
+    ```
 
-View application logs:
+1. View application logs:
 
-```command {title="View application logs"}
-kubectl logs -l app=chatbot --tail=10
-```
+    ```command
+    kubectl logs -l app=chatbot --tail=10
+    ```
 
-```output
-INFO:     172.234.232.183:43246 - "GET /api/health HTTP/1.1" 200 OK
-2025-10-18 15:50:26,836 - app.api.health - INFO - Performing health check
-2025-10-18 15:50:28,186 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
-2025-10-18 15:50:28,187 - app.api.health - INFO - Health check completed: healthy
-INFO:     172.234.232.183:43262 - "GET /api/health HTTP/1.1" 200 OK
-2025-10-18 15:50:31,838 - app.api.health - INFO - Performing health check
-2025-10-18 15:50:32,029 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
-2025-10-18 15:50:32,029 - app.api.health - INFO - Health check completed: healthy
-INFO:     172.234.232.183:43274 - "GET /api/health HTTP/1.1" 200 OK
-2025-10-18 15:50:34,002 - app.api.health - INFO - Performing health check
-INFO:     172.234.253.68:49118 - "GET /api/health HTTP/1.1" 200 OK
-2025-10-18 15:50:25,059 - app.api.health - INFO - Performing health check
-2025-10-18 15:50:25,255 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
-2025-10-18 15:50:25,256 - app.api.health - INFO - Health check completed: healthy
-INFO:     172.234.253.68:49128 - "GET /api/health HTTP/1.1" 200 OK
-2025-10-18 15:50:30,059 - app.api.health - INFO - Performing health check
-2025-10-18 15:50:30,245 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
-2025-10-18 15:50:30,246 - app.api.health - INFO - Health check completed: healthy
-INFO:     172.234.253.68:49136 - "GET /api/health HTTP/1.1" 200 OK
-2025-10-18 15:50:34,003 - app.api.health - INFO - Performing health check
-INFO:     172.234.232.4:38044 - "GET /api/health HTTP/1.1" 200 OK
-2025-10-18 15:50:28,758 - app.api.health - INFO - Performing health check
-2025-10-18 15:50:29,030 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
-2025-10-18 15:50:29,031 - app.api.health - INFO - Health check completed: healthy
-INFO:     172.234.232.4:44836 - "GET /api/health HTTP/1.1" 200 OK
-2025-10-18 15:50:33,758 - app.api.health - INFO - Performing health check
-2025-10-18 15:50:33,948 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
-2025-10-18 15:50:33,949 - app.api.health - INFO - Health check completed: healthy
-INFO:     172.234.232.4:44844 - "GET /api/health HTTP/1.1" 200 OK
-2025-10-18 15:50:34,094 - app.api.health - INFO - Performing health check
-```
+    ```output
+    INFO:     172.234.232.183:43246 - "GET /api/health HTTP/1.1" 200 OK
+    2025-10-18 15:50:26,836 - app.api.health - INFO - Performing health check
+    2025-10-18 15:50:28,186 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+    2025-10-18 15:50:28,187 - app.api.health - INFO - Health check completed: healthy
+    INFO:     172.234.232.183:43262 - "GET /api/health HTTP/1.1" 200 OK
+    2025-10-18 15:50:31,838 - app.api.health - INFO - Performing health check
+    2025-10-18 15:50:32,029 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+    2025-10-18 15:50:32,029 - app.api.health - INFO - Health check completed: healthy
+    INFO:     172.234.232.183:43274 - "GET /api/health HTTP/1.1" 200 OK
+    2025-10-18 15:50:34,002 - app.api.health - INFO - Performing health check
+    INFO:     172.234.253.68:49118 - "GET /api/health HTTP/1.1" 200 OK
+    2025-10-18 15:50:25,059 - app.api.health - INFO - Performing health check
+    2025-10-18 15:50:25,255 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+    2025-10-18 15:50:25,256 - app.api.health - INFO - Health check completed: healthy
+    INFO:     172.234.253.68:49128 - "GET /api/health HTTP/1.1" 200 OK
+    2025-10-18 15:50:30,059 - app.api.health - INFO - Performing health check
+    2025-10-18 15:50:30,245 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+    2025-10-18 15:50:30,246 - app.api.health - INFO - Health check completed: healthy
+    INFO:     172.234.253.68:49136 - "GET /api/health HTTP/1.1" 200 OK
+    2025-10-18 15:50:34,003 - app.api.health - INFO - Performing health check
+    INFO:     172.234.232.4:38044 - "GET /api/health HTTP/1.1" 200 OK
+    2025-10-18 15:50:28,758 - app.api.health - INFO - Performing health check
+    2025-10-18 15:50:29,030 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+    2025-10-18 15:50:29,031 - app.api.health - INFO - Health check completed: healthy
+    INFO:     172.234.232.4:44836 - "GET /api/health HTTP/1.1" 200 OK
+    2025-10-18 15:50:33,758 - app.api.health - INFO - Performing health check
+    2025-10-18 15:50:33,948 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+    2025-10-18 15:50:33,949 - app.api.health - INFO - Health check completed: healthy
+    INFO:     172.234.232.4:44844 - "GET /api/health HTTP/1.1" 200 OK
+    2025-10-18 15:50:34,094 - app.api.health - INFO - Performing health check
+    ```
 
-### Get external IP address
+### Get External IP Address
 
 Check your Service for the external IP:
 
@@ -737,13 +690,15 @@ The LoadBalancer may take 1-2 minutes to provision. If the IP address is not yet
 
 LKE has provisioned a NodeBalancer that routes traffic to your pods.
 
-### Verify deployment
+### Verify Deployment
 
 Test the health endpoint using the external IP:
 
-```command {title="Test health check endpoint with cluster's external IP"}
+```command
 curl http://172.238.59.197/api/health | jq
 ```
+
+The output should resemble:
 
 ```output
 {
@@ -755,111 +710,98 @@ curl http://172.238.59.197/api/health | jq
 }
 ```
 
-Navigate to the external IP address in your browser to access the chatbot.
+## Test the Chatbot
 
-![][image7]
+1. Navigate to the external IP address of the LoadBalancer in your browser to access the chatbot:
 
-Your chatbot is live on Kubernetes.
+    ![](chatbot-no-questions.jpg)
 
-## Part 6: Testing Your Kubernetes Deployment
+1. Start by testing **RAG retrieval**. Ask questions that your documents can answer, and verify that the responses use that information.
 
-Your chatbot is running on Kubernetes, but you need to verify it works correctly in this distributed environment. Test the user interface, confirm that load balancing distributes requests across pods, and verify that Kubernetes' self-healing capabilities work as expected.
+    ![](chatbot-first-question.jpg)
 
-### Test end-to-end functionality with the LoadBalancer
+1. Then, test **conversation memory** by asking follow-up questions that require previous context.
+
+    ![](chatbot-followup-question.jpg)
+
+## Testing Your Kubernetes Deployment
+
+Your chatbot is running on Kubernetes, but you need to verify it works correctly in this distributed environment.
+
+### Test End-to-End Functionality with the LoadBalancer
 
 Your chatbot is distributed across multiple pods, which means any request from any pod should properly route through the LoadBalancer to any available pod. Conversation state should persist, regardless of which pod handles each request. Since all state lives in your external PostgreSQL database, any pod can pick up the conversation seamlessly—this is stateless design in action.
 
-The original HTML interface (app/static/index.html) from Guide 1 has JavaScript fetch calls which use a relative path. For example:
+Check how requests distribute across pods:
 
-```javascript {title="sendMessage function in app/static/index.html"}
-async function sendMessage(message) {
-  showTypingIndicator();
+1. In a terminal window, run the following command to follow specific log messages and show the name of the pod that processed each one:
 
-  try {
-    const response = await fetch('/api/chat', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        message: message,
-        thread_id: threadId
-      })
-    }); …
-```
+    ```command
+    kubectl logs \
+    -l app=chatbot \
+    --follow \
+    --prefix=true \
+    | grep "Processing chat message"
+    ```
 
-In a production environment, these paths for fetch calls should use the LoadBalancer's external IP (example: http://172.238.59.197/api/chat). However, for this guide, you can test this by editing a local copy of app/static/index.html. Search for any instances of calls to fetch, and prepend the LoadBalancer IP to the request path. Then, save the file and open the local HTML file directly in your browser.
+1. In the browser window, send several requests to the chatbot. The log messages may look like this:
 
-Test the chat interface. It should continue to behave the same. Refresh the page and continue the conversation to verify persistence works across page loads. This confirms your application works identically whether running on a single server or distributed across multiple pods—a key benefit of stateless design.
-
-### Verify horizontal scaling works
-
-Check how requests distribute across pods. In a terminal window, run the following command to follow specific log messages and show the name of the pod that processed each one:
-
-```command {title="Follow logs and display pod name"}
-~/$ kubectl logs \     -l app=chatbot      --follow \     --prefix=true \     | grep "Processing chat message"
-```
-
-Then, in the browser window with your local copy of app/static/index.html loaded, send several requests to the chatbot.
-
-The log messages may look like this:
-
-```output
-[pod/chatbot-deployment-598f6cbd78-2n8js/chatbot] 2025-10-18 16:00:49,820 - app.api.chat - INFO - Processing chat message: Who is Huck?...
-[pod/chatbot-deployment-598f6cbd78-2n8js/chatbot] 2025-10-18 16:00:59,339 - app.api.chat - INFO - Processing chat message: Who is Tom?...
-[pod/chatbot-deployment-598f6cbd78-2n8js/chatbot] 2025-10-18 16:01:26,643 - app.api.chat - INFO - Processing chat message: Where does Huck live?...
-[pod/chatbot-deployment-598f6cbd78-jj4nz/chatbot] 2025-10-18 16:02:16,633 - app.api.chat - INFO - Processing chat message: Where does Tom live?...
-[pod/chatbot-deployment-598f6cbd78-2n8js/chatbot] 2025-10-18 16:02:39,514 - app.api.chat - INFO - Processing chat message: Describe their friendship....
-[pod/chatbot-deployment-598f6cbd78-jj4nz/chatbot] 2025-10-18 16:03:01,706 - app.api.chat - INFO - Processing chat message: What questions have I asked so far in this convers...
-[pod/chatbot-deployment-598f6cbd78-p9nnz/chatbot] 2025-10-18 16:03:18,521 - app.api.chat - INFO - Processing chat message: Do the two of them have any other friends?...
-```
+    ```output
+    [pod/chatbot-deployment-598f6cbd78-2n8js/chatbot] 2025-10-18 16:00:49,820 - app.api.chat - INFO - Processing chat message: Who is Huck?...
+    [pod/chatbot-deployment-598f6cbd78-2n8js/chatbot] 2025-10-18 16:00:59,339 - app.api.chat - INFO - Processing chat message: Who is Tom?...
+    [pod/chatbot-deployment-598f6cbd78-2n8js/chatbot] 2025-10-18 16:01:26,643 - app.api.chat - INFO - Processing chat message: Where does Huck live?...
+    [pod/chatbot-deployment-598f6cbd78-jj4nz/chatbot] 2025-10-18 16:02:16,633 - app.api.chat - INFO - Processing chat message: Where does Tom live?...
+    [pod/chatbot-deployment-598f6cbd78-2n8js/chatbot] 2025-10-18 16:02:39,514 - app.api.chat - INFO - Processing chat message: Describe their friendship....
+    [pod/chatbot-deployment-598f6cbd78-jj4nz/chatbot] 2025-10-18 16:03:01,706 - app.api.chat - INFO - Processing chat message: What questions have I asked so far in this convers...
+    [pod/chatbot-deployment-598f6cbd78-p9nnz/chatbot] 2025-10-18 16:03:18,521 - app.api.chat - INFO - Processing chat message: Do the two of them have any other friends?...
+    ```
 
 Notice how different requests, all originating from the same HTML page, are being distributed across your pods by the LoadBalancer.
 
-### Test Kubernetes self-healing by deleting a pod
+### Test Kubernetes Self-Healing by Deleting a Pod
 
-Manually force a pod deletion, using a specific pod name:
+1. Manually force a pod deletion, using a specific pod name:
 
-```command {title="Delete a pod"}
-~/$ kubectl delete pod chatbot-deployment-598f6cbd78-2n8js
-```
+    ```command {title="Delete a pod"}
+    kubectl delete pod chatbot-deployment-598f6cbd78-2n8js
+    ```
 
-Immediately check the status of your pods.
+1. Immediately check the status of your pods.
 
-```command {title="Get pods"}
-~/$ kubectl get pods
-```
+    ```command {title="Get pods"}
+    kubectl get pods
+    ```
 
-```output
-NAME                                  READY   STATUS    RESTARTS   AGE
-chatbot-deployment-598f6cbd78-dxbdw   0/1     Running   0          4s
-chatbot-deployment-598f6cbd78-jj4nz   1/1     Running   0          1h
-chatbot-deployment-598f6cbd78-p9nnz   1/1     Running   0          1h
-```
+    ```output
+    NAME                                  READY   STATUS    RESTARTS   AGE
+    chatbot-deployment-598f6cbd78-dxbdw   0/1     Running   0          4s
+    chatbot-deployment-598f6cbd78-jj4nz   1/1     Running   0          1h
+    chatbot-deployment-598f6cbd78-p9nnz   1/1     Running   0          1h
+    ```
 
 The Deployment controller automatically creates a replacement. Your Service continues working because the other two pods handle traffic during the replacement.
 
 
-## Part 7: Production Considerations
+## Production Considerations
 
 When deploying to production, keep in mind the following key considerations:
 
-### Manage secrest securely
+### Managing Secrets Securely
 
-Never commit secret.yaml with real values to version control. Consider external secret management tools like HashiCorp Vault. Rotate secrets periodically and use Kubernetes RBAC to restrict access.
+Never commit `secret.yaml` with real values to version control. Consider external secret management tools like HashiCorp Vault. Rotate secrets periodically and use Kubernetes RBAC to restrict access.
 
-### Updating your application
+### Updating your Chatbot
 
-When you make code changes, build a new image with an incremented version. Update deployment.yaml with a new image tag.
+When you make code changes, build a new image with an incremented version. Update `deployment.yaml` with a new image tag.
 
-Kubernetes performs a rolling update—it creates new pods with the updated image, waits for them to pass readiness checks, then terminates old pods. This provides zero-downtime deployment.
+Kubernetes performs a rolling update; it creates new pods with the updated image, waits for them to pass readiness checks, then terminates old pods. This provides zero-downtime deployment.
 
-### Scaling your application
+### Scaling your Chatbot
 
-Scale manually by changing the replica count. This changes the number of pods (application instances)—not the number of nodes (Linode instances). Your three nodes can run many more than three pods, and Kubernetes distributes them based on available resources.
+Scale manually by changing the replica count. This changes the number of pods (application instances), not the number of nodes (compute instances). Your three nodes can run many more than three pods, and Kubernetes distributes them based on available resources.
 
 ```command {title="Increase deployment replica count"}
-~/$ kubectl scale deployment chatbot-deployment --replicas=8
+kubectl scale deployment chatbot-deployment --replicas=8
 ```
 
 ```output
@@ -882,18 +824,18 @@ chatbot-deployment-598f6cbd78-v98hf   1/1     Running   0          62s
 
 For automatic scaling based on CPU usage, create a [HorizontalPodAutoscaler](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/).
 
-### Monitoring and logging
+### Monitoring and Logging
 
-To check resource usage across nodes and pods, first install the [Kubernetes Metric Server](https://github.com/kubernetes-sigs/metrics-server).
+To check resource usage across nodes and pods, install the [Kubernetes Metric Server](https://github.com/kubernetes-sigs/metrics-server).
 
 ```command {title="Install Metrics Server onto cluster"}
-~/$ kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
 ```
 
 Then, after a few minutes, you can run commands to show usage.
 
 ```command {title="Show CPU and memory usage per node"}
-~/$ kubectl top nodes
+kubectl top nodes
 ```
 
 ```output
@@ -904,7 +846,7 @@ lke525573-759963-5b4330b90000   72m          3%       1547Mi          40%
 ```
 
 ```command {title="Show CPU and memory usage per pod"}
-~/$ kubectl top pods
+kubectl top pods
 ```
 
 ```output
@@ -913,38 +855,35 @@ NAME                                  CPU(cores)   MEMORY(bytes)    chatbot-depl
 
 For production log management, consider log aggregation tools like the ELK stack (Elasticsearch, Logstash, Kibana) or Grafana Loki. These centralize logs from all pods and provide search and visualization.
 
-### Cost management
+### Cost Management
 
-Calculate your monthly costs:
+Calculate your monthly costs with the [Akamai Cloud Computing Calculator](https://www.linode.com/pricing/cloud-cost-calculator/). These were the resources provisioned by default in this guide:
 
-* **LKE nodes**: 3 nodes × $X/month (varies by plan)
-* **NodeBalancer**: $Y/month
-* **Managed databases**: Same as Guide 1
-* **Object Storage**: Same as Guide 1
+- LKE cluster with 3 nodes and one NodeBalancer
+- Two managed databases
+- One object storage bucket
 
 Optimize costs by:
 
-* Right-sizing your node pool (use smaller nodes if resource limits are low).
-* Reducing replicas if traffic is low.
-* Using the cluster autoscaler to scale nodes down during off-peak hours.
+- Right-sizing your node pool (use smaller nodes if resource limits are low)
+- Reducing replicas if traffic is low
+- Using the cluster autoscaler to scale nodes down during off-peak hours
 
 ## Conclusion
 
-You've deployed your LangChain chatbot to Kubernetes with multiple replicas, proper secrets management, and production-ready infrastructure. The same application from Guide 1 now runs in a cloud-native environment with auto-healing and horizontal scaling capabilities.
+You've deployed your LangChain chatbot to Kubernetes with multiple replicas, secrets management, and production-ready infrastructure.
 
-This architecture demonstrates enterprise deployment patterns. Guide 3 will show you the Akamai App Platform, giving you similar infrastructure but with less complexity.
+## Troubleshooting
 
-### Troubleshooting
-
-If you encounter issues with **pods not starting** (for example: ImagePullBackOff status), then:
+If you encounter issues with **pods not starting** (for example: `ImagePullBackOff` status), then:
 
 * Verify your image name and tag match what you pushed to Docker Hub.
 * Check that the image is publicly accessible or that you've configured image pull [secrets with your Docker Hub credentials](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/).
 * Try pulling the image locally with docker pull to confirm it exists.
 
-If **pods are crashing immediately** (for example, CrashLoopBackOff status), then perform the following debugging steps:
+If **pods are crashing immediately** (for example, `CrashLoopBackOff` status), then perform the following debugging steps:
 
-* Check the logs with kubectl logs <pod-name>.
+* Check the logs with kubectl logs `{{< placeholder "POD_NAME" >}}`.
 * Common causes include missing environment variables, incorrect database connection strings, or application code errors.
 * Verify your Secret and ConfigMap are applied correctly.
 
@@ -954,7 +893,7 @@ If you encounter **database connection issues**, run the following checks:
 * Check that your LKE node IPs are in the allowed IP list for both managed databases.
 * Test direct connectivity with a debug pod running psql.
 
-When you create a Kubernetes Service with type: LoadBalancer on LKE, it automatically [provisions an Akamai NodeBalancer](https://techdocs.akamai.com/cloud-computing/docs/get-started-with-load-balancing-on-an-lke-cluster) behind the scenes—you can see it in Akamai Cloud Manager under NodeBalancers. When checking Service status with kubectl, if the **LoadBalancer is stuck in pending state**, then:
+When you create a Kubernetes Service with `type: LoadBalancer` on LKE, it automatically [provisions an Akamai NodeBalancer](https://techdocs.akamai.com/cloud-computing/docs/get-started-with-load-balancing-on-an-lke-cluster) behind the scenes—you can see it in Akamai Cloud Manager under NodeBalancers. When checking Service status with kubectl, if the **LoadBalancer is stuck in pending state**, then:
 
 * Note that provisioning typically takes 1-2 minutes.
 * If it's stuck longer, check the Akamai Cloud Manager for the NodeBalancer status.
@@ -978,21 +917,3 @@ If your overall application encounters **resource exhaustion**, then:
 * If pods are hitting their limits, then increase the values in your Deployment.
 * If nodes are full, then scale up your node pool or use larger nodes.
 * Consider implementing the HorizontalPodAutoscaler to handle traffic spikes automatically.
-
-## **Additional Resources**
-
-* Akamai
-  * LKE documentation: [https://techdocs.akamai.com/cloud-computing/docs/linode-kubernetes-engine](https://techdocs.akamai.com/cloud-computing/docs/linode-kubernetes-engine)
-  * Manage a cluster with kubectl: [https://techdocs.akamai.com/cloud-computing/docs/manage-a-cluster-with-kubectl](https://techdocs.akamai.com/cloud-computing/docs/manage-a-cluster-with-kubectl)
-  * Load balancing on LKE: [https://techdocs.akamai.com/cloud-computing/docs/get-started-with-load-balancing-on-an-lke-cluster](https://techdocs.akamai.com/cloud-computing/docs/get-started-with-load-balancing-on-an-lke-cluster)
-* Docker
-  * .dockerignore files: [https://docs.docker.com/build/concepts/context/#dockerignore-files](https://docs.docker.com/build/concepts/context/#dockerignore-files)
-  * Writing a Dockerfile: [https://docs.docker.com/get-started/docker-concepts/building-images/writing-a-dockerfile/](https://docs.docker.com/get-started/docker-concepts/building-images/writing-a-dockerfile/)
-  * Build and push your first image to Docker Hub: [https://docs.docker.com/get-started/introduction/build-and-push-first-image/](https://docs.docker.com/get-started/introduction/build-and-push-first-image/)
-  * Building best practices: [https://docs.docker.com/build/building/best-practices/](https://docs.docker.com/build/building/best-practices/)
-* Kubernetes
-  * Official documentation: [https://kubernetes.io/docs/](https://kubernetes.io/docs/)
-  * Secret: [https://kubernetes.io/docs/concepts/configuration/secret/](https://kubernetes.io/docs/concepts/configuration/secret/)
-  * ConfigMap: [https://kubernetes.io/docs/concepts/configuration/configmap/](https://kubernetes.io/docs/concepts/configuration/configmap/)
-  * Deployment: [https://kubernetes.io/docs/concepts/workloads/controllers/deployment/](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
-  * Service: [https://kubernetes.io/docs/concepts/services-networking/service/](https://kubernetes.io/docs/concepts/services-networking/service/)

@@ -1,31 +1,38 @@
 ---
-slug: deploy-chatbot-rag-pipeline-langchain-linode
-title: "Deploy a Chatbot and RAG Pipeline with LangChain on an Akamai Compute Instance"
-description: "Two to three sentences describing your guide."
-og_description: "Optional two to three sentences describing your guide when shared on social media. If omitted, the `description` parameter is used within social links."
+slug: deploy-chatbot-rag-pipeline-langchain-akamai-compute-instance
+title: "Deploy a RAG-Powered Chatbot with LangChain on an Akamai Compute Instance"
+description: "Deploy a conversational AI chatbot that answers questions from your documents using RAG, LangChain, and FastAPI on Akamai infrastructure. Follow step-by-step instructions to configure PostgreSQL with vector embeddings, set up object storage for document ingestion, create a stateful chat API with LangGraph, and run the application as a systemd service."
 authors: ["Akamai"]
 contributors: ["Akamai"]
-published: 2025-11-13
-keywords: ['list','of','keywords','and key phrases']
+published: 2025-12-05
+keywords: ['RAG chatbot','retrieval augmented generation','LangChain','LangGraph','FastAPI','Python chatbot','vector database','pgvector','PostgreSQL','OpenAI API','document embeddings','semantic search','conversational AI','LLM chatbot','Akamai compute instance','object storage','chatbot deployment','uvicorn','systemd service']
 license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 external_resources:
-- '[Link Title 1](http://www.example.com)'
-- '[Link Title 2](http://www.example.net)'
+- '[LangChain official documentation](https://python.langchain.com)'
+- '[LangChain RAG tutorial](https://python.langchain.com/docs/tutorials/rag/)'
+- '[LangChain chatbot tutorial](https://python.langchain.com/docs/tutorials/chatbot/)'
+- '[LangGraph documentation](https://langchain-ai.github.io/langgraph/)'
+- '[Akamai Managed Databases](https://www.linode.com/docs/products/databases/)'
+- '[Akamai Object Storage](https://www.linode.com/docs/products/storage/object-storage/)'
+- '[pgvector documentation](https://github.com/pgvector/pgvector)'
+- '[OpenAI API documentation](https://platform.openai.com/docs)'
+- '[OpenAI Pricing calculator](https://openai.com/api/pricing/)'
+- '[OpenAI Best practices](https://platform.openai.com/docs/guides/production-best-practices)'
 ---
 
 This guide walks you through deploying a large language model chatbot that uses retrieval-augmented generation (RAG) to retrieve relevant information from a set of documents that's specific to your chatbot before generating responses. Using RAG ensures accurately generated answers that are grounded in your content.
 
-This guide implements a chatbot in Python using these open-source software frameworks:
+This guide deploys a chatbot written in Python using these open-source software frameworks:
 
 - **LangChain**: Provides components that help you write LLM-powered apps. For the example chatbot, LangChain is used to orchestrate the RAG pipeline and to request responses from the LLM.
 
-- **LangGraph**: Leverages LangChain to help you build stateful applications with LLMs. For the example chatbot, LangGraph is used to manage conversation state so that users can close chats and continue them later.
+- **LangGraph**: Helps you build stateful applications with LLMs. For the example chatbot, LangGraph is used to manage conversation state so that users can close chats and continue them later.
 
 - **FastAPI**: Provides components for building a REST API. The API for the example chatbot handles chat requests and responses.
 
 The [RAG Chatbot Langchain Workflow](/docs/guides/using-langchain-create-chatbot-rag-pipeline) guide explains the workflow of the application in more detail and provides a walkthrough of relevant code that leverages the LangChain, LangGraph, and FastAPI frameworks.
 
-If you prefer to deploy to Kubernets, the [RAG Chatbot Langchain LKE](/docs/guides/deploy-chatbot-rag-pipeline-langchain-lke) guide shows how to containerize and deploy this application on Linode Kubernetes Engine (LKE).
+If you prefer to deploy to Kubernetes, the [RAG Chatbot Langchain LKE](/docs/guides/deploy-chatbot-rag-pipeline-langchain-lke) guide shows how to containerize and deploy this application on Linode Kubernetes Engine (LKE).
 
 ## Systems and Components
 
@@ -39,29 +46,21 @@ This diagram describes which systems and components are present in the chatbot d
 
 - **Python Application**: Your chatbot application, built with LangChain, LangGraph, and FastAPI.
 
-- **Source Documents**: Akamai Object Storage, an S3-compatible object storage used to store source documents that form the chatbot's knowledge base.
+- **Source Documents**: Akamai Object Storage, an S3-compatible object storage is used to store source documents that form the chatbot's knowledge base.
 
 - **OpenAI API**: External LLM service providing both the embedding model (text-embedding-3-small) for document vectorization and the chat model (gpt-4o-mini) for generating responses.
 
-- **Vector Database**: [Akamai's Managed Database](https://www.akamai.com/products/databases) running PostgreSQL with the pgvector extension enabled. Used for storing document embeddings and performing vector similarity searches whenever a user queries your chatbot's knowledge base.
+- **Vector Embeddings**: [Akamai's Managed Database](https://www.akamai.com/products/databases) running PostgreSQL with the pgvector extension enabled. Used for storing document embeddings and performing vector similarity searches whenever a user queries your chatbot's knowledge base.
 
-- **Conversation State Database**: Akamai's Managed Database running PostgreSQL. Used by LangGraph to persist conversation history across chatbot sessions.
+- **Conversation State**: Akamai's Managed Database running PostgreSQL. Used by LangGraph to persist conversation history across chatbot sessions.
 
 ## Before You Begin
 
-1. You'll use OpenAI's API for creating embeddings and generating responses. While you could self-host a model using Ollama on a GPU-powered Linode, using OpenAI's API keeps this guide focused on LangChain fundamentals.
+1. [Sign up for an Akamai Cloud Manager account](https://techdocs.akamai.com/cloud-computing/docs/getting-started#sign-up-for-an-account) if you do not already have one.
 
-https://platform.openai.com/api-keys
+1. [Sign up for an OpenAI account](https://auth.openai.com/create-account) if you do not already have one.
 
-Create an API key at [https://platform.openai.com](https://platform.openai.com):
-
-1. Sign in or create an account
-2. Navigate to **API Keys** in your account settings.
-3. Click **Create new secret key**.
-
-![][image3]
-
-OpenAI charges per token used. For all development and testing of this application, expect total charges to be less than $10.
+    OpenAI charges per token used. For all development and testing of this application, expect total charges to be less than $10.
 
 ## Environment Setup
 
@@ -79,7 +78,7 @@ OpenAI charges per token used. For all development and testing of this applicati
     sudo ufw enable
     ```
 
-### Clone the Application Codebase
+### Clone the Chatbot Codebase
 
 From your SSH session with your instance, clone the [linode/docs-cloud-projects GitHub repository](https://github.com/linode/docs-cloud-projects) . The Python code for the chatbot application is located in the `rag-pipeline-chatbot-langchain` branch of this repository, so you need to check out this branch after cloning:
 
@@ -146,7 +145,9 @@ Set up your Python environment with all required packages for LangChain, databas
 pip install -r requirements.txt
 ```
 
-### Verify OpenAI API Access
+### Create an OpenAI API Key
+
+1. Create an OpenAI API key at [https://platform.openai.com/api-keys](https://platform.openai.com/api-keys).
 
 1. Test your OpenAI API key to verify it works. Replace `YOUR_OPENAI_API_KEY` with your API key:
 
@@ -347,108 +348,122 @@ Your databases have been initialized. Documents have been uploaded to Linode Obj
 
 1. Open your browser and navigate to the IP address for your Linode instance, to port 8000.
 
-![][image7]
+    ![](chatbot-no-questions.jpg)
 
 1. Start by testing **RAG retrieval**. Ask questions that your documents can answer, and verify that the responses use that information.
 
-![][image8]
+    ![](chatbot-first-question.jpg)
 
 1. Then, test **conversation memory** by asking follow-up questions that require previous context.
 
-![][image9]
+    ![](chatbot-followup-question.jpg)
 
 1. In addition to these basic tests, you can also test the following scenarios:
 
-* **Session persistence**: Refresh your browser and verify the conversation continues.
-* **Multiple sessions**: Open an incognito window to start a new independent conversation
-* **Application restart**: Stop and restart the app, then verify previous conversations are still accessible.
+    * **Session persistence**: Refresh your browser and verify the conversation continues.
+    * **Multiple sessions**: Open an incognito window to start a new independent conversation.
+    * **Application restart**: Stop and restart the app, then verify previous conversations are still accessible.
 
 ## Production Deployment
 
-As part of a production deployment, you can set up your application to run as a system service that starts automatically and restarts on failure. To do this, create the systemd service file at /etc/systemd/system/langchain-chatbot.service:
+As part of a production deployment, you can set up your application to run as a system service that starts automatically and restarts on failure.
 
-```bash {title="systemd service file for chatbot application"}
-[Unit]
-Description=LangChain RAG Chatbot
-After=network.target
+1. Create the systemd service file at `/etc/systemd/system/langchain-chatbot.service` from this file snippet. Replace `{{< placeholder "YOUR_USERNAME" >}}` with your limited-access user.
 
-[Service]
-Type=simple
-User=[USERNAME]
-WorkingDirectory=/home/[USERNAME]/project
-Environment="PATH=/home/[USERNAME]/project/venv/bin"
-EnvironmentFile=/home/[USERNAME]/project/.env
-ExecStart=/home/[USERNAME]/project/venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8000
-Restart=on-failure
-RestartSec=5s
+    ```file {title="/etc/systemd/system/langchain-chatbot.service", lang="bash"}
+    [Unit]
+    Description=LangChain RAG Chatbot
+    After=network.target
 
-[Install]
-WantedBy=multi-user.target
-```
+    [Service]
+    Type=simple
+    User={{< placeholder "YOUR_USERNAME" >}}
+    WorkingDirectory=/home/{{< placeholder "YOUR_USERNAME" >}}/project
+    Environment="PATH=/home/{{< placeholder "YOUR_USERNAME" >}}/project/venv/bin"
+    EnvironmentFile=/home/{{< placeholder "YOUR_USERNAME" >}}/project/.env
+    ExecStart=/home/{{< placeholder "YOUR_USERNAME" >}}/project/venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8000
+    Restart=on-failure
+    RestartSec=5s
 
-The service file uses your virtual environment, configures automatic restart on failure, loads environment variables from your .env file, and runs as a non-root user for security. To enable the service, run the following commands:
+    [Install]
+    WantedBy=multi-user.target
+    ```
 
-```command {title="enable chatbot service"}
-~/project$ sudo systemctl daemon-reload
-~/project$ sudo systemctl enable langchain-chatbot
-~/project$ sudo systemctl start langchain-chatbot
-```
+    The service file uses your virtual environment, configures automatic restart on failure, loads environment variables from your `.env` file, and runs as a non-root user for security.
 
-To view service status, use the following command:
+1. To enable the service, run the following commands:
 
-```command {title="view service status"}
-~/project$ sudo systemctl status langchain-chatbot
-```
+    ```command {title="Akamai compute instance (limited-access user)"}
+    sudo systemctl daemon-reload
+    sudo systemctl enable langchain-chatbot
+    sudo systemctl start langchain-chatbot
+    ```
 
-```output
-[sudo] password for demo_user:  ● langchain-chatbot.service - LangChain RAG Chatbot      Loaded: loaded (/etc/systemd/system/langchain-chatbot.service; enabled; preset: enabled)      Active: active (running) since Fri 2025-10-10 13:00:16 UTC; 2min ago    Main PID: 757 (uvicorn)       Tasks: 8 (limit: 4605)      Memory: 239.6M (peak: 240.3M)         CPU: 9.913s      CGroup: /system.slice/langchain-chatbot.service              └─757 /home/[USERNAME]/project/venv/bin/python3 /home/[USERNAME]/project/venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8000
-```
+1. To view service status, run:
 
-To view system logs for the service, use journalctl:
+    ```command {title="Akamai compute instance (limited-access user)"}
+    sudo systemctl status langchain-chatbot
+    ```
 
-```command {title="show system service logs related to chatbot service"}
-~/project$ sudo journalctl -xeu langchain-chatbot.service
-```
+    The output should resemble:
 
-```output
-Oct 10 13:00:16 localhost systemd[1]: Started langchain-chatbot.service - LangChain RAG Chatbot.
-░░ Subject: A start job for unit langchain-chatbot.service has finished successfully
-░░ Defined-By: systemd
-░░ Support: http://www.ubuntu.com/support
-░░
-░░ A start job for unit langchain-chatbot.service has finished successfully.
-░░
-░░ The job identifier is 127.
-Oct 10 13:00:22 localhost uvicorn[757]: INFO:     Started server process [757]
-Oct 10 13:00:22 localhost uvicorn[757]: INFO:     Waiting for application startup.
-Oct 10 13:00:22 localhost uvicorn[757]: 2025-10-10 13:00:22,951 - app.main - INFO - Starting LangChain RAG Chatbot application
-Oct 10 13:00:22 localhost uvicorn[757]: 2025-10-10 13:00:22,951 - app.main - INFO - Initializing RAG pipeline...
-Oct 10 13:00:23 localhost uvicorn[757]: 2025-10-10 13:00:23,944 - app.core.rag - INFO - Vector store initialized successfully
-Oct 10 13:00:23 localhost uvicorn[757]: 2025-10-10 13:00:23,950 - app.core.rag - INFO - RAG chain created successfully
-Oct 10 13:00:23 localhost uvicorn[757]: 2025-10-10 13:00:23,950 - app.main - INFO - RAG pipeline initialized successfully
-Oct 10 13:00:23 localhost uvicorn[757]: 2025-10-10 13:00:23,950 - app.main - INFO - Initializing conversation memory...
-Oct 10 13:00:23 localhost uvicorn[757]: 2025-10-10 13:00:23,950 - app.core.memory - INFO - Attempting to initialize PostgreSQL checkpointer...
-Oct 10 13:00:24 localhost uvicorn[757]: 2025-10-10 13:00:24,029 - app.core.memory - INFO - Calling checkpointer.setup()...
-Oct 10 13:00:24 localhost uvicorn[757]: 2025-10-10 13:00:24,034 - app.core.memory - INFO - PostgreSQL checkpointer schema set up successfully
-Oct 10 13:00:24 localhost uvicorn[757]: 2025-10-10 13:00:24,034 - app.core.memory - INFO - PostgreSQL checkpointer initialized successfully
-Oct 10 13:00:24 localhost uvicorn[757]: 2025-10-10 13:00:24,037 - app.core.memory - INFO - Conversation graph created successfully
-Oct 10 13:00:24 localhost uvicorn[757]: 2025-10-10 13:00:24,037 - app.main - INFO - Conversation memory initialized successfully
-Oct 10 13:00:24 localhost uvicorn[757]: 2025-10-10 13:00:24,037 - app.main - INFO - Application startup completed successfully
-Oct 10 13:00:24 localhost uvicorn[757]: INFO:     Application startup complete.
-Oct 10 13:00:24 localhost uvicorn[757]: INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-```
+    ```output
+    ● langchain-chatbot.service - LangChain RAG Chatbot
+        Loaded: loaded (/etc/systemd/system/langchain-chatbot.service; enabled; preset: enabled)
+        Active: active (running) since Wed 2025-10-10 06:11:54 UTC; 1 week 2 days ago
+    Main PID: 219349 (uvicorn)
+        Tasks: 8 (limit: 4605)
+        Memory: 167.8M (peak: 168.5M)
+            CPU: 11min 22.750s
+        CGroup: /system.slice/langchain-chatbot.service
+                └─219349 /home/{{< placeholder "YOUR_USERNAME" >}}/project/venv/bin/python3 /home/{{< placeholder "YOUR_USERNAME" >}}/project/venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8000
+    ```
 
-### Aditional considerations
+1. To view system logs for the service, use journalctl:
+
+    ```command {title="Akamai compute instance (limited-access user)"}
+    sudo journalctl -xeu langchain-chatbot.service
+    ```
+
+    The output should resemble:
+
+    ```output
+    Oct 10 13:00:16 localhost systemd[1]: Started langchain-chatbot.service - LangChain RAG Chatbot.
+    ░░ Subject: A start job for unit langchain-chatbot.service has finished successfully
+    ░░ Defined-By: systemd
+    ░░ Support: http://www.ubuntu.com/support
+    ░░
+    ░░ A start job for unit langchain-chatbot.service has finished successfully.
+    ░░
+    ░░ The job identifier is 127.
+    Oct 10 13:00:22 localhost uvicorn[757]: INFO:     Started server process [757]
+    Oct 10 13:00:22 localhost uvicorn[757]: INFO:     Waiting for application startup.
+    Oct 10 13:00:22 localhost uvicorn[757]: 2025-10-10 13:00:22,951 - app.main - INFO - Starting LangChain RAG Chatbot application
+    Oct 10 13:00:22 localhost uvicorn[757]: 2025-10-10 13:00:22,951 - app.main - INFO - Initializing RAG pipeline...
+    Oct 10 13:00:23 localhost uvicorn[757]: 2025-10-10 13:00:23,944 - app.core.rag - INFO - Vector store initialized successfully
+    Oct 10 13:00:23 localhost uvicorn[757]: 2025-10-10 13:00:23,950 - app.core.rag - INFO - RAG chain created successfully
+    Oct 10 13:00:23 localhost uvicorn[757]: 2025-10-10 13:00:23,950 - app.main - INFO - RAG pipeline initialized successfully
+    Oct 10 13:00:23 localhost uvicorn[757]: 2025-10-10 13:00:23,950 - app.main - INFO - Initializing conversation memory...
+    Oct 10 13:00:23 localhost uvicorn[757]: 2025-10-10 13:00:23,950 - app.core.memory - INFO - Attempting to initialize PostgreSQL checkpointer...
+    Oct 10 13:00:24 localhost uvicorn[757]: 2025-10-10 13:00:24,029 - app.core.memory - INFO - Calling checkpointer.setup()...
+    Oct 10 13:00:24 localhost uvicorn[757]: 2025-10-10 13:00:24,034 - app.core.memory - INFO - PostgreSQL checkpointer schema set up successfully
+    Oct 10 13:00:24 localhost uvicorn[757]: 2025-10-10 13:00:24,034 - app.core.memory - INFO - PostgreSQL checkpointer initialized successfully
+    Oct 10 13:00:24 localhost uvicorn[757]: 2025-10-10 13:00:24,037 - app.core.memory - INFO - Conversation graph created successfully
+    Oct 10 13:00:24 localhost uvicorn[757]: 2025-10-10 13:00:24,037 - app.main - INFO - Conversation memory initialized successfully
+    Oct 10 13:00:24 localhost uvicorn[757]: 2025-10-10 13:00:24,037 - app.main - INFO - Application startup completed successfully
+    Oct 10 13:00:24 localhost uvicorn[757]: INFO:     Application startup complete.
+    Oct 10 13:00:24 localhost uvicorn[757]: INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+    ```
+
+### Additional Considerations for Production Deployment
 
 For a production deployment, consider taking the following additional steps:
 
-* Move your project folder into /opt rather than within your user's home folder. Then, modify the system service file accordingly.
-* Add Nginx as a reverse proxy for SSL termination.
+* Move your project folder into `/opt` rather than within your user's home folder. Then, modify the system service file accordingly.
+* Add NGINX as a reverse proxy for SSL termination.
 * Implement backup strategies for your data. Your vector database changes only when you update documents, so weekly backups are sufficient. Your state database changes constantly with conversation history, so back it up daily.
 
----
-
-## Part 5: Testing and Optimization
+## Testing and Optimization
 
 Now that your application is deployed, test it thoroughly and optimize for performance and cost. This ensures your chatbot works reliably under real-world conditions and runs efficiently.
 
@@ -458,13 +473,13 @@ Now that your application is deployed, test it thoroughly and optimize for perfo
 * Test edge cases, including empty queries, very long messages, special characters, and rapid requests.
 * For RAG quality, check that retrieved chunks are relevant to user questions. If results are poor, consider [adjusting the chunk size](https://www.machinelearningplus.com/gen-ai/optimizing-rag-chunk-size-your-definitive-guide-to-better-retrieval-accuracy/).
 
-### Performance tuning
+### Performance Tuning
 
 * Fine-tune your [HNSW index](https://www.crunchydata.com/blog/hnsw-indexes-with-postgres-and-pgvector) parameters (m and ef_construction values).
 * Implement database connection pooling to handle heavier traffic patterns.
 * Consider caching frequently asked questions.
 
-### Cost management
+### Cost Management
 
 * Keep API costs under control by monitoring token usage in your logs and identifying queries that consume excessive tokens.
 * Shorten prompts by removing unnecessary instructions.
@@ -474,19 +489,15 @@ Now that your application is deployed, test it thoroughly and optimize for perfo
 
 ## Conclusion
 
-This guide walked you through how to build a production-ready RAG chatbot with Python and LangChain, deployed on Linode infrastructure.
+This guide walked you through how to deploy a production-ready RAG chatbot with Python and LangChain, deployed on an Akamai compute instance
 
 This architecture prepares you for future scaling. The separated database design translates cleanly to containerized services when you're ready to move to Linode Kubernetes Engine. The same principles that work for a single server work even better in distributed environments.
 
-**Guide 2** will show you how to deploy this same application to Linode Kubernetes Engine (LKE). You'll learn containerization, Kubernetes deployments, secrets management, and horizontal scaling.
-
-**Guide 3** will use the Akamai App Platform to deploy on Kubernetes via a web UI. You'll get the same infrastructure but use self-service forms instead of kubectl and YAML.
-
-### Troubleshooting
+## Troubleshooting
 
 If you encounter **database connection issues**, check these common causes:
 
-* Verify both connection strings in .env are correct.
+* Verify both connection strings in `.env` are correct.
 * Confirm your Linode's IP address (use IPv6) is in the allowlist for both databases.
 * Test direct connectivity with the psql client.
 * Verify the databases are running in Cloud Manager.
@@ -518,35 +529,14 @@ If you encounter issues with the **systemd service not starting**—for example,
 
 * Check journalctl for errors.
 * Verify all paths in the service file are absolute.
-* Ensure the .env file exists and has correct permissions (600).
+* Ensure the `.env` file exists and has correct permissions (600).
 * Test a manual start of the application as the service user.
 * Verify the virtual environment has all dependencies installed.
 
 If you encounter **object storage connection issues**, troubleshoot with these checks:
 
-* Verify access keys in .env are correct.
+* Verify access keys in `.env` are correct.
 * Verify your access keys have proper read/write permissions for your document bucket.
 * Confirm the bucket name and endpoint URL match your configuration.
 * Test bucket access directly with s3cmd.
 * Test with a standalone Python script that uses boto3.
-
----
-
-## Additional Resources
-
-* LangChain
-  * Official documentation: [https://python.langchain.com](https://python.langchain.com)
-  * RAG tutorial: [https://python.langchain.com/docs/tutorials/rag/](https://python.langchain.com/docs/tutorials/rag/)
-  * Chatbot tutorial: [https://python.langchain.com/docs/tutorials/chatbot/](https://python.langchain.com/docs/tutorials/chatbot/)
-  * LangGraph documentation: [https://langchain-ai.github.io/langgraph/](https://langchain-ai.github.io/langgraph/)
-* Akamai
-  * Managed databases: [https://www.linode.com/docs/products/databases/](https://www.linode.com/docs/products/databases/)
-  * Object storage: [https://www.linode.com/docs/products/storage/object-storage/](https://www.linode.com/docs/products/storage/object-storage/)
-* Python
-  * FastAPI getting started tutorial: [https://fastapi.tiangolo.com/tutorial/](https://fastapi.tiangolo.com/tutorial/)
-* PostgreSQL
-  * pgvector documentation: [https://github.com/pgvector/pgvector](https://github.com/pgvector/pgvector)
-* OpenAI
-  * API documentation: [https://platform.openai.com/docs](https://platform.openai.com/docs)
-  * Pricing calculator: [https://openai.com/api/pricing/](https://openai.com/api/pricing/)
-  * Best practices: [https://platform.openai.com/docs/guides/production-best-practices](https://platform.openai.com/docs/guides/production-best-practices)

@@ -1,48 +1,65 @@
 ---
 slug: using-langchain-create-chatbot-rag-pipeline
-title: "Using Langchain Create Chatbot Rag Pipeline"
-description: "Two to three sentences describing your guide."
-og_description: "Optional two to three sentences describing your guide when shared on social media. If omitted, the `description` parameter is used within social links."
+title: "Using LangChain and LangGraph to Build a RAG-Powered Chatbot"
+description: "Learn how to build a RAG-powered chatbot using LangChain and LangGraph in this comprehensive code walkthrough. This guide explains the complete workflow from document indexing with vector embeddings to stateful conversation management, including detailed explanations of key LangGraph concepts like StateGraph, persistent checkpointing, and thread-based configuration for managing conversation sessions."
 authors: ["Akamai"]
 contributors: ["Akamai"]
-published: 2025-12-04
-keywords: ['list','of','keywords','and key phrases']
+published: 2025-12-05
+keywords: ['RAG chatbot','retrieval augmented generation','LangChain','LangGraph','FastAPI','Python chatbot','chatbot workflow','RAG pipeline','vector database','pgvector','PostgreSQL','OpenAI API','document embeddings','semantic search','conversational AI','LLM chatbot','conversation memory','stateful chatbot','document indexing','text chunking','vector similarity search','S3FileLoader','RecursiveCharacterTextSplitter','LCEL','LangChain Expression Language','conversation history','persistent checkpointing','RAG architecture','chatbot code walkthrough','prompt engineering','ChatPromptTemplate','vector store retriever','HNSW indexing','embedding model','text-embedding-3-small','gpt-4o-mini','object storage integration','PostgreSQL checkpointing']
 license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 external_resources:
-- '[Link Title 1](http://www.example.com)'
-- '[Link Title 2](http://www.example.net)'
+- '[LangChain official documentation](https://python.langchain.com)'
+- '[LangChain RAG tutorial](https://python.langchain.com/docs/tutorials/rag/)'
+- '[LangChain chatbot tutorial](https://python.langchain.com/docs/tutorials/chatbot/)'
+- '[LangGraph documentation](https://langchain-ai.github.io/langgraph/)'
+- '[LangGraph Graph API](https://docs.langchain.com/oss/python/langgraph/graph-api)'
+- '[LangGraph Persistence](https://langchain-ai.github.io/langgraph/how-tos/persistence/)'
+- '[LangChain S3FileLoader](https://docs.langchain.com/oss/javascript/integrations/document_loaders/web_loaders/s3)'
+- '[LangChain RecursiveCharacterTextSplitter](https://docs.langchain.com/oss/python/integrations/splitters/recursive_text_splitter)'
+- '[LangChain Vector Store Retriever](https://python.langchain.com/docs/how_to/vectorstore_retriever/)'
+- '[LangChain ChatPromptTemplate](https://python.langchain.com/api_reference/core/prompts/langchain_core.prompts.chat.ChatPromptTemplate.html)'
+- '[LangChain Expression Language (LCEL)](https://python.langchain.com/docs/concepts/lcel/)'
+- '[FastAPI documentation](https://fastapi.tiangolo.com/)'
+- '[pgvector documentation](https://github.com/pgvector/pgvector)'
 ---
 
-[RAG Chatbot Langchain Compute Instance](/docs/guides/deploy-chatbot-rag-pipeline-langchain-linode)
+Large language models have extensive general knowledge but can't access your organization's proprietary documents, internal policies, or specialized domain content. Retrieval-augmented generation (RAG) solves this by retrieving relevant information from your documents and including it in prompts to the LLM.
 
-[RAG Chatbot Langchain LKE](/docs/guides/deploy-chatbot-rag-pipeline-langchain-lke)
+By building a chatbot with RAG, you can ground its responses in your specific content, ensuring accurate answers that reflect your documentation rather than the model's training data. Building a chatbot with RAG requires solving several problems: processing and indexing documents, generating embeddings, performing vector searches, managing conversation state, and orchestrating LLM interactions.
 
-Building a chatbot that can answer questions about your specific documents requires solving several problems: processing and indexing documents, generating embeddings, performing vector searches, managing conversation state, and orchestrating LLM interactions. This guide describes how to leverage LangChain and LangGraph, two open-source production-ready frameworks, to simplify chatbot development.
+This guide describes how to leverage LangChain and LangGraph, two open-source production-ready frameworks, to simplify chatbot development.
 
-## LangChain vs LangGraph
-
-LangChain offers a comprehensive toolkit for building LLM-powered applications. It provides pre-built integrations with popular vector databases and language models. For retrieval-augmented generation (RAG) chatbots, LangChain includes methods for document loading, text splitting, embedding generation, and the retrieval pipeline. Its *LCEL* expression language lets you chain operations together declaratively, improving the readibility of your chatbot code.
-
-LangGraph orchestrates stateful AI agents. LangGraph provides persistent checkpointing that saves conversation history to a database. This means users can close a chat and resume it later without losing context. LangGraph models conversations as state graphs, where each node represents a processing step (like retrieval or response generation) and edges control the flow. This architecture makes it straightforward to build chatbots that remember context, handle multi-turn conversations, and maintain state across restarts.
-
-## Understanding Retrieval-Augmented Generation (RAG)
-
-Here is a quick overview of how RAG solves the problem of LLMs having limited knowledge of your specific documents. RAG operates in two distinct phases:
-
-1. The **indexing phase** involves preparing your knowledge base: load documents, split them into chunks, generate embeddings, and store everything in your vector database.
-2. The **query phase** happens with every user question: convert the question to a vector, find related documents through vector search, and pass that information to the LLM for answer generation.
-
-The key insight is that the retriever uses vector similarity—not the LLM—to find relevant documents. It's pure mathematics comparing embeddings, which makes it fast and cheap. The application involves the LLM only after retrieval, to synthesize information into a natural language answer.
+{{< note >}}
+Two companion guides demonstrate how to deploy this chatbot on Akamai Cloud:
+- [RAG Chatbot Langchain Compute Instance](/docs/guides/deploy-chatbot-rag-pipeline-langchain-linode)
+- [RAG Chatbot Langchain LKE](/docs/guides/deploy-chatbot-rag-pipeline-langchain-lke)
+{{< /note >}}
 
 ## Workflow Diagram
 
-Below is a high-level diagram of the RAG chatbot architecture deployed on Akamai Cloud Computing.
+Below is a workflow diagram of an example RAG chatbot architecture built with the LangChain, LangGraph, and FastAPI frameworks.
 
-![RAG diagram](rag-chatbot-langchain-workflow.svg)
+![RAG chatbot workflow diagram with LangChain, LangGraph, and FastAPI](rag-chatbot-langchain-workflow.svg)
 
-1.
+1. LangChain is used to load source documents from an S3-compatible object storage bucket.
 
-1.
+1. The documents are [split into *chunks*](https://docs.langchain.com/oss/python/integrations/splitters) and then vector representations of these chunks are generated by an [*embedding model*](https://docs.langchain.com/oss/python/integrations/text_embedding).
+
+    Document chunking addresses two technical requirements: maintaining text segments within the model's token limits and optimizing vector database queries for better accuracy and response times.
+
+1. These generated vector embeddings are stored in the vector database. The example code assumes a PostgreSQL database with the `pgvector` extension enabled.
+
+1. When a user submits a question, the chatbot sends it to the same embedding model that processed the documents. This converts the query text into a vector representation in the same mathematical space as the document chunks, enabling meaningful comparisons.
+
+1. The query embedding is compared against all stored document embeddings using vector similarity search. The pgvector extension performs this efficiently using HNSW (Hierarchical Navigable Small World) indexing, returning the most semantically similar chunks.
+
+1. The chatbot retrieves the top matching document chunks identified by the similarity search. These chunks contain the specific text segments from your documents that are most relevant to the user's question.
+
+1. LangGraph retrieves the conversation history for the current session from the PostgreSQL state database. This provides the LLM with previous messages and responses, enabling it to understand follow-up questions and maintain context across the conversation.
+
+1. The chatbot constructs a prompt that combines the user's question, the retrieved document chunks as context, and the conversation history. This complete prompt is sent to the LLM (gpt-4o-mini in the example), which generates a response grounded in both your specific documents and the ongoing conversation.
+
+1. After the LLM responds, LangGraph saves both the user's question and the assistant's answer to the state database using its checkpointing mechanism. This persisted history allows users to continue conversations across sessions and enables the chatbot to reference earlier exchanges.
 
 ### Systems and Components
 
@@ -62,30 +79,44 @@ Below is a high-level diagram of the RAG chatbot architecture deployed on Akamai
 
 - **OpenAI API**: External LLM service providing both the embedding model (text-embedding-3-small) for document vectorization and the chat model (gpt-4o-mini) for generating responses.
 
+## LangChain vs LangGraph
+
+LangChain offers a comprehensive toolkit for building LLM-powered applications. It provides pre-built integrations with popular vector databases and language models. For retrieval-augmented generation (RAG) chatbots, LangChain includes methods for document loading, text splitting, embedding generation, and the retrieval pipeline. Its *LCEL* expression language lets you chain operations together declaratively, improving the readibility of your chatbot code.
+
+LangGraph orchestrates stateful AI agents. LangGraph provides persistent checkpointing that saves conversation history to a database. This means users can close a chat and resume it later without losing context. LangGraph models conversations as state graphs, where each node represents a processing step (like retrieval or response generation) and edges control the flow. This architecture makes it straightforward to build chatbots that remember context, handle multi-turn conversations, and maintain state across restarts.
+
+## Understanding Retrieval-Augmented Generation (RAG)
+
+Here is a quick overview of how RAG solves the problem of LLMs having limited knowledge of your specific documents. RAG operates in two distinct phases:
+
+1. The **indexing phase** involves preparing your knowledge base: loading documents, splitting them into chunks, generating embeddings, and storing everything in your vector database.
+
+2. The **query phase** happens with every user question: converting the question to a vector, finding related documents through vector search, and passing that information to the LLM for answer generation.
+
+The key insight is that the retriever uses vector similarity-—not the LLM—-to find relevant documents. The application involves the LLM only after retrieval to synthesize information into a natural language answer.
+
 ## Chatbot Code Walkthrough
+
+The example chatbot application code can be found in the [rag-pipeline-chatbot-langchain branch of the linode/docs-cloud-projects repository](https://github.com/linode/docs-cloud-projects/tree/rag-pipeline-chatbot-langchain) on GitHub. This section describes some key areas of the code and how they interact with the LangChain, LangGraph, and FastAPI frameworks.
 
 Here is a quick breakdown of the key Python files in the repository:
 
-* app/api/
-  * chat.py: Handles chat API endpoints for processing user messages and returning AI responses with conversation thread management.
-  * health.py: For monitoring application status, database connectivity, and system health.
-* app/core/
-  * config.py: Loads environment variables and provides centralized settings for databases, APIs, and application parameters.
-  * memory.py: Implements conversation memory persistence across sessions using LangGraph with PostgreSQL checkpointing.
-  * rag.py: Core RAG pipeline implementation that handles document indexing from S3-compatible storage, vector storage with pgvector, and query processing.
-* app/scripts/
-  * init_db.py: Database initialization script that creates necessary PostgreSQL databases, enables the pgvector extension, and sets up the required tables and indexes.
-  * index_documents.py: Indexes documents in an object storage bucket by processing them through the RAG pipeline for chunking and embedding, then storing data in the vector database.
+- `app/api/`
+  - `chat.py`: Handles chat API endpoints for processing user messages and returning AI responses with conversation thread management.
+  - `health.py`: For monitoring application status, database connectivity, and system health.
+- `app/core/`
+  - `config.py`: Loads environment variables and provides centralized settings for databases, APIs, and application parameters.
+  - `memory.py`: Implements conversation memory persistence across sessions using LangGraph with PostgreSQL checkpointing.
+  - `rag.py`: Core RAG pipeline implementation that handles document indexing from S3-compatible storage, vector storage with pgvector, and query processing.
+- `app/scripts/`
+  - `init_db.py`: Database initialization script that creates necessary PostgreSQL databases, enables the pgvector extension, and sets up the required tables and indexes.
+  - `index_documents.py`: Indexes documents in an object storage bucket by processing them through the RAG pipeline for chunking and embedding, then storing data in the vector database.
 
 ### Implementing Document Indexing
 
-Build the pipeline that transforms documents into searchable vectors stored in your PostgreSQL database. The code in scripts/init_db.py handles initializing the conversation and vector databases with the necessary tables and indexes. Run the script with the following command:
+The code for indexing documents is present in the [`app/core/rag.py`](https://github.com/linode/docs-cloud-projects/blob/rag-pipeline-chatbot-langchain/app/core/rag.py) file. Here are some highlights from the `index_documents_from_s3` method:
 
-Indexing documents involves splitting them into chunks, generating embeddings, and then storing those vectors in the database. These processes are handled in app/core/rag.py. For example:
-
-https://github.com/linode/docs-cloud-projects/blob/rag-pipeline-chatbot-langchain/app/core/rag.py
-
-```file {title="app/core/rag.py", lang="python", linenostart="121", hl_lines=""}
+```file {title="app/core/rag.py" lang="python" linenostart="121" hl_lines="139-147"}
 def index_documents_from_s3(self, object_keys: List[str]) -> Dict[str, Any]:
     """
     Index documents from S3-compatible Object Storage.
@@ -186,30 +217,15 @@ def index_documents_from_s3(self, object_keys: List[str]) -> Dict[str, Any]:
         }
 ```
 
-- S3FileLoader
-  - LangChain's document loader for S3-compatible object storage
-  - Handles authentication and retrieval of documents from object storage
-- RecursiveCharacterTextSplitter (lines 116-121)
-  - LangChain's text splitting utility
-  - Intelligently splits documents into chunks while:
-    - Respecting configurable chunk size (chunk_size)
-    - Creating overlaps between chunks (chunk_overlap)
-    - Using hierarchical separators (paragraphs → lines → spaces → characters)
-- Document objects (line 109)
-  - LangChain's standard document format returned by loaders
-  - Contains both content and metadata
-- Vector store operations (line 143)
-  - self.vector_store.add_documents(chunks) - LangChain's abstraction for adding documents to vector databases
-  - This would be using something like PGVector (LangChain's PostgreSQL vector store integration)
+- On lines 139-147, LangChain's [S3FileLoader](https://docs.langchain.com/oss/javascript/integrations/document_loaders/web_loaders/s3) is used to load documents from S3-compatible object storage. It handles authentication and retrieval of documents from object storage
+- [RecursiveCharacterTextSplitter](https://docs.langchain.com/oss/python/integrations/splitters/recursive_text_splitter) (lines 154-159), a LangChain text splitting utility, is used to intelligently splits documents into chunks while. It respects a configurable chunk size (`chunk_size`), creates overlaps between chunks (`chunk_overlap`), and uses hierarchical separators (paragraphs / lines / spaces / characters).
+- On Line 188, the `add_documents` method of LangChain's vector store interface is used to add chunks to the vector database.
 
+### Building the RAG Query Pipeline
 
-### Building the RAG query pipeline
+The application uses LangChain to chain together the retrieval of relevant document chunks with the LLM-generated response to the user's prompt. In [`app/core/rag.py`](https://github.com/linode/docs-cloud-projects/blob/rag-pipeline-chatbot-langchain/app/core/rag.py), chaining these steps together looks like this:
 
-The application uses LangChain to chain together the retrieval of relevant document chunks with the LLM-generated response to the user's prompt. In app/core/rag.py, chaining these steps together looks like this:
-
-https://github.com/linode/docs-cloud-projects/blob/rag-pipeline-chatbot-langchain/app/core/rag.py
-
-```python {title="RAG chain, implemented in app/core/rag.py"}
+```file {title="app/core/rag.py" lang="python" linenostart="59"}
 def _create_rag_chain(self):
     """Create the RAG chain for question answering."""
     try:
@@ -251,195 +267,139 @@ def _create_rag_chain(self):
         raise
 ```
 
-The above code snippet does the following:
-
-* Configures the [vector store retriever](https://python.langchain.com/docs/how_to/vectorstore_retriever/) to return the top 10 most similar chunks (settings.retrieval_k is defined in app/core/[config.py](http://config.py))
-* Designs a [ChatPromptTemplate](https://python.langchain.com/api_reference/core/prompts/langchain_core.prompts.chat.ChatPromptTemplate.html) that instructs the LLM to use the retrieved context and cite sources.
-* Uses [LangChain Expression Language (LCEL)](https://python.langchain.com/docs/concepts/lcel/) to invoke the retriever to establish the context for a query, add that context to the prompt, send the enriched prompt to the LLM, and return the LLM's response.
-
-This code snippet uses several LangChain features:
-
-* **Vector Store Retriever** (lines 212-215): Converts the vector store into a retriever interface with `as_retriever()`. The `search_type="similarity"` parameter configures similarity-based vector search, and `search_kwargs={"k": settings.retrieval_k}` returns the top k most similar document chunks.
-
-* **ChatPromptTemplate** (lines 218-233): LangChain's template system for structuring prompts. The `from_messages()` method creates a chat-style prompt with system and human messages, and supports variable interpolation for `{context}` and `{question}`.
-
-* **LangChain Expression Language (LCEL)** (lines 235-241): Uses the pipe operator `|` to chain operations together declaratively. The pipeline executes sequentially: first retrieves context and passes the question through, then formats the prompt template, invokes the LLM, and finally parses the output.
-
-* **RunnablePassthrough** (line 237): A LangChain primitive that passes the input question through unchanged to the prompt template.
-
-* **StrOutputParser** (line 240): LangChain's output parser that extracts string content from the LLM's response object and converts it to plain text.
-
-EDITOR: update LCEL link and maybe highlight it more exactly in the code
+- Lines 212-215: The [vector store retriever](https://python.langchain.com/docs/how_to/vectorstore_retriever/) is configured to return the top 10 most similar chunks (settings.retrieval_k is defined in `app/core/config.py`).
+- A [ChatPromptTemplate](https://python.langchain.com/api_reference/core/prompts/langchain_core.prompts.chat.ChatPromptTemplate.html) is designed on lines 69-84 that instructs the LLM to use the retrieved context and cite sources.
+- Lines 87-92 use the [LangChain Expression Language (LCEL)](https://python.langchain.com/docs/concepts/lcel/) to invoke the retriever and establish the context for a query, add that context to the prompt, send the enriched prompt to the LLM, and return the LLM's response.
 
 ### Adding Conversation Memory
 
-To make the RAG system more user-friendly within a chatbot interface, extend it with persistent conversation memory using LangGraph. LangGraph stores conversation history in the conversations database, which enables persistence across restarts and supports multiple concurrent conversations. The checkpointer is implemented in app/core/memory.py:
+To make the RAG system more user-friendly within a chatbot interface, extend it with persistent conversation memory using LangGraph. LangGraph stores conversation history in the conversations database, which enables persistence across restarts and supports multiple concurrent conversations. The example chatbot's persistence code is implemented in [`app/core/memory.py`](https://github.com/linode/docs-cloud-projects/blob/rag-pipeline-chatbot-langchain/app/core/memory.py):
 
-```python {title="Conversation memory, implemented in app/core/memory.py"}
-class ConversationState(TypedDict):
-    messages: List[BaseMessage]
-    thread_id: str
-    user_input: str
-    rag_result: Optional[Dict[str, Any]]
+- **_create_conversation_graph**: This method compiles a [*graph*](https://docs.langchain.com/oss/python/langgraph/graph-api), which LangGraph uses to represent the chatbot agent's workflow.
 
-class ConversationMemory:
-    def __init__(self):
-        self.checkpointer = None
-        self.graph = None
-        self._checkpointer_context = None
-        self._initialize_checkpointer()
-        self._create_conversation_graph()
+    ```file {title="app/core/memory.py" lang="python" linenostart="147"}
+        def _create_conversation_graph(self):
+            """Create the LangGraph conversation graph."""
+            try:
+                # Create the graph with state schema
+                workflow = StateGraph(ConversationState)
 
-    def _create_conversation_graph(self):
-        try:
-            # Create the graph with state schema
-            workflow = StateGraph(ConversationState)
+                # Add nodes
+                workflow.add_node("rag_query", self._rag_query_node)
+                workflow.add_node("generate_response", self._generate_response_node)
 
-            # Add nodes
-            workflow.add_node("rag_query", self._rag_query_node)
-            workflow.add_node("generate_response", self._generate_response_node)
+                # Define the flow
+                workflow.set_entry_point("rag_query")
+                workflow.add_edge("rag_query", "generate_response")
+                workflow.add_edge("generate_response", END)
 
-            # Define the flow
-            workflow.set_entry_point("rag_query")
-            workflow.add_edge("rag_query", "generate_response")
-            workflow.add_edge("generate_response", END)
+                # Compile the graph with checkpointer
+                self.graph = workflow.compile(checkpointer=self.checkpointer)
 
-            # Compile the graph with checkpointer
-            self.graph = workflow.compile(checkpointer=self.checkpointer)
+                logger.info("Conversation graph created successfully")
+            except Exception as e:
+                logger.error(f"Failed to create conversation graph: {e}")
+                raise
+    ```
 
-            logger.info("Conversation graph created successfully")
-        except Exception as e:
-            logger.error(f"Failed to create conversation graph: {e}")
-            raise
+    Graphs specify the state of the chatbot application, the actions performed by the agent, and which actions an agent should take based on its current state.
 
-    def process_message(self, message: str, thread_id: Optional[str] = None) -> Dict[str, Any]:
-        try:
-            # Generate thread ID if not provided
-            if not thread_id:
-                thread_id = str(uuid.uuid4())
+    - Lines 154-155 create *nodes* for the graph. Nodes are individual processing steps for your agent. The `rag_query` node retrieves relevant documents, and the `generate_response` node generates the AI response.
 
-            # Get existing conversation history first
-            existing_history = self.get_conversation_history(thread_id)
-            existing_messages = existing_history.get("messages", [])
+    - Lines 158-160 create *edges* for the graph. Edges determine which states should follow from each other, or the logical flow of the agent. These lines define this execution path: the agent starts with `rag_query`, flows to `generate_response`, then ends.
 
-            # Create human message in serializable format
-            human_message = {
-                "type": "HumanMessage",
-                "content": message,
-                "timestamp": datetime.utcnow().isoformat()
-            }
+    - Line 163 *compiles* the graph, which performs some validation of the logical consistency of the graph. The graph is compiled with a PostgreSQL checkpointer that automatically persists conversation state after each step, enabling conversation history across sessions.
 
-            # Prepare initial state with existing messages + new message
-            initial_state = {
-                "messages": existing_messages + [human_message],
-                "thread_id": thread_id,
-                "user_input": message,
-                "rag_result": None
-            }
+- **process_message**: This message handles a user's chatbot question and retrieves an answer from the LLM. It does this while referring to and preserving the user's conversation history. It can accept a unique thread ID as an argument, which corresponds to a user's conversation history with the chatbot.
 
-            # Configure the graph with thread ID
-            config = {"configurable": {"thread_id": thread_id}}
+    ```file {title="app/core/memory.py" lang="python" linenostart="272"}
+        def process_message(self, message: str, thread_id: Optional[str] = None) -> Dict[str, Any]:
+            """
+            Process a user message and return the response.
 
-            # Run the conversation graph
-            final_state = self.graph.invoke(initial_state, config=config)
+            Args:
+                message: The user's message
+                thread_id: Optional thread ID for conversation continuity
 
-            # Extract the response
-            messages = final_state["messages"]
-            ai_response = messages[-1]["content"] if messages else "No response generated."
+            Returns:
+                Dictionary with response and thread information
+            """
+            try:
+                # Generate thread ID if not provided
+                if not thread_id:
+                    thread_id = str(uuid.uuid4())
 
-            result = {
-                "response": ai_response,
-                "thread_id": thread_id,
-                "message_count": len(messages),
-                "timestamp": datetime.utcnow().isoformat()
-            }
+                # Get existing conversation history first
+                existing_history = self.get_conversation_history(thread_id)
+                existing_messages = existing_history.get("messages", [])
 
-            logger.info(f"Message processed successfully for thread {thread_id}")
-            return result
-
-        except Exception as e:
-            logger.error(f"Failed to process message: {e}")
-            return {
-                "response": "I apologize, but I encountered an error while processing your message.",
-                "thread_id": thread_id or str(uuid.uuid4()),
-                "message_count": 0,
-                "timestamp": datetime.utcnow().isoformat(),
-                "error": str(e)
-            }
-
-     def get_conversation_history(self, thread_id: str) -> Dict[str, Any]:
-        try:
-            config = {"configurable": {"thread_id": thread_id}}
-
-            # Get the current state
-            state = self.graph.get_state(config)
-
-            if not state.values:
-                return {
-                    "thread_id": thread_id,
-                    "messages": [],
-                    "created_at": None,
-                    "updated_at": None,
-                    "message_count": 0
+                # Create human message in serializable format
+                human_message = {
+                    "type": "HumanMessage",
+                    "content": message,
+                    "timestamp": datetime.utcnow().isoformat()
                 }
 
-            # Extract messages
-            messages = state.values.get("messages", [])
+                # Prepare initial state with existing messages + new message
+                initial_state = {
+                    "messages": existing_messages + [human_message],
+                    "thread_id": thread_id,
+                    "user_input": message,
+                    "rag_result": None
+                }
 
-            # Messages are already in serializable format
-            formatted_messages = messages if isinstance(messages, list) else []
+                # Configure the graph with thread ID
+                config = {"configurable": {"thread_id": thread_id}}
 
-            # Handle created_at/updated_at timestamps properly             …
-            result = {
-                "thread_id": thread_id,
-                "messages": formatted_messages,
-                "created_at": created_at,
-                "updated_at": updated_at,
-                "message_count": len(formatted_messages)
-            }
+                # Run the conversation graph
+                final_state = self.graph.invoke(initial_state, config=config)
 
-            logger.info(f"Retrieved conversation history for thread {thread_id}")
-            return result
+                # Extract the response
+                messages = final_state["messages"]
+                ai_response = messages[-1]["content"] if messages else "No response generated."
 
-        except Exception as e:
-            logger.error(f"Failed to get conversation history: {e}")
-            return {
-                "thread_id": thread_id,
-                "messages": [],
-                "created_at": None,
-                "updated_at": None,
-                "message_count": 0,
-                "error": str(e)
-            }
-```
+                result = {
+                    "response": ai_response,
+                    "thread_id": thread_id,
+                    "message_count": len(messages),
+                    "timestamp": datetime.utcnow().isoformat()
+                }
 
-Every invocation now loads the conversation history as context, executes the RAG chain, and saves the new turn to the database. To verify this implementation works, you would ask a question and then ask a follow-up that requires context.
+                logger.info(f"Message processed successfully for thread {thread_id}")
+                return result
+    ```
+
+    - Lines 289-290 retrieve the conversation history for the user's thread ID.
+
+    - Lines 292-305 combine the previous conversation history with the new user message into an initial state for the agent's graph.
+
+    - Lines 307-311 ensure that the graph execution has access to the thread ID, and therefore the allowing the PostgresSQL checkpointer, to store and retrieve state for the conversation.
+
+    - Line 311: The graph is invoked to execute the agent's workflow (RAG querying and LLM response generation)
 
 ### Creating the API
 
-The application uses the FastAPI framework to create the web API that clients interact with to send messages and receive responses. The API is implemented in app/api/chat.py. The key endpoint, which accepts messages and returns AI-generated responses, is implemented like this:
+The application uses the FastAPI framework to create the web API that clients interact with to send messages and receive responses. The API is implemented in []`app/api/chat.py`]. The key endpoint, which accepts messages and returns AI-generated responses, is implemented like this:
 
-```python {title="API endpoint to handle chat messages, in app/api/chat.py"}
-import logging
-from typing import Dict, Any
-from fastapi import APIRouter, HTTPException, Depends
-from fastapi.responses import JSONResponse
-
-from app.models.schemas import ChatRequest, ChatResponse
-from app.core.memory import get_conversation_memory
-from app.core.config import get_settings
-
-logger = logging.getLogger(__name__)
-settings = get_settings()
-
-router = APIRouter()
-
+```file {title="app/api/chat.py" lang="python" linenostart="21"}
 @router.post("/chat", response_model=ChatResponse)
 async def chat(
     request: ChatRequest,
     conversation_memory=Depends(get_conversation_memory)
 ) -> ChatResponse:
+    """
+    Process a chat message and return the AI response.
+
+    Args:
+        request: Chat request containing message and optional thread_id
+        conversation_memory: Dependency injection for conversation memory
+
+    Returns:
+        ChatResponse with the AI's response and thread information
+    """
     try:
+        logger.info(f"Processing chat message: {request.message[:50]}...")
+
         # Process the message through the conversation memory system
         result = conversation_memory.process_message(
             message=request.message,
@@ -454,114 +414,4 @@ async def chat(
 
         logger.info(f"Chat message processed successfully for thread {result['thread_id']}")
         return response
-
-    except Exception as e:
-        logger.error(f"Failed to process chat message: {e}")
-        raise HTTPException(
-            status_code=500,
-            detail=f"Failed to process chat message: {str(e)}"
-        )
-```
-
-The endpoint accepts a message and an optional thread_id. It generates a new thread_id if none is provided. Then, it invokes the LangGraph RAG chain and returns the final response.
-
-### Creating a Simple HTML Interface
-
-Finally, the chatbot needs a clean UI to make it easily usable. This can be done with a single HTML file with embedded CSS and JavaScript. Key parts of that code include:
-
-```html {title="Chatbot UI in app/static/index.html"}
-  <div class="chat-input-container">
-            <div class="thread-info" id="threadInfo" style="display: none;">
-                <strong>Thread ID:</strong> <span id="threadId"></span>
-                <button class="clear-button" onclick="clearConversation()">Clear History</button>
-            </div>
-            <form class="chat-input-form" id="chatForm">
-                <textarea
-                    class="chat-input"
-                    id="messageInput"
-                    placeholder="Type your message here..."
-                    rows="1"
-                    required
-                ></textarea>
-                <button type="submit" class="send-button" id="sendButton">Send</button>
-            </form>
-        </div> …     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            initializeApp();
-            setupEventListeners();
-            checkHealth();
-        });
-
-        function initializeApp() {
-            // Load thread ID from localStorage or create new one
-            threadId = localStorage.getItem('chatbot_thread_id');
-            if (threadId) {
-                showThreadInfo();
-                loadConversationHistory();
-            }
-        }
-
-        function setupEventListeners() {
-            const form = document.getElementById('chatForm');
-            const messageInput = document.getElementById('messageInput');
-
-            form.addEventListener('submit', handleSubmit);             …
-        }
-
-        function handleSubmit(event) {
-            event.preventDefault();
-
-            const messageInput = document.getElementById('messageInput');
-            const message = messageInput.value.trim();
-
-            if (!message || isTyping) return;
-
-            // Add user message to chat
-            addMessage(message, 'user');
-
-            // Clear input
-            messageInput.value = '';
-            autoResize();
-
-            // Send message to API
-            sendMessage(message);
-        }
-
-…
-        async function sendMessage(message) {
-            try {
-                const response = await fetch('/api/chat', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        message: message,
-                        thread_id: threadId
-                    })
-                });
-
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-
-                const data = await response.json();
-
-                // Update thread ID if it's new
-                if (data.thread_id && data.thread_id !== threadId) {
-                    threadId = data.thread_id;
-                    localStorage.setItem('chatbot_thread_id', threadId);
-                    showThreadInfo();
-                }
-
-                // Add assistant response
-                addMessage(data.response, 'assistant');
-
-            } catch (error) {
-                console.error('Error sending message:', error);
-                addMessage('Sorry, I encountered an error while processing your message. Please try again.', 'assistant');
-            } finally {
-                hideTypingIndicator();
-            }
-        } …
 ```
