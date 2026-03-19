@@ -5,7 +5,6 @@ published: 2021-08-13
 modified: 2022-05-17
 keywords: ['database','cluster','backups','configuration management']
 tags: ["quick deploy apps", "linode platform", "cloud manager"]
-aliases: ['/guides/deploying-clustercontrol-marketplace-app/','/guides/clustercontrol-marketplace-app/']
 external_resources:
 - '[ClusterControl](https://severalnines.com/product/clustercontrol/clustercontrol-community-edition)'
 aliases: ['/products/tools/marketplace/guides/clustercontrol/','/guides/deploying-clustercontrol-marketplace-app/','/guides/clustercontrol-marketplace-app/']

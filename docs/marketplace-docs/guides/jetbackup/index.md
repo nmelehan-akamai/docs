@@ -5,7 +5,6 @@ published: 2021-08-13
 modified: 2022-05-17
 keywords: ['backups','cpanel', 'backup']
 tags: ["quick deploy apps", "linode platform", "cloud manager"]
-aliases: ['/guides/deploying-jetbackup-marketplace-app/','/guides/jetbackup-marketplace-app/']
 external_resources:
 - '[JetBackup](https://www.jetbackup.com/)'
 aliases: ['/products/tools/marketplace/guides/jetbackup/','/guides/deploying-jetbackup-marketplace-app/','/guides/jetbackup-marketplace-app/']
