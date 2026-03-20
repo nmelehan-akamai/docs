@@ -18,7 +18,7 @@ disqusShortname="linode-1"
 enableGitInfo = true
 
 [sitemap]
-filename = "sitemap_linodedocs.xml"
+filename = "sitemap.xml"
 
 [outputs]
 home = ["HTML", "RSS"]
