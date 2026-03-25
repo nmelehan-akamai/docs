@@ -180,7 +180,7 @@ To construct the Terraform file, execute the following instructions. For more in
     }
     ```
 
-1. Define the `linode` provider. Include the [Linode v4 API](/docs/api/) `token` for the account. See the [Getting Started with the Linode API guide](/docs/products/tools/api/get-started/#get-an-access-token) for more information about tokens.
+1. Define the `linode` provider. Include the [Linode v4 API](https://techdocs.akamai.com/linode-api/reference/api) `token` for the account. See the [Getting Started with the Linode API guide](/docs/products/tools/api/get-started/#get-an-access-token) for more information about tokens.
 
     {{< note respectIndent=false >}}
 To hide sensitive information, such as API tokens, declare a `variables.tf` file and store the information there. Retrieve the variables using the `var` keyword. See the [Linode introduction to HCL](/docs/guides/introduction-to-hcl/#input-variables) for guidance on how to use variables.

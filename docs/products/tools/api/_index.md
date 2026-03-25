@@ -14,7 +14,7 @@ aliases: ['/products/tools/linode-api/','/platform/api/','/guides/platform/api/'
 ---
 
 {{< note >}}
-To view the official documentation on each Linode API endpoint, see the [API developer documentation](/docs/api/).
+To view the official documentation on each Linode API endpoint, see the [API developer documentation](https://techdocs.akamai.com/linode-api/reference/api).
 {{< /note >}}
 
 ## Features
@@ -48,4 +48,4 @@ Access to the Linode API is available at no charge across [all regions](https://
 
 ## Limits and Considerations
 
-- Rate limiting may vary by endpoint. See [Linode APIv4 Rate Limits](/docs/api/#linode-apiv4-rate-limits)
+- Rate limiting may vary by endpoint. See [Linode APIv4 Rate Limits](https://techdocs.akamai.com/linode-api/reference/api#linode-apiv4-rate-limits)
