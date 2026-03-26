@@ -108,6 +108,7 @@ atera
 atlanta
 Auditbeat
 auditd
+auth_socket
 authdaemonrc
 authg
 authlib
@@ -1941,7 +1942,7 @@ photoshop
 php
 php5
 php7
-phpFox
+phpfox
 PHPMailer
 phpmyadmin
 Phrack
@@ -2600,6 +2601,7 @@ timewait
 timey
 tinc
 tincd
+Tiny Tiny
 tinydb
 tiobe
 titlebar
@@ -2674,7 +2676,7 @@ turborepo
 turtl
 tv
 tw
-TWiki
+twiki
 twilio
 txt
 txz
@@ -3047,4 +3049,5 @@ zsh
 zshrc
 zxvf
 ZYpp
+Zypper
 Zypperauth_socket
