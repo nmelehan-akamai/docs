@@ -2,7 +2,7 @@
 slug: create-terraform-module
 title: "Create a Terraform Module"
 title_meta: "How to Create a Terraform Module"
-description: 'This guide shows you how to create a Terraform module with nested root, Linode instance, and Stackscripts modules using a Linode StackScripts installer.'
+description: 'This guide shows you how to create a Terraform module with nested root, Linode instance, and StackScripts modules using a Linode StackScripts installer.'
 authors: ["Linode"]
 contributors: ["Linode"]
 published: 2018-12-12

@@ -1,7 +1,7 @@
 ---
 slug: garrys-mod-server-on-centos-7
 title: 'Garry''s Mod on CentOS 7'
-description: 'This guide provides you with step-by-step instructions for deploying a Garrys Mod Server, which enables complete control of a video game engine, on CentOS 7.'
+description: 'This guide provides you with step-by-step instructions for deploying a Garry's Mod Server, which enables complete control of a video game engine, on CentOS 7.'
 authors: ["Julian Meyer"]
 contributors: ["Julian Meyer"]
 published: 2015-01-21

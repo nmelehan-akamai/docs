@@ -1,6 +1,6 @@
 ---
 slug: javascript-objects-tutorial
-title: "An Introduction to Javascript Objects"
+title: "An Introduction to JavaScript Objects"
 title_meta: "A Javascript Objects Tutorial"
 description: "JavaScript objects include key-value properties and methods and support inheritance. This tutorial discusses JavaScript objects, object inheritance, and the keyword this."
 authors: ["Nathaniel Stickman"]
