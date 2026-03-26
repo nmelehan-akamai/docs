@@ -9,7 +9,7 @@ published: 2021-08-06
 keywords: ['infrastructure as a service','iaas','infrastructure','cloud networks']
 tags: ['networking', 'linux']
 license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
-image: An_introduction _to_ Infrastructure_as_a_Service.jpg
+image: An_introduction_to_Infrastructure_as_a_Service.jpg
 external_resources:
 - '[Open Stack](https://www.openstack.org/)'
 - '[Apache CloudStack](https://cloudstack.apache.org/)'

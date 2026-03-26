@@ -1,6 +1,6 @@
 ---
 slug: a-shell-script-to-automatically-backup-mongodb-databases
-title: "Automatically Backup Mongodb Databases Using Bash Scripting"
+title: "Automatically Backup MongoDB Databases Using Bash Scripting"
 description: 'In this guide, you learn how to create a Bash script that creates a backup of all current MongoDB databases. The MongoDB backup is in a .tar file format and is configured to be uploaded to a Linode object storage bucket. You also learn how to configure a Cron job that automatically runs the backup script daily.'
 authors: ["Linode"]
 contributors: ["Linode"]
