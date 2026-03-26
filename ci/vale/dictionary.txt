@@ -1932,7 +1932,6 @@ pg_dumpall
 pgpass
 pg_restore
 pgvector
-pgvector
 PGvector
 Phalcon
 pharmer
