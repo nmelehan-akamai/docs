@@ -1823,6 +1823,7 @@ OKConfig
 okta
 oldfashioned
 oldstable
+Ollama
 omnichannel
 onboarding
 oneof
