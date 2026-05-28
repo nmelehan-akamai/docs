@@ -4,11 +4,11 @@
 
   # # Adobe Analytics script used in production.
   # For development/staging, see the config dir.
-  adobe_launch_script = "https://assets.adobedtm.com/fcfd3580c848/f9e7661907ee/launch-2fb69de42220.min.js"
+    adobe_launch_script = "/adobe-launch.js"
 
   # OneTrust Domain used in production.
-  onetrust_script_src    = "https://www.linode.com/ns/ot/202501.2.0/prod/scripttemplates/otSDKStub.js"
-  onetrust_domain_script = "01922358-0e47-73fa-9452-fa124177d6d6"
+  onetrust_script_src    = "/onetrust/scripttemplates/otSDKStub.js"
+  onetrust_domain_script = "EDGEAKAMAIZERONETRUSTDOMAINID"
 
   [params.marketplace_deploy_this_app_button]
     base_url = "https://cloud.linode.com/linodes/create"
