@@ -181,7 +181,7 @@ console.log("Server is listening on port 3000.")      //Terminal output
 {{< /file >}}
 
 
-5.  Run a new [screen](/docs/guides/using-gnu-screen-to-manage-persistent-terminal-sessions) session:
+5.  Run a new [screen](/cloud/guides/using-gnu-screen-to-manage-persistent-terminal-sessions) session:
 
         screen
 

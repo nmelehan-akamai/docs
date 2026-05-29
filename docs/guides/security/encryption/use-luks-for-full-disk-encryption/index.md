@@ -142,7 +142,7 @@ If you lose or forget this password, the data on this disk image will be **irrec
 
     ![Debian 8 Write Partition Confirmation](fde-disk-formatting.png)
 
-16. The installer will begin deploying the base system. Once it completes, you'll have the option to choose specific software packages. The only packages required for the server are `SSH server` and `standard system utilities`, but you can select additional options as needed. If you wish to make use of a graphical shell over [VNC](/docs/guides/install-vnc-on-ubuntu-16-04/) or the Glish console, select the desktop environment of your choice. Once you've confirmed your selections, hit **Continue**:
+16. The installer will begin deploying the base system. Once it completes, you'll have the option to choose specific software packages. The only packages required for the server are `SSH server` and `standard system utilities`, but you can select additional options as needed. If you wish to make use of a graphical shell over [VNC](/cloud/guides/install-vnc-on-ubuntu-16-04/) or the Glish console, select the desktop environment of your choice. Once you've confirmed your selections, hit **Continue**:
 
     ![Debian 8 Software Selection](fde-software-selection.png)
 

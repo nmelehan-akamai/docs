@@ -30,7 +30,7 @@ For example, to archive all of website data stored in `/var/www/example.com` to 
 tar -czvf ~/example-com-backup.tar.gz /var/www/example.com/
 ```
 
-To learn more about creating tar files, see [Archive, Compress, and Extract Files in Linux Using the Command Line](/docs/guides/compress-files-using-the-command-line/).
+To learn more about creating tar files, see [Archive, Compress, and Extract Files in Linux Using the Command Line](/cloud/guides/compress-files-using-the-command-line/).
 
 ## Download Files with an FTP Client
 
@@ -45,11 +45,11 @@ FTP clients are a user-friendly way to access, download, and upload files from y
 
 Whichever client you choose, you can connect to your Compute Instance using the same credentials you would use for SSH. Once connected, you should be presented with a visual file explorer of your remote system. From here, you can navigate to the directory where your files are located and then download those files.
 
-For further instructions, see our [Transfer Files with FileZilla](/docs/guides/filezilla/) guide.
+For further instructions, see our [Transfer Files with FileZilla](/cloud/guides/filezilla/) guide.
 
 ## Download Files with SCP
 
-You can use SCP (Secure Copy Protocol) to retrieve a specific directory or file via the command-line. SCP is installed by default on most macOS and Linux systems and is available with [Cygwin or PuTTY](/docs/guides/connect-to-server-over-ssh-on-windows/) for Windows.
+You can use SCP (Secure Copy Protocol) to retrieve a specific directory or file via the command-line. SCP is installed by default on most macOS and Linux systems and is available with [Cygwin or PuTTY](/cloud/guides/connect-to-server-over-ssh-on-windows/) for Windows.
 
 -   The syntax for using SCP to copy a file from your Linode into a directory on another computer is:
 
@@ -95,17 +95,17 @@ For example:
     scp -r your_linode_username@your_linode_ip:/var/www/html/ ~/html_backup
     ```
 
-If you intend to repeat this process regularly, consider [using rsync](/docs/guides/backing-up-your-data/#understand-the-rsync-command) to create additional local copies of your data. rsync is capable of performing incremental file copies, which means you do not have to fully transfer each file every time you download your data.
+If you intend to repeat this process regularly, consider [using rsync](/cloud/guides/backing-up-your-data/#understand-the-rsync-command) to create additional local copies of your data. rsync is capable of performing incremental file copies, which means you do not have to fully transfer each file every time you download your data.
 
 ## Download a Database
 
 Special care is needed when downloading data from a database. Before it can be downloaded, the data in a database needs to first be *dumped* to a file. This database dump file can then be transferred just as any other normal file type.
 
--   To create a dump of a MySQL (or MariaDB) database, [use the `mysqldump` command](/docs/guides/mysqldump-backups/). **You can only use this tool if your database process is accessible and running.**
+-   To create a dump of a MySQL (or MariaDB) database, [use the `mysqldump` command](/cloud/guides/mysqldump-backups/). **You can only use this tool if your database process is accessible and running.**
 
--   If your MySQL database won't run for some reason, follow the instructions for creating [*physical* backups](/docs/guides/create-physical-backups-of-your-mariadb-or-mysql-databases/).
+-   If your MySQL database won't run for some reason, follow the instructions for creating [*physical* backups](/cloud/guides/create-physical-backups-of-your-mariadb-or-mysql-databases/).
 
--   If you use PostgreSQL, follow the [How to Back Up Your PostgreSQL Database](/docs/guides/back-up-a-postgresql-database/) guide.
+-   If you use PostgreSQL, follow the [How to Back Up Your PostgreSQL Database](/cloud/guides/back-up-a-postgresql-database/) guide.
 
 ## Download a Disk
 

@@ -38,12 +38,12 @@ Learn in this guide how to clean up your Docker resources. Here, you can see how
         sudo dnf upgrade
         ```
 
-1.  Follow the steps in our [Installing and Using Docker](/docs/guides/installing-and-using-docker-on-ubuntu-and-debian/) guide to install, set up, and run a Docker instance. You can use the drop-down at the top of the page to select the Linux distribution matching your system.
+1.  Follow the steps in our [Installing and Using Docker](/cloud/guides/installing-and-using-docker-on-ubuntu-and-debian/) guide to install, set up, and run a Docker instance. You can use the drop-down at the top of the page to select the Linux distribution matching your system.
 
 Additionally, this guide assumes that you are logged in as a non-root user within the `docker` user group. You can learn how to add a non-root user to this group in the guide above. Otherwise, if your user is not in the `docker` group, you need to begin each of the commands given throughout this guide with `sudo`.
 
 {{< note >}}
-The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Linux Users and Groups](/docs/guides/linux-users-and-groups/) guide.
+The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
 {{< /note >}}
 
 ## How to Remove All Dangling or Unused Resources

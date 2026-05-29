@@ -69,7 +69,7 @@ Open a web browser and navigate to the custom domain you entered when deploying 
 
 1. **Obtain and save passwords** that were generated on your behalf during deployment, including your Mastodon user's password.
 
-    1. Log in to your new Compute Instance through [Lish](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish) or [SSH](/docs/guides/connect-to-server-over-ssh/) using the `root` user and the associated password you entered when creating the instance.
+    1. Log in to your new Compute Instance through [Lish](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish) or [SSH](/cloud/guides/connect-to-server-over-ssh/) using the `root` user and the associated password you entered when creating the instance.
 
     1. The passwords have been saved in the /root/.deployment-secrets.txt file. You can view this file in your preferred text editor or through the `cat` command:
 

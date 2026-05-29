@@ -139,7 +139,7 @@ Now that the configuration is set and saved, we can start the server.
 
 Now, you can start the SHOUTcast server. Here's how:
 
-1.  You'll want to run your shoutcast in a [screen session](/docs/guides/using-gnu-screen-to-manage-persistent-terminal-sessions/). Let's jump into a screen session by entering the following command:
+1.  You'll want to run your shoutcast in a [screen session](/cloud/guides/using-gnu-screen-to-manage-persistent-terminal-sessions/). Let's jump into a screen session by entering the following command:
 
         screen
 

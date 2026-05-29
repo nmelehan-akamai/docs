@@ -35,10 +35,10 @@ These are the problems the `PATH` variable is designed to solve. In this tutoria
 
             sudo dnf upgrade
 
-1. You may want to take a refresher on environmental variables. You can get everything you need to know from our guide [How to Set and Use Linux Environmental Variables](/docs/guides/how-to-set-linux-environment-variables/).
+1. You may want to take a refresher on environmental variables. You can get everything you need to know from our guide [How to Set and Use Linux Environmental Variables](/cloud/guides/how-to-set-linux-environment-variables/).
 
 {{< note >}}
-The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Linux Users and Groups](/docs/guides/linux-users-and-groups/) guide.
+The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
 {{< /note >}}
 
 ## What Is the PATH Variable?

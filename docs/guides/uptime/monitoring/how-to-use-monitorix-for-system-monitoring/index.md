@@ -12,9 +12,9 @@ license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 image: UseMonitorix_sysmon.png
 ---
 
-[Monitorix](https://www.monitorix.org/) is a free, open-source system monitoring tool that keeps track of several Linux services and system resources. This Linux system monitoring tool is composed of two programs. The first, monitorix, is a system data logging daemon written in [Perl](/docs/guides/development/perl/). The second, its web interface, uses the CGI script, `monitorix.cgi`.
+[Monitorix](https://www.monitorix.org/) is a free, open-source system monitoring tool that keeps track of several Linux services and system resources. This Linux system monitoring tool is composed of two programs. The first, monitorix, is a system data logging daemon written in [Perl](/cloud/guides/development/perl/). The second, its web interface, uses the CGI script, `monitorix.cgi`.
 
-Besides tracking Linux server elements such as overall system load, file system activity, and global kernel usage, Monitorix also tracks hardware data such as sub-system temperatures, battery status, and UPS statistics. It also monitors popular third-party Linux programs such as mail servers; [libvirt](https://libvirt.org/)-based virtual machines; and [MySQL](https://www.mysql.com/), [Nginx](/docs/guides/web-servers/nginx/), and [MongoDB](/docs/guides/databases/mongodb/) databases.
+Besides tracking Linux server elements such as overall system load, file system activity, and global kernel usage, Monitorix also tracks hardware data such as sub-system temperatures, battery status, and UPS statistics. It also monitors popular third-party Linux programs such as mail servers; [libvirt](https://libvirt.org/)-based virtual machines; and [MySQL](https://www.mysql.com/), [Nginx](/cloud/guides/web-servers/nginx/), and [MongoDB](/cloud/guides/databases/mongodb/) databases.
 
 Monitorix was originally designed for the [Red Hat Enterprise Linux](https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux) operating system family. Now, licensed under [GPLv2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html), it works on all major Linux server distributions. Beginning with version 3.0, Monitorix comes with its own web server, which is useful for remote Linux server monitoring. With its simple graphical interface, it's also good for interactive server monitoring.
 
@@ -68,7 +68,7 @@ Debian and Ubuntu Linux systems contain an additional configuration file, `/etc/
 
         sudo service monitorix restart
 {{< note >}}
-By default, Monitorix uses its built-in web server. However, it can be set to work with the [Apache](/docs/guides/web-servers/apache/), [Lighttpd](/docs/guides/web-servers/lighttpd/), or Nginx web servers.
+By default, Monitorix uses its built-in web server. However, it can be set to work with the [Apache](/cloud/guides/web-servers/apache/), [Lighttpd](/cloud/guides/web-servers/lighttpd/), or Nginx web servers.
 {{< /note >}}
 
 ## Getting started with Monitorix
@@ -109,7 +109,7 @@ If you are running Monitorix on your computer, instead, navigate to `http://loca
 
 - The Monitorix daemon stores its log files by default to `/var/log/monitorix`. The data within these logs are typically displayed by the built-in web server. Monitorix's default web address is `http://localhost:8080/monitorix`.
 
-- For authentication, Monitorix uses [HTTP basic access authentication](/docs/guides/apache-access-control/#the-caveats-of-http-authentication). User passwords are set using the [htpasswd.pl script](https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/).
+- For authentication, Monitorix uses [HTTP basic access authentication](/cloud/guides/apache-access-control/#the-caveats-of-http-authentication). User passwords are set using the [htpasswd.pl script](https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/).
 
 - The Monitorix web interface can also [monitor multiple Linux servers](https://www.monitorix.org/documentation.html#58).
 

@@ -25,7 +25,7 @@ Ubuntu has a Mandatory Access Control (MAC) system similar to [SELinux](https://
 
 1.  Ensure that you have followed the [Getting Started](https://techdocs.akamai.com/cloud-computing/docs/getting-started) and [Securing Your Server](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guides.
     {{< note respectIndent=false >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you're not familiar with the `sudo` command, you can check our [Users and Groups](/docs/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you're not familiar with the `sudo` command, you can check our [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
     {{< /note >}}
 
 1.  Update your system:
@@ -148,4 +148,4 @@ If you do not see the this entry, open the port with the following command:
     {{< /note >}}
 
 ## Next Steps
-After installing SELinux on your system, use our [Getting Started with SELinux Guide](/docs/guides/a-beginners-guide-to-selinux-on-centos-7/) to learn the basics of SELinux security.
+After installing SELinux on your system, use our [Getting Started with SELinux Guide](/cloud/guides/a-beginners-guide-to-selinux-on-centos-7/) to learn the basics of SELinux security.

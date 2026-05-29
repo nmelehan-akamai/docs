@@ -54,7 +54,7 @@ Some advantages of HarperDB are:
 1.  On a multi-user system, it is best to create a dedicated HarperDB user account with `sudo` access. Use this account for the instructions in this guide.
 
 {{< note >}}
-The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Linux Users and Groups](/docs/guides/linux-users-and-groups/) guide.
+The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
 {{< /note >}}
 
 ## How To Install HarperDB

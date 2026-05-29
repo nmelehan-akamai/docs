@@ -31,7 +31,7 @@ To follow along with this guide, make sure you have the following:
 
 1.  A Linode, which you run the MySQL software on. You can follow the [Getting Started with Linode](https://techdocs.akamai.com/cloud-computing/docs/getting-started) guide to provision a Linode.
 
-1.  The MySQL server software (or MariaDB) installed on your Linode. Please refer to the [MySQL section](/docs/guides/databases/mysql/), which contains guides that describe how to install MySQL on several Linux distributions.
+1.  The MySQL server software (or MariaDB) installed on your Linode. Please refer to the [MySQL section](/cloud/guides/databases/mysql/), which contains guides that describe how to install MySQL on several Linux distributions.
 
 ## Preparing the Database
 

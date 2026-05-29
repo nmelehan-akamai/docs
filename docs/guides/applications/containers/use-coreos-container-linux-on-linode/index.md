@@ -38,7 +38,7 @@ Container Linux does not use a swap space, so while Linode's other distributions
 These are not needed for Container Linux, and Network Helper is not compatible so they are all disabled. Linode's Container Linux images use `systemd-networkd`, so see our [static networking](https://techdocs.akamai.com/cloud-computing/docs/network-configuration-using-systemd-networkd) guide if you want to configure static and/or multiple IP addresses for your deployment.
 
 {{< note >}}
-The [Linode backup service](https://techdocs.akamai.com/cloud-computing/docs/backup-service) is not available for Container Linux. You should back up your data and configurations using an [alternative backup method](/docs/guides/backing-up-your-data/).
+The [Linode backup service](https://techdocs.akamai.com/cloud-computing/docs/backup-service) is not available for Container Linux. You should back up your data and configurations using an [alternative backup method](/cloud/guides/backing-up-your-data/).
 {{< /note >}}
 
 ## Log into Container Linux

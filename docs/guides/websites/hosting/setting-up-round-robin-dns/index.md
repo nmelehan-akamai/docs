@@ -28,7 +28,7 @@ To continue following this guide, you will need a website that's hosted on a Lin
 
 - [Add a domain and configure an A record](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-dns-manager) to point to your new Linode. When using round-robin DNS, a low TTL is recommended.
 
-- [Install and configure a web server](/docs/guides/how-to-install-nginx-debian-10/), adding a site that uses your domain name. While any major web server will be able to accommodate round-robin DNS, this guide was specifically created using NGINX.
+- [Install and configure a web server](/cloud/guides/how-to-install-nginx-debian-10/), adding a site that uses your domain name. While any major web server will be able to accommodate round-robin DNS, this guide was specifically created using NGINX.
 
 After creating your Linode, configuring DNS, and setting up your web server, you should be able to freely access a webpage using your domain name:
 

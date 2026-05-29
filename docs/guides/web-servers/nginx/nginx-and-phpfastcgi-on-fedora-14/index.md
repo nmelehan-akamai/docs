@@ -158,5 +158,5 @@ You may wish to consult the following resources for additional information on th
 - [The NGINX Homepage](http://nginx.org/)
 - [FastCGI Project Homepage](http://www.fastcgi.com/)
 - [PHP Documentation](http://www.php.net/docs.php)
-- [Installing NGINX on Fedora 14](/docs/guides/websites-with-nginx-on-fedora-14/)
-- [Basic NGINX Configuration](/docs/guides/how-to-configure-nginx/)
+- [Installing NGINX on Fedora 14](/cloud/guides/websites-with-nginx-on-fedora-14/)
+- [Basic NGINX Configuration](/cloud/guides/how-to-configure-nginx/)

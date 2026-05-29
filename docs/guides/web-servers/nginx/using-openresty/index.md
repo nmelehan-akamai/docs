@@ -23,7 +23,7 @@ Learn in this guide everything you need to know about OpenResty and how to insta
 1. Follow our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide to update your system. You may also wish to set the timezone, configure your hostname, create a limited user account, and harden SSH access.
 
 {{< note >}}
-The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Linux Users and Groups](/docs/guides/linux-users-and-groups/) guide.
+The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
 {{< /note >}}
 
 ## What Is OpenResty?
@@ -42,7 +42,7 @@ OpenResty is meant to allow your entire app within NXINGX. This makes OpenResty 
 
 However, there are some use cases that do not take advantage of the extra features of OpenResty. For instance, your web application may not need the additional NGINX modules, or Lua scripting offered by OpenResty. Such cases do not warrant changing over to OpenResty from NGINX, although they could still operate on OpenResty's NGINX core.
 
-Since OpenResty is essentially an enhanced version of NGINX, comparisons between NGINX and Apache apply to OpenResty vs Apache. Thus, you can learn more about how it would compare with Apache through our guide [A Comparison of the NGINX and Apache Web Servers](/docs/guides/comparing-nginx-and-apache-web-servers/).
+Since OpenResty is essentially an enhanced version of NGINX, comparisons between NGINX and Apache apply to OpenResty vs Apache. Thus, you can learn more about how it would compare with Apache through our guide [A Comparison of the NGINX and Apache Web Servers](/cloud/guides/comparing-nginx-and-apache-web-servers/).
 
 ## How to Install OpenResty
 

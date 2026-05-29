@@ -42,10 +42,10 @@ Rook automates the deployment and management of Ceph to create self-managing, se
     -   Multipath Devices
     -   Persistent Volumes
 
-    This guide utilizes Linode Block Storage Volumes attached to individual cluster nodes to demonstrate initial Rook and Ceph configuration. For production environments, we recommend utilizing [persistent volumes](/docs/guides/deploy-volumes-with-the-linode-block-storage-csi-driver/) or another local storage option.
+    This guide utilizes Linode Block Storage Volumes attached to individual cluster nodes to demonstrate initial Rook and Ceph configuration. For production environments, we recommend utilizing [persistent volumes](/cloud/guides/deploy-volumes-with-the-linode-block-storage-csi-driver/) or another local storage option.
 
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/docs/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
 {{< /note >}}
 
 ## Creating and Attaching Volumes

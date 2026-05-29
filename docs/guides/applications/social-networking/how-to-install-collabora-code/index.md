@@ -51,10 +51,10 @@ For those users who do not want to use Collabora with Nextcloud, integration and
 
 1.  Create and configure a subdomain name and point it at the Linode. This subdomain name provides access to the Collabora instance. The subdomain is required in addition to the domain or subdomain name used to access the Nextcloud instance. For more information on domains and how to create a DNS record, see the [Linode DNS Manager guide](https://techdocs.akamai.com/cloud-computing/docs/dns-manager).
 
-1.  Collabora CODE requires a supporting storage application such as Nextcloud. For information on configuring Nextcloud, see the [Linode guide to installing Nextcloud on Ubuntu](/docs/guides/how-to-install-nextcloud-on-ubuntu-22-04/). This guide assumes Collabora is being installed on the same server as Nextcloud.
+1.  Collabora CODE requires a supporting storage application such as Nextcloud. For information on configuring Nextcloud, see the [Linode guide to installing Nextcloud on Ubuntu](/cloud/guides/how-to-install-nextcloud-on-ubuntu-22-04/). This guide assumes Collabora is being installed on the same server as Nextcloud.
 
 {{< note >}}
-The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Linux Users and Groups](/docs/guides/linux-users-and-groups/) guide.
+The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
 {{< /note >}}
 
 ## How to Install and Configure Collabora CODE
@@ -228,7 +228,7 @@ For details on how to configure the Apache virtual host, see the [Collabora Apac
 
 ### How to Enable HTTPS for the Collabora Domain
 
-The steps in this section explain how to use [Certbot](https://certbot.eff.org/) to request a *Let's Encrypt* TLS certificate and enable HTTPS support. The `snap` package manager can be used to install Certbot. For additional information about Certbot, Let's Encrypt certificates, and HTTPS, consult the [Linode guide to Using Certbot on NGINX](/docs/guides/enabling-https-using-certbot-with-nginx-on-ubuntu/).
+The steps in this section explain how to use [Certbot](https://certbot.eff.org/) to request a *Let's Encrypt* TLS certificate and enable HTTPS support. The `snap` package manager can be used to install Certbot. For additional information about Certbot, Let's Encrypt certificates, and HTTPS, consult the [Linode guide to Using Certbot on NGINX](/cloud/guides/enabling-https-using-certbot-with-nginx-on-ubuntu/).
 
 1.  Install the `snap` package manager.
 

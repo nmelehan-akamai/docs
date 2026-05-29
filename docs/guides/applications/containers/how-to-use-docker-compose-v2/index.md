@@ -26,7 +26,7 @@ The Docker application allows for the standardization and automation of producti
 
 Docker deploys applications inside containers. Each container is based on a Docker image, although an image might contain multiple containers. A container packages a software application, such as a database or web server, inside a virtualized environment. This package includes everything required to run the application, including libraries, configurations, and supporting utilities. The Docker Engine component allows users to host, manage, and run the containers.
 
-Docker containers are lightweight, efficient, and can run on many different operating systems. Containers are isolated from each other and generally only consist of a single application. To deploy a complete system solution containing several applications, multiple containers are typically required. In the original Docker application, each container must be handled separately, making it challenging to coordinate multi-container deployments. For more information on Docker, see the [Linode Introduction to Docker](/docs/guides/introduction-to-docker/).
+Docker containers are lightweight, efficient, and can run on many different operating systems. Containers are isolated from each other and generally only consist of a single application. To deploy a complete system solution containing several applications, multiple containers are typically required. In the original Docker application, each container must be handled separately, making it challenging to coordinate multi-container deployments. For more information on Docker, see the [Linode Introduction to Docker](/cloud/guides/introduction-to-docker/).
 
 ## What is Docker Compose?
 
@@ -70,7 +70,7 @@ Some applications also require a *Dockerfile*. This file explains how to build a
 1.  Follow our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide to update your system. You may also wish to set the timezone, configure your hostname, create a limited user account, and harden SSH access.
 
 {{< note >}}
-The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Linux Users and Groups](/docs/guides/linux-users-and-groups/) guide.
+The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
 {{< /note >}}
 
 ## How to Install Docker Compose and Docker Engine
@@ -305,7 +305,7 @@ Docker Compose makes it easy to launch a project. Use the `docker compose up` co
     ⠿ Container wordpress-wordpress-1  S...                                   3.0s
     ```
 
-1. Test the application to ensure the Docker project is running correctly. Navigate to the IP address of the server, and append the port `:8000`, or alternatively use the address `http://ip_address:8000/wp-admin/install.php`. The WordPress installation page should appear. Choose the appropriate language and continue with the installation. Supply the user credentials and database details when prompted. See the Linode Guide on [How to Install WordPress on Ubuntu 22.04](/docs/guides/how-to-install-wordpress-ubuntu-22-04) for more details.
+1. Test the application to ensure the Docker project is running correctly. Navigate to the IP address of the server, and append the port `:8000`, or alternatively use the address `http://ip_address:8000/wp-admin/install.php`. The WordPress installation page should appear. Choose the appropriate language and continue with the installation. Supply the user credentials and database details when prompted. See the Linode Guide on [How to Install WordPress on Ubuntu 22.04](/cloud/guides/how-to-install-wordpress-ubuntu-22-04) for more details.
 
     ![The WordPress Installation Page](Wordpress-Install.png)
 

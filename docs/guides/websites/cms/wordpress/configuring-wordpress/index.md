@@ -18,10 +18,10 @@ WordPress is one of the most popular Content Management Systems (CMSs) around. I
 
 If you have not already installed WordPress on your server, you can follow one of our guides below to do so:
 
-- [How to Install WordPress on Debian 10](/docs/guides/how-to-install-wordpress-debian-10/)
-- [How to Install WordPress on Ubuntu 20.04](/docs/guides/how-to-install-wordpress-ubuntu-2004/)
-- [How to Install WordPress Using WP-CLI on CentOS 8](/docs/guides/how-to-install-wordpress-using-wp-cli-on-centos-8/)
-- [How to Install WordPress on AlmaLinux 8](/docs/guides/how-to-install-wordpress-almalinux-8/)
+- [How to Install WordPress on Debian 10](/cloud/guides/how-to-install-wordpress-debian-10/)
+- [How to Install WordPress on Ubuntu 20.04](/cloud/guides/how-to-install-wordpress-ubuntu-2004/)
+- [How to Install WordPress Using WP-CLI on CentOS 8](/cloud/guides/how-to-install-wordpress-using-wp-cli-on-centos-8/)
+- [How to Install WordPress on AlmaLinux 8](/cloud/guides/how-to-install-wordpress-almalinux-8/)
 
 ## Before You Begin
 
@@ -37,7 +37,7 @@ If you have not already installed WordPress on your server, you can follow one o
    If you are on CentOS and did not use the Remi repository to install PHP, you may have to replace `php74-php` with `php` throughout this guide.
 
 {{< note >}}
-This guide is written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Linux Users and Groups](/docs/guides/linux-users-and-groups/) guide.
+This guide is written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
 {{< /note >}}
 
 ## Install Optional PHP Extensions

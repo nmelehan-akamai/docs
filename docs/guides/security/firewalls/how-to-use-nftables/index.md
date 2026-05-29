@@ -16,7 +16,7 @@ external_resources:
 - '[Configuring Chains in nftables](https://wiki.nftables.org/wiki-nftables/index.php/Configuring_chains)'
 ---
 
-[*nftables*](https://netfilter.org/projects/nftables/) replaces the successful [iptables](/docs/guides/what-is-iptables/) and its related frameworks built on Netfilter. With nftables come improvements to performance and usability, but also significant changes to syntax and usage. Use this guide to get started learning about what nftables is and how it differs from iptables. Follow along with this guide's example to implement your own rules in nftables and get a hands-on idea of what it can do.
+[*nftables*](https://netfilter.org/projects/nftables/) replaces the successful [iptables](/cloud/guides/what-is-iptables/) and its related frameworks built on Netfilter. With nftables come improvements to performance and usability, but also significant changes to syntax and usage. Use this guide to get started learning about what nftables is and how it differs from iptables. Follow along with this guide's example to implement your own rules in nftables and get a hands-on idea of what it can do.
 
 ## What are nftables?
 
@@ -55,7 +55,7 @@ Otherwise, you can manually install nftables using the following steps. These st
 1.  Follow our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide to update your system. You may also wish to set the timezone, configure your hostname, create a limited user account, and harden SSH access.
 
 {{< note >}}
-This guide is written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Linux Users and Groups](/docs/guides/linux-users-and-groups/) guide.
+This guide is written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
 {{< /note >}}
 
 ### Installation Steps

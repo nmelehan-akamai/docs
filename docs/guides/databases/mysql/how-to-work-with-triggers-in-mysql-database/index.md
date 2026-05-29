@@ -43,7 +43,7 @@ In this guide, you will learn:
 
 1.  Follow our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide to update your system. You may also wish to set the timezone, configure your hostname, create a limited user account, and harden SSH access.
 
-1.  A MySQL server and client installed on the Linode server. Installation guides for MySQL are available for different distributions in our [MySQL section](/docs/databases/mysql/).
+1.  A MySQL server and client installed on the Linode server. Installation guides for MySQL are available for different distributions in our [MySQL section](/cloud/databases/mysql/).
 
 ## Prepare the Database
 

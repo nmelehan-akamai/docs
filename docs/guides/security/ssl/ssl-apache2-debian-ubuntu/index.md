@@ -28,9 +28,9 @@ This guide assumes that you are running Apache 2.4 or higher on Debian 8 or Ubun
 
 -  Familiarize yourself with our [Getting Started](https://techdocs.akamai.com/cloud-computing/docs/getting-started) guide and complete the steps for setting your Linode's hostname and timezone.
 
--  Complete our [Hosting a Website](/docs/guides/hosting-a-website-ubuntu-18-04/) guide, and create a site that you wish to secure with SSL.
+-  Complete our [Hosting a Website](/cloud/guides/hosting-a-website-ubuntu-18-04/) guide, and create a site that you wish to secure with SSL.
 
--  Follow our guide to obtain either a [self-signed](/docs/guides/create-a-self-signed-tls-certificate/) or [commercial](/docs/guides/obtain-a-commercially-signed-tls-certificate/) SSL certificate.
+-  Follow our guide to obtain either a [self-signed](/cloud/guides/create-a-self-signed-tls-certificate/) or [commercial](/cloud/guides/obtain-a-commercially-signed-tls-certificate/) SSL certificate.
 
 -  If hosting multiple websites with commercial SSL certificates on the same IP address, use the [Server Name Identification (SNI) extension](https://wiki.apache.org/httpd/NameBasedSSLVHostsWithSNI) of TLS. SNI is accepted by most modern web browsers. If you expect to receive connections from clients running legacy browsers (like Internet Explorer for Windows XP), you will need to [contact support](https://techdocs.akamai.com/cloud-computing/docs/help-and-support) to request an additional IP address.
 

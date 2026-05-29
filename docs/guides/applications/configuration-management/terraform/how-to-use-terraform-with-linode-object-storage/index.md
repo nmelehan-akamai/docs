@@ -32,7 +32,7 @@ Terraform is an open source product that is available in free and commercial edi
 
 Terraform uses providers to manage resources. A provider, which is very similar to an API, is typically created in conjunction with the infrastructure vendor. Terraform's provider-based system allows users to create, modify, and destroy network infrastructure from different vendors. Developers can import these providers into their configuration files to help declare and configure their infrastructure components. Providers are available for most major vendors, including [Linode](https://registry.terraform.io/providers/linode/linode/latest). Terraform users can browse through a complete listing of the various providers in the [*Terraform Registry*](https://registry.terraform.io/browse/providers).
 
-Linode offers a useful [Beginner's Guide to Terraform](/docs/guides/beginners-guide-to-terraform/) as an introduction to the main Terraform concepts. Additionally, Terraform documentation includes a number of [Tutorials](https://developer.hashicorp.com/terraform/tutorials), including guides to the more popular providers.
+Linode offers a useful [Beginner's Guide to Terraform](/cloud/guides/beginners-guide-to-terraform/) as an introduction to the main Terraform concepts. Additionally, Terraform documentation includes a number of [Tutorials](https://developer.hashicorp.com/terraform/tutorials), including guides to the more popular providers.
 
 ## How to Use Terraform
 
@@ -47,7 +47,7 @@ When the Terraform plan is ready to implement, the `terraform apply` command is 
 Terraform can be used in a multi-developer environment in conjunction with a versioning control system. Developers can also build their own provider infrastructure for use instead of, or alongside, third-party providers. Terraform provides more details about how the product works and how to use it in their [Introduction to Terraform summary](https://developer.hashicorp.com/terraform/intro).
 
 {{< note >}}
-Terraform is very powerful, but it can be a difficult tool to use. Syntax errors can be hard to debug. Before attempting to create any infrastructure, it is a good idea to read the [Linode Introduction to the HashiCorp Configuration Language](/docs/guides/introduction-to-hcl/). The documentation about the [Linode Provider](https://registry.terraform.io/providers/linode/linode/latest/docs) in the Terraform Registry is also essential. Consult Linode's extensive collection of [Terraform guides](/docs/guides/applications/configuration-management/terraform/) for more examples and explanations.
+Terraform is very powerful, but it can be a difficult tool to use. Syntax errors can be hard to debug. Before attempting to create any infrastructure, it is a good idea to read the [Linode Introduction to the HashiCorp Configuration Language](/cloud/guides/introduction-to-hcl/). The documentation about the [Linode Provider](https://registry.terraform.io/providers/linode/linode/latest/docs) in the Terraform Registry is also essential. Consult Linode's extensive collection of [Terraform guides](/cloud/guides/applications/configuration-management/terraform/) for more examples and explanations.
 {{< /note >}}
 
 ## Before You Begin
@@ -63,7 +63,7 @@ Terraform is very powerful, but it can be a difficult tool to use. Syntax errors
     ```
 
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Users and Groups](/docs/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
 {{< /note >}}
 
 ## How to Download and Install Terraform
@@ -183,7 +183,7 @@ To construct the Terraform file, execute the following instructions. For more in
 1. Define the `linode` provider. Include the [Linode v4 API](https://techdocs.akamai.com/linode-api/reference/api) `token` for the account. See the [Getting Started with the Linode API guide](https://techdocs.akamai.com/linode-api/reference/get-started#get-an-access-token) for more information about tokens.
 
     {{< note respectIndent=false >}}
-To hide sensitive information, such as API tokens, declare a `variables.tf` file and store the information there. Retrieve the variables using the `var` keyword. See the [Linode introduction to HCL](/docs/guides/introduction-to-hcl/#input-variables) for guidance on how to use variables.
+To hide sensitive information, such as API tokens, declare a `variables.tf` file and store the information there. Retrieve the variables using the `var` keyword. See the [Linode introduction to HCL](/cloud/guides/introduction-to-hcl/#input-variables) for guidance on how to use variables.
     {{< /note >}}
 
     ```file {title="/terraform/linode-terraform-storage.tf" lang="aconf" hl_lines="2" linenostart="10"}
@@ -474,7 +474,7 @@ terraform apply
 
 Terraform uses [state](https://developer.hashicorp.com/terraform/language/state) on a [backend](https://developer.hashicorp.com/terraform/language/settings/backends/configuration) to log and track resource information. By default, state is stored locally in a file named `terraform.tfstate`.
 
-For steps on how to use Linode Object Storage as a remote backend to store state, see our guide [Use Terraform to Provision Infrastructure on Linode](/docs/guides/how-to-build-your-infrastructure-using-terraform-and-linode/#use-linode-object-storage-to-store-state).
+For steps on how to use Linode Object Storage as a remote backend to store state, see our guide [Use Terraform to Provision Infrastructure on Linode](/cloud/guides/how-to-build-your-infrastructure-using-terraform-and-linode/#use-linode-object-storage-to-store-state).
 
 ## Conclusion
 

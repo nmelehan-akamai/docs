@@ -31,7 +31,7 @@ The Community Edition is a limited version of Ant Media Server Enterprise Editio
 - Simulcasting to Periscope
 - Your Live or VoD streams can play anywhere including mobile(Android, iOS) browsers.
 
-If you need adaptive streaming, cluster, load balancer, and hardware encoding, consider using the [Enterprise Edition](/docs/marketplace-docs/guides/antmediaenterpriseserver/).
+If you need adaptive streaming, cluster, load balancer, and hardware encoding, consider using the [Enterprise Edition](/cloud/marketplace-docs/guides/antmediaenterpriseserver/).
 
 ## Deploying a Quick Deploy App
 
@@ -66,7 +66,7 @@ If you need adaptive streaming, cluster, load balancer, and hardware encoding, c
 The Ant Media Server will deploy with an administrator account preconfigured using the email entered in the `email address` UDF on deployment. The generated password can be found in `/home/$USERNAME/.credentials`, along with the sudo user password.
 {{< /note >}}
 
-1.  Using [LISH](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish) or [SSH](/docs/guides/connect-to-server-over-ssh/) connect to the instance and access the Ant Media Server credentials in the `/home/$USERNAME/.credentials` file. You will find an example of the output below. Keep in mind that $USERNAME will be replaced with your chosen sudo username.
+1.  Using [LISH](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish) or [SSH](/cloud/guides/connect-to-server-over-ssh/) connect to the instance and access the Ant Media Server credentials in the `/home/$USERNAME/.credentials` file. You will find an example of the output below. Keep in mind that $USERNAME will be replaced with your chosen sudo username.
 
     ```command
     cat /home/$USERNAME/.credentials

@@ -18,7 +18,7 @@ This deployment is using the [Mayan Electronic Document Management System](https
 
 A [NodeBalancer](https://techdocs.akamai.com/cloud-computing/docs/nodebalancer) is configured with the TCP protocol to pass traffic through to the backend servers for SSL/TLS termination, and with Proxy Protocol V1 so that NGINX can log the originating client IP addresses. Linode [Object Storage](https://techdocs.akamai.com/cloud-computing/docs/object-storage) is the storage backend for Mayan EDNS documents, as well as for routine database backups.
 
-All nodes are secured with [Cloud Firewalls](https://techdocs.akamai.com/cloud-computing/docs/cloud-firewall) for protection from the outside world, and communicate internally via private [VLAN](https://techdocs.akamai.com/cloud-computing/docs/vlan). The application servers connect to the databases via a shared floating VLAN IP address, with [Keepalived](/docs/guides/ip-failover-legacy-keepalived/) to facilitate failover.
+All nodes are secured with [Cloud Firewalls](https://techdocs.akamai.com/cloud-computing/docs/cloud-firewall) for protection from the outside world, and communicate internally via private [VLAN](https://techdocs.akamai.com/cloud-computing/docs/vlan). The application servers connect to the databases via a shared floating VLAN IP address, with [Keepalived](/cloud/guides/ip-failover-legacy-keepalived/) to facilitate failover.
 
 The PostgreSQL databases are implemented as an active-active cluster, using [Bucardo](https://bucardo.org/Bucardo/) for bi-directional replication. A backup script dumps the Mayan database, compresses the dump file, and then leverages [Rclone](https://rclone.org/) to upload the timestamped archive to the Object Storage bucket.
 
@@ -29,7 +29,7 @@ The PostgreSQL databases are implemented as an active-active cluster, using [Buc
 - [Mayan EDMS](https://mayan-edms.com/)
 - [PostgreSQL 14](https://www.postgresql.org/)
 - [Bucardo](https://bucardo.org/Bucardo/)
-- [Keepalived](/docs/guides/ip-failover-legacy-keepalived/)
+- [Keepalived](/cloud/guides/ip-failover-legacy-keepalived/)
 - [Prometheus](https://prometheus.io/)
 - [Grafana](https://grafana.com/)
 - [NGINX](https://www.nginx.com/)
@@ -53,4 +53,4 @@ The PostgreSQL databases are implemented as an active-active cluster, using [Buc
 
 ## Diagrams
 
-[![Thumbnail of Cloud-base document management system reference architecture](document-management-diagram-thumbnail.png)](/docs/reference-architecture/cloud-based-document-management-system/diagrams/)
+[![Thumbnail of Cloud-base document management system reference architecture](document-management-diagram-thumbnail.png)](/cloud/reference-architecture/cloud-based-document-management-system/diagrams/)

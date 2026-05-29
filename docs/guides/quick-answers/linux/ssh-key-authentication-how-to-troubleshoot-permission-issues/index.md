@@ -60,7 +60,7 @@ debug1: identity file /Users/username/.ssh/id_rsa type 0
 
         ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no <accountname>@<ip_address>
 
-1. If you were able to gain access to your Linode in the previous step, follow our [Use SSH Public Key Authentication on Linux, macOS, and Windows](/docs/guides/use-public-key-authentication-with-ssh/) guide to properly configure public key authentication.
+1. If you were able to gain access to your Linode in the previous step, follow our [Use SSH Public Key Authentication on Linux, macOS, and Windows](/cloud/guides/use-public-key-authentication-with-ssh/) guide to properly configure public key authentication.
 
 1. (**Optional**) If you do not want to use public-key authentication in the future, turn off `PubKeyAuthentication` in the `/etc/ssh/sshd_config` file.
 
@@ -111,7 +111,7 @@ PasswordAuthentication Yes
 
 ### The Target Server Does Not Have a Copy of the Public Key
 
-This situation arises because the target server does not have your public key. Without that information, it cannot locate the key when it receives the SSH request. To correct this, copy the public key into the `authorized_keys` file in your directory on the Linode. For more information on how to generate a public key, see our [Use SSH Public Key Authentication on Linux, macOS, and Windows](/docs/guides/use-public-key-authentication-with-ssh/) guide.
+This situation arises because the target server does not have your public key. Without that information, it cannot locate the key when it receives the SSH request. To correct this, copy the public key into the `authorized_keys` file in your directory on the Linode. For more information on how to generate a public key, see our [Use SSH Public Key Authentication on Linux, macOS, and Windows](/cloud/guides/use-public-key-authentication-with-ssh/) guide.
 
 1. Locate the file containing the public key file on your client. The file is usually named `id_rsa.pub`. On macOS devices, it is typically located at `/Users/<username>/.ssh/`, while on Linux systems it can be found at `/home/<username>/.ssh/`. On Windows systems, the file location is user-defined.
 

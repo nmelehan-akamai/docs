@@ -11,7 +11,7 @@ license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 aliases: ['/linode-writers-formatting-guide/','/linode-writers-guide/','/style-guide/']
 show_on_rss_feed: false
 external_resources:
- - '[GitHub Beginners Guide](/docs/guides/a-beginners-guide-to-github/)'
+ - '[GitHub Beginners Guide](/cloud/guides/a-beginners-guide-to-github/)'
  - '[Red Hat Writing Style Guide](http://stylepedia.net/)'
 build:
   list: false
@@ -21,7 +21,7 @@ build:
 
 ## Write Guides for Linode
 
-This guide provides templates and guidelines to use when creating or updating a guide for [Linode Docs](/docs/).
+This guide provides templates and guidelines to use when creating or updating a guide for [Linode Docs](/cloud/).
 
 Updates, improvements, and bug fixes to Linode documentation are always welcome through [GitHub](https://github.com/linode/docs) via pull requests (PRs) or issues.
 
@@ -100,13 +100,13 @@ Below is an example *Before You Begin* section. You may copy the example and edi
 
 ```file {title="Guides Written for a Non-Root User" lang="txt"}
 {{</* note */>}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/docs/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
 {{</* /note */>}}
 ```
 
 ```file {title="Guides Written for a Root User" lang="txt"}
 {{</* note */>}}
-The steps in this guide require root privileges. Be sure to run the steps below as `root` or with the `sudo` prefix. For more information on privileges, see our [Users and Groups](/docs/guides/linux-users-and-groups/) guide.
+The steps in this guide require root privileges. Be sure to run the steps below as `root` or with the `sudo` prefix. For more information on privileges, see our [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
 {{</* /note */>}}
 ```
 

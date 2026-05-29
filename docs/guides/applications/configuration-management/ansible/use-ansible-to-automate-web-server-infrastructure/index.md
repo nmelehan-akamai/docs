@@ -36,7 +36,7 @@ If you remove these resources afterward, you are only [billed for the time](http
 - Create a new directory to work from. For example, you can name it, **"Ansible_Infra"**.
 
 {{< note >}}
-The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/docs/guides/linux-users-and-groups/) guide.
+The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
 {{< /note >}}
 
 ## Create Five Linodes Using the Linode CLI

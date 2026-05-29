@@ -77,7 +77,7 @@ mariadb-0         1/1       Running            0          2h
     ```
 
     {{< note >}}
-    If you've set up Kubernetes using automated solutions like Linode's Kubernetes Engine, [k8s-alpha CLI](/docs/guides/how-to-deploy-kubernetes-on-linode-with-k8s-alpha-cli/), or [Rancher](/docs/guides/how-to-deploy-kubernetes-on-linode-with-rancher-2-x/), you'll see [csi-linode](https://github.com/linode/linode-blockstorage-csi-driver) and [ccm-linode](https://github.com/linode/linode-cloud-controller-manager) Pods in the `kube-system` namespace. This is normal as long as they're in the Running status.
+    If you've set up Kubernetes using automated solutions like Linode's Kubernetes Engine, [k8s-alpha CLI](/cloud/guides/how-to-deploy-kubernetes-on-linode-with-k8s-alpha-cli/), or [Rancher](/cloud/guides/how-to-deploy-kubernetes-on-linode-with-rancher-2-x/), you'll see [csi-linode](https://github.com/linode/linode-blockstorage-csi-driver) and [ccm-linode](https://github.com/linode/linode-cloud-controller-manager) Pods in the `kube-system` namespace. This is normal as long as they're in the Running status.
     {{< /note >}}
 
 
@@ -182,7 +182,7 @@ If the Kubernetes API server isn't working normally, then you may not be able to
 
 #### Non-systemd systems
 
-If your nodes do not run [systemd](/docs/guides/what-is-systemd/), the location of logs on your master nodes should be:
+If your nodes do not run [systemd](/cloud/guides/what-is-systemd/), the location of logs on your master nodes should be:
 
 - `/var/log/kube-apiserver.log` - [API server](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/)
 - `/var/log/kube-scheduler.log` - [Scheduler](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-scheduler/ )

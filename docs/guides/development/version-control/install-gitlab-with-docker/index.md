@@ -67,7 +67,7 @@ It takes some time for DNS changes to propagate through the internet, so it's su
 
     {{% content "update-dns-at-common-name-server-authorities" %}}
 
-You can test to see if your DNS changes have propagated with the [`dig` command](/docs/guides/use-dig-to-perform-manual-dns-queries/):
+You can test to see if your DNS changes have propagated with the [`dig` command](/cloud/guides/use-dig-to-perform-manual-dns-queries/):
 
     dig +short gitlab.example.com
 
@@ -245,6 +245,6 @@ GitLab offers many features that are worth taking the time to understand and uti
 
 -   Review Linode's Git documentation:
 
-    -   [Getting Start with Git](/docs/guides/how-to-configure-git/)
+    -   [Getting Start with Git](/cloud/guides/how-to-configure-git/)
 
-    -   [How to Install Git on Linux, Mac or Windows](/docs/guides/how-to-install-git-on-linux-mac-and-windows/)
+    -   [How to Install Git on Linux, Mac or Windows](/cloud/guides/how-to-install-git-on-linux-mac-and-windows/)

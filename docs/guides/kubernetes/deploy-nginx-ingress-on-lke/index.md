@@ -36,7 +36,7 @@ This guide will show you how to:
 
 ## Before You Begin
 
-1. Review the [Beginner's Guide to Kubernetes](/docs/guides/beginners-guide-to-kubernetes/) series to gain an understanding of key concepts within Kubernetes, including master and worker nodes, Pods, Deployments, and Services.
+1. Review the [Beginner's Guide to Kubernetes](/cloud/guides/beginners-guide-to-kubernetes/) series to gain an understanding of key concepts within Kubernetes, including master and worker nodes, Pods, Deployments, and Services.
 
 1. Purchase a domain name from a reliable domain registrar. In a later section, you will use Linode's DNS Manager to [create a new Domain](https://techdocs.akamai.com/cloud-computing/docs/create-a-domain) and to [add a DNS "A" record](https://techdocs.akamai.com/cloud-computing/docs/manage-dns-records) for two subdomains: one named `blog` and another named `shop`. Your subdomains will point to the example Kubernetes Services you will create in this guide. The example domain names used throughout this guide are `blog.example.com` and `shop.example.com`.
 
@@ -50,11 +50,11 @@ This guide will show you how to:
 
     - [Cloud Manager LKE instructions](https://techdocs.akamai.com/cloud-computing/docs/linode-kubernetes-engine)
     - [Linode API LKE instructions](https://techdocs.akamai.com/cloud-computing/docs/deploy-and-manage-a-kubernetes-cluster-with-the-api)
-    - [Terraform instructions](/docs/guides/deploy-lke-cluster-using-terraform/)
+    - [Terraform instructions](/cloud/guides/deploy-lke-cluster-using-terraform/)
 
-    You can also use an unmanaged Kubernetes cluster (that's not deployed through LKE). The instructions within this guide depend on the Linode Cloud Controller Manager (CCM), which is installed by default on LKE clusters but needs to be manually installed on unmanaged clusters. To learn how to install the Linode CCM on a cluster that was not deployed through LKE, see the [Installing the Linode CCM on an Unmanaged Kubernetes Cluster](/docs/guides/install-the-linode-ccm-on-unmanaged-kubernetes/) guide.
+    You can also use an unmanaged Kubernetes cluster (that's not deployed through LKE). The instructions within this guide depend on the Linode Cloud Controller Manager (CCM), which is installed by default on LKE clusters but needs to be manually installed on unmanaged clusters. To learn how to install the Linode CCM on a cluster that was not deployed through LKE, see the [Installing the Linode CCM on an Unmanaged Kubernetes Cluster](/cloud/guides/install-the-linode-ccm-on-unmanaged-kubernetes/) guide.
 
-1. **Setup your local environment** by installing [Helm 3](/docs/guides/how-to-install-apps-on-kubernetes-with-helm-3/#install-helm) and [kubectl](https://techdocs.akamai.com/cloud-computing/docs/manage-a-cluster-with-kubectl) on your computer (or whichever system you intend to use to manage your Kubernetes Cluster).
+1. **Setup your local environment** by installing [Helm 3](/cloud/guides/how-to-install-apps-on-kubernetes-with-helm-3/#install-helm) and [kubectl](https://techdocs.akamai.com/cloud-computing/docs/manage-a-cluster-with-kubectl) on your computer (or whichever system you intend to use to manage your Kubernetes Cluster).
 
 1. **Configure kubectl** to use the new Kubernetes cluster by downloading the kubeconfig YAML file and adding it to kubectl. See the instructions within the [Download Your kubeconfig](https://techdocs.akamai.com/cloud-computing/docs/manage-a-cluster-with-kubectl) guide.
 
@@ -275,7 +275,7 @@ Once your Ingress Controller is installed and DNS records have been created poin
 
 ## Next Steps
 
-If you would like to secure your site with TLS encryption, you can follow the [Getting Started with Load Balancing on a Linode Kubernetes Engine (LKE) Cluster](/docs/kubernetes/getting-started-with-load-balancing-on-a-lke-cluster/).
+If you would like to secure your site with TLS encryption, you can follow the [Getting Started with Load Balancing on a Linode Kubernetes Engine (LKE) Cluster](/cloud/kubernetes/getting-started-with-load-balancing-on-a-lke-cluster/).
 
 If you would rather not continue using the cluster you just created, review the [tear-down section](#tear-down-your-lke-cluster-and-nodebalancer) to remove the billable Linode resources that were generated.
 

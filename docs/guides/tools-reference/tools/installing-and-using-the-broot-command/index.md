@@ -19,7 +19,7 @@ The `broot` command provides a modern approach to generating directory trees on 
 1.  Follow our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide to update your system. You may also wish to set the timezone, configure your hostname, create a limited user account, and harden SSH access.
 
 {{< note >}}
-The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Linux Users and Groups](/docs/guides/linux-users-and-groups/) guide.
+The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
 {{< /note >}}
 
 ## What is broot?
@@ -102,7 +102,7 @@ Here are some useful commands for exploring the file tree once you are in `broot
 
 ## How to Use broot Commands
 
-`broot`, in addition to using assigned keyboard keys, has a dedicated command system. Typing a space or colon while the search field is blank starts a command entry, similar to the system in the [Vi text editor](/docs/guides/what-is-vi/). Pressing **Enter** then executes the command.
+`broot`, in addition to using assigned keyboard keys, has a dedicated command system. Typing a space or colon while the search field is blank starts a command entry, similar to the system in the [Vi text editor](/cloud/guides/what-is-vi/). Pressing **Enter** then executes the command.
 
 One of the most useful commands available is the `exit` command. Typing `:q` and pressing **Enter** exits `broot`, putting you back in the shell in the same working directory where you started.
 

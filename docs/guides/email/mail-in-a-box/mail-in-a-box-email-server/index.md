@@ -36,7 +36,7 @@ Email security should also a primary concern for most users and Mail-in-a-Box ha
 
 ## Before You Begin
 
-- Consider reading through the [Running a Mail Server](/docs/guides/running-a-mail-server/) guide. This discusses the benefits and drawbacks of self-hosting an email server.
+- Consider reading through the [Running a Mail Server](/cloud/guides/running-a-mail-server/) guide. This discusses the benefits and drawbacks of self-hosting an email server.
 
 - Have a registered domain name that you wish to use with your email server. Verify that your registrar allows *custom nameservers* and *glue records*.
 
@@ -53,7 +53,7 @@ Wherever you see `example.com` in this tutorial, replace it with your domain nam
 
 Mail-in-a-Box allows you to configure and manage DNS through its own DNS service or through an external DNS service. This guide covers using the built-in DNS service. To continue, configure a custom name server for whichever domain you wish to associate with this email server. Since all of the domain records for the chosen domain are managed by Mail-in-a-Box, it's recommended that you use a domain not already associated with a service or website.
 
-Follow the instructions within the [Register Custom DNS Name Servers](/docs/guides/custom-name-servers/) guide. Since Mail-in-a-Box configures your DNS records for you, you can skip the *Add A Records* section.
+Follow the instructions within the [Register Custom DNS Name Servers](/cloud/guides/custom-name-servers/) guide. Since Mail-in-a-Box configures your DNS records for you, you can skip the *Add A Records* section.
 
 1. Add the following glue records on your domain's registrar, replacing *example.com* with the domain name you wish to use. Each glue record should point to the public IPv4 address of the Compute Instance in which will deploy Mail-in-a-Box. To view the IP addresses, see [Managing IP Addresses on a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/managing-ip-addresses-on-a-compute-instance#viewing-ip-addresses).
 
@@ -64,13 +64,13 @@ Follow the instructions within the [Register Custom DNS Name Servers](/docs/guid
 
 2. Within your registrar, change the name servers used for your domain to match the ones you just registered above.
 
-There can be a delay while your registrar sends these changes to the TLD (top-level domain) name servers. Most reputable registrars and TLD name servers are able to update their records quickly, though it can take up to 24 hours. If you'd like to confirm that the changes have been made, see the [Verify DNS Changes](/docs/guides/custom-name-servers/#verify-dns-changes) section of the registering a custom name server guide linked above.
+There can be a delay while your registrar sends these changes to the TLD (top-level domain) name servers. Most reputable registrars and TLD name servers are able to update their records quickly, though it can take up to 24 hours. If you'd like to confirm that the changes have been made, see the [Verify DNS Changes](/cloud/guides/custom-name-servers/#verify-dns-changes) section of the registering a custom name server guide linked above.
 
 If you don't see your custom name servers in the dig output within an hour of registering them, there may be an issue with the registration or propagation process. Contact your registrar for help resolving any issues.
 
 ## Install Mail-in-a-Box
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/docs/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
 {{< /note >}}
 
 1.  After you log in to your server with an SSH client, update all the software packages on your server:

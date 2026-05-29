@@ -22,10 +22,10 @@ This guide shows you how to use Docker Compose to install LiveKit on a Compute I
 
 1.  Follow our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide to update your system. You may also wish to set the timezone, configure your hostname, create a limited user account, and harden SSH access.
 
-1.  Follow the instructions in our [How to Use Docker Compose V2](/docs/guides/how-to-use-docker-compose-v2/#how-to-install-docker-compose-and-docker-engine) guide to install **Docker Compose** and **Docker Engine**.
+1.  Follow the instructions in our [How to Use Docker Compose V2](/cloud/guides/how-to-use-docker-compose-v2/#how-to-install-docker-compose-and-docker-engine) guide to install **Docker Compose** and **Docker Engine**.
 
 {{< note title="Your user requires sudo privileges" >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/docs/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
 {{< /note >}}
 
 ## LiveKit Features and Compatibility
@@ -118,7 +118,7 @@ Your DNS records can be setup using the [DNS Manager](https://techdocs.akamai.co
     sudo ufw reload
     ```
     {{< note title="Your firewall settings may be different" >}}
-    The exact commands you use may vary depending on your instance's distribution and firewall manager. See our guides on firewalls for documentation on other common firewall managers: [Linode Guides: Firewalls](/docs/guides/security/firewalls/)
+    The exact commands you use may vary depending on your instance's distribution and firewall manager. See our guides on firewalls for documentation on other common firewall managers: [Linode Guides: Firewalls](/cloud/guides/security/firewalls/)
 
     Likewise, if your Compute Instance is attached to a Cloud Firewall, you will want to make sure the appropriate ports are open in your Cloud Firewall configuration: [Cloud Firewall: Manage Firewall Rules](https://techdocs.akamai.com/cloud-computing/docs/manage-firewall-rules)
     {{< /note >}}

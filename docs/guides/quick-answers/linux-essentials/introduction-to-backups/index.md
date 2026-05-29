@@ -8,7 +8,7 @@ published: 2018-05-18
 keywords: ["backups", "snapshot", "Linode backup", "beginners"]
 license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 external_resources:
-  - '[Backing Up Your Data](/docs/guides/backing-up-your-data/)'
+  - '[Backing Up Your Data](/cloud/guides/backing-up-your-data/)'
 tags: ["linux"]
 aliases: ['/quick-answers/linux-essentials/introduction-to-backups/']
 ---
@@ -52,15 +52,15 @@ You may have made manual backups of files on your personal computer by dragging 
 
         cp backup.zip /mnt/my-volume
 
-If you are more comfortable working on the command line, this kind of backup can be automated with a [cron job](/docs/guides/schedule-tasks-with-cron/) so that it can run automatically at a set interval.
+If you are more comfortable working on the command line, this kind of backup can be automated with a [cron job](/cloud/guides/schedule-tasks-with-cron/) so that it can run automatically at a set interval.
 
 ## Database Backups
 
 Many applications, including common CMS platforms like WordPress, store their data in a database. It is crucial to make sure that this data can be restored in the event of a system compromise. Fortunately, most database systems include tools to make backing up simple and painless.
 
-If you are using MySQL or MariaDB, read more about  `mysqldump` in our [mysqldump](/docs/guides/mysqldump-backups/) guide, or try making [physical backups](/docs/guides/create-physical-backups-of-your-mariadb-or-mysql-databases/).
+If you are using MySQL or MariaDB, read more about  `mysqldump` in our [mysqldump](/cloud/guides/mysqldump-backups/) guide, or try making [physical backups](/cloud/guides/create-physical-backups-of-your-mariadb-or-mysql-databases/).
 
-If your application uses PostgreSQL, read our guide on [How to Back Up Your PostgreSQL Database](/docs/guides/back-up-a-postgresql-database/).
+If your application uses PostgreSQL, read our guide on [How to Back Up Your PostgreSQL Database](/cloud/guides/back-up-a-postgresql-database/).
 
 ## Third-Party Tools
 

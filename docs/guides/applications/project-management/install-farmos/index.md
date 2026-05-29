@@ -28,7 +28,7 @@ This guide explains how to install, setup and host your own farmOS web app on a 
 
     {{% content "limited-user-note-shortguide" %}}
 
-1.  Install and configure a [LAMP stack on Ubuntu 20.04](/docs/guides/how-to-install-a-lamp-stack-on-ubuntu-20-04/). Skip the configuration steps for setting up MySQL and use the steps outlined in this guide instead.
+1.  Install and configure a [LAMP stack on Ubuntu 20.04](/cloud/guides/how-to-install-a-lamp-stack-on-ubuntu-20-04/). Skip the configuration steps for setting up MySQL and use the steps outlined in this guide instead.
 
 ## MySQL Setup
 
@@ -54,7 +54,7 @@ This guide explains how to install, setup and host your own farmOS web app on a 
 
 ## Download and Install farmOS
 
-1.  Navigate to your site's document root. If you installed and configured your Apache server using our [LAMP stack on Ubuntu 20.04](/docs/guides/how-to-install-a-lamp-stack-on-ubuntu-20-04/) guide, your document root should be located in the `/var/www/html/example.com/public_html/` directory. Replace `example.com` with your own document root path's name.
+1.  Navigate to your site's document root. If you installed and configured your Apache server using our [LAMP stack on Ubuntu 20.04](/cloud/guides/how-to-install-a-lamp-stack-on-ubuntu-20-04/) guide, your document root should be located in the `/var/www/html/example.com/public_html/` directory. Replace `example.com` with your own document root path's name.
 
         cd /var/www/html/example.com
 
@@ -80,7 +80,7 @@ Ensure that the version number matches the farmOS version you wish to download.
 
         sudo a2enmod rewrite
 
-1.  Specify the rewrite conditions for your farmOS site's document root in Apache's configuration file using the text editor of your choice. If you installed and configured your Apache server using [LAMP stack on Ubuntu 20.04](/docs/guides/how-to-install-a-lamp-stack-on-ubuntu-20-04/) guide, the configuration file for your site is located at `/etc/apache2/sites-available/example.com.conf`.
+1.  Specify the rewrite conditions for your farmOS site's document root in Apache's configuration file using the text editor of your choice. If you installed and configured your Apache server using [LAMP stack on Ubuntu 20.04](/cloud/guides/how-to-install-a-lamp-stack-on-ubuntu-20-04/) guide, the configuration file for your site is located at `/etc/apache2/sites-available/example.com.conf`.
 
     {{< file "/etc/apache2/sites-available/example.com.conf" conf >}}
 <Directory /var/www/html/example.com/public_html>
@@ -127,7 +127,7 @@ Ensure that the version number matches the farmOS version you wish to download.
 
     ![welcome](welcome.png)
 
-1.  After the installation has finished, you may want to reset your file permissions to avoid security vulnerabilities from your site's document root. If you installed and configured your Apache server using our [LAMP stack on Ubuntu 20.04](/docs/guides/how-to-install-a-lamp-stack-on-ubuntu-20-04/) guide, your document root should be located in the `/var/www/html/example.com/public_html/` directory:
+1.  After the installation has finished, you may want to reset your file permissions to avoid security vulnerabilities from your site's document root. If you installed and configured your Apache server using our [LAMP stack on Ubuntu 20.04](/cloud/guides/how-to-install-a-lamp-stack-on-ubuntu-20-04/) guide, your document root should be located in the `/var/www/html/example.com/public_html/` directory:
 
         sudo chmod 644 sites/default
         sudo chmod 644 ./sites/default/settings.php

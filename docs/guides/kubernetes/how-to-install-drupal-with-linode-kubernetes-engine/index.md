@@ -31,7 +31,7 @@ If you remove the resources afterward, you will only be billed for the hour(s) t
 
 ## Before You Begin
 
-Familiarize yourself with Kubernetes using our series [A Beginner's Guide to Kubernetes](/docs/guides/beginners-guide-to-kubernetes/) and [Advantages of Using Kubernetes](/docs/guides/kubernetes-use-cases/).
+Familiarize yourself with Kubernetes using our series [A Beginner's Guide to Kubernetes](/cloud/guides/beginners-guide-to-kubernetes/) and [Advantages of Using Kubernetes](/cloud/guides/kubernetes-use-cases/).
 
 ## Create an LKE Cluster
 

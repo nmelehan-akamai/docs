@@ -21,10 +21,10 @@ This guide walks through the installation steps for Memcached on Debian 11 and U
 
 1.  Follow our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide to update your system. You may also wish to set the timezone, configure your hostname, create a limited user account, and harden SSH access.
 
-1.  Follow our [How to Configure a Firewall with UFW](/docs/guides/configure-firewall-with-ufw/) guide to install UFW, allow SSH access, and enable the firewall.
+1.  Follow our [How to Configure a Firewall with UFW](/cloud/guides/configure-firewall-with-ufw/) guide to install UFW, allow SSH access, and enable the firewall.
 
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/docs/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
 {{< /note >}}
 
 ## Install Memcached

@@ -25,7 +25,7 @@ This guide walks you through configuring a new or existing Mastodon instance to 
 1. Follow our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide to update your system. You may also wish to set the timezone, configure your hostname, create a limited user account, and harden SSH access.
 
 {{< note >}}
-The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Linux Users and Groups](/docs/guides/linux-users-and-groups/) guide.
+The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
 {{< /note >}}
 
 ## Why Use Linode Object Storage with Mastodon?
@@ -64,9 +64,9 @@ If you are implementing Linode Object Storage on an existing Mastodon instance, 
 
 The rest of this guide assumes that you have a complete Mastodon setup running through an NGINX proxy. The examples throughout this guide use the same example domain name in the guide linked below, `example.com`.
 
-To create a new Mastodon instance, follow our guide [How to Install a Mastodon Server](/docs/guides/install-mastodon-on-ubuntu-2004/). A link in the upper right of the guide allows you to select a Linux distribution for the installation. The beginning of the guide also includes links for creating and configuring a new Linode Compute Instance for running the Mastodon server.
+To create a new Mastodon instance, follow our guide [How to Install a Mastodon Server](/cloud/guides/install-mastodon-on-ubuntu-2004/). A link in the upper right of the guide allows you to select a Linux distribution for the installation. The beginning of the guide also includes links for creating and configuring a new Linode Compute Instance for running the Mastodon server.
 
-You may, alternatively, choose to deploy a new Linode with Mastodon via the Linode Marketplace. Take a look at our guide on how to [Deploy Mastodon through the Linode Marketplace](/docs/marketplace-docs/guides/mastodon/) to learn more and for instructions.
+You may, alternatively, choose to deploy a new Linode with Mastodon via the Linode Marketplace. Take a look at our guide on how to [Deploy Mastodon through the Linode Marketplace](/cloud/marketplace-docs/guides/mastodon/) to learn more and for instructions.
 
 ### Configuring an NGINX Proxy
 
@@ -189,7 +189,7 @@ The process for adding object storage support to your Mastodon instance requires
     docker compose restart
     ```
 
-At this point, your Mastodon instance is ready to start storing media on your Linode Object Storage bucket. Unless you are working on an existing Mastodon instance, you can skip to the [Verifying the Results](/docs/guides/linode-object-storage-with-mastodon/#verifying-the-results) section further to test your configuration.
+At this point, your Mastodon instance is ready to start storing media on your Linode Object Storage bucket. Unless you are working on an existing Mastodon instance, you can skip to the [Verifying the Results](/cloud/guides/linode-object-storage-with-mastodon/#verifying-the-results) section further to test your configuration.
 
 ### Syncing Existing Data
 
@@ -199,7 +199,7 @@ To do so, you can use a tool for managing Amazon S3-compatible storage to copy l
 
 However, this guide uses the powerful and flexible [rclone](https://rclone.org/s3/). `rclone` operates on a wide range of storage devices and platforms, not just S3, and it is exceptional for syncing across storage mediums.
 
-1. Follow our guide on [How to Use Rclone to Sync Files to Linode Object Storage](/docs/guides/rclone-object-storage-file-sync/) to install and configure `rclone` on your system. During the configuration process, make the following adjustments.
+1. Follow our guide on [How to Use Rclone to Sync Files to Linode Object Storage](/cloud/guides/rclone-object-storage-file-sync/) to install and configure `rclone` on your system. During the configuration process, make the following adjustments.
 
     - For `region`, enter the region designation for your Linode Object Storage bucket. This guide has been using `us-southeast-1` as an example.
 

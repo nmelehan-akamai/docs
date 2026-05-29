@@ -171,5 +171,5 @@ You may wish to consult the following resources for additional information on th
 - [The NGINX Homepage](http://nginx.org/)
 - [FastCGI Project Homepage](http://www.fastcgi.com/)
 - [PHP Documentation](http://www.php.net/docs.php)
-- [Installing Nginx on Ubuntu 9.10 (Karmic)](/docs/web-servers/nginx/installation/ubuntu-9-10-karmic)
-- [Basic NGINX Configuration](/docs/guides/how-to-configure-nginx/)
+- [Installing Nginx on Ubuntu 9.10 (Karmic)](/cloud/web-servers/nginx/installation/ubuntu-9-10-karmic)
+- [Basic NGINX Configuration](/cloud/guides/how-to-configure-nginx/)

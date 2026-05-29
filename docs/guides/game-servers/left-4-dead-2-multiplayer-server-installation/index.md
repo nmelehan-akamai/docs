@@ -28,7 +28,7 @@ You will need the following items to get started:
 - An up-to-date Linode running Ubuntu or Debian. We suggest you follow our [Getting Started](https://techdocs.akamai.com/cloud-computing/docs/getting-started) guide for help configuring your Linode.
 
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the sudo command, reference the [Users and Groups](/docs/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the sudo command, reference the [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
 {{< /note >}}
 
 ## Preparing your Linode
@@ -68,7 +68,7 @@ If you've configured your firewall according to our [Securing Your Server](https
 
 ## Install SteamCMD and Left 4 Dead 2
 {{< note >}}
-This guide requires additional libraries which are not included in our standard [SteamCMD Guide](/docs/guides/install-steamcmd-for-a-steam-game-server/).  This guide includes standalone configuration instructions for SteamCMD.  If you have already followed our SteamCMD installation guide, you can skip to step 4.
+This guide requires additional libraries which are not included in our standard [SteamCMD Guide](/cloud/guides/install-steamcmd-for-a-steam-game-server/).  This guide includes standalone configuration instructions for SteamCMD.  If you have already followed our SteamCMD installation guide, you can skip to step 4.
 {{< /note >}}
 
 1.  From your user's home folder, download SteamCMD into its own directory:
@@ -165,7 +165,7 @@ The `+port 27020` parameter is not required but is recommended so that your serv
 {{< /note >}}
 
     You can change the map to whichever one you prefer.
-    This script, when run, will execute the L4D2 server in a [Screen](/docs/guides/using-gnu-screen-to-manage-persistent-terminal-sessions/) session.
+    This script, when run, will execute the L4D2 server in a [Screen](/cloud/guides/using-gnu-screen-to-manage-persistent-terminal-sessions/) session.
 
 5.  Make the script executable:
 

@@ -49,7 +49,7 @@ marketplace_app_name: "BeEF"
 1. Once the app has been *fully* deployed, view the BeEF completion message through one of the methods below:
 
     - **Lish Console:** Within Cloud Manager, navigate to **Linodes** from the left menu, select the Compute Instance you just deployed, and click the **Launch LISH Console** button. See [Using the Lish Console](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish).
-    - **SSH:** Log in to your Compute Instance over SSH using the `root` user and run the following command. See [Connecting to a Remote Server Over SSH](/docs/guides/connect-to-server-over-ssh/) for assistance.
+    - **SSH:** Log in to your Compute Instance over SSH using the `root` user and run the following command. See [Connecting to a Remote Server Over SSH](/cloud/guides/connect-to-server-over-ssh/) for assistance.
 
         ```command
         cat /home/$USERNAME/.credentials

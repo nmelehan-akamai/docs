@@ -53,7 +53,7 @@ For more information about PeerTube, see the [PeerTube FAQ](https://joinpeertube
 1.  Create and configure a domain name to point at the Linode. This domain name provides access to the PeerTube instance. For more information on domains and how to create a DNS record, see the [Linode DNS Manager guide](https://techdocs.akamai.com/cloud-computing/docs/dns-manager).
 
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Users and Groups](/docs/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
 {{< /note >}}
 
 ## How to Install PeerTube
@@ -341,7 +341,7 @@ To enable PeerTube to send emails, fill in the mail server details under the `sm
 
 NGINX requires a PeerTube virtual host to properly serve the files. Copy the sample `peertube` virtual host file to the correct location in `/etc/nginx/sites-available` and edit it. Most of the file is pre-filled, so only a few changes are required.
 
-Use [Certbot](https://certbot.eff.org/) to install a Let's Encrypt certificate and enable HTTPS support. For more background on Certbot, Let's Encrypt certificates, and HTTPS, review the [Linode guide to Using Certbot on NGINX](/docs/guides/enabling-https-using-certbot-with-nginx-on-ubuntu/).
+Use [Certbot](https://certbot.eff.org/) to install a Let's Encrypt certificate and enable HTTPS support. For more background on Certbot, Let's Encrypt certificates, and HTTPS, review the [Linode guide to Using Certbot on NGINX](/cloud/guides/enabling-https-using-certbot-with-nginx-on-ubuntu/).
 
 To configure the NGINX virtual host for HTTP and HTTPS, follow these steps.
 

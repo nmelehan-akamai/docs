@@ -74,7 +74,7 @@ First, create the Compute Instance and add the necessary disks and configuration
         - **Root (boot) device:** /dev/sda
         - **Filesystem and Boot Helpers:** Disable all settings within this section.
 
-1. Navigate to the Settings tab for the Compute Instance and disable the Shutdown Watchdog (Lassie). See [Enable (or Disable) Shutdown Watchdog](/docs/guides/lassie-shutdown-watchdog/#enable-or-disable-shutdown-watchdog) for instructions.
+1. Navigate to the Settings tab for the Compute Instance and disable the Shutdown Watchdog (Lassie). See [Enable (or Disable) Shutdown Watchdog](/cloud/guides/lassie-shutdown-watchdog/#enable-or-disable-shutdown-watchdog) for instructions.
 
 ### Download the Distribution's Installer Image
 

@@ -257,5 +257,5 @@ cockpit dhcpv6-client ssh
 ## Next Steps
 
 For more on the software in this stack see the following guides:
-- [Getting Started with NGINX](/docs/guides/getting-started-with-nginx-part-1-installation-and-basic-setup/)
-- [Serve PHP with PHP-FPM and NGINX](/docs/guides/serve-php-php-fpm-and-nginx/)
+- [Getting Started with NGINX](/cloud/guides/getting-started-with-nginx-part-1-installation-and-basic-setup/)
+- [Serve PHP with PHP-FPM and NGINX](/cloud/guides/serve-php-php-fpm-and-nginx/)

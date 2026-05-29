@@ -40,10 +40,10 @@ Why would you want to host your own cloud? Some common reasons are:
 - You own a small business and want to keep everything in-house.
 - You need an expandable storage solution.
 
-This tutorial walks you through the steps to install ownCloud on [CentOS Stream 8](https://www.centos.org/centos-stream/). There are only a few steps to install ownCloud on CentOS Stream 8. You [install the LAMP (Linux Apache MySQL/MariaDB PHP) stack](/docs/guides/how-to-install-a-lamp-stack-on-centos-8/); create a database and database user; configure Apache; and set up ownCloud using its graphical user interface.
+This tutorial walks you through the steps to install ownCloud on [CentOS Stream 8](https://www.centos.org/centos-stream/). There are only a few steps to install ownCloud on CentOS Stream 8. You [install the LAMP (Linux Apache MySQL/MariaDB PHP) stack](/cloud/guides/how-to-install-a-lamp-stack-on-centos-8/); create a database and database user; configure Apache; and set up ownCloud using its graphical user interface.
 
 {{< note >}}
-To automatically install ownCloud on a Compute Instance, consider deploying [ownCloud Server through the Linode Marketplace](/docs/marketplace-docs/guides/owncloud/).
+To automatically install ownCloud on a Compute Instance, consider deploying [ownCloud Server through the Linode Marketplace](/cloud/marketplace-docs/guides/owncloud/).
 {{< /note >}}
 
 ## Before You Begin
@@ -287,7 +287,7 @@ If you continue to experience issues, you can temporarily disable SELinux.
 sudo setenforce 0
 ```
 
-Refer to the [A Beginner's Guide to SELinux on CentOS 8](/docs/guides/a-beginners-guide-to-selinux-on-centos-8/) guide to learn more about SELinux.
+Refer to the [A Beginner's Guide to SELinux on CentOS 8](/cloud/guides/a-beginners-guide-to-selinux-on-centos-8/) guide to learn more about SELinux.
 {{< /note >}}
 
 1. Once you access the web-based installer, type a username and password for the admin user; click the `Storage & Database` drop-down; and then click `MySQL/MariaDB`.

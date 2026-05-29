@@ -132,5 +132,5 @@ You may wish to consult the following resources for additional information on th
 - [The NGINX Homepage](http://nginx.org/)
 - [FastCGI Project Homepage](http://www.fastcgi.com/)
 - [Perl Documentation](http://perldoc.perl.org/)
-- [Installing NGINX on Debian 5 (Lenny)](/docs/web-servers/nginx/installation/debian-5-lenny)
-- [Basic NGINX Configuration](/docs/guides/how-to-configure-nginx/)
+- [Installing NGINX on Debian 5 (Lenny)](/cloud/web-servers/nginx/installation/debian-5-lenny)
+- [Basic NGINX Configuration](/cloud/guides/how-to-configure-nginx/)

@@ -120,7 +120,7 @@ The Helm client software issues commands to your cluster. You run the client sof
     kubectl config use-context your-cluster-name
     ```
 
-1.  It is beneficial to have a registered [domain name](/docs/guides/dns-overview/) for this guide's example app, but it is not required.
+1.  It is beneficial to have a registered [domain name](/cloud/guides/dns-overview/) for this guide's example app, but it is not required.
 
 ## Install Helm
 

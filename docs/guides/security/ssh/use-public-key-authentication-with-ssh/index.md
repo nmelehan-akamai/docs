@@ -21,12 +21,12 @@ image: use_public_key_authentication_with_ssh.png
 
 - If a server that uses SSH keys is compromised by a hacker, no authorization credentials are at risk of being exposed.
 
-- Since a password isn't required, you can log in to servers from within scripts or automation tools that you need to run unattended. For example, you can set up periodic updates for your servers with a configuration management tool like [Ansible](/docs/guides/running-ansible-playbooks/), and you can run those updates without having to be physically present.
+- Since a password isn't required, you can log in to servers from within scripts or automation tools that you need to run unattended. For example, you can set up periodic updates for your servers with a configuration management tool like [Ansible](/cloud/guides/running-ansible-playbooks/), and you can run those updates without having to be physically present.
 
 This guide explains how the SSH key login scheme works, how to generate an SSH key, and how to use those keys with a Linode Linux server.
 
 {{< note >}}
-If you're unfamiliar with logging in to a remote machine with SSH, review the [Connecting to a Remote Server Over SSH](/docs/guides/connect-to-server-over-ssh/) guide that corresponds with the operating system of your local workstation. You can also review the instructions for connecting to a Compute Instance over SSH within our [Set Up and Secure](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance#connect-to-the-instance) guide.
+If you're unfamiliar with logging in to a remote machine with SSH, review the [Connecting to a Remote Server Over SSH](/cloud/guides/connect-to-server-over-ssh/) guide that corresponds with the operating system of your local workstation. You can also review the instructions for connecting to a Compute Instance over SSH within our [Set Up and Secure](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance#connect-to-the-instance) guide.
 {{< /note >}}
 
 ## How Does SSH Public Key Authentication Work?
@@ -212,7 +212,7 @@ You can also manually add an SSH key to a server:
     chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys
     ```
 
-1.  Open the `authorized_keys` file with the text editor of your choice ([such as nano](/docs/quick-answers/linux/use-nano-to-edit-files-in-linux/)).
+1.  Open the `authorized_keys` file with the text editor of your choice ([such as nano](/cloud/quick-answers/linux/use-nano-to-edit-files-in-linux/)).
 
     ```command
     nano ~/.ssh/authorized_keys
@@ -277,9 +277,9 @@ These instructions are only recommended if you do not yet have any authorized ke
 
     For more in-depth instructions on using SSH to connect to a remote system, review the following guides:
 
-    - [How to Connect to a Remote Server Over SSH on Linux](/docs/guides/connect-to-server-over-ssh-on-linux/)
-    - [How to Connect to a Remote Server Over SSH on a Mac](/docs/guides/connect-to-server-over-ssh-on-mac/)
-    - [How to Connect to a Remote Server Over SSH on Windows](/docs/guides/connect-to-server-over-ssh-on-windows/)
+    - [How to Connect to a Remote Server Over SSH on Linux](/cloud/guides/connect-to-server-over-ssh-on-linux/)
+    - [How to Connect to a Remote Server Over SSH on a Mac](/cloud/guides/connect-to-server-over-ssh-on-mac/)
+    - [How to Connect to a Remote Server Over SSH on Windows](/cloud/guides/connect-to-server-over-ssh-on-windows/)
 
 1.  By default, your SSH keys will be tried *before* defaulting back to a password. If everything is configured properly, the SSH key that you generated and uploaded in previous sections will be used. If you entered a passphrase for the key, you will be prompted for it.
 
@@ -312,7 +312,7 @@ These instructions are only recommended if you do not yet have any authorized ke
 
 ## Public Key Authentication with PuTTY on Windows
 
-The following instructions use the [PuTTY](https://www.putty.org) software to connect over SSH, but [other options](/docs/guides/connect-to-server-over-ssh-on-windows/) are available on Windows too.
+The following instructions use the [PuTTY](https://www.putty.org) software to connect over SSH, but [other options](/cloud/guides/connect-to-server-over-ssh-on-windows/) are available on Windows too.
 
 ### Generate a Key Pair with PuTTY
 
@@ -367,7 +367,7 @@ The following instructions use the [PuTTY](https://www.putty.org) software to co
     chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys
     ```
 
-1.  Open the `authorized_keys` file with the text editor of your choice ([`nano`, for example](/docs/quick-answers/linux/use-nano-to-edit-files-in-linux/)). Then, paste the contents of your public key that you copied in step one on a new line at the end of the file.
+1.  Open the `authorized_keys` file with the text editor of your choice ([`nano`, for example](/cloud/quick-answers/linux/use-nano-to-edit-files-in-linux/)). Then, paste the contents of your public key that you copied in step one on a new line at the end of the file.
 
 1.  Save, close the file, and exit PuTTY.
 

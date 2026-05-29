@@ -29,7 +29,7 @@ Drupal 8 is the latest version of the popular [Drupal](https://www.drupal.org/) 
 
 4.  Install and configure a LAMP stack. You can do this in one of two ways:
 
-    *  See our [Hosting a Website](/docs/guides/hosting-a-website-ubuntu-18-04/) guide to configure each component manually.
+    *  See our [Hosting a Website](/cloud/guides/hosting-a-website-ubuntu-18-04/) guide to configure each component manually.
 
     *  Deploy using our LAMP [StackScript](https://techdocs.akamai.com/cloud-computing/docs/stackscripts).
 
@@ -121,7 +121,7 @@ Require all granted
 
     ![Drupal 8 choose installation profile.](drupal-choose-installation-profile.png)
 
-3.  Complete the database configuration using the DB name, username and password you created when [setting up your LAMP stack](/docs/guides/hosting-a-website-ubuntu-18-04/#create-a-database) with a MySQL or MariaDB database.
+3.  Complete the database configuration using the DB name, username and password you created when [setting up your LAMP stack](/cloud/guides/hosting-a-website-ubuntu-18-04/#create-a-database) with a MySQL or MariaDB database.
 
     ![Drupal 8 database configuration.](drupal-database-configuration.png)
 

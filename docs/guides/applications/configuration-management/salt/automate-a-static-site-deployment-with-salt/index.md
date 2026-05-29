@@ -49,7 +49,7 @@ The workflow described in this guide is similar to how Linode's own [Guides & Tu
 
 Development of your Hugo site and your Salt formula will take place on your personal computer. Some software will need to be installed on your computer first:
 
-1.   Install Git using one of the methods in [Linode's guide](/docs/guides/how-to-install-git-on-linux-mac-and-windows/). If you have a Mac, use the Homebrew method, as it will also be used to install Hugo.
+1.   Install Git using one of the methods in [Linode's guide](/cloud/guides/how-to-install-git-on-linux-mac-and-windows/). If you have a Mac, use the Homebrew method, as it will also be used to install Hugo.
 
 1.   Install Hugo. The [Hugo documentation](https://gohugo.io/getting-started/installing/) has a full list of installation methods, and instructions for some popular platforms are as follows:
 
@@ -246,7 +246,7 @@ nginx_service:
       - pkg: nginx_pkg
 {{< /file >}}
 
-    This state says that the `nginx` service should be immediately run and be enabled to run at boot. For a Debian 9 system, Salt will set the appropriate [systemd](/docs/guides/what-is-systemd/) configurations to enable the service. Salt also supports other init systems.
+    This state says that the `nginx` service should be immediately run and be enabled to run at boot. For a Debian 9 system, Salt will set the appropriate [systemd](/cloud/guides/what-is-systemd/) configurations to enable the service. Salt also supports other init systems.
 
     The `require` lines specify that this state component should not be applied until after the `nginx_pkg` component has been applied.
 
@@ -836,7 +836,7 @@ webhook_config:
       - group: hugo_group
 {{< /file >}}
 
-    The first state creates a [systemd unit file](/docs/guides/introduction-to-systemctl/) for the webhook service. The second state creates a webhook configuration. The webhook server reads the configuration and generates a webhook URL from it.
+    The first state creates a [systemd unit file](/cloud/guides/introduction-to-systemctl/) for the webhook service. The second state creates a webhook configuration. The webhook server reads the configuration and generates a webhook URL from it.
 
 1.  Create a `webhook.service` file in your repository's `files/` directory:
 

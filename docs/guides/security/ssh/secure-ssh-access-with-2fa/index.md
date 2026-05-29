@@ -36,7 +36,7 @@ If you plan on [combining two-factor and public key authentication](#combine-two
 1. You will need a smartphone or another client device with an authenticator application such as [Google Authenticator](https://en.wikipedia.org/wiki/Google_Authenticator) or [Authy](https://www.authy.com/). Many other options exist, and this guide should be compatible with nearly all of them.
 
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, you can check our [Users and Groups](/docs/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, you can check our [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
 {{< /note >}}
 
 ## Install Google Authenticator
@@ -197,7 +197,7 @@ If your SSH client disconnects before you can enter your two-factor token, check
 
 ## Combine Two-Factor and Public Key Authentication (Optional)
 
-This section is optional. If you'd like to use [public key authentication](/docs/guides/use-public-key-authentication-with-ssh/) instead of a password authentication with TOTP, follow the steps in this section.
+This section is optional. If you'd like to use [public key authentication](/cloud/guides/use-public-key-authentication-with-ssh/) instead of a password authentication with TOTP, follow the steps in this section.
 
 {{< note >}}
 Before completing this section, ensure that your computer's [public key has been uploaded to your Linode](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance#upload-ssh-key). Public keys are normally stored in your home directory's `authorized_keys` file.
@@ -237,8 +237,8 @@ cat ~/.ssh/authorized_keys
 
 ## Next Steps
 
-First, be sure you have followed our guide to [Securing Your Server](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance). Although there is no single, foolproof method to protect your data, firewalls and services like [Fail2Ban](/docs/guides/using-fail2ban-to-secure-your-server-a-tutorial/) are a great means to minimize risk.
+First, be sure you have followed our guide to [Securing Your Server](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance). Although there is no single, foolproof method to protect your data, firewalls and services like [Fail2Ban](/cloud/guides/using-fail2ban-to-secure-your-server-a-tutorial/) are a great means to minimize risk.
 
-When you use two-factor authentication with TOTPs, an important point to consider is the physical security of the device on which you've configured your authenticator app. Be sure your phone or device is secured with a passphrase, so that even if it falls into the wrong hands, it can't easily be used to compromise your server. If you lose the phone or device that stores your credentials, you can use [Lish](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish) to access your Linode and disable two-factor authentication. If this happens, you should switch to a different, hardened method of SSH access, such as [public key authentication](/docs/guides/use-public-key-authentication-with-ssh/), in the interim.
+When you use two-factor authentication with TOTPs, an important point to consider is the physical security of the device on which you've configured your authenticator app. Be sure your phone or device is secured with a passphrase, so that even if it falls into the wrong hands, it can't easily be used to compromise your server. If you lose the phone or device that stores your credentials, you can use [Lish](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish) to access your Linode and disable two-factor authentication. If this happens, you should switch to a different, hardened method of SSH access, such as [public key authentication](/cloud/guides/use-public-key-authentication-with-ssh/), in the interim.
 
 While two-factor authentication may be a valuable security feature, total security is an ongoing process not an end goal that can be achieved by adding extra layers of authentication. To provide the best protection for your data, take care to follow security best practices at all times.

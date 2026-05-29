@@ -32,7 +32,7 @@ This tutorial shows you how to start using Countly for your analytics needs. Cou
     sudo dnf upgrade
     ```
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/docs/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
 {{< /note >}}
 
 ## How to Install Countly Analytics Community Edition
@@ -219,7 +219,7 @@ To have Countly start collecting analytics, you need to embed one of its client 
 
 Countly has numerous client SDKs available to fit your needs, from web and mobile apps, to the desktop, server, and beyond. You can see Countly's [full list of client SDKs](https://support.count.ly/hc/en-us/articles/360037236571-Downloading-and-Installing-SDKs) for more information on how to download and operate each.
 
-To get you started and to demonstrate, the rest of this section walks you through an example using Countly's web application SDK. It covers how you can make the client available for your web application and even includes example code to embed it. If you don't have a web application ready, follow our guide [Deploy a Static Site using Hugo and Object Storage](/docs/guides/host-static-site-object-storage/).
+To get you started and to demonstrate, the rest of this section walks you through an example using Countly's web application SDK. It covers how you can make the client available for your web application and even includes example code to embed it. If you don't have a web application ready, follow our guide [Deploy a Static Site using Hugo and Object Storage](/cloud/guides/host-static-site-object-storage/).
 
 1.  Ensure your web application's client-side code includes or has access to the Countly web SDK file. This can be done multiple ways:
 

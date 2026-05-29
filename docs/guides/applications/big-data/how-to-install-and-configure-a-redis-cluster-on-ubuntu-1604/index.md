@@ -12,7 +12,7 @@ license: '[CC BY-ND 4.0](http://creativecommons.org/licenses/by-nd/4.0)'
 aliases: ['/applications/big-data/redis-cluster/','/applications/big-data/how-to-install-and-configure-a-redis-cluster-on-ubuntu-1604/']
 external_resources:
  - '[Redis Official Website](https://redis.io/)'
- - '[Install and Configure Redis on CentOS 7](/docs/guides/install-and-configure-redis-on-centos-7/)'
+ - '[Install and Configure Redis on CentOS 7](/cloud/guides/install-and-configure-redis-on-centos-7/)'
 deprecated: true
 ---
 
@@ -24,9 +24,9 @@ Redis as an in-memory store allows for extremely fast operations such as countin
 
 Prior to starting, we recommend familiarizing yourself with the following:
 
-* [Firewall settings using iptables or ufw](/docs/guides/configure-firewall-with-ufw/)
+* [Firewall settings using iptables or ufw](/cloud/guides/configure-firewall-with-ufw/)
 * [Getting Started with VLANs](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-vlans)
-* [Master-Replicas Replication](/docs/guides/how-to-install-a-redis-server-on-ubuntu-or-debian8/)
+* [Master-Replicas Replication](/cloud/guides/how-to-install-a-redis-server-on-ubuntu-or-debian8/)
 
 ### Redis Sentinel or Redis Cluster?
 
@@ -70,7 +70,7 @@ Alternatively, you can install the "build-essential" meta-package to load the de
 
 ## Configure Redis Masters and Replicas
 
-This guide manually connects each of the masters and replicas across three Linodes. Consider using [tmux](/docs/guides/persistent-terminal-sessions-with-tmux/) for the management of multiple terminal windows.
+This guide manually connects each of the masters and replicas across three Linodes. Consider using [tmux](/cloud/guides/persistent-terminal-sessions-with-tmux/) for the management of multiple terminal windows.
 
 This guide uses a minimum of six nodes with the following topology:
 

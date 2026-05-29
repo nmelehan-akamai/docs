@@ -72,7 +72,7 @@ Installing a complete Prometheus and Grafana-based system is a multi-step proces
 1.  In most cases, Prometheus and Grafana are used to monitor external servers. To duplicate the configuration in this guide, create and set up a second Linode Compute Instance to use as a client.
 
 {{< note >}}
-The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Linux Users and Groups](/docs/guides/linux-users-and-groups/) guide.
+The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
 {{< /note >}}
 
 ## How to Install and Configure Prometheus, Grafana, and Node Exporter

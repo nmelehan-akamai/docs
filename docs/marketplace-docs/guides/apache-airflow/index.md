@@ -82,7 +82,7 @@ To learn more about Airflow and determine if it's the right tool for you, read t
 
     - [Airflow > Tutorials](https://airflow.apache.org/docs/apache-airflow/stable/tutorial/index.html)
     - [Airflow > How-to Guides](https://airflow.apache.org/docs/apache-airflow/stable/howto/index.html)
-    - [Create Connections and Variables in Apache Airflow](/docs/guides/apache-airflow-tutorial-creating-connections-and-variables/)
+    - [Create Connections and Variables in Apache Airflow](/cloud/guides/apache-airflow-tutorial-creating-connections-and-variables/)
 
 {{< note type="warning">}}
 The Akamai Quick Deploy App app deploys Apache Airflow in standalone mode, suitable for development, testing, and initial configurations. Standalone mode is not recommended for [production deployments](https://airflow.apache.org/docs/apache-airflow/stable/production-deployment.html).

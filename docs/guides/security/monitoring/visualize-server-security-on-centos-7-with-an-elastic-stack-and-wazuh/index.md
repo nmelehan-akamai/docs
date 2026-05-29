@@ -47,22 +47,22 @@ Wazuh is an open source branch of the original [OSSEC HIDS](https://ossec.github
 
 3. Add a domain zone, NS record, and A/AAA record for the domain you will use to access your Kibana installation. See the [DNS Manager](https://techdocs.akamai.com/cloud-computing/docs/dns-manager) guide for details. If you will access your Kibana instance via your Linode's IP address, you can skip this step.
 
-4. [Create an SSL Certificate](/docs/guides/install-lets-encrypt-to-create-ssl-certificates/), if you will be using SSL encryption for your domain.
+4. [Create an SSL Certificate](/cloud/guides/install-lets-encrypt-to-create-ssl-certificates/), if you will be using SSL encryption for your domain.
 
 5. Install NGINX or Apache. Visit our guides on how to install a LEMP or LAMP stack for CentOS for help:
 
-      - [Install a LEMP Stack on CentOS 7 with FastCGI](/docs/guides/lemp-stack-on-centos-7-with-fastcgi/)
-      - [LAMP stack on CentOS 7](/docs/guides/how-to-install-a-lamp-stack-on-centos-7/)
+      - [Install a LEMP Stack on CentOS 7 with FastCGI](/cloud/guides/lemp-stack-on-centos-7-with-fastcgi/)
+      - [LAMP stack on CentOS 7](/cloud/guides/how-to-install-a-lamp-stack-on-centos-7/)
 
 6. Configure your webserver for virtual domain hosting:
 
       **NGINX**
 
-      - [How to Configure NGINX](/docs/guides/how-to-configure-nginx/)
+      - [How to Configure NGINX](/cloud/guides/how-to-configure-nginx/)
 
       **Apache**
 
-      - [Apache Configuration Basics](/docs/guides/apache-configuration-basics/)
+      - [Apache Configuration Basics](/cloud/guides/apache-configuration-basics/)
 
 ## Update System and Install Prerequisites
 

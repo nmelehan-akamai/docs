@@ -44,7 +44,7 @@ Since software for a Quick Deploy App is installed *after* a Linode Compute Inst
 
 -   **Lish console:** Open the [Lish console](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish) and follow along with the installation script. Once the *"Installation Complete!"* notice appears, the install is finished.
 
--   **Log file:** The same *"Installation Complete!"* notice should also appear at the end of the installation's log file, which you can view by logging in to your instance through [SSH](/docs/guides/connect-to-server-over-ssh/) or [Lish](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish) and running:
+-   **Log file:** The same *"Installation Complete!"* notice should also appear at the end of the installation's log file, which you can view by logging in to your instance through [SSH](/cloud/guides/connect-to-server-over-ssh/) or [Lish](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish) and running:
 
     ```command
     grep -i 'installation complete' /var/log/stackscript.log
@@ -54,10 +54,10 @@ Since software for a Quick Deploy App is installed *after* a Linode Compute Inst
 
 ## Access the App
 
-Since each Quick Deploy App installs different software with different functions, the instructions for accessing an App can vary greatly. In some cases, the App deploys a webpage or admin panel that's accessible over a web browser. In other cases, you may need to log in to your instance through [SSH](/docs/guides/connect-to-server-over-ssh/) or [Lish](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish) and navigate to the software directory. To learn how to access the App that you deployed, review the guide that corresponds with your Quick Deploy App.
+Since each Quick Deploy App installs different software with different functions, the instructions for accessing an App can vary greatly. In some cases, the App deploys a webpage or admin panel that's accessible over a web browser. In other cases, you may need to log in to your instance through [SSH](/cloud/guides/connect-to-server-over-ssh/) or [Lish](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish) and navigate to the software directory. To learn how to access the App that you deployed, review the guide that corresponds with your Quick Deploy App.
 
 ## Add a Custom Domain
 
 For websites like WordPress, WooCommerce, and Drupal, it may be desirable to have a domain name associated with your app. Otherwise, your app is only accessible through the instance's IP address or rDNS value.
 
-For information on how to add a domain name to your app, visit our [DNS Manager](https://techdocs.akamai.com/cloud-computing/docs/dns-manager) guide. Specifically, you should [set up an *A record*](https://techdocs.akamai.com/cloud-computing/docs/manage-dns-records) and assign your IP address to it. For more general information about how DNS works, review the [DNS Records: An Introduction](/docs/guides/dns-overview/) guide.
+For information on how to add a domain name to your app, visit our [DNS Manager](https://techdocs.akamai.com/cloud-computing/docs/dns-manager) guide. Specifically, you should [set up an *A record*](https://techdocs.akamai.com/cloud-computing/docs/manage-dns-records) and assign your IP address to it. For more general information about how DNS works, review the [DNS Records: An Introduction](/cloud/guides/dns-overview/) guide.

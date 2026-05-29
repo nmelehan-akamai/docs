@@ -26,7 +26,7 @@ Following this guide results in the creation of billable resources on your accou
 
 ## Before You Begin
 
-1. Install Terraform on your computer by following the *Install Terraform* section of our [Use Terraform to Provision Linode Environments](/docs/guides/how-to-build-your-infrastructure-using-terraform-and-linode/#install-terraform) guide.
+1. Install Terraform on your computer by following the *Install Terraform* section of our [Use Terraform to Provision Linode Environments](/cloud/guides/how-to-build-your-infrastructure-using-terraform-and-linode/#install-terraform) guide.
 
     {{< note title ="Linode Provider Version 3.0.0" >}}
     As of June, 2025, the [Linode Terraform Provider](https://github.com/linode/terraform-provider-linode/) version is 3.0.0. To determine the current version, see the [Linode Namespace](https://registry.terraform.io/namespaces/linode) in the Terraform Registry.
@@ -217,7 +217,7 @@ Let's take a closer look at each block in the configuration file:
     ```
 
     {{< note >}}
-    If you are not familiar with the Domain Name System (DNS), review the [DNS Records: An Introduction](/docs/guides/dns-overview/) guide.
+    If you are not familiar with the Domain Name System (DNS), review the [DNS Records: An Introduction](/cloud/guides/dns-overview/) guide.
     {{< /note >}}
 
     The `linode_domain` resource creates a [domain zone](https://techdocs.akamai.com/cloud-computing/docs/create-a-domain) for your domain.
@@ -289,7 +289,7 @@ The `stackscript_data` variable is of type `map`. This will allow you to provide
 Terraform allows you to assign variables in many ways. For example, you can assign a variable value via the command line when running `terraform apply`. In order to persist variable values, you can also create files to hold all your values.
 
 {{< note >}}
-There are several other options available for secrets management with Terraform. For more information on this, see [Secrets Management with Terraform](/docs/guides/secrets-management-with-terraform/).
+There are several other options available for secrets management with Terraform. For more information on this, see [Secrets Management with Terraform](/cloud/guides/secrets-management-with-terraform/).
 {{< /note >}}
 
 Terraform will automatically load any file named `terraform.tfvars` and use its contents to populate variables. However, you should separate out any sensitive values, like passwords and tokens, into their own file. Keep this sensitive file out of version control.
@@ -336,7 +336,7 @@ Terraform will automatically load any file named `terraform.tfvars` and use its 
 
     - `domain` should be replaced with your WordPress site's domain address.
 
-    - `soa_email` should be the email address you would like to use for your [Start of Authority](/docs/guides/dns-overview/#soa) email address.
+    - `soa_email` should be the email address you would like to use for your [Start of Authority](/cloud/guides/dns-overview/#soa) email address.
 
 ## Initialize, Plan, and Apply the Terraform Configuration
 

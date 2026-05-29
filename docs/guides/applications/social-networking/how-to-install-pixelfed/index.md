@@ -52,7 +52,7 @@ For a more complete list of Pixelfed features, see the [Pixelfed features page](
 1.  (**Optional**) To allow Pixelfed to send emails, enable email on the Linode server.
 
 {{< note >}}
-The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Linux Users and Groups](/docs/guides/linux-users-and-groups/) guide.
+The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
 {{< /note >}}
 
 ## How to Configure the Server to Support Pixelfed
@@ -201,7 +201,7 @@ These settings are found in different sections of the file. In the `vi` editor, 
 
 ### Configure a Virtual Host and HTTPS Support
 
-The next step is to create a virtual host file for the Pixelfed domain. A virtual host allows for the configuration of domain-specific settings. Pixelfed requires HTTPS support, which can be enabled using the [Certbot](https://certbot.eff.org/) application. This guide covers the main steps required to install and use Certbot. For more detailed information about Certbot, Let's Encrypt certificates, and HTTPS, see the [Linode guide to Using Certbot on NGINX](/docs/guides/enabling-https-using-certbot-with-nginx-on-ubuntu/).
+The next step is to create a virtual host file for the Pixelfed domain. A virtual host allows for the configuration of domain-specific settings. Pixelfed requires HTTPS support, which can be enabled using the [Certbot](https://certbot.eff.org/) application. This guide covers the main steps required to install and use Certbot. For more detailed information about Certbot, Let's Encrypt certificates, and HTTPS, see the [Linode guide to Using Certbot on NGINX](/cloud/guides/enabling-https-using-certbot-with-nginx-on-ubuntu/).
 
 1.  Create a `/var/www/html/domain_name` directory for the Pixelfed site. In the following command, replace `example.com` with the actual name of the domain.
 

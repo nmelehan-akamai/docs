@@ -54,7 +54,7 @@ This Quick Deploy App installs the OpenLiteSpeed web server, WordPress, the Lite
 
 ## Getting Started After Deployment
 
-Log in to your Compute Instance over SSH, using the `root` user or the sudo user created during deployment. See [Connecting to a Remote Server Over SSH](/docs/guides/connect-to-server-over-ssh/) for assistance. Once logged in, you should see Message of the Day output which includes OpenLiteSpeed HTTPS URLs:
+Log in to your Compute Instance over SSH, using the `root` user or the sudo user created during deployment. See [Connecting to a Remote Server Over SSH](/cloud/guides/connect-to-server-over-ssh/) for assistance. Once logged in, you should see Message of the Day output which includes OpenLiteSpeed HTTPS URLs:
 
 ```command
 cat /etc/motd
@@ -107,7 +107,7 @@ Now that OpenLiteSpeed WordPress has been fully deployed, you can begin adding c
 
 - See the Linode tab at: https://docs.litespeedtech.com/cloud/images/wordpress/
 - [WordPress Support](https://wordpress.org/support/): Learn the basic workflows for using WordPress.
-- [Securing WordPress](/docs/guides/how-to-secure-wordpress/): Advice on securing WordPress through HTTPS, using a secure password, changing the admin username, and more.
+- [Securing WordPress](/cloud/guides/how-to-secure-wordpress/): Advice on securing WordPress through HTTPS, using a secure password, changing the admin username, and more.
 - [WordPress Themes](https://wordpress.org/themes/#): A collection of *thousands* of WordPress themes.
 - [Quick Deploy Apps Repository](https://github.com/akamai-compute-marketplace/marketplace-apps): Review the deployment Ansible playbooks.
 

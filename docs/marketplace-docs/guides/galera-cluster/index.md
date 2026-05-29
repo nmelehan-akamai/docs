@@ -20,7 +20,7 @@ marketplace_app_name: "Galera Cluster"
 Galera provides a performant MariaDB database solution with synchronous replication to achieve high availability. Galera is deployed with MariaDB, which is an open-source database management system that uses a relational database and SQL (Structured Query Language) to manage its data. MariaDB was originally based off of MySQL and maintains backward compatibility.
 
 {{< note type="warning" title="Quick Deploy App Cluster Notice" >}}
-This Quick Deploy App deploys 3 Compute Instances to create a highly available and redundant MariaDB Galera cluster, each with the plan type and size that you select. Please be aware that each of these Compute Instances will appear on your invoice as separate items. To instead deploy MariaDB on a single Compute Instance, see [Deploy MySQL/MariaDB](/docs/marketplace-docs/guides/mysql/).
+This Quick Deploy App deploys 3 Compute Instances to create a highly available and redundant MariaDB Galera cluster, each with the plan type and size that you select. Please be aware that each of these Compute Instances will appear on your invoice as separate items. To instead deploy MariaDB on a single Compute Instance, see [Deploy MySQL/MariaDB](/cloud/marketplace-docs/guides/mysql/).
 {{< /note >}}
 
 ## Deploying a Quick Deploy App
@@ -174,4 +174,4 @@ The standard tool for interacting with MariaDB is the `mysql` client which insta
 
 For more on MySQL/MariaDB, checkout the following guides:
 
-- [MariaDB Clusters with Galera](/docs/guides/set-up-mariadb-clusters-with-galera-debian-and-ubuntu/)
+- [MariaDB Clusters with Galera](/cloud/guides/set-up-mariadb-clusters-with-galera-debian-and-ubuntu/)

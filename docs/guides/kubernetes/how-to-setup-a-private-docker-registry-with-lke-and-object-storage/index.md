@@ -25,7 +25,7 @@ This guide was written using [Kubernetes version 1.17](https://v1-17.docs.kubern
 
 1. [Deploy a LKE Cluster](https://techdocs.akamai.com/cloud-computing/docs/linode-kubernetes-engine). This example was written using a node pool with two [2 GB nodes](https://www.linode.com/pricing/). Depending on the workloads you will be deploying on your cluster, you may consider using nodes with higher resources.
 
-1. Install [Helm 3](/docs/guides/how-to-install-apps-on-kubernetes-with-helm-3/#install-helm), [kubectl](https://techdocs.akamai.com/cloud-computing/docs/manage-a-cluster-with-kubectl), and [Docker](/docs/guides/installing-and-using-docker-on-ubuntu-and-debian/) to your local environment.
+1. Install [Helm 3](/cloud/guides/how-to-install-apps-on-kubernetes-with-helm-3/#install-helm), [kubectl](https://techdocs.akamai.com/cloud-computing/docs/manage-a-cluster-with-kubectl), and [Docker](/cloud/guides/installing-and-using-docker-on-ubuntu-and-debian/) to your local environment.
 
     {{< note >}}
     For Docker installation instructions on other operating systems, see [Docker's official documentation](https://docs.docker.com/get-docker/).
@@ -399,7 +399,7 @@ If you have not yet [generated an Object Storage key pair](https://techdocs.akam
 
 You are now ready to push and pull images to your Docker registry. In this section you will pull an existing image from Docker Hub and then push it to your registry. Then, in the next section, you will use your registry's image to deploy an example static site.
 
-1.  Use Docker to pull an image from [Docker Hub](https://hub.docker.com/). This example is using an image that was created following our [Create and Deploy a Docker Container Image to a Kubernetes Cluster](/docs/guides/deploy-container-image-to-kubernetes/) guide. The image will build a Hugo static site with some boiler plate content. However, you can use any image from Docker Hub that you prefer.
+1.  Use Docker to pull an image from [Docker Hub](https://hub.docker.com/). This example is using an image that was created following our [Create and Deploy a Docker Container Image to a Kubernetes Cluster](/cloud/guides/deploy-container-image-to-kubernetes/) guide. The image will build a Hugo static site with some boiler plate content. However, you can use any image from Docker Hub that you prefer.
 
     ```command
     sudo docker pull leslitagordita/hugo-site:v10

@@ -31,10 +31,10 @@ Redis is an open-source NoSQL database boasting quick transactions and low laten
 
             sudo dnf upgrade
 
-1. Follow the instructions in our [How to Install and Configure Redis](/docs/guides/install-redis-ubuntu/) guide to install a Redis server and command-line interface (CLI). Be sure to use the drop-down menu at the top of that page to select your Linux distribution and follow the appropriate steps.
+1. Follow the instructions in our [How to Install and Configure Redis](/cloud/guides/install-redis-ubuntu/) guide to install a Redis server and command-line interface (CLI). Be sure to use the drop-down menu at the top of that page to select your Linux distribution and follow the appropriate steps.
 
 {{< note >}}
-The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Linux Users and Groups](/docs/guides/linux-users-and-groups/) guide.
+The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
 {{< /note >}}
 
 ## How Redis Configurations Work
@@ -48,7 +48,7 @@ Each setting in Redis is controlled using a configuration directive. A directive
 - A configuration keyword
 - One or more arguments for the configuration
 
-The file below includes an example configuration directive. This example is taken from a configuration directive used in the first of our guides in this series on Redis — [Connecting to Redis and Using Redis Databases](/docs/guides/redis-getting-started/):
+The file below includes an example configuration directive. This example is taken from a configuration directive used in the first of our guides in this series on Redis — [Connecting to Redis and Using Redis Databases](/cloud/guides/redis-getting-started/):
 
 {{< file "/etc/redis/redis.conf" >}}
 # [...]
@@ -185,4 +185,4 @@ The command attempts to preserve, as much as is feasible, the original structure
 
 You now have the tools you need to start working with Redis configurations from the command line. As mentioned in this tutorial, these tools work exceptionally well when you want to test various settings on the fly.
 
-To learn more about Redis and how to use Redis databases, be sure to read our other guides in this series. They cover everything from [connecting to a remote Redis server](/docs/guides/redis-getting-started/) to [using sorted sets in Redis databases](/docs/guides/using-sorted-sets-in-redis-database/).
+To learn more about Redis and how to use Redis databases, be sure to read our other guides in this series. They cover everything from [connecting to a remote Redis server](/cloud/guides/redis-getting-started/) to [using sorted sets in Redis databases](/cloud/guides/using-sorted-sets-in-redis-database/).

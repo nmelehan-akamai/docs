@@ -35,7 +35,7 @@ SELinux defaults to denying anything that is not explicitly allowed. SELinux has
 
 1.  Ensure that you have followed the [Getting Started](https://techdocs.akamai.com/cloud-computing/docs/getting-started) and [Securing Your Server](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guides.
     {{< note respectIndent=false >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you're not familiar with the `sudo` command, you can check our [Users and Groups](/docs/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you're not familiar with the `sudo` command, you can check our [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
     {{< /note >}}
 1.  Update your system:
 
@@ -144,7 +144,7 @@ If SELinux is currently disabled, update your SELinux configuration file with th
 
         sudo sealert -a /var/log/audit/audit.log
 
-    The output will resemble the example, however, it varies depending on the programs and configurations on your system. The example was generated using a [Linode running the Apache webserver](/docs/guides/how-to-install-a-lamp-stack-on-centos-7/#apache) with a virtual hosts configuration.
+    The output will resemble the example, however, it varies depending on the programs and configurations on your system. The example was generated using a [Linode running the Apache webserver](/cloud/guides/how-to-install-a-lamp-stack-on-centos-7/#apache) with a virtual hosts configuration.
 
     {{< output >}}
 SELinux is preventing /usr/sbin/httpd from write access on the directory logs.

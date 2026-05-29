@@ -18,7 +18,7 @@ All modern GitLab installations additionally include tooling to create backups o
 
 ## Before you Begin
 
-- Follow the guide for [Deploying Gitlab Through the Linode Marketplace](/docs/marketplace-docs/guides/gitlab/) to completion, or otherwise ensure that a Gitlab installation is available and accessible over SSH.
+- Follow the guide for [Deploying Gitlab Through the Linode Marketplace](/cloud/marketplace-docs/guides/gitlab/) to completion, or otherwise ensure that a Gitlab installation is available and accessible over SSH.
 
 - Create an Object Storage access key and a bucket. See the [Manage Access Keys](https://techdocs.akamai.com/cloud-computing/docs/manage-access-keys) and Create and Manage Buckets](https://techdocs.akamai.com/cloud-computing/docs/create-and-manage-buckets) guides.
 

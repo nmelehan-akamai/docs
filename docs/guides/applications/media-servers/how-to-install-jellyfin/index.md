@@ -29,7 +29,7 @@ In this guide you complete the following:
         sudo apt-get update && sudo apt-get upgrade
 
     {{< note respectIndent=false >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/docs/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
     {{< /note >}}
 
 ## Install Jellyfin
@@ -136,7 +136,7 @@ Click the "hamburger" menu in the top left corner of Jellyfin and choose *Dashbo
 
     ![Library Dashboard](jellyfin-library-dashboard.png)
 
-- Media can be added to individual folders from inside your Linode using various [file transfer tools](/docs/guides/tools-reference/file-transfer/) and [download methods](/docs/guides/download-resources-from-the-command-line-with-wget/).
+- Media can be added to individual folders from inside your Linode using various [file transfer tools](/cloud/guides/tools-reference/file-transfer/) and [download methods](/cloud/guides/download-resources-from-the-command-line-with-wget/).
 - Once files in a folder are added to your Jellyfin server, they can be accessed from your *Home Menu* by clicking on the Home icon at top left of the page after selecting the hamburger menu.
 
     ![Home Menu](homemenu.png)
@@ -188,4 +188,4 @@ Although nano is used in this example, feel free to use the text editor of your 
 
         sudo systemctl restart apache2
 
-You may also want to [set up SSL encryption for this virtual host](/docs/guides/secure-http-traffic-certbot/). For more information regarding this configuration, see Jellyfin's [reverse proxy documentation](https://jellyfin.org/docs/general/networking/index.html#running-jellyfin-behind-a-reverse-proxy)
+You may also want to [set up SSL encryption for this virtual host](/cloud/guides/secure-http-traffic-certbot/). For more information regarding this configuration, see Jellyfin's [reverse proxy documentation](https://jellyfin.org/docs/general/networking/index.html#running-jellyfin-behind-a-reverse-proxy)

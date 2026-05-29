@@ -33,11 +33,11 @@ This guide assumes you have a working Kubernetes cluster running on Linode. You 
 
     - The [Linode Cloud Manager](https://techdocs.akamai.com/cloud-computing/docs/linode-kubernetes-engine).
     - [Linode's API v4](https://techdocs.akamai.com/cloud-computing/docs/deploy-and-manage-a-kubernetes-cluster-with-the-api).
-    - [Terraform](/docs/guides/deploy-lke-cluster-using-terraform/), the popular infrastructure as code (IaC) tool.
+    - [Terraform](/cloud/guides/deploy-lke-cluster-using-terraform/), the popular infrastructure as code (IaC) tool.
 
-1. Deploy an [unmanaged Kubernetes cluster using Terraform](/docs/guides/how-to-provision-an-unmanaged-kubernetes-cluster-using-terraform/) and the [Kubernetes Terraform installer](https://registry.terraform.io/modules/linode/k8s/linode/0.1.2).
+1. Deploy an [unmanaged Kubernetes cluster using Terraform](/cloud/guides/how-to-provision-an-unmanaged-kubernetes-cluster-using-terraform/) and the [Kubernetes Terraform installer](https://registry.terraform.io/modules/linode/k8s/linode/0.1.2).
 
-1. Use kubeadm to manually deploy a Kubernetes cluster on Linode. You can follow the [Getting Started with Kubernetes: Use kubeadm to Deploy a Cluster on Linode](/docs/guides/deploy-kubernetes-cluster-using-kubeadm/) guide to do this.
+1. Use kubeadm to manually deploy a Kubernetes cluster on Linode. You can follow the [Getting Started with Kubernetes: Use kubeadm to Deploy a Cluster on Linode](/cloud/guides/deploy-kubernetes-cluster-using-kubeadm/) guide to do this.
 
     {{< note >}}
     The Block Storage CSI Driver supports Kubernetes version 1.13 or higher. To check the version of Kubernetes you are running, you can issue the following command:
@@ -47,7 +47,7 @@ This guide assumes you have a working Kubernetes cluster running on Linode. You 
     ```
     {{< /note >}}
 
-    After deploying your cluster with kubeadm, to continue with this guide, you'll need to install the CSI driver using the instructions in the [Installing the Linode Block Storage CSI Driver](/docs/guides/install-the-linode-block-storage-csi-driver-on-unmanaged-kubernetes/) guide.
+    After deploying your cluster with kubeadm, to continue with this guide, you'll need to install the CSI driver using the instructions in the [Installing the Linode Block Storage CSI Driver](/cloud/guides/install-the-linode-block-storage-csi-driver-on-unmanaged-kubernetes/) guide.
 
     {{< note >}}
     Using either the Linode Kubernetes Engine or Terraform methods above will install both the Linode Block Storage CSI Driver and the `linode` secret token as part of their deployment methods automatically.

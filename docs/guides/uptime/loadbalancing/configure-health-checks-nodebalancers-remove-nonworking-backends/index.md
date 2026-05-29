@@ -47,7 +47,7 @@ Use the following settings to provision each of the three back-end server instan
 -   **Details** : Name each instance `srv1`, `srv2`, and `srv3`, respectively, under **Linode Label**.
 -   **Add-ons**: A **Private IP** is mandatory for each instance. NodeBalancers only distribute client requests to back-end servers over a region's private network.
 
-1.  Once your servers are up and running, log in to each using [SSH](/docs/guides/connect-to-server-over-ssh/) or [Lish](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish), and install the NGINX web server:
+1.  Once your servers are up and running, log in to each using [SSH](/cloud/guides/connect-to-server-over-ssh/) or [Lish](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish), and install the NGINX web server:
 
     ```command
     sudo apt install nginx

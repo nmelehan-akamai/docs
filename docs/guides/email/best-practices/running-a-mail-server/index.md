@@ -53,7 +53,7 @@ There are several third-party mail services available:
 
 - [Postmark](https://postmarkapp.com/why?utm_source=linode&utm_medium=referral&utm_campaign=awareness)
 - [Fastmail](https://www.fastmail.com)
-- [Google Workspace](https://workspace.google.com/products/gmail/) uses the familiar Gmail interface. Check out our guide to [Using Google Workspace for Email](/docs/guides/using-google-workspace-for-email/).
+- [Google Workspace](https://workspace.google.com/products/gmail/) uses the familiar Gmail interface. Check out our guide to [Using Google Workspace for Email](/cloud/guides/using-google-workspace-for-email/).
 - [Microsoft 365](https://www.office.com) is the successor to Outlook.com and can support custom domains for email, amongst other services.
 
 If you decide to use an outside mail service, you will still need to set up [DNS](https://techdocs.akamai.com/cloud-computing/docs/dns-manager) for your mail and use the settings provided by the third-party mail service.
@@ -91,7 +91,7 @@ Here are the most popular MTA services available:
 
 - [Courier Mail Server](http://www.courier-mta.org) comes with Courier-IMAP, which is the popular part of the Courier mail server suite, but Courier-MTA also includes mail relaying features. It's a simpler MTA but somewhat limited.
 - [Exim](http://www.exim.org) is modern and oriented towards flexibility. It's secure, but not quite as security-oriented as Postfix. It's very customizable, but is one of the most complex MTAs to configure.
-- [Postfix](http://www.postfix.org) is part of Linode's [recommended mail server build](/docs/guides/email-with-postfix-dovecot-and-mysql/). It's modern, security-oriented, and very flexible. It is slightly simpler to set up than Exim.
+- [Postfix](http://www.postfix.org) is part of Linode's [recommended mail server build](/cloud/guides/email-with-postfix-dovecot-and-mysql/). It's modern, security-oriented, and very flexible. It is slightly simpler to set up than Exim.
 - [Qmail](http://cr.yp.to/qmail.html) is a modern MTAs and supports [Maildir-style](https://en.wikipedia.org/wiki/Maildir) directories. Qmail has not received an update since 2007, but remains very popular.
 - [Sendmail](http://www.sendmail.com/sm/open_source/) is a legacy MTA that has a large following and good support.
 - [Zimbra](http://www.zimbra.com) is an all-in-one mail service. Zimbra offers a simple install, but few configurable options.
@@ -117,11 +117,11 @@ Most servers and clients support both IMAP and POP3. POP3 clients connect to the
 
 Here are the most popular IMAP and POP3 servers available:
 
-- [Citadel](http://www.citadel.org) is an all-in-one mail service that includes mail, calendars, instant messaging, mailing lists, and other collaboration tools. It's open source and geared towards small and medium-sized organizations. Linode has  guides for [Citadel on Ubuntu 12.04](/docs/guides/email-with-citadel-on-ubuntu-12-04-lts-precise-pangolin/) and [Citadel on Debian 6](/docs/guides/email-with-citadel-on-debian-6-squeeze/).
+- [Citadel](http://www.citadel.org) is an all-in-one mail service that includes mail, calendars, instant messaging, mailing lists, and other collaboration tools. It's open source and geared towards small and medium-sized organizations. Linode has  guides for [Citadel on Ubuntu 12.04](/cloud/guides/email-with-citadel-on-ubuntu-12-04-lts-precise-pangolin/) and [Citadel on Debian 6](/cloud/guides/email-with-citadel-on-debian-6-squeeze/).
 - [Courier](http://www.courier-mta.org) has a very popular IMAP server called [Courier IMAP](http://www.courier-mta.org/imap/). It's an all-in-one mail server software suite, but Courier IMAP can be installed by itself if that's the only part you need.
 - [Cyrus](https://www.cyrusimap.org) is a modern, security-oriented IMAP/POP3 server designed to work on sealed servers where users do not log in directly.
 - [DBMail](http://www.dbmail.org) is an open source project that stores mail in databases instead of flat files.
-- [Dovecot](http://dovecot.org) is a lightweight, modern, and configurable mail server, and is part of our [recommended mail server build](/docs/guides/email-with-postfix-dovecot-and-mysql/).
+- [Dovecot](http://dovecot.org) is a lightweight, modern, and configurable mail server, and is part of our [recommended mail server build](/cloud/guides/email-with-postfix-dovecot-and-mysql/).
 - [Xmail](http://www.xmailserver.org) is a full-featured POP3 server, but does not support IMAP.
 - [Zimbra](http://www.zimbra.com) is an all-in-one mail service that's much simpler to install than other options, but less customizable.
 
@@ -129,17 +129,17 @@ Here are the most popular IMAP and POP3 servers available:
 
 ### TLS/SSL Certificate
 
-A TLS (SSL) certificate can be used to encrypt connections to your mail server using protocols like [STARTTLS](https://en.wikipedia.org/wiki/Opportunistic_TLS). It is recommended to obtain your certificate from a public Certificate Authority (CA) to provide authenticity guarantees for your users and avoid warnings and error messages. You can generate a free Let's Encrypt certificate using the [certbot](https://certbot.eff.org/) tool or use a paid service like your domain's registrar or a dedicated certificate provider. See [Obtain a Commercially Signed TLS Certificate](/docs/guides/obtain-a-commercially-signed-tls-certificate/) for additional details.
+A TLS (SSL) certificate can be used to encrypt connections to your mail server using protocols like [STARTTLS](https://en.wikipedia.org/wiki/Opportunistic_TLS). It is recommended to obtain your certificate from a public Certificate Authority (CA) to provide authenticity guarantees for your users and avoid warnings and error messages. You can generate a free Let's Encrypt certificate using the [certbot](https://certbot.eff.org/) tool or use a paid service like your domain's registrar or a dedicated certificate provider. See [Obtain a Commercially Signed TLS Certificate](/cloud/guides/obtain-a-commercially-signed-tls-certificate/) for additional details.
 
-If the certificate is for internal use (not a public-facing service) and you are able to mark the certificate as trusted in your users' mail clients, a self-signed certificate may be sufficient. Consider any security implications and error messages that may appear when using a self-signed certificate. See [Create a Self-Signed TLS Certificate](/docs/guides/create-a-self-signed-tls-certificate/) for instructions.
+If the certificate is for internal use (not a public-facing service) and you are able to mark the certificate as trusted in your users' mail clients, a self-signed certificate may be sufficient. Consider any security implications and error messages that may appear when using a self-signed certificate. See [Create a Self-Signed TLS Certificate](/cloud/guides/create-a-self-signed-tls-certificate/) for instructions.
 
 ### Software Installation
 
 Install and configure the MTA, MDA, and IMAP/POP3 server. To help manage domains, email addresses, user credentials, aliases, etc., install a database server like MySQL or PostgreSQL.
 
-For detailed configuration instructions, see our [Postfix, Dovecot, and MySQL](/docs/guides/email-with-postfix-dovecot-and-mysql/) guide.
+For detailed configuration instructions, see our [Postfix, Dovecot, and MySQL](/cloud/guides/email-with-postfix-dovecot-and-mysql/) guide.
 
-For more mail server guides, including guides for older software versions and other mail-related services, visit our [Email Server Guides](/docs/email/).
+For more mail server guides, including guides for older software versions and other mail-related services, visit our [Email Server Guides](/cloud/email/).
 
 ### DNS Records
 
@@ -244,7 +244,7 @@ If you're using a firewall, be sure to edit the rules for your mail server's por
 
 ### Webmail
 
-Webmail is a type of mail client that can be installed on your server and accessed from a web browser. It allows your users to access their email from your website (example: `http://example.com/mail`) anywhere they have access to the internet. Running a web server is a prerequisite for running a webmail client, so follow the [Hosting a Website](/docs/guides/set-up-web-server-host-website/) guide if you want to run webmail on your Linode, in addition to installing a mail server.
+Webmail is a type of mail client that can be installed on your server and accessed from a web browser. It allows your users to access their email from your website (example: `http://example.com/mail`) anywhere they have access to the internet. Running a web server is a prerequisite for running a webmail client, so follow the [Hosting a Website](/cloud/guides/set-up-web-server-host-website/) guide if you want to run webmail on your Linode, in addition to installing a mail server.
 
 Here are some of the most popular webmail clients:
 

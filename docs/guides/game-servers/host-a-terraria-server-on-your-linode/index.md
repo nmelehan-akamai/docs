@@ -42,7 +42,7 @@ Terraria only uses IPv4 and does not use IPv6.
 
 ### Firewalld
 
-Firewalld is the default iptables controller in CentOS 7+ and Fedora. See our [guide on using firewalld](/docs/guides/introduction-to-firewalld-on-centos/) for more information.
+Firewalld is the default iptables controller in CentOS 7+ and Fedora. See our [guide on using firewalld](/cloud/guides/introduction-to-firewalld-on-centos/) for more information.
 
 1.  Enable and start firewalld:
 
@@ -77,7 +77,7 @@ Firewalld is the default iptables controller in CentOS 7+ and Fedora. See our [g
 
 ### UFW
 
-[UFW (Uncomplicated Firewall)](/docs/security/firewalls/configure-firewall-with-ufw/) is an iptables controller packaged with Ubuntu, but it's not installed in Debian by default.
+[UFW (Uncomplicated Firewall)](/cloud/security/firewalls/configure-firewall-with-ufw/) is an iptables controller packaged with Ubuntu, but it's not installed in Debian by default.
 
 1.  If needed, install UFW:
 
@@ -99,7 +99,7 @@ The second command in this step, `sudo ufw delete 4` references the fourth rule 
 
 ### iptables
 
-To manually configure iptables without using a controller, see our [iptables guide](/docs/guides/control-network-traffic-with-iptables/) for a general ruleset.
+To manually configure iptables without using a controller, see our [iptables guide](/cloud/guides/control-network-traffic-with-iptables/) for a general ruleset.
 
 1.  You'll also want to add the rule below for Terraria:
 

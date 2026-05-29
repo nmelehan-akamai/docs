@@ -14,7 +14,7 @@ Apache Subversion is an open source version control system released in 2000 and 
 
 ## What is Apache Subversion?
 
-Apache Subversion is a [version control system](/docs/guides/introduction-to-version-control/)(VCS) that manages, documents, and organizes the changes made to a project's files and directories. Subversion can work across networks to manage the same files and directories. This enables collaboration between developers who are working on the same codebase. Although Subversion is commonly used to version control software development projects, you can use it to version control any group of files and directories. Apache Subversion is invoked on the command line using the `svn` command. For this reason it is sometimes also referred to as *SVN*.
+Apache Subversion is a [version control system](/cloud/guides/introduction-to-version-control/)(VCS) that manages, documents, and organizes the changes made to a project's files and directories. Subversion can work across networks to manage the same files and directories. This enables collaboration between developers who are working on the same codebase. Although Subversion is commonly used to version control software development projects, you can use it to version control any group of files and directories. Apache Subversion is invoked on the command line using the `svn` command. For this reason it is sometimes also referred to as *SVN*.
 
 Apache Subversion is made up of two primary components:
 
@@ -64,9 +64,9 @@ Root or sudo permissions must be available to install Apache Subversion.
 
 - If you are connecting to an existing Subversion server, then an Apache Subversion Client is the minimum installation required.
 - If you need a full installation of Apache Subversion for local use, then it requires both the client and server components.
-- Deploy a new Linode and follow the steps below. You can also follow the steps in the [How to Install a LAMP Stack on Ubuntu 20.04](/docs/guides/how-to-install-a-lamp-stack-on-ubuntu-20-04/) guide.
+- Deploy a new Linode and follow the steps below. You can also follow the steps in the [How to Install a LAMP Stack on Ubuntu 20.04](/cloud/guides/how-to-install-a-lamp-stack-on-ubuntu-20-04/) guide.
 
-- If you choose to follow the steps in the *LAMP stack* guide or already have a server with a LAMP stack installed, skip the [Install the Apache Web Server](/docs/guides/install-apache-subversion-ubuntu/#install-the-apache-web-server) section below, and move on to the [Install Apache Subversion](/docs/guides/install-apache-subversion-ubuntu/#install-apache-subversion) section after updating your Ubuntu 20.04 system.
+- If you choose to follow the steps in the *LAMP stack* guide or already have a server with a LAMP stack installed, skip the [Install the Apache Web Server](/cloud/guides/install-apache-subversion-ubuntu/#install-the-apache-web-server) section below, and move on to the [Install Apache Subversion](/cloud/guides/install-apache-subversion-ubuntu/#install-apache-subversion) section after updating your Ubuntu 20.04 system.
 
 - Update your Ubuntu 20.04 system:
 
@@ -243,4 +243,4 @@ The [SVN Book](https://svnbook.red-bean.com/) is a must-read for those who manag
 
 You should make sure to back up your Apache Subversion repository at reasonable intervals. One way to do so is by backing up your Subversion server using the [Linode Backup service](https://techdocs.akamai.com/cloud-computing/docs/backup-service).
 
-Refer to our [How to Install and Use the Subversion CLI Client](/docs/guides/subversion-svn-tutorial) for client installation steps, along with the essential commands to support a Subversion workflow.
+Refer to our [How to Install and Use the Subversion CLI Client](/cloud/guides/subversion-svn-tutorial) for client installation steps, along with the essential commands to support a Subversion workflow.

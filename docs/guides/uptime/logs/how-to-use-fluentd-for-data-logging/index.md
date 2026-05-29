@@ -58,7 +58,7 @@ The output plug-ins, prefixed with `out_`, have three different flushing and buf
 1.  Fluentd input and output are synchronized to a time source, and Fluentd recommends setting up a Network Time Protocol daemon prior to software installation. In cloud environments with many separated data sources, a single source of NTP synchronization is recommended. The NTP time becomes the basis for data stamping through the parsing stages that Fluentd performs.
 
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/docs/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
 {{< /note >}}
 
 The commands, file contents, and other instructions provided throughout this guide may include placeholders. These are typically domain names, IP addresses, usernames, passwords, and other values that are unique to you. The table below identifies these placeholders and explains what to replace them with:

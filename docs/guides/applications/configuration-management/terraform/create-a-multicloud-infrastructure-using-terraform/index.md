@@ -64,7 +64,7 @@ Code that declares the final state of your desired infrastructure is referred to
 1. You need a personal access token for [Linode’s API v4](https://techdocs.akamai.com/linode-api/reference/api) to use with Terraform and the Terraform Linode Provider. Follow the [Getting Started with the Linode API](https://techdocs.akamai.com/linode-api/reference/get-started#get-an-access-token) to get a token.
 
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Linux Users and Groups](/docs/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
 {{< /note >}}
 
 ## Downloading Terraform on your Linode Server
@@ -241,7 +241,7 @@ resource  "linode_instance"  "terraform" {
 
 1. The full `linode-terraform.tf` file, including both the `provider` and `resource` sections, is shown below.
 
-    These configurations create a Linode 2GB labeled `terraform-example` and place it in the `terraform` Linodes group. You can replace the values with your own desired values. Lists of the allowable values for each of the fields, such as the `region`, are found in the [*Linode API*](/docs/api/linode-instances/).
+    These configurations create a Linode 2GB labeled `terraform-example` and place it in the `terraform` Linodes group. You can replace the values with your own desired values. Lists of the allowable values for each of the fields, such as the `region`, are found in the [*Linode API*](/cloud/api/linode-instances/).
 
     {{< file "~/terraform/linode-terraform.tf" >}}
 
@@ -761,7 +761,7 @@ This command permanently deletes your resources. This operation cannot be undone
 
 Terraform is revolutionizing the DevOps ecosystem by transforming the way infrastructure is managed. It offers many advanced techniques to help streamline common IaC tasks. For instance, Terraform modules can package frequently-used configuration tasks together.
 
-See Linode's [Guide to Creating a Terraform Module](/docs/guides/create-terraform-module/) for instructions on how to create a module.
+See Linode's [Guide to Creating a Terraform Module](/cloud/guides/create-terraform-module/) for instructions on how to create a module.
 
 **Useful References:**
 

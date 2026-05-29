@@ -26,7 +26,7 @@ OwnCloud is an open-source, cloud-based, file hosting service you can install on
 ![ownCloud](owncloud_ubuntu.jpg)
 
 {{< note >}}
-To automatically install ownCloud on a Compute Instance, consider deploying [ownCloud Server through the Linode Marketplace](/docs/marketplace-docs/guides/owncloud/).
+To automatically install ownCloud on a Compute Instance, consider deploying [ownCloud Server through the Linode Marketplace](/cloud/marketplace-docs/guides/owncloud/).
 {{< /note >}}
 
 ## Before You Begin
@@ -35,7 +35,7 @@ To automatically install ownCloud on a Compute Instance, consider deploying [own
 
 1.  Follow our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide to update your system. You may also wish to set the timezone, configure your hostname, create a limited user account, and harden SSH access.
 
-3.  [Install and configure a LAMP stack](/docs/guides/install-lamp-stack-on-ubuntu-16-04/).
+3.  [Install and configure a LAMP stack](/cloud/guides/install-lamp-stack-on-ubuntu-16-04/).
 
 ## Install ownCloud
 

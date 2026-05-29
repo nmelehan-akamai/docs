@@ -9,7 +9,7 @@ license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 description: 'Quick Deploy App deployment shortguide'
 ---
 
-Akamai Quick Deploy Apps let you easily deploy software on a Compute Instance using Cloud Manager. See [Get Started with Quick Deploy Apps](/docs/marketplace-docs/get-started/) for complete steps.
+Akamai Quick Deploy Apps let you easily deploy software on a Compute Instance using Cloud Manager. See [Get Started with Quick Deploy Apps](/cloud/marketplace-docs/get-started/) for complete steps.
 
 1. Log in to [Cloud Manager](https://cloud.linode.com) and select the **Quick Deploy Apps** link from the left navigation menu. This displays the Linode **Create** page with the **Marketplace** tab pre-selected.
 

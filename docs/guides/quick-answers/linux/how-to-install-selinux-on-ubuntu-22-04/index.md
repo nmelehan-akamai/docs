@@ -25,7 +25,7 @@ According to [the official Security Enhanced Linux project page](http://www.seli
 2.  Follow our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide to update your system. You may also wish to set the timezone, configure your hostname, create a limited user account, and harden SSH access.
 
 {{< note >}}
-The steps in this guide require root privileges. Be sure to run the steps below as `root` or with the `sudo` prefix. For more information on privileges, see our [Users and Groups](/docs/guides/linux-users-and-groups/) guide.
+The steps in this guide require root privileges. Be sure to run the steps below as `root` or with the `sudo` prefix. For more information on privileges, see our [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
 {{< /note >}}
 
 ## SELinux Installation
@@ -131,7 +131,7 @@ The presence of `/etc/selinux/config` is a sign that the host is ready for confi
 
 ## SELinux Management
 
-[SELinux has several options](/docs/guides/a-beginners-guide-to-selinux-on-centos-7/) beyond the scope of this guide. Configuration is commonly achieved through configuration files rather than graphical user interface (GUI) or command line applications.
+[SELinux has several options](/cloud/guides/a-beginners-guide-to-selinux-on-centos-7/) beyond the scope of this guide. Configuration is commonly achieved through configuration files rather than graphical user interface (GUI) or command line applications.
 
 ### Enabling SELinux
 

@@ -44,7 +44,7 @@ The NVIDIA CUDA Toolkit is not needed on CPU-only (non-GPU) instances.
 
 ### Use Conda to Install PyTorch
 
-[Anaconda](https://www.anaconda.com/) is a package manager for [Python](/docs/guides/how-to-install-python-on-ubuntu-20-04/) and [R](/docs/guides/how-to-install-r-on-ubuntu-and-debian/). The steps in this section uses Anaconda to install PyTorch.
+[Anaconda](https://www.anaconda.com/) is a package manager for [Python](/cloud/guides/how-to-install-python-on-ubuntu-20-04/) and [R](/cloud/guides/how-to-install-r-on-ubuntu-and-debian/). The steps in this section uses Anaconda to install PyTorch.
 
 1. In your home directory, create a directory to install Anaconda and move into it.
 
@@ -113,7 +113,7 @@ Verifying transaction: done
 
 ### Use Pip to Install PyTorch
 
-If you don't have access to Anaconda, PyTorch can be installed with Python Pip. Learn about Pip and Python programming environments in our [Using Pipenv to Manage Python Packages and Versions](/docs/guides/manage-python-environments-pipenv/) guide.
+If you don't have access to Anaconda, PyTorch can be installed with Python Pip. Learn about Pip and Python programming environments in our [Using Pipenv to Manage Python Packages and Versions](/cloud/guides/manage-python-environments-pipenv/) guide.
 
 1. To install Pip, use the following command:
 

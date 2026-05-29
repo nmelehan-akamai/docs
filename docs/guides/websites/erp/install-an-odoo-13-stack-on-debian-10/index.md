@@ -15,8 +15,8 @@ external_resources:
   - '[Odoo User Documentation](https://www.odoo.com/documentation/user/13.0/)'
   - '[Odoo Developer Documentation](https://www.odoo.com/documentation/13.0)'
   - '[PostgreSQL 11 Documentation](https://www.postgresql.org/docs/11/static/index.html)'
-  - '[Install an SSL certificate with LetsEncrypt](/docs/guides/install-lets-encrypt-to-create-ssl-certificates/)'
-  - '[How to Set up tinc, a Peer-to-Peer VPN](/docs/guides/how-to-set-up-tinc-peer-to-peer-vpn/)'
+  - '[Install an SSL certificate with LetsEncrypt](/cloud/guides/install-lets-encrypt-to-create-ssl-certificates/)'
+  - '[How to Set up tinc, a Peer-to-Peer VPN](/cloud/guides/how-to-set-up-tinc-peer-to-peer-vpn/)'
 relations:
     platform:
         key: install-an-odoo-13-stack
@@ -28,7 +28,7 @@ relations:
 
 [Odoo](https://www.odoo.com/) (formerly known as OpenERP) is a self-hosted suite of over 10,000 open source applications for a variety of business needs. A few popular applications for Odoo include CRMs, eCommerce, accounting, inventory, point of sale, and project management. These applications are all fully integrated and can be installed and accessed through a web interface. Using Odoo's web interface can make it easier to automate and manage your company's processes.
 
-For simple installations, Odoo and its dependencies can be installed on a single Linode. Our [Install Odoo 10 on Ubuntu 16.04](/docs/guides/install-odoo-10-on-ubuntu-16-04/) guide has an example of this. However, this single-server setup is not suited for production deployments. This guide covers how to configure an Odoo 13 cluster where the Odoo server and PostgreSQL database are hosted on separate Linodes. This configuration gives you more flexibility and scalability while allowing you to use PostgreSQL database replication for added performance and reliability.
+For simple installations, Odoo and its dependencies can be installed on a single Linode. Our [Install Odoo 10 on Ubuntu 16.04](/cloud/guides/install-odoo-10-on-ubuntu-16-04/) guide has an example of this. However, this single-server setup is not suited for production deployments. This guide covers how to configure an Odoo 13 cluster where the Odoo server and PostgreSQL database are hosted on separate Linodes. This configuration gives you more flexibility and scalability while allowing you to use PostgreSQL database replication for added performance and reliability.
 
 ## System Requirements
 
@@ -53,7 +53,7 @@ All examples in this guide are for Debian 10. If you plan to use a different ope
 1.  This guide uses `sudo` wherever possible. Complete the sections of our [Securing Your Server](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) to create a standard user account, harden SSH access, and remove unnecessary network services.
 
     {{< note respectIndent=false >}}
-Commands that require elevated privileges are prefixed with `sudo`. If you're not familiar with the `sudo` command, you can check our [Users and Groups](/docs/guides/linux-users-and-groups/) guide.
+Commands that require elevated privileges are prefixed with `sudo`. If you're not familiar with the `sudo` command, you can check our [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
 {{< /note >}}
 
 1.  Update your systems:
@@ -77,9 +77,9 @@ If you want to configure a firewall for your Linodes, open the following ports:
 
 - Port `8069` is used by Odoo's webserver.
 
-A convenient way to open these ports is by using the [UFW firewall utility](/docs/guides/configure-firewall-with-ufw/). However, this utility is not installed by default. Follow these instructions to install and configure UFW:
+A convenient way to open these ports is by using the [UFW firewall utility](/cloud/guides/configure-firewall-with-ufw/). However, this utility is not installed by default. Follow these instructions to install and configure UFW:
 {{< note >}}
-If you prefer to use a different firewall utility, like [iptables](/docs/guides/control-network-traffic-with-iptables/), be sure to use the same ports as described in the table above when configuring your software.
+If you prefer to use a different firewall utility, like [iptables](/cloud/guides/control-network-traffic-with-iptables/), be sure to use the same ports as described in the table above when configuring your software.
 {{< /note >}}
 
 1. Install `ufw` with the following command:
@@ -97,7 +97,7 @@ If you prefer to use a different firewall utility, like [iptables](/docs/guides/
             sudo ufw allow 22,6010,5432,8069/tcp
 
     {{< note respectIndent=false >}}
-You may want to only accept connections from certain hosts/IP addresses. The [Advanced Rules](/docs/guides/configure-firewall-with-ufw/#advanced-rules) section of our UFW guide shows how to specify hosts/IP addresses in your rules.
+You may want to only accept connections from certain hosts/IP addresses. The [Advanced Rules](/cloud/guides/configure-firewall-with-ufw/#advanced-rules) section of our UFW guide shows how to specify hosts/IP addresses in your rules.
 {{< /note >}}
 
 1. After configuring your ports, enable the firewall:
@@ -108,7 +108,7 @@ You may want to only accept connections from certain hosts/IP addresses. The [Ad
 
         sudo ufw status
 {{< note >}}
-For more detailed information about firewall setup please read our [How to Configure a Firewall with UFW](/docs/guides/configure-firewall-with-ufw/) guide.
+For more detailed information about firewall setup please read our [How to Configure a Firewall with UFW](/cloud/guides/configure-firewall-with-ufw/) guide.
 {{< /note >}}
 
 
@@ -218,7 +218,7 @@ Now that you finished PostgreSQL configuration you can start the `postgresql` se
 This section shows how to configure your Odoo 13 web application to work with the PostgreSQL database backend. Run the commands in this section on the Linode that you created for your Odoo application server.
 
 {{< note >}}
-Odoo 13 uses Python 3.6+ instead of Python 3.5. [Debian 10 servers run Python 3.7.3 by default](/docs/guides/how-to-install-python-on-debian-10/), so you should not have compatibility problems.
+Odoo 13 uses Python 3.6+ instead of Python 3.5. [Debian 10 servers run Python 3.7.3 by default](/cloud/guides/how-to-install-python-on-debian-10/), so you should not have compatibility problems.
 {{< /note >}}
 
 ### Prepare Linode for Odoo 13 Installation
@@ -420,7 +420,7 @@ You have two options to backup your production database:
 
     You can later use this interface to restore your database from a specific database backup file. Odoo correctly restores to the database on the **PostgreSQL server**, and not to the database service that was installed on the Odoo application server. This happens because your Odoo configuration is explicit about the database connection.
 
-1. You can use a procedure similar to the one described in our guide [How to Back Up Your PostgreSQL Database](/docs/guides/back-up-a-postgresql-database/) from the backend **PostgreSQL** Linode.
+1. You can use a procedure similar to the one described in our guide [How to Back Up Your PostgreSQL Database](/cloud/guides/back-up-a-postgresql-database/) from the backend **PostgreSQL** Linode.
 
 ## Update Odoo Modules
 
@@ -454,7 +454,7 @@ You now have Odoo 13 and PostgreSQL installed and configured. There are several 
 
 You can install a web server as a reverse proxy in front of the Odoo application server. By doing so, your Odoo installation would be accessible on port 80 (HTTP) or port 443 (HTTPS), instead of port 8069.
 
-Our [Use NGINX as a Reverse Proxy](/docs/guides/use-nginx-reverse-proxy/) guide lists further benefits of setting up a reverse proxy. It also shows how to use NGINX as a reverse proxy for an example Node.js application. The instructions in this guide could be adapted for your Odoo installation. In particular, you could alter the instructions in that guide's [Configure NGINX](/docs/guides/use-nginx-reverse-proxy/#configure-nginx) section to use port 8069, instead of port 3000.
+Our [Use NGINX as a Reverse Proxy](/cloud/guides/use-nginx-reverse-proxy/) guide lists further benefits of setting up a reverse proxy. It also shows how to use NGINX as a reverse proxy for an example Node.js application. The instructions in this guide could be adapted for your Odoo installation. In particular, you could alter the instructions in that guide's [Configure NGINX](/cloud/guides/use-nginx-reverse-proxy/#configure-nginx) section to use port 8069, instead of port 3000.
 
 If you proceed with setting up the reverse proxy, you should also add these lines to your `/etc/odoo-server.conf` Odoo server configuration file:
 
@@ -478,7 +478,7 @@ Finally, allow port 80 in your firewall. If you're using UFW, these lines allow 
 
 ### Set Up SSL
 
-If you have set up a reverse proxy, you can also choose to serve your Odoo site over HTTPS. To do so, configure the reverse proxy server with an SSL certificate. The directions in our [How to Install Certbot for TLS on Debian 10](/docs/guides/enabling-https-using-certbot-with-nginx-on-debian/) guide show how to do this with NGINX on Debian 10.
+If you have set up a reverse proxy, you can also choose to serve your Odoo site over HTTPS. To do so, configure the reverse proxy server with an SSL certificate. The directions in our [How to Install Certbot for TLS on Debian 10](/cloud/guides/enabling-https-using-certbot-with-nginx-on-debian/) guide show how to do this with NGINX on Debian 10.
 
 After setting up an SSL certificate, be sure to allow port 443 in your firewall. If you're using UFW, these lines allow the port:
 

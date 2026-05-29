@@ -12,7 +12,7 @@ tags: ["drupal","centos","apache","lamp","php","cms"]
 license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 image: DrupalThemesMods_DrushCentOS8.png
 external_resources:
- - '[SSL Certificates](/docs/security/ssl/)'
+ - '[SSL Certificates](/cloud/security/ssl/)'
  - '[Drush Commands](https://docs.drush.org/en/9.x/)'
  - '[Backup and Migrate](https://www.drupal.org/docs/8/modules/backup-and-migrate/howto-for-backup-and-migrate)'
 relations:
@@ -35,9 +35,9 @@ Before installing themes, modules, and a backup system using Drush, make sure th
 
     {{% content "limited-user-note-shortguide" %}}
 
-1.  Install and configure a [LAMP stack on CentOS 8](/docs/guides/how-to-install-a-lamp-stack-on-centos-8/)
+1.  Install and configure a [LAMP stack on CentOS 8](/cloud/guides/how-to-install-a-lamp-stack-on-centos-8/)
 
-1.  Install [Composer and Drush on CentOS 8](/docs/guides/how-to-install-drush-on-centos-8/)
+1.  Install [Composer and Drush on CentOS 8](/cloud/guides/how-to-install-drush-on-centos-8/)
 
 1.  Make sure that your system is up to date, using:
 
@@ -61,7 +61,7 @@ In this section you will download, enable, and set a Drupal theme using Drush.
          composer require drupal/bootstrap
 
     {{< note respectIndent=false >}}
-If you receive an error related to not being able to write to the `composer.json` file, see the [Setting the Site’s Ownership and Permissions](/docs/guides/how-to-install-drupal-using-drush-on-centos-8/#setting-the-sites-ownership-and-permissions) section of the [Install Drupal using Drush on CentOS 8](/docs/guides/how-to-install-drupal-using-drush-on-centos-8/) guide.
+If you receive an error related to not being able to write to the `composer.json` file, see the [Setting the Site’s Ownership and Permissions](/cloud/guides/how-to-install-drupal-using-drush-on-centos-8/#setting-the-sites-ownership-and-permissions) section of the [Install Drupal using Drush on CentOS 8](/cloud/guides/how-to-install-drupal-using-drush-on-centos-8/) guide.
 
 Ensure that your `/var/www/html/example.com/public_html` directory has user and group read, write, and execute permissions.
 

@@ -77,4 +77,4 @@ Finally, you may want to cancel a scheduled reboot. You can do that with the fol
 
 The process for restarting your Linux server over PuTTY is the same as above. The only difference is that you need to use PuTTY to open an SSH connection to your server.
 
-If you are unsure how to do that, take a look at our guide on [Connecting to a Remote Server Over SSH using PuTTY](/docs/guides/connect-to-server-over-ssh-using-putty/).
+If you are unsure how to do that, take a look at our guide on [Connecting to a Remote Server Over SSH using PuTTY](/cloud/guides/connect-to-server-over-ssh-using-putty/).

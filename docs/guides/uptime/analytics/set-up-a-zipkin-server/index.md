@@ -144,7 +144,7 @@ The default Fedora 26 firewall rules block all ports as a safety precaution. Cre
 
         pip2 install py_zipkin bottle requests
 
-4. Download the python script [website.py](/docs/assets/scripts/website.py) which has been commented to show the added Zipkin code:
+4. Download the python script [website.py](/cloud/assets/scripts/website.py) which has been commented to show the added Zipkin code:
 
         wget https://github.com/linode/docs/assets/scripts/website.py
 

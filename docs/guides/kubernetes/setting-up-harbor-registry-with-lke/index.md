@@ -42,7 +42,7 @@ The following is a summary of the infrastructure created in this guide. Instruct
 If you would like to remove these services after you finish following the guide, review our [Stop Further Billing](https://techdocs.akamai.com/cloud-computing/docs/stop-further-billing) guide. For more information on how billing for services works, review the [Billing Overview](https://techdocs.akamai.com/cloud-computing/docs/understanding-how-billing-works).
 
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/docs/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
 {{< /note >}}
 
 ## What is Harbor?
@@ -73,7 +73,7 @@ The server is your Harbor access point. It gives you an administrative interface
 
 This tutorial requires you to have a domain for your Harbor server. Doing so allows you to use Let's Encrypt for SSL certification. For example code and commands, the tutorial uses `harbor.example.com` as the domain name.
 
-In your DNS manager for your own domain, create an [A record](/docs/guides/dns-overview/#a-and-aaaa) named `harbor`:
+In your DNS manager for your own domain, create an [A record](/cloud/guides/dns-overview/#a-and-aaaa) named `harbor`:
 
 - If you use the Linode DNS Manager, follow our [Manage DNS Records](https://techdocs.akamai.com/cloud-computing/docs/manage-dns-records) guide to create the new a record.
 
@@ -172,7 +172,7 @@ Using SSL lets you secure traffic to and from your Harbor server. You can create
 
 [Certbot](https://certbot.eff.org) is a tool that provides an interface for requesting and downloading certificates from Let's Encrypt. This tutorial uses Certbot to set up an SSL certificate:
 
-1. To install Certbot, follow one of our [Certbot for NGINX guides](/docs/guides/enabling-https-using-certbot/#nginx). For this tutorial, follow just the **Installing Snapd** and **Installing Certbot** sections. *Do not* follow that guide's steps for requesting a certificate.
+1. To install Certbot, follow one of our [Certbot for NGINX guides](/cloud/guides/enabling-https-using-certbot/#nginx). For this tutorial, follow just the **Installing Snapd** and **Installing Certbot** sections. *Do not* follow that guide's steps for requesting a certificate.
 
 1. Use Certbot to request a certificate for your domain (given after the `-d` option), using the [standalone verification](https://eff-certbot.readthedocs.io/en/stable/using.html#standalone) option. Replace the domain in this command with your Harbor server's domain:
 
@@ -379,7 +379,7 @@ The following instructions can be run from your local workstation. They require 
     ```
 
 {{< note >}}
-You can learn more about building Docker images through our guide on [How to Use a Dockerfile to Build a Docker Image](/docs/guides/how-to-use-dockerfiles/).
+You can learn more about building Docker images through our guide on [How to Use a Dockerfile to Build a Docker Image](/cloud/guides/how-to-use-dockerfiles/).
 {{< /note >}}
 
 #### Push an Image to Harbor

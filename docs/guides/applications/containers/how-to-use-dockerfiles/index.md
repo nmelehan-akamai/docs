@@ -18,7 +18,7 @@ aliases: ['/applications/containers/how-to-use-dockerfiles/']
 ---
 ![How to Use a Dockerfile](how-to-use-dockerfile.png "How to Use a Dockerfile")
 
-A Dockerfile is a text file of instructions which are used to automate installation and configuration of a [Docker image](/docs/guides/introduction-to-docker/#docker-images). Dockerfiles make it easy to deploy multiple Docker containers without having to maintain the same image across multiple virtual machines. Instructions are executed in the order they appear in the Dockerfile, which makes using and updating them clear and intuitive. This article covers the basics, with an example, of how a Dockerfile works.
+A Dockerfile is a text file of instructions which are used to automate installation and configuration of a [Docker image](/cloud/guides/introduction-to-docker/#docker-images). Dockerfiles make it easy to deploy multiple Docker containers without having to maintain the same image across multiple virtual machines. Instructions are executed in the order they appear in the Dockerfile, which makes using and updating them clear and intuitive. This article covers the basics, with an example, of how a Dockerfile works.
 
 ## Before You Begin
 
@@ -152,6 +152,6 @@ Congratulations! You've built your first Dockerfile and run your first Docker im
 
 For more examples and information on using Dockerfiles with Docker images and containers, see:
 
--   our guide on [How to Use Docker Images, Containers, and Dockerfiles in Depth](/docs/guides/docker-images-containers-and-dockerfiles-in-depth);
+-   our guide on [How to Use Docker Images, Containers, and Dockerfiles in Depth](/cloud/guides/docker-images-containers-and-dockerfiles-in-depth);
 
 -   Docker's [Dockerfile Best Practices](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/).

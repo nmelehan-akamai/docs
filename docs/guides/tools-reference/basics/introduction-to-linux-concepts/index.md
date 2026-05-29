@@ -10,9 +10,9 @@ keywords: ["Linux", "Unix-Like systems", "history"]
 license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 aliases: ['/tools-reference/basics/introduction-to-linux-concepts/','/tools-reference/introduction-to-linux-concepts/','/using-linux/linux-concepts/']
 external_resources:
- - '[Using the Terminal](/docs/guides/using-the-terminal/)'
- - '[LAMP Guides](/docs/lamp-guides/)'
- - '[Package Management](/docs/guides/linux-package-management-overview/)'
+ - '[Using the Terminal](/cloud/guides/using-the-terminal/)'
+ - '[LAMP Guides](/cloud/lamp-guides/)'
+ - '[Package Management](/cloud/guides/linux-package-management-overview/)'
 tags: ["linux"]
 ---
 
@@ -88,12 +88,12 @@ After you connect to your Linode, you should be looking at a shell prompt that l
 
 What does this bit of text mean? The entire thing is the *shell prompt*. It's your terminal's way of telling you that it's ready for you to enter the next command. The different parts of the shell prompt provide information:
 
--   **root**: This is your username. To learn more about users, jump down to the [Users and Permissions](/docs/guides/introduction-to-linux-concepts/#users-and-permissions-in-linux) section.
+-   **root**: This is your username. To learn more about users, jump down to the [Users and Permissions](/cloud/guides/introduction-to-linux-concepts/#users-and-permissions-in-linux) section.
 -   **localhost**: This is your Linode's hostname. A *hostname* is your Linode's name for itself.
 -   **\~**: After the colon, the SSH session shows the name of the directory you're in. When you first log in, you're in your user's *home* directory. The tilde (**\~**) is a shortcut for the home directory. If the directory was spelled out, it would be `/root`. For users other than the root user, home directories are in `/home/user1`, where **user1** is the name of the user.
 -   **\#** - The **hash** or **pound** (**\#**) punctuation mark indicates where the shell prompt ends. When you type a command, your text begins after this point. For users other than the root user, the **dollar sign** (**\$**) indicates the same thing.
 
-You can type any valid Linux shell command at the blinking cursor after the shell prompt. We'll go over a few practical commands in the rest of this article, but to get a really good in-depth introduction to the command-line interface, you should read the [Using the Terminal](/docs/guides/using-the-terminal/) article as well.
+You can type any valid Linux shell command at the blinking cursor after the shell prompt. We'll go over a few practical commands in the rest of this article, but to get a really good in-depth introduction to the command-line interface, you should read the [Using the Terminal](/cloud/guides/using-the-terminal/) article as well.
 
 {{< note >}}
 These command line tips will make your Linux forays much more effective:
@@ -255,11 +255,11 @@ lrwxrwxrwx  1 root root   16 Apr 30  2012 libfuse.so.2 -> libfuse.so.2.8.6
 
 ### Learn More About Navigating Directories
 
-Now you know how to use the `pwd` command to show you where you are, the `cd` command to move to a new directory, and the `ls` command to show you the contents of a directory. These are the basic tools you need to navigate through your Linode's files and directories. To learn more about navigating directories, read the linked section of the [Using the Terminal](/docs/guides/using-the-terminal/) guide.
+Now you know how to use the `pwd` command to show you where you are, the `cd` command to move to a new directory, and the `ls` command to show you the contents of a directory. These are the basic tools you need to navigate through your Linode's files and directories. To learn more about navigating directories, read the linked section of the [Using the Terminal](/cloud/guides/using-the-terminal/) guide.
 
 ### Upload Files to Your Linode
 
-One of the easiest ways to upload your own files to your Linode is with a Secure FTP (**SFTP**) program. See [Migrate from Shared Hosting to Linode](/docs/guides/migrate-from-shared-hosting-to-linode/) for a walkthrough on how to upload your own files using SFTP.
+One of the easiest ways to upload your own files to your Linode is with a Secure FTP (**SFTP**) program. See [Migrate from Shared Hosting to Linode](/cloud/guides/migrate-from-shared-hosting-to-linode/) for a walkthrough on how to upload your own files using SFTP.
 
 ## Users and Permissions in Linux
 
@@ -308,7 +308,7 @@ The user permissions are listed first and the group permissions are listed secon
 -   **group1** and the user accounts inside the group has read and execute permissions, but not write permissions, **r-x**. Members of the **group1** group can view the contents of the `my_directory` directory, run files in it, but not change them.
 -   Everyone can read and execute the files in the `var` directory, but not change them, because the permissions for everyone are **r-x**.
 
-To learn about users and groups in more detail, read the [Linux Users and Groups](/docs/guides/linux-users-and-groups/) article.
+To learn about users and groups in more detail, read the [Linux Users and Groups](/cloud/guides/linux-users-and-groups/) article.
 
 ## Software
 
@@ -318,7 +318,7 @@ This section shows you how to install, run, update, and uninstall software from 
 
 Like most things in Linux, installing software is accomplished by typing and executing a specific text command. The most popular Linux distributions come with *package managers* that make it relatively easy to install and uninstall software on your Linode. Debian and Ubuntu use the Advanced Packaging Tool (**APT**) package manager, and Fedora and CentOS use the Yellowdog Updater, Modified (**yum**) package manager.
 
-Our **Quick Start Guides** series contain basic instructions for installing and configuring many common types of Linux software. The [Hosting a Website](/docs/guides/hosting-a-website-ubuntu-18-04/) guide shows you how to install software to run a website, while [Running a Mail Server](/docs/guides/running-a-mail-server/) is for email servers.
+Our **Quick Start Guides** series contain basic instructions for installing and configuring many common types of Linux software. The [Hosting a Website](/cloud/guides/hosting-a-website-ubuntu-18-04/) guide shows you how to install software to run a website, while [Running a Mail Server](/cloud/guides/running-a-mail-server/) is for email servers.
 
 #### Install with APT
 
@@ -356,7 +356,7 @@ Sometimes you want to run a program on an as-needed basis. For example, you migh
 
 1. Use the `cd` command to move into the directory where the script is located.
 
-1. Run `ls -l directory` to check that your user account has [execute permissions](/docs/guides/introduction-to-linux-concepts/#users-and-permissions-in-linux) for the script file in the directory. If you need to modify the permissions, see the [Linux Users and Groups](/docs/guides/linux-users-and-groups/#chmod-command) guide.
+1. Run `ls -l directory` to check that your user account has [execute permissions](/cloud/guides/introduction-to-linux-concepts/#users-and-permissions-in-linux) for the script file in the directory. If you need to modify the permissions, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups/#chmod-command) guide.
 
 1.  Run the script with the following syntax:
 
@@ -364,7 +364,7 @@ Sometimes you want to run a program on an as-needed basis. For example, you migh
 
 **Scheduled:**
 
-Sometimes you want to run a program at regular intervals, as in the case of a daily backup script. The best way to do this is with the *cron* tool. Read the [Schedule Tasks with Cron](/docs/guides/schedule-tasks-with-cron/) article to learn more. Scripts that you run this way also have to be [executable](/docs/guides/introduction-to-linux-concepts/#users-and-permissions-in-linux).
+Sometimes you want to run a program at regular intervals, as in the case of a daily backup script. The best way to do this is with the *cron* tool. Read the [Schedule Tasks with Cron](/cloud/guides/schedule-tasks-with-cron/) article to learn more. Scripts that you run this way also have to be [executable](/cloud/guides/introduction-to-linux-concepts/#users-and-permissions-in-linux).
 
 ### Updating Software
 
@@ -412,6 +412,6 @@ Some distributions are designed to be as simple and minimalistic as possible, wh
 
 -   **Organizational Structure**: While it might not affect the performance of the distribution, one of the distinguishing factors between distributions is the organizational structure of the development team. Some distributions, like Debian, Gentoo, Arch, and Slackware are developed by independent communities of developers, while other distributions like openSUSE, Fedora, and Ubuntu are developed by communities sponsored by various corporations (e.g. Novell, RedHat, and Canonical for the examples above). Other distributions, such as CentOS, are derived by a community from commercially-produced distributions.
 
--   **Common Tool Sets**: Different distributions make use of different tools for common tasks like [package management](/docs/guides/linux-package-management-overview/) or system configuration. As we discussed above, Debian and Ubuntu use APT to manage `.deb` packages, CentOS and Fedora use yum to manage `.rpm` packages, and openSUSE also uses `.rpm` packages but manages them with a tool called **yast**. In many cases your choice of distribution will come down to the one that provides the tools you need and are most comfortable with.
+-   **Common Tool Sets**: Different distributions make use of different tools for common tasks like [package management](/cloud/guides/linux-package-management-overview/) or system configuration. As we discussed above, Debian and Ubuntu use APT to manage `.deb` packages, CentOS and Fedora use yum to manage `.rpm` packages, and openSUSE also uses `.rpm` packages but manages them with a tool called **yast**. In many cases your choice of distribution will come down to the one that provides the tools you need and are most comfortable with.
 
 Different distributions of Linux are right for different situations. You should experiment until you find the best fit for you. Given the similarities between different distributions, don't be afraid switch to a new one that will serve you better. If you're familiar with the concepts in this article, you're well on your way to administrating your system like a pro with any distribution of Linux.

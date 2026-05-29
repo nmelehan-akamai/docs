@@ -13,20 +13,20 @@ external_resources:
 
 With Jenkins, you can implement a robust continuous integration and continuous delivery (CI/CD) setup for automating application builds, tests, and deployments. Linode's Jenkins CI/CD reference architecture ensures a scalable setup capable of deploying applications to Linode or any of many other hosting providers.
 
-Get started by taking a look at the overview and diagrams for the architecture in our [Jenkins CI/CD on Linode to Any Hyperscaler](/docs/reference-architecture/jenkins-ci-cd-on-linode-to-any-hyperscaler/).
+Get started by taking a look at the overview and diagrams for the architecture in our [Jenkins CI/CD on Linode to Any Hyperscaler](/cloud/reference-architecture/jenkins-ci-cd-on-linode-to-any-hyperscaler/).
 
 The present tutorial walks you through a complete implementation of our Jenkins CI/CD architecture. Throughout, follow along to provision the base setup and see extensive examples to help you get started using the architecture for your particular needs.
 
 ## Before You Begin
 
-1. Create a Linode account, if you don't have one. See the [Getting Started with Linode](/docs/guides/getting-started/) documentation.
+1. Create a Linode account, if you don't have one. See the [Getting Started with Linode](/cloud/guides/getting-started/) documentation.
 
-1. Create a new Compute Instance, which acts as the primary Jenkins server in this tutorial. See the [Creating a Compute Instance](/docs/guides/creating-a-compute-instance/) guide.
+1. Create a new Compute Instance, which acts as the primary Jenkins server in this tutorial. See the [Creating a Compute Instance](/cloud/guides/creating-a-compute-instance/) guide.
 
-1. Follow our [Setting Up and Securing a Compute Instance](/docs/guides/set-up-and-secure/) guide to update your system. You may also wish to set the timezone, configure your hostname, create a limited user account, and harden SSH access.
+1. Follow our [Setting Up and Securing a Compute Instance](/cloud/guides/set-up-and-secure/) guide to update your system. You may also wish to set the timezone, configure your hostname, create a limited user account, and harden SSH access.
 
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/docs/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
 {{< /note >}}
 
 ## What Is Jenkins?
@@ -37,9 +37,9 @@ All this makes Jenkins an exceptional tool for automating CI/CD workflows. Jenki
 
 Further plugins mean that you can adapt Jenkins to your needs — whether using a particular test suite, storing artifacts, or deploying to cloud providers.
 
-Learn more about CI/CD principles in our guide [Introduction to Continuous Integration and Continuous Deployment](/docs/guides/introduction-ci-cd/).
+Learn more about CI/CD principles in our guide [Introduction to Continuous Integration and Continuous Deployment](/cloud/guides/introduction-ci-cd/).
 
-You can also learn more particulars about automating builds with Jenkins through our guide [How to Automate Builds with Jenkins on Ubuntu 22.04](/docs/guides/automate-builds-with-jenkins-on-ubuntu/).
+You can also learn more particulars about automating builds with Jenkins through our guide [How to Automate Builds with Jenkins on Ubuntu 22.04](/cloud/guides/automate-builds-with-jenkins-on-ubuntu/).
 
 ## How to Provision Jenkins for CI/CD
 
@@ -167,7 +167,7 @@ Now you have what you need to support three build agents. This tutorial deploys 
 The configurations and commands used in this guide add multiple Linode instances to your account. Be sure to monitor your account closely in the Linode Cloud Manager to avoid unwanted charges.
 {{< /note >}}
 
-1. Install Terraform. Follow the relevant section of our [Use Terraform to Provision Linode Environments](/docs/guides/how-to-build-your-infrastructure-using-terraform-and-linode/#install-terraform) guide to do so.
+1. Install Terraform. Follow the relevant section of our [Use Terraform to Provision Linode Environments](/cloud/guides/how-to-build-your-infrastructure-using-terraform-and-linode/#install-terraform) guide to do so.
 
 1. Download our Terraform package for deploying Jenkins build agents:
 
@@ -253,9 +253,9 @@ And in fact you can adapt the commands in the "Deploy" portion of the pipeline f
 
 Because this tutorial uses Kubernetes for its deployment, you need to have a Docker registry. This allows you to push built Docker images from the Jenkins agents and pull them onto the Kubernetes cluster.
 
-The easiest solution here is [Docker Hub](https://hub.docker.com/), where you can add images after registering an account. Learn more, with a full-functioning example, in our guide [Create and Deploy a Docker Container Image to a Kubernetes Cluster](/docs/guides/deploy-container-image-to-kubernetes/).
+The easiest solution here is [Docker Hub](https://hub.docker.com/), where you can add images after registering an account. Learn more, with a full-functioning example, in our guide [Create and Deploy a Docker Container Image to a Kubernetes Cluster](/cloud/guides/deploy-container-image-to-kubernetes/).
 
-You can also self-host a registry solution. One such solution is [Harbor](https://goharbor.io/), and you can deploy your own Harbor server readily through the Linode Marketplace. See our guide [Deploy Harbor through the Linode Marketplace](/docs/marketplace-docs/guides/harbor/) to see how.
+You can also self-host a registry solution. One such solution is [Harbor](https://goharbor.io/), and you can deploy your own Harbor server readily through the Linode Marketplace. See our guide [Deploy Harbor through the Linode Marketplace](/cloud/marketplace-docs/guides/harbor/) to see how.
 
 Whatever solution you choose, you need later to provide the registry's path to the Jenkins pipeline.
 
@@ -349,7 +349,7 @@ For convenience, this tutorial opts to use a `Jenkinsfile` included within the p
 
 - *Deploy*, where a kubectl command deploys the built Docker image to the Kubernetes cluster
 
-The example pipeline uses ESLint for a simple JavaScript code analysis, but there are more options to choose from depending on your codebase and needs. You can learn more about code analysis tools in our guide [What is Static Code Analysis?](/docs/guides/what-is-static-code-analysis/).
+The example pipeline uses ESLint for a simple JavaScript code analysis, but there are more options to choose from depending on your codebase and needs. You can learn more about code analysis tools in our guide [What is Static Code Analysis?](/cloud/guides/what-is-static-code-analysis/).
 
 #### Create a Remote Repository
 

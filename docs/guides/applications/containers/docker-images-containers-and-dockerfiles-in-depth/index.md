@@ -16,7 +16,7 @@ external_resources:
  - '[Docker Docs](http://docs.docker.com/)'
 ---
 
-[Docker images](/docs/guides/introduction-to-docker/#docker-images) make it easy to deploy multiple containers without having to maintain the same image across several virtual machines. You can use a Dockerfile to automate the installation and configuration of an image and its dependencies. A [Dockerfile](/docs/guides/how-to-use-dockerfiles) is a text file of the commands (which are executed in order) used to automate installation and configuration of a Docker image. This article expands on our guide on [How to Use a Dockerfile to Build a Docker Image](/docs/guides/how-to-use-dockerfiles) by covering in-depth utilization of Docker images, containers, and Dockerfiles.
+[Docker images](/cloud/guides/introduction-to-docker/#docker-images) make it easy to deploy multiple containers without having to maintain the same image across several virtual machines. You can use a Dockerfile to automate the installation and configuration of an image and its dependencies. A [Dockerfile](/cloud/guides/how-to-use-dockerfiles) is a text file of the commands (which are executed in order) used to automate installation and configuration of a Docker image. This article expands on our guide on [How to Use a Dockerfile to Build a Docker Image](/cloud/guides/how-to-use-dockerfiles) by covering in-depth utilization of Docker images, containers, and Dockerfiles.
 
 ## Before You Begin
 
@@ -156,7 +156,7 @@ When deploying containers with port configurations, Docker may also create host 
 
 ## Further Reading
 
-This guide and [How to Use a Dockerfile to Build a Docker Image](/docs/guides/how-to-use-dockerfiles) covered the basics of using Dockerfiles to build images and containers, but they barely scratch the surface of what you can accomplish with Docker. For more information:
+This guide and [How to Use a Dockerfile to Build a Docker Image](/cloud/guides/how-to-use-dockerfiles) covered the basics of using Dockerfiles to build images and containers, but they barely scratch the surface of what you can accomplish with Docker. For more information:
 
 -   visit the official [Dockerfile Best Practices](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/) documentation for more on Dockerfiles;
 

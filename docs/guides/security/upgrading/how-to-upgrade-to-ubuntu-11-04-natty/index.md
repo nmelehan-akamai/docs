@@ -70,7 +70,7 @@ Issue the following command to update your package lists:
 
     apt-get update
 
-When running system upgrades, you may want to start a [screen](/docs/guides/using-gnu-screen-to-manage-persistent-terminal-sessions/) session. This will ensure that your system updates continue to run in the event that you are disconnected from the server. Issue the following command to install `screen`:
+When running system upgrades, you may want to start a [screen](/cloud/guides/using-gnu-screen-to-manage-persistent-terminal-sessions/) session. This will ensure that your system updates continue to run in the event that you are disconnected from the server. Issue the following command to install `screen`:
 
     apt-get install screen
 

@@ -20,7 +20,7 @@ audiences: ["intermediate"]
 Omnibus GitLab is a software package (or software stack) that allows you to easily install and run GitLab on your Linode.
 This guide walks you through the process of installing and setting up your own NGINX server on a typical Omnibus installation. Using the method outlined here, you are not forced to use Omnibus's default settings, and can create as many virtual hosts as you need for hosting multiple websites and apps on the same server as your GitLab.
 
-Preconfigured software stacks sometimes bring a series of challenges to those who need to customize specific settings. If you require more control over your installation, consider [installing GitLab from source](/docs/guides/install-gitlab-on-ubuntu-14-04-trusty-tahr/). This application stack could benefit from large amounts of disk space, so also consider using our [Block Storage](https://techdocs.akamai.com/cloud-computing/docs/block-storage) service with this setup.
+Preconfigured software stacks sometimes bring a series of challenges to those who need to customize specific settings. If you require more control over your installation, consider [installing GitLab from source](/cloud/guides/install-gitlab-on-ubuntu-14-04-trusty-tahr/). This application stack could benefit from large amounts of disk space, so also consider using our [Block Storage](https://techdocs.akamai.com/cloud-computing/docs/block-storage) service with this setup.
 
 
 ## Before You Begin
@@ -35,7 +35,7 @@ Preconfigured software stacks sometimes bring a series of challenges to those wh
 
         sudo apt-get update && sudo apt-get upgrade
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, visit our [Users and Groups guide](/docs/guides/linux-users-and-groups/) for more information.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, visit our [Users and Groups guide](/cloud/guides/linux-users-and-groups/) for more information.
 {{< /note >}}
 
 ## Install Omnibus GitLab
@@ -187,4 +187,4 @@ upstream gitlab {
 
         sudo usermod -aG gitlab-www www-data
 
-Congratulations! You have turned a default Omnibus GitLab server into a multi-purpose one. To serve additional websites and apps using your newly unbundled NGINX server, simply create additional virtual hosts above, and configure them to your needs. For more information, please refer to our guide on [how to configure NGINX](/docs/guides/how-to-configure-nginx/).
+Congratulations! You have turned a default Omnibus GitLab server into a multi-purpose one. To serve additional websites and apps using your newly unbundled NGINX server, simply create additional virtual hosts above, and configure them to your needs. For more information, please refer to our guide on [how to configure NGINX](/cloud/guides/how-to-configure-nginx/).

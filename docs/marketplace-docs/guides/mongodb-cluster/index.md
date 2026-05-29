@@ -70,7 +70,7 @@ The following fields (in addition to the domain field above) are used when creat
 
 After your cluster has been fully provisioned, use the instructs below to obtain and save passwords that were generated on your behalf during deployment.
 
-1. Log in to your new Compute Instance through [Lish](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish) or [SSH](/docs/guides/connect-to-server-over-ssh/) using the `root` user and the associated password you entered when creating the instance. If you opted to include your SSH keys as part of this deployment, you can also log in using those keys as either the `root` user or the limited user account you specified during deployment.
+1. Log in to your new Compute Instance through [Lish](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish) or [SSH](/cloud/guides/connect-to-server-over-ssh/) using the `root` user and the associated password you entered when creating the instance. If you opted to include your SSH keys as part of this deployment, you can also log in using those keys as either the `root` user or the limited user account you specified during deployment.
 
 1. The passwords have been saved in a `.deployment-secrets.txt` file located in your user's home directory. You can view this file in your preferred text editor or through the `cat` command. In the command below, replace *[username]* with the limited sudo user you created during deployment.
 
@@ -102,7 +102,7 @@ After your cluster has been fully provisioned, use the instructs below to obtain
 
 After MongoDB has finished deploying, you can access and administer it directly from the console.
 
-1.  Log in to your Compute Instance via [SSH](/docs/guides/connect-to-server-over-ssh/) or [Lish](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish).
+1.  Log in to your Compute Instance via [SSH](/cloud/guides/connect-to-server-over-ssh/) or [Lish](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish).
 
 1.  Launch the [mongo shell](https://docs.mongodb.com/v4.4/mongo/) by running the following command. When prompted, enter the admin user password you set when creating this instance.
 
@@ -150,5 +150,5 @@ For more information on access control and user management, as well as other tip
 
 For more on MongoDB, checkout the following guides:
 
-- [Creating a MongoDB Replica Set](/docs/guides/create-a-mongodb-replica-set/)
-- [Building Database Clusters with MongoDB](/docs/guides/build-database-clusters-with-mongodb/)
+- [Creating a MongoDB Replica Set](/cloud/guides/create-a-mongodb-replica-set/)
+- [Building Database Clusters with MongoDB](/cloud/guides/build-database-clusters-with-mongodb/)

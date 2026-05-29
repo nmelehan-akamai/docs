@@ -30,7 +30,7 @@ While kubeadm automates several cluster-provisioning tasks, there are other even
 
 - The [Linode Kubernetes Engine](https://www.linode.com/products/kubernetes/), allows you to spin up a Kubernetes cluster from the [Cloud Manager](https://techdocs.akamai.com/cloud-computing/docs/linode-kubernetes-engine) or the [Linode API](https://techdocs.akamai.com/cloud-computing/docs/deploy-and-manage-a-kubernetes-cluster-with-the-api), and Linode handles the management and maintenance of your control plane.
 
-- If you prefer a full featured GUI, [Linode's Rancher integration](/docs/guides/how-to-deploy-kubernetes-on-linode-with-rancher-2-x/) enables you to deploy and manage Kubernetes clusters with a simple web interface.
+- If you prefer a full featured GUI, [Linode's Rancher integration](/cloud/guides/how-to-deploy-kubernetes-on-linode-with-rancher-2-x/) enables you to deploy and manage Kubernetes clusters with a simple web interface.
 
 {{% content "k8s-alpha-deprecation-shortguide" %}}
 
@@ -61,7 +61,7 @@ While kubeadm automates several cluster-provisioning tasks, there are other even
 
     To learn more about managing compute resources for containers, see the official [Kubernetes documentation](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/).
 
-1.  Read the [Beginners Guide to Kubernetes](/docs/guides/beginners-guide-to-kubernetes/) to familiarize yourself with the major components and concepts of Kubernetes. The current guide assumes a working knowledge of common Kubernetes concepts and terminology.
+1.  Read the [Beginners Guide to Kubernetes](/cloud/guides/beginners-guide-to-kubernetes/) to familiarize yourself with the major components and concepts of Kubernetes. The current guide assumes a working knowledge of common Kubernetes concepts and terminology.
 
 ## Build a Kubernetes Cluster
 
@@ -280,7 +280,7 @@ Complete the steps outlined in this section on all three Linodes.
 
 After installing the Kubernetes related tooling on all your Linodes, you are ready to set up the Kubernetes control plane. The control plane is responsible for allocating resources to your cluster, maintaining the health of your cluster, and ensuring that it meets the minimum requirements you designate for the cluster.
 
-The primary components of the control plane are the <abbr title="The kube-apiserver is the front end for the Kubernetes API server. It validates and configures data for Kubernetes’ API objects including Pods, Services, Deployments, and more.">kube-apiserver</abbr>, <abbr title="The kube-controller-manager is a daemon that manages the Kubernetes control loop. It watches the shared state of the cluster through the Kubernetes API server.">kube-controller-manager</abbr>, kube-scheduler, and etcd. You can easily initialize the Kubernetes control plane with all the necessary components using kubeadm. For more information on each of control plane component see the [Beginner's Guide to Kubernetes](/docs/guides/beginners-guide-to-kubernetes/).
+The primary components of the control plane are the <abbr title="The kube-apiserver is the front end for the Kubernetes API server. It validates and configures data for Kubernetes’ API objects including Pods, Services, Deployments, and more.">kube-apiserver</abbr>, <abbr title="The kube-controller-manager is a daemon that manages the Kubernetes control loop. It watches the shared state of the cluster through the Kubernetes API server.">kube-controller-manager</abbr>, kube-scheduler, and etcd. You can easily initialize the Kubernetes control plane with all the necessary components using kubeadm. For more information on each of control plane component see the [Beginner's Guide to Kubernetes](/cloud/guides/beginners-guide-to-kubernetes/).
 
 In addition to the baseline control plane components, there are several *addons*, that can be installed on the control plane to access additional cluster features. You need to install a networking and network policy provider addon that implements the [Kubernetes' network model](https://kubernetes.io/docs/concepts/cluster-administration/networking/) on the cluster's Pod network.
 
@@ -346,7 +346,7 @@ kubeadm only supports Container Network Interface (CNI) based networks. CNI cons
 
 ### Inspect the Control Plane with Kubectl
 
-After completing the previous section, your Kubernetes control plane is ready with all the necessary components to manage a cluster. To gain a better understanding of all the parts that make up the control plane, this section walks you through inspecting your control plane. If you have not yet reviewed the [Beginner's Guide to Kubernetes](/docs/guides/beginners-guide-to-kubernetes/), it is helpful to do so prior to continuing with this section as it relies on the understanding of basic Kubernetes concepts.
+After completing the previous section, your Kubernetes control plane is ready with all the necessary components to manage a cluster. To gain a better understanding of all the parts that make up the control plane, this section walks you through inspecting your control plane. If you have not yet reviewed the [Beginner's Guide to Kubernetes](/cloud/guides/beginners-guide-to-kubernetes/), it is helpful to do so prior to continuing with this section as it relies on the understanding of basic Kubernetes concepts.
 
 1.  View the current state of all nodes in your cluster. At this stage, the only node you should expect to see is the control plane, since worker nodes have yet to be bootstrapped. A `STATUS` of `Ready` indicates that the control plane contains all necessary components, including the Pod network add-on, to start managing clusters.
 
@@ -361,7 +361,7 @@ After completing the previous section, your Kubernetes control plane is ready wi
     primary       Ready      control-plane    1h    v1.14.1
     ```
 
-1.  Inspect the available [namespaces](/docs/guides/beginners-guide-to-kubernetes-part-3-objects/#namespaces) in your cluster.
+1.  Inspect the available [namespaces](/cloud/guides/beginners-guide-to-kubernetes-part-3-objects/#namespaces) in your cluster.
 
     ```command
     kubectl get namespaces
@@ -458,7 +458,7 @@ Follow the steps below on each node you would like to bootstrap to the cluster a
 
 ## Next Steps
 
-Now that you have a Kubernetes cluster up and running, you can begin experimenting with the various ways to configure Pods, group resources, and deploy services that are exposed to the public internet. To help you get started with this, move on to follow along with the [Deploy a Static Site on Linode using Kubernetes](/docs/guides/how-to-deploy-a-static-site-on-linode-kubernetes-engine/) guide.
+Now that you have a Kubernetes cluster up and running, you can begin experimenting with the various ways to configure Pods, group resources, and deploy services that are exposed to the public internet. To help you get started with this, move on to follow along with the [Deploy a Static Site on Linode using Kubernetes](/cloud/guides/how-to-deploy-a-static-site-on-linode-kubernetes-engine/) guide.
 
 ## Tear Down Your Cluster
 

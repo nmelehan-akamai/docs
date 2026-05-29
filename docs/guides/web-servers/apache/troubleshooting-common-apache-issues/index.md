@@ -16,7 +16,7 @@ external_resources:
  - '[Apache user wiki](http://wiki.apache.org/httpd/)'
 ---
 
-This article provides troubleshooting guidelines for the [Apache web server](/docs/web-servers/apache/). Apache is a highly customizable tool for serving HTTP traffic. Because it allows for so many different configurations and settings in so many different places, sometimes Apache configuration can befuddle even advanced users.
+This article provides troubleshooting guidelines for the [Apache web server](/cloud/web-servers/apache/). Apache is a highly customizable tool for serving HTTP traffic. Because it allows for so many different configurations and settings in so many different places, sometimes Apache configuration can befuddle even advanced users.
 
 In this guide, you'll start with some basic troubleshooting steps and then proceed to more advanced techniques that can help you untangle conflicting directives. We recommend starting at the beginning of this guide and going through it in order. By the time you're done, you should be able to debug your Apache installation.
 
@@ -183,5 +183,5 @@ If you're continuing to have issues with Apache, we encourage you to make contac
 
 You might want to look at the following Linode guides:
 
-- A group of guides for various [web frameworks](/docs/frameworks/)
-- General [Apache HTTP server](/docs/web-servers/apache/) guides
+- A group of guides for various [web frameworks](/cloud/frameworks/)
+- General [Apache HTTP server](/cloud/web-servers/apache/) guides

@@ -57,7 +57,7 @@ Throughout this guide, commands and code snippets will reference the values disp
 
 1.  [Set the hostname](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance#configure-a-custom-hostname) for each server.
 
-1.  [Set the FQDN](/docs/guides/using-your-systems-hosts-file/) for each Linode by editing the servers' `/etc/hosts` files.
+1.  [Set the FQDN](/cloud/guides/using-your-systems-hosts-file/) for each Linode by editing the servers' `/etc/hosts` files.
 
     {{< note type="secondary" title="Example content for the hosts file" isCollapsible=true >}}
     You can model the contents of your `/etc/hosts` files on these snippets:

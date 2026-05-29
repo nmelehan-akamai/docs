@@ -26,10 +26,10 @@ pgAdmin is a free, open-source PostgreSQL database administration GUI for Micros
 
 1.  Follow our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide to update your system. You may also wish to set the timezone, configure your hostname, create a limited user account, and harden SSH access.
 
-1. Install PostgreSQL on your Linode using one of our [PostgreSQL installation guides](/docs/databases/postgresql/).
+1. Install PostgreSQL on your Linode using one of our [PostgreSQL installation guides](/cloud/databases/postgresql/).
 
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Linux Users and Groups](/docs/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
 {{< /note >}}
 
 ## Install pgAdmin

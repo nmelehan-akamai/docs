@@ -18,7 +18,7 @@ marketplace_app_name: "Redis Sentinel"
 [Redis](https://redis.io/) is an open-source, in-memory, data-structure store, with the optional ability to write and persist data to a disk, which can be used as a key-value database, cache, and message broker. Redis features built-in transactions, replication, and support for a variety of data structures such as strings, hashes, lists, sets, and others.
 
 {{< note type="warning" title="Quick Deploy App Cluster Notice" >}}
-This Quick Deploy App deploys 3 or 5 Compute Instances to create a highly available and redundant Redis cluster using Redis Sentinel, each with the plan type and size that you select. Please be aware that each of these Compute Instances will appear on your invoice as separate items. To instead deploy Redis on a single Compute Instance, see [Deploy Redis](/docs/marketplace-docs/guides/redis/).
+This Quick Deploy App deploys 3 or 5 Compute Instances to create a highly available and redundant Redis cluster using Redis Sentinel, each with the plan type and size that you select. Please be aware that each of these Compute Instances will appear on your invoice as separate items. To instead deploy Redis on a single Compute Instance, see [Deploy Redis](/cloud/marketplace-docs/guides/redis/).
 {{< /note >}}
 
 ## Deploying a Quick Deploy App
@@ -66,7 +66,7 @@ The following fields are used when creating your self-signed TLS/SSL certificate
 
 After your cluster has been fully provisioned, use the instructs below to obtain and save passwords that were generated on your behalf during deployment.
 
-1. Log in to your new Compute Instance through [Lish](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish) or [SSH](/docs/guides/connect-to-server-over-ssh/) using the `root` user and the associated password you entered when creating the instance. If you opted to include your SSH keys as part of this deployment, you can also log in using those keys as either the `root` user or the limited user account you specified during deployment.
+1. Log in to your new Compute Instance through [Lish](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish) or [SSH](/cloud/guides/connect-to-server-over-ssh/) using the `root` user and the associated password you entered when creating the instance. If you opted to include your SSH keys as part of this deployment, you can also log in using those keys as either the `root` user or the limited user account you specified during deployment.
 
 1. The passwords have been saved in a `.deployment-secrets.txt` file located in your user's home directory. You can view this file in your preferred text editor or through the `cat` command. In the command below, replace *[username]* with the limited sudo user you created during deployment.
 
@@ -91,7 +91,7 @@ After your cluster has been fully provisioned, use the instructs below to obtain
 
 ### Access the Redis CLI
 
-1.  Log in to your new Compute Instance through [Lish](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish) or [SSH](/docs/guides/connect-to-server-over-ssh/) using either the `root` user or limited user and the associated password you entered when creating the instance.
+1.  Log in to your new Compute Instance through [Lish](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish) or [SSH](/cloud/guides/connect-to-server-over-ssh/) using either the `root` user or limited user and the associated password you entered when creating the instance.
 
 1.  To use the redis-cli, run either of the commands below:
 
