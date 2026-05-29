@@ -111,7 +111,7 @@ It is a best practice to configure load balancing first, and then add health che
 
     ![The NodeBalancer configuration screen after making the indicated changes.](nodebalancer-configuration-screen.png)
 
-1.  When done, click the **Create NodeBalancer** button to initialize the instance. Our [Create a NodeBalancer guide](https://www.linode.com/docs/products/networking/nodebalancers/guides/create/) has more details on load balancer setup.
+1.  When done, click the **Create NodeBalancer** button to initialize the instance. Our [Create a NodeBalancer guide](https://techdocs.akamai.com/cloud-computing/docs/create-a-nodebalancer) has more details on load balancer setup.
 
 #### Verify Load Balancing
 

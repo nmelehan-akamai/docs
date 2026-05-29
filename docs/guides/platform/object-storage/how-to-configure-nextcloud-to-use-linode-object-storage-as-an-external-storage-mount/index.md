@@ -99,7 +99,7 @@ Linode Object Storage is *Amazon S3-compatible*. Nextcloud connects to Amazon's 
     | Secret Key | The value of the Secret Key you created using the Linode Cloud Manager. |
 
     {{< note >}}
-    To view Object Storage region IDs and hostname values, review the [Access Buckets and Files through URLs](https://www.linode.com/docs/products/storage/object-storage/guides/urls/#cluster-url-s3-endpoint) guide.
+    To view Object Storage region IDs and hostname values, review the [Access Buckets and Files through URLs](https://techdocs.akamai.com/cloud-computing/docs/access-buckets-and-files-through-urls#cluster-url-s3-endpoint) guide.
     {{< /note >}}
 
     {{< note >}}

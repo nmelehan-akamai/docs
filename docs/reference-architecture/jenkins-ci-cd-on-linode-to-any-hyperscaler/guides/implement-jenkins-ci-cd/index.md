@@ -597,7 +597,7 @@ Navigating to your Slack workspace, you should see messages from the Jenkins bot
 Finally, to see the deployed example application in action, you can forward the port on the Kubernetes cluster to your workstation.
 
 {{< note >}}
-Install `kubectl` on your workstation if you don't have it already: [Install kubectl](https://www.linode.com/docs/products/compute/kubernetes/guides/kubectl/#install-kubectl).
+Install `kubectl` on your workstation if you don't have it already: [Install kubectl](https://techdocs.akamai.com/cloud-computing/docs/manage-a-cluster-with-kubectl#install-kubectl).
 {{< /note >}}
 
 1. Enter following command from your Jenkins server to make the application's service available on port `8080` on `localhost`. Update the path to your downloaded Kubernetes cluster's config on the first line:
