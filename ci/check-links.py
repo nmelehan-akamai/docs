@@ -394,7 +394,7 @@ def check_internal_links_markdown(guides, assets):
                 # Check if link points to a canonical internal link
                 if not next((x for x in guides if x.link == link), None):
                     # Checks if the link matches an alias or not
-                    if next((x for x in guides if link.replace('/docs/','/') in x.aliases), None) is not None:
+                    if next((x for x in guides if link.replace('/cloud/','/') in x.aliases), None) is not None:
                         issues.append(Issue(link_unmodified,'points-to-alias'))
                     else:
                         issues.append(Issue(link_unmodified,'not-found'))
