@@ -379,7 +379,7 @@ def check_internal_links_markdown(guides, assets):
                 if not "/" in link and "." in link:
                     continue
                 # Log issue if link does not start with /docs/
-                if not link.startswith('/docs/'):
+                if not link.startswith('/cloud/'):
                     issues.append(Issue(link_unmodified,'incorrect-root'))
                     continue
                 # Log issue if link ends with two slashes /
