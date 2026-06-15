@@ -125,7 +125,7 @@ issue_types.append(IssueType(
 issue_types.append(IssueType(
     id = 'incorrect-root',
     title = "Incorrect root directory",
-    summary = "The link does not point to the correct root (/docs/)",
+    summary = "The link does not point to the correct root (/cloud/)",
     severity = 'failure',
     weight = 30
 ))
@@ -198,7 +198,7 @@ def get_guides():
                                     #print("New file path: " + new_file_path)
                                     os.rename(old_file_path,new_file_path)
 
-                            canonical_link = "/docs/guides/" + expanded_guide['slug'] + "/"
+                            canonical_link = "/cloud/guides/" + expanded_guide['slug'] + "/"
                         # ... If the guide is in the API section...
                         elif "slug" in expanded_guide.keys() and "docs/api/" in file_path:
                             canonical_link = "/docs/api/" + expanded_guide['slug'] + "/"
