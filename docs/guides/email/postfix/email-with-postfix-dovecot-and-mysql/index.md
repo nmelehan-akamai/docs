@@ -583,7 +583,7 @@ auth_mechanisms = plain login
 {{< /file >}}
 
     {{< note respectIndent=false >}}
-For reference, [view a complete `10-auth.conf` file](/cloud/assets/1238-dovecot_10-auth.conf.txt).
+For reference, [view a complete `10-auth.conf` file](1238-dovecot_10-auth.conf.txt).
 {{< /note >}}
 
 1. Edit the `/etc/dovecot/conf.d/auth-sql.conf.ext` file with authentication and storage information. Ensure your file contains the following lines. Make sure the `passdb` section is uncommented, that the `userdb` section that uses the `static` driver is uncommented and updated with the right argument. Then comment out the `userdb` section that uses the `sql` driver:
@@ -630,7 +630,7 @@ password_query = SELECT email as user, password FROM virtual_users WHERE email='
     1.  Change the `/etc/dovecot/dovecot-sql.conf.ext` file's `password_query` value to `password_query = SELECT email as user, password FROM virtual_users WHERE email=(SELECT destination FROM virtual_aliases WHERE source = '%u');`
 
     {{< note respectIndent=false >}}
-For reference, [view](/cloud/assets/1284-dovecot__dovecot-sql.conf.ext.txt) a complete `dovecot-sql.conf.ext`file.
+For reference, [view](1284-dovecot__dovecot-sql.conf.ext.txt) a complete `dovecot-sql.conf.ext`file.
 {{< /note >}}
 
 1.  Change the owner and group of the `/etc/dovecot/` directory to `vmail` and `dovecot`:
@@ -646,7 +646,7 @@ For reference, [view](/cloud/assets/1284-dovecot__dovecot-sql.conf.ext.txt) a co
     {{< note respectIndent=false >}}
 When editing the file, be careful not to remove any opening or closing curly braces. If there's a syntax error, Dovecot will crash silently. You can check `/var/log/upstart/dovecot.log` to debug the error.
 
-Here is [an example of a complete `10-master.conf`](/cloud/assets/1240-dovecot_10-master.conf.txt) file.
+Here is [an example of a complete `10-master.conf`](1240-dovecot_10-master.conf.txt) file.
 {{< /note >}}
 
     Disable unencrypted IMAP and POP3 by setting the protocols' ports to `0`. Uncomment the `port` and `ssl` variables:

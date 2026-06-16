@@ -63,7 +63,7 @@ Issue the following commands to download and compile nginx with support for the 
     useradd -M -r --shell /bin/sh --home-dir /opt/nginx nginx
     mkdir /var/lib/nginx
     cp /opt/uwsgi/nginx/uwsgi_params /opt/nginx/conf/uwsgi_params
-    wget -O init-rpm.sh http://www.linode.com/docs/assets/654-init-rpm.sh
+    wget -O init-rpm.sh 654-init-rpm.sh
     mv init-rpm.sh /etc/rc.d/init.d/nginx
     chmod +x /etc/rc.d/init.d/nginx
     chkconfig --add nginx
@@ -75,7 +75,7 @@ Issue the following commands to download and compile nginx with support for the 
 Issue the following command to download an init script to manage the uWSGI process, located at `/etc/init.d/uwsgi`:
 
     cd /opt/
-    wget -O init-rpm.sh http://www.linode.com/docs/assets/653-uwsgi-init-rpm.sh
+    wget -O init-rpm.sh 653-uwsgi-init-rpm.sh
     mv /opt/init-rpm.sh /etc/init.d/uwsgi
     chmod +x /etc/init.d/uwsgi
 

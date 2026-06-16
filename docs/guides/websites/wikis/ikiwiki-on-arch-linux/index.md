@@ -222,12 +222,12 @@ Configure the `username` user's identity within git. Modify the following model 
     git config --global user.email "username@example.com"
     git config --global user.name "username example"
 
-Issue the following commands to copy the default `basewiki` and `templates` to the `~/wiki` directory, download a [sample ikiwiki configuration file](/cloud/assets/694-ikiwiki.yaml), and create an initial commit in the `~/wiki` repository:
+Issue the following commands to copy the default `basewiki` and `templates` to the `~/wiki` directory, download a [sample ikiwiki configuration file](694-ikiwiki.yaml), and create an initial commit in the `~/wiki` repository:
 
     cd ~/wiki
     cp -R /usr/share/ikiwiki/templates ~/wiki/
     cp -R /usr/share/ikiwiki/basewiki ~/wiki/
-    wget -O ikiwiki.yaml http://www.linode.com/docs/assets/694-ikiwiki.yaml
+    wget -O ikiwiki.yaml 694-ikiwiki.yaml
     git add .
     git commit -m "initial ikiwiki commit"
     git push origin master

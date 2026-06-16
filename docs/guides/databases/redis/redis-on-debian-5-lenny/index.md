@@ -127,7 +127,7 @@ While running the Redis instance in this configuration is useful for testing and
 Issue the following sequence of commands to download a basic init script, create a dedicated system user, mark this file as executable, and ensure that the Redis process will start following the next boot cycle:
 
     cd /opt/
-    wget -O init-deb.sh http://www.linode.com/docs/assets/628-redis-init-deb.sh
+    wget -O init-deb.sh 628-redis-init-deb.sh
     adduser --system --no-create-home --disabled-login --disabled-password --group redis
     mv /opt/init-deb.sh /etc/init.d/redis
     chmod +x /etc/init.d/redis

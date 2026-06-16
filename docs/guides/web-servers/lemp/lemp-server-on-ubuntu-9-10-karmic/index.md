@@ -99,9 +99,9 @@ Create a dedicated system user to run the nginx process under by issuing the fol
 
     adduser --system --no-create-home --disabled-login --disabled-password --group nginx
 
-Now install and configure the [init script](/cloud/assets/543-init-deb.sh) to make it possible to start and stop the web server more easily. Issue the following command sequence:
+Now install and configure the [init script](543-init-deb.sh) to make it possible to start and stop the web server more easily. Issue the following command sequence:
 
-    wget -O init-deb.sh http://www.linode.com/docs/assets/543-init-deb.sh
+    wget -O init-deb.sh 543-init-deb.sh
     mv init-deb.sh /etc/init.d/nginx
     chmod +x /etc/init.d/nginx
     /usr/sbin/update-rc.d -f nginx defaults
@@ -203,10 +203,10 @@ Visit the [spawn-fcgi project page](http://redmine.lighttpd.net/projects/spawn-f
 Issue the following sequence of commands to download a small wrapper script for PHP-FastCGI, configure an init script to control the process, start the process for the first time, and ensure that the process will start following a reboot cycle:
 
     cd /opt/
-    wget -O php-fastcgi-deb.sh http://www.linode.com/docs/assets/544-php-fastcgi-deb.sh
+    wget -O php-fastcgi-deb.sh 544-php-fastcgi-deb.sh
     mv php-fastcgi-deb.sh /usr/bin/php-fastcgi
     chmod +x /usr/bin/php-fastcgi
-    wget -O init-php-fastcgi-deb.sh http://www.linode.com/docs/assets/545-init-php-fastcgi-deb.sh
+    wget -O init-php-fastcgi-deb.sh 545-init-php-fastcgi-deb.sh
     mv init-php-fastcgi-deb.sh /etc/init.d/php-fastcgi
     chmod +x /etc/init.d/php-fastcgi
     /etc/init.d/php-fastcgi start

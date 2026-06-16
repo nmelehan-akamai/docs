@@ -106,7 +106,7 @@ Please do **not** remove the Passenger files from `opt` after the install. They 
 Nginx is now installed in `/opt/nginx`, but there are no "init" scripts to control this process. Issue the following sequence of commands to download a script, move it to the proper directory, set the proper permissions and set system startup links:
 
     cd /opt
-    wget -O init-rpm.sh http://www.linode.com/docs/assets/603-init-rpm.sh
+    wget -O init-rpm.sh 603-init-rpm.sh
     mv /opt/init-rpm.sh /etc/rc.d/init.d/nginx
     chmod +x /etc/rc.d/init.d/nginx
     chkconfig --add nginx

@@ -127,8 +127,8 @@ Install the Perl module for FastCGI using the [CPAN Minus](/cloud/guides/manage-
 Issue the following command sequence to download the FastCGI wrapper script (credit: [Denis S. Filimonov](http://www.ruby-forum.com/topic/145858)) and an init script to control the FastCGI process, set the permissions, launch the wrapper for the first time, and ensure that FastCGI launches at startup:
 
     cd /opt/
-    wget -O fastcgi-wrapper http://www.linode.com/docs/assets/638-fastcgi-wrapper.sh
-    wget -O init-deb.sh http://www.linode.com/docs/assets/637-init-deb.sh
+    wget -O fastcgi-wrapper 638-fastcgi-wrapper.sh
+    wget -O init-deb.sh 637-init-deb.sh
     mv /opt/fastcgi-wrapper /usr/bin/fastcgi-wrapper.pl
     mv /opt/init-deb.sh /etc/init.d/perl-fastcgi
     chmod +x /usr/bin/fastcgi-wrapper.pl

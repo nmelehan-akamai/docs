@@ -108,9 +108,9 @@ When upstream sources offer new releases, repeat the instructions for installing
 
 ### Create an Init Script to Manage nginx
 
-Before we can begin to use the nginx server, we must create a means of controlling the daemon process. You can create an "init script" using [this example](/cloud/assets/659-init-deb.sh) to control nginx. Issue the following commands to download the file, change the execution mode, and set the system to initialize nginx on boot:
+Before we can begin to use the nginx server, we must create a means of controlling the daemon process. You can create an "init script" using [this example](659-init-deb.sh) to control nginx. Issue the following commands to download the file, change the execution mode, and set the system to initialize nginx on boot:
 
-    wget -O init-deb.sh http://www.linode.com/docs/assets/659-init-deb.sh
+    wget -O init-deb.sh 659-init-deb.sh
     mv init-deb.sh /etc/init.d/nginx
     chmod +x /etc/init.d/nginx
     /usr/sbin/update-rc.d -f nginx defaults

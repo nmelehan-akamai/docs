@@ -576,7 +576,7 @@ title CentOS (2.6.32-431.23.3.el6.x86_64)
 
 1.  Issue the following commands as `root` to retrieve and run the script:
 
-        wget -O selinux.sh http://www.linode.com/docs/assets/542-centos5-native-kernel-selinux-enforcing.sh
+        wget -O selinux.sh 542-centos5-native-kernel-selinux-enforcing.sh
         chmod +x selinux.sh
         ./selinux.sh
 

@@ -199,7 +199,7 @@ The following commands should be run on the server where **Solr** is installed.
 Run the following commands on the server where **Solr** is installed.
 {{< /note >}}
 
-1.  Use a text editor to create a new script `/etc/init.d/solr`.  Alternatively, you can download it from [this link](/cloud/assets/solr):
+1.  Use a text editor to create a new script `/etc/init.d/solr`.  Alternatively, you can download it from [this link](solr):
 
         sudo nano /etc/init.d/solr
 

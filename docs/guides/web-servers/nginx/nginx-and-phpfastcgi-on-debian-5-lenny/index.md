@@ -124,10 +124,10 @@ Visit the [spawn-fcgi project page](http://redmine.lighttpd.net/projects/spawn-f
 Issue the following command sequence to download scripts to control spawn-fcgi and php-fastcgi, set privileges, make the init script run at startup, and launch it for the first time:
 
     cd /opt
-    wget -O php-fastcgi-deb.sh http://www.linode.com/docs/assets/680-php-fastcgi-deb.sh
+    wget -O php-fastcgi-deb.sh 680-php-fastcgi-deb.sh
     mv php-fastcgi-deb.sh /usr/bin/php-fastcgi
     chmod +x /usr/bin/php-fastcgi
-    wget -O php-fastcgi-init-deb.sh http://www.linode.com/docs/assets/681-php-fastcgi-init-deb.sh
+    wget -O php-fastcgi-init-deb.sh 681-php-fastcgi-init-deb.sh
     mv php-fastcgi-init-deb.sh /etc/init.d/php-fastcgi
     chmod +x /etc/init.d/php-fastcgi
     update-rc.d php-fastcgi defaults

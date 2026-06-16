@@ -201,7 +201,7 @@ OversignHeaders     From
 {{< /file >}}
 
 
-    Edit `/etc/opendkim.conf` and replace it's contents with the above, or download [a copy of opendkim.conf](/cloud/assets/postfix-opendkim.conf.txt), upload it to your server and copy it over `/etc/opendkim.conf`.
+    Edit `/etc/opendkim.conf` and replace it's contents with the above, or download [a copy of opendkim.conf](postfix-opendkim.conf.txt), upload it to your server and copy it over `/etc/opendkim.conf`.
 
 2.  Ensure that file permissions are set correctly:
 

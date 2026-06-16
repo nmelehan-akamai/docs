@@ -128,7 +128,7 @@ class apache::params {
 
 
     {{< note respectIndent=false >}}
-For the duration of this guide, when something needs to be added to the parameter list the variables needed for Red Hat and Debian will be provided, but the expanding code will not be shown. A complete copy of `params.pp` can be viewed [here](/cloud/assets/params.pp).
+For the duration of this guide, when something needs to be added to the parameter list the variables needed for Red Hat and Debian will be provided, but the expanding code will not be shown. A complete copy of `params.pp` can be viewed [here](params.pp).
 {{< /note >}}
 
 4.  With the parameters finally defined, we need to call the `params.pp` file and the parameters into `init.pp`. To do this, the parameters need to be added after the class name, but before the opening curly bracket (`{`):
@@ -146,7 +146,7 @@ class apache (
 
 ### Manage Configuration Files
 
-Apache has two different configuration files, depending on whether you are working on a Red Hat- or Debian-based system. These can be pulled off a server, or viewed here: [httpd.conf (Red Hat)](/cloud/assets/httpd.conf), [apache2.conf (Debian)](/cloud/assets/apache2.conf).
+Apache has two different configuration files, depending on whether you are working on a Red Hat- or Debian-based system. These can be pulled off a server, or viewed here: [httpd.conf (Red Hat)](httpd.conf), [apache2.conf (Debian)](apache2.conf).
 
 1.  Copy the `httpd.conf` and `apache2.conf` files to the `files` directory located at `/etc/puppet/modules/apache/files/`.
 
@@ -194,7 +194,7 @@ if $::osfamily == 'RedHat' {
 {{< /file >}}
 
 
-    These parameters will also need to be added to the `init.pp` file, following the example of the additional parameters. A complete copy of the `init.pp` file can be seen [here](/cloud/assets/puppet_apacheinit.pp).
+    These parameters will also need to be added to the `init.pp` file, following the example of the additional parameters. A complete copy of the `init.pp` file can be seen [here](puppet_apacheinit.pp).
 
 5.  When the configuration file is changed, Apache needs to restart. To automate this, the `service` resource can be used in combination with the `notify` attribute, which will call the resource to run whenever the configuration file is changed:
 

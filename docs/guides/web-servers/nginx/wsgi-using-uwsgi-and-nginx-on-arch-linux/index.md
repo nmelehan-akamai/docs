@@ -54,7 +54,7 @@ Because you have built these packages from source, you will want to monitor thei
 Issue the following command to download an init script to manage the uWSGI process, located at `/etc/rc.d/uwsgi`:
 
     cd /opt/
-    wget -O init-arch.sh http://www.linode.com/docs/assets/700-init-arch.sh
+    wget -O init-arch.sh 700-init-arch.sh
     mv /opt/init-arch.sh /etc/rc.d/uwsgi
 
 Create an `/etc/conf.d/uwsgi` file to specify specific settings for your Python application. The `MODULE` specifies the name of the Python module that contains your `wsgi` specification. Consider the following example:

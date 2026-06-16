@@ -87,9 +87,9 @@ Create a dedicated system user to run the nginx process under by issuing the fol
 
     useradd -M -r --shell /bin/sh --home-dir /opt/nginx nginx
 
-Now install and configure the [init script](/cloud/assets/546-init-rpm.sh) to make it possible to start and stop the web server more easily. Issue the following command sequence:
+Now install and configure the [init script](546-init-rpm.sh) to make it possible to start and stop the web server more easily. Issue the following command sequence:
 
-    wget -O init-rpm.sh http://www.linode.com/docs/assets/546-init-rpm.sh
+    wget -O init-rpm.sh 546-init-rpm.sh
     mv init-rpm.sh /etc/rc.d/init.d/nginx
     chmod +x /etc/rc.d/init.d/nginx
     chkconfig --add nginx
@@ -169,10 +169,10 @@ If your application includes PHP code, you will need to implement the following 
 Issue the following sequence of commands to download a small wrapper script for PHP-FastCGI, configure an init script to control the process, start the process for the first time, and ensure that the process will start following a reboot cycle:
 
     cd /opt/
-    wget -O php-fastcgi-rpm.sh http://www.linode.com/docs/assets/548-php-fastcgi-rpm.sh
+    wget -O php-fastcgi-rpm.sh 548-php-fastcgi-rpm.sh
     mv php-fastcgi-rpm.sh /usr/bin/php-fastcgi
     chmod +x /usr/bin/php-fastcgi
-    wget -O init-php-fastcgi-rpm.sh http://www.linode.com/docs/assets/547-init-php-fastcgi-rpm.sh
+    wget -O init-php-fastcgi-rpm.sh 547-init-php-fastcgi-rpm.sh
     mv init-php-fastcgi-rpm.sh /etc/init.d/php-fastcgi
     chmod +x /etc/init.d/php-fastcgi
     chkconfig --add php-fastcgi

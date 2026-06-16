@@ -96,7 +96,7 @@ Please do **not** remove the Passenger files from `opt` after the install. They 
 Nginx is now installed in `/opt/nginx`, but we need a way of controlling it. Issue the following commands to download an "init" script to control the process, set permissions, and configure system startup links:
 
     cd /opt/
-    wget -O init-nginx-deb.sh http://www.linode.com/docs/assets/705-init-nginx-deb.sh
+    wget -O init-nginx-deb.sh 705-init-nginx-deb.sh
     mv /opt/init-nginx-deb.sh /etc/init.d/nginx
     chmod +x /etc/init.d/nginx
     /usr/sbin/update-rc.d -f nginx defaults

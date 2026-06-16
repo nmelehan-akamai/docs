@@ -94,7 +94,7 @@ Issue the following command to return to a root shell.
 Issue the following commands to create an init script to control the Confluence application, mark this file executable, and configure Confluence to start automatically when the system boots:
 
     cd /opt/
-    wget -O init-rpm.sh http://www.linode.com/docs/assets/614-init-rpm.sh
+    wget -O init-rpm.sh 614-init-rpm.sh
     mv init-rpm.sh /etc/init.d/confluence
     chmod +x /etc/init.d/confluence
     chkconfig --add confluence

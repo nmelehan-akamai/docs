@@ -146,10 +146,10 @@ You may wish to create a test HTML page under `/srv/www/www.example.com/public_h
 Issue the following command sequence to download scripts to control spawn-fcgi and php-fastcgi, set privileges, make the init script run at startup, and launch it for the first time:
 
     cd /opt
-    wget -O php-fastcgi-rpm.sh http://www.linode.com/docs/assets/696-php-fastcgi-rpm.sh
+    wget -O php-fastcgi-rpm.sh 696-php-fastcgi-rpm.sh
     mv php-fastcgi-rpm.sh /usr/bin/php-fastcgi
     chmod +x /usr/bin/php-fastcgi
-    wget -O php-fastcgi-init-rpm.sh http://www.linode.com/docs/assets/697-php-fastcgi-init-rpm.sh
+    wget -O php-fastcgi-init-rpm.sh 697-php-fastcgi-init-rpm.sh
     mv php-fastcgi-init-rpm.sh /etc/rc.d/init.d/php-fastcgi
     chmod +x /etc/rc.d/init.d/php-fastcgi
     chkconfig --add php-fastcgi

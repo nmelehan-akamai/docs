@@ -188,7 +188,7 @@ Modify your configuration file sufficiently with the new configuration options p
 To ensure complete functionality of the Girocco system, we need to run the `taskd.pl` and `jobd.sh` scripts as daemons to perform necessary system maintenance. Use or modify the following init script to control the daemon operations:
 
     cd /opt/
-    wget -O repo-taskd-init-deb.sh http://www.linode.com/docs/assets/564-repo-taskd-init-deb.sh
+    wget -O repo-taskd-init-deb.sh 564-repo-taskd-init-deb.sh
     cp /opt/repo-taskd-init-deb.sh /etc/init.d/repod
     chmod +x /etc/init.d/repod
     /usr/sbin/update-rc.d -f repod defaults

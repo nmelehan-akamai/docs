@@ -68,7 +68,7 @@ Now issue the following commands to download and compile nginx with support for 
     make install
     adduser --system --no-create-home --disabled-login --disabled-password --group nginx
     cp /opt/uwsgi/nginx/uwsgi_params /opt/nginx/conf/uwsgi_params
-    wget -O init-deb.sh http://www.linode.com/docs/assets/686-init-deb.sh
+    wget -O init-deb.sh 686-init-deb.sh
     mv init-deb.sh /etc/init.d/nginx
     chmod +x /etc/init.d/nginx
     /usr/sbin/update-rc.d -f nginx defaults
@@ -79,7 +79,7 @@ Now issue the following commands to download and compile nginx with support for 
 Issue the following command to download an init script to manage the uWSGI process, located at `/etc/init.d/uwsgi`:
 
     cd /opt/
-    wget -O init-deb.sh http://www.linode.com/docs/assets/687-uwsgi-init-deb.sh
+    wget -O init-deb.sh 687-uwsgi-init-deb.sh
     mv /opt/init-deb.sh /etc/init.d/uwsgi
     chmod +x /etc/init.d/uwsgi
 

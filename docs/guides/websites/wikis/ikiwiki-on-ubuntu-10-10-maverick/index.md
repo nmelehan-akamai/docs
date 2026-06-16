@@ -303,12 +303,12 @@ Add the following excerpt to `~/wiki/.git/config`:
 {{< /file >}}
 
 
-Issue the following commands to copy the default `basewiki` and `templates` to the `~/wiki` directory, download a [sample ikiwiki configuration file](/cloud/assets/693-ikiwiki.yaml), and create an initial commit in the `~/wiki` repository:
+Issue the following commands to copy the default `basewiki` and `templates` to the `~/wiki` directory, download a [sample ikiwiki configuration file](693-ikiwiki.yaml), and create an initial commit in the `~/wiki` repository:
 
     cd ~/wiki
     cp -R /usr/share/ikiwiki/templates ~/wiki/
     cp -R /usr/share/ikiwiki/basewiki ~/wiki/
-    wget -O ikiwiki.yaml http://www.linode.com/docs/assets/693-ikiwiki.yaml
+    wget -O ikiwiki.yaml 693-ikiwiki.yaml
     git add .
     git commit -m "initial ikiwiki commit"
     git push origin master

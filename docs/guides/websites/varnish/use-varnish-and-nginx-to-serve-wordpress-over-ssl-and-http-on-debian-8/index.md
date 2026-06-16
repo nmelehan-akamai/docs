@@ -287,7 +287,7 @@ set resp.http.X-Purger = req.http.X-Purger;
 {{< /file >}}
 
 
-    This concludes the `custom.vcl` configuration. You can now save and exit the file. The final `custom.vcl` file will look like [this](/cloud/assets/custom.vcl).
+    This concludes the `custom.vcl` configuration. You can now save and exit the file. The final `custom.vcl` file will look like [this](custom.vcl).
 
     {{< note respectIndent=false >}}
 You can download the complete sample configuration file using the link above and `wget`. If you do, remember to replace the variables as described above.

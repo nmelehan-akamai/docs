@@ -68,8 +68,8 @@ In typical installations, the MongoDB server process is controlled using command
 Issue the following sequence of commands to download the scripts and set the permissions on these files:
 
     cd /opt/bin/
-    wget -O mongodb-start http://www.linode.com/docs/assets/625-mongodb-start.sh
-    wget -O mongodb-stop http://www.linode.com/docs/assets/626-mongodb-stop.sh
+    wget -O mongodb-start 625-mongodb-start.sh
+    wget -O mongodb-stop 626-mongodb-stop.sh
     chmod +x *
 
 Review the contents of the `mongodb-start` and `mongodb-stop` and modify these files if your deployment requires an alternate initialization procedure. From now on, issuing `/opt/bin/mongodb-start` or `/opt/bin/mongodb-stop` will start or stop the MongoDB process, respectively. The behavior of the `mongod` process is controlled by the values set in `/opt/config/mongodb`.
@@ -107,7 +107,7 @@ Setting the `fork` option to equal `true` configures MongoDB to run as a daemon 
 
 We've also created a *very* basic "init script" as a wrapper around the `mongodb-start` and `mongo-stop` scripts described above. You will still need to modify and manage the configuration of your MongoDB server in the files above. This script only provides a means for ensuring that MongoDB will start at boot. Issue the following commands:
 
-    wget -O init-rpm.sh http://www.linode.com/docs/assets/624-mongodb-init-rpm.sh
+    wget -O init-rpm.sh 624-mongodb-init-rpm.sh
     mv init-rpm.sh /etc/init.d/mongodb
     chmod +x /etc/init.d/mongodb
     chkconfig --add mongodb

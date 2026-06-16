@@ -61,7 +61,7 @@ Send the following sequence of commands to set the required file permissions:
 Issue the following command to download an init script to manage the uWSGI process, located at `/etc/init.d/uwsgi`:
 
     cd /opt/
-    wget -O init-rpm.sh http://www.linode.com/docs/assets/701-init-rpm.sh
+    wget -O init-rpm.sh 701-init-rpm.sh
     mv /opt/init-rpm.sh /etc/init.d/uwsgi
     chmod +x /etc/init.d/uwsgi
 

@@ -42,8 +42,8 @@ Issue the following commands to install support for PHP and FastCGI:
 Issue the following sequence of commands to create scripts to control `spawn-fcgi` and the PHP-FastCGI process, set the permissions for these scripts, ensure that PHP-FastCGI starts as part of the boot process, and start PHP-FastCGI For the first time:
 
     cd /opt/
-    wget -O php-fastcgi-deb.sh http://www.linode.com/docs/assets/579-pp-php-fastcgi-deb.sh
-    wget -O php-fastcgi-init-deb.sh http://www.linode.com/docs/assets/580-php-fastcgi-init-deb.sh
+    wget -O php-fastcgi-deb.sh 579-pp-php-fastcgi-deb.sh
+    wget -O php-fastcgi-init-deb.sh 580-php-fastcgi-init-deb.sh
     mv /opt/php-fastcgi-deb.sh /usr/bin/php-fastcgi
     mv /opt/php-fastcgi-init-deb.sh /etc/init.d/php-fastcgi
     chmod 755 /usr/bin/php-fastcgi

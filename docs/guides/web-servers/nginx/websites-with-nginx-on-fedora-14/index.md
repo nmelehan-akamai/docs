@@ -119,9 +119,9 @@ When upstream sources offer new releases, repeat the instructions for installing
 
 ### Create an Init Script to manage nginx
 
-Before you begin to use the nginx server, you must create a means of controlling it. You can create an "init script" using [this example](/cloud/assets/663-init-rpm.sh) to control nginx. Issue the following commands to download the file, change the execution mode, and set the system to initialize nginx on boot:
+Before you begin to use the nginx server, you must create a means of controlling it. You can create an "init script" using [this example](663-init-rpm.sh) to control nginx. Issue the following commands to download the file, change the execution mode, and set the system to initialize nginx on boot:
 
-    wget -O init-rpm.sh http://www.linode.com/docs/assets/663-init-rpm.sh
+    wget -O init-rpm.sh 663-init-rpm.sh
     mv init-rpm.sh /etc/rc.d/init.d/nginx
     chmod +x /etc/rc.d/init.d/nginx
     chkconfig --add nginx
