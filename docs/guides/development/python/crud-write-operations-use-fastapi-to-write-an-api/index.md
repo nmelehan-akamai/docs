@@ -31,7 +31,7 @@ FastAPI requires the following items to be installed on your system:
 - [Gunicorn](/cloud/guides/flask-and-gunicorn-on-ubuntu/#install-and-configure-gunicorn) or [Hypercorn](https://pypi.org/project/Hypercorn/). These tools are used as the web server gateway for your API.
 
 {{< note >}}
-If you have not followed the steps in the [CRUD Read Operations: Use FastAPI to Write an API](/cloud/guides/crud-read-operations-use-fastapi-to-write-an-api/) guide, ensure that you have created a `main.py` file with [the code](/cloud/guides/crud-read-operations-use-fastapi-to-write-an-api/main.py) included in the previous guide's examples.
+If you have not followed the steps in the [CRUD Read Operations: Use FastAPI to Write an API](/cloud/guides/crud-read-operations-use-fastapi-to-write-an-api/) guide, ensure that you have created a `main.py` file with the code included in the previous guide's examples.
 {{< /note >}}
 
 ### Install FastAPI and Hypercorn

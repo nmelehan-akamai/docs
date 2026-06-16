@@ -90,7 +90,7 @@ Currently, the following databases are supported. Click on each database below t
 - [PostgreSQL](https://techdocs.akamai.com/cloud-computing/docs/postgresql-managed-databases)
 
 {{< note >}}
-Updates and security patches are automatically applied to the underlying operating system but *not* to the database software. For more details, review the [Automatic Updates and Maintenance Windows](/cloud/products/databases/managed-databases/guides/updates-and-maintenance/) guide.
+Updates and security patches are automatically applied to the underlying operating system but *not* to the database software. For more details, review the [Automatic Updates and Maintenance Windows](https://techdocs.akamai.com/cloud-computing/docs/aiven-manage-database#automatic-updates-and-maintenance-window) guide.
 {{< /note >}}
 
 ### Quick Deploy Apps and Clusters
