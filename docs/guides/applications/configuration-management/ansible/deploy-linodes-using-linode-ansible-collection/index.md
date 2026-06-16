@@ -32,7 +32,7 @@ This guide shows how to:
 {{< note type="alert" >}}
 This guide’s example instructions create a [1GB Linode](https://www.linode.com/pricing/#compute-shared) (Nanode) billable resource on your Linode account. If you do not want to keep using the Linode that you create, be sure to delete the Linode when you have finished the guide.
 
-If you remove the resource, [you are only be billed for the hour(s) that the resources were present on your account](/cloud/guides/understanding-billing-and-payments/).
+If you remove the resource, [you are only be billed for the hour(s) that the resources were present on your account](https://techdocs.akamai.com/cloud-computing/docs/understanding-how-billing-works).
 {{< /note >}}
 
 ## Before You Begin

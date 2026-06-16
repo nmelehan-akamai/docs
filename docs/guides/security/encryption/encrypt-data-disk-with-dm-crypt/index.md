@@ -28,9 +28,9 @@ The steps in this guide require root privileges. Be sure to run the steps below 
 
 1. Familiarize yourself with our [Getting Started](https://techdocs.akamai.com/cloud-computing/docs/getting-started) guide, deploy a Debian image.
 
-1. [Resize the disk](/cloud/guides/resize-a-linode-disk/) and reserve approximately 4096 MB for your operating system so that you can use the rest of your available disk space as encrypted storage:
+1. [Resize the disk](https://techdocs.akamai.com/cloud-computing/docs/manage-disks-on-a-compute-instance) and reserve approximately 4096 MB for your operating system so that you can use the rest of your available disk space as encrypted storage:
 
-1. [Create a new disk](/cloud/guides/disks-and-storage/#creating-a-disk) and select **raw** under **Filesystem**:
+1. [Create a new disk](https://techdocs.akamai.com/cloud-computing/docs/manage-disks-on-a-compute-instance) and select **raw** under **Filesystem**:
 
 1. Open your [configuration profile](https://techdocs.akamai.com/cloud-computing/docs/manage-configuration-profiles-on-a-compute-instance) and review your **Block Device Assignment**. Add any additional disk(s) and/or block storage devices if they aren't already included. Throughout this guide replace `/dev/sdX` with the device name of your storage disk.
 

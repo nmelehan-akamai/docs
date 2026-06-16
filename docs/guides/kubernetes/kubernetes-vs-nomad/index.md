@@ -128,7 +128,7 @@ This tutorial showcases what features set Nomad and Kubernetes apart, and which 
 
 Be sure to reference the tutorials linked throughout this guide to keep learning about Kubernetes and Nomad. For reference, here are several that can act as next steps:
 
-- [Deploying and Managing a Cluster on Linode Kubernetes Engine (LKE)](/cloud/guides/deploy-and-manage-a-cluster-with-linode-kubernetes-engine-a-tutorial/)
+- [Deploying and Managing a Cluster on Linode Kubernetes Engine (LKE)](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-lke-linode-kubernetes-engine)
 
 - [Manage a Docker Cluster with Kubernetes](/cloud/guides/manage-a-docker-cluster-with-kubernetes/)
 

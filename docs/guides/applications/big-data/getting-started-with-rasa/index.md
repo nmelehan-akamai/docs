@@ -219,7 +219,7 @@ The following steps walk through setting up these prerequisites and deploying an
     deactivate
     ```
 
-1.  Follow our [Deploying and Managing a Cluster on Linode Kubernetes Engine (LKE)](/cloud/guides/deploy-and-manage-a-cluster-with-linode-kubernetes-engine-a-tutorial/) guide to set up a Kubernetes cluster and configure kubectl.
+1.  Follow our [Deploying and Managing a Cluster on Linode Kubernetes Engine (LKE)](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-lke-linode-kubernetes-engine) guide to set up a Kubernetes cluster and configure kubectl.
 
 1.  Create a namespace for the Rasa Kubernetes cluster. This example designates the namespace `rasacluster`.
 

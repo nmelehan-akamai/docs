@@ -13,7 +13,7 @@ aliases: ['/networking/firewalls/control-network-traffic-with-iptables/','/secur
 bundles: ['debian-security', 'centos-security', 'network-security']
 external_resources:
  - '[Security Basics](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance)'
- - '[Using the Linode Shell (Lish)](/cloud/networking/using-the-linode-shell-lish)'
+ - '[Using the Linode Shell (Lish)](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish)'
  - '[iptables: Linux firewall rules for a basic Web Server](http://bencane.com/2012/09/17/iptables-linux-firewall-rules-for-a-basic-web-server/)'
  - '[Linux Firewalls with iptables](http://www.linuxhomenetworking.com/wiki/index.php/Quick_HOWTO_:_Ch14_:_Linux_Firewalls_Using_iptables)'
 tags: ["networking","security"]

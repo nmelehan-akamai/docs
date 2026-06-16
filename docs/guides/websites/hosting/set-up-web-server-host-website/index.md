@@ -172,4 +172,4 @@ The exact form fields will vary depending on the type of DNS record you select.
 
 Computers use DNS to determine the IP address associated with a domain name. Reverse DNS lookup does the opposite by resolving an IP address to a designated domain name. You should always set the reverse DNS, even if your Linode hosts more than one domain.
 
-For more information about how to configure a reverse DNS, see [Configure Your Linode for Reverse DNS (rDNS)](/cloud/networking/dns/configure-your-linode-for-reverse-dns/)
+For more information about how to configure a reverse DNS, see [Configure Your Linode for Reverse DNS (rDNS)](https://techdocs.akamai.com/cloud-computing/docs/configure-rdns-reverse-dns-on-a-compute-instance)

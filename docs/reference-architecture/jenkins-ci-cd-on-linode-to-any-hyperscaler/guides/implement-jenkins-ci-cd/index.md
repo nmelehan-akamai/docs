@@ -19,11 +19,11 @@ The present tutorial walks you through a complete implementation of our Jenkins 
 
 ## Before You Begin
 
-1. Create a Linode account, if you don't have one. See the [Getting Started with Linode](/cloud/guides/getting-started/) documentation.
+1. Create a Linode account, if you don't have one. See the [Getting Started with Linode](https://techdocs.akamai.com/cloud-computing/docs/getting-started) documentation.
 
-1. Create a new Compute Instance, which acts as the primary Jenkins server in this tutorial. See the [Creating a Compute Instance](/cloud/guides/creating-a-compute-instance/) guide.
+1. Create a new Compute Instance, which acts as the primary Jenkins server in this tutorial. See the [Creating a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/create-a-compute-instance) guide.
 
-1. Follow our [Setting Up and Securing a Compute Instance](/cloud/guides/set-up-and-secure/) guide to update your system. You may also wish to set the timezone, configure your hostname, create a limited user account, and harden SSH access.
+1. Follow our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide to update your system. You may also wish to set the timezone, configure your hostname, create a limited user account, and harden SSH access.
 
 {{< note >}}
 This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
