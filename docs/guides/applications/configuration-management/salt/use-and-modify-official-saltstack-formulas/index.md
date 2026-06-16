@@ -440,4 +440,4 @@ pillar_roots:
 
 ## Next Steps
 
-To learn how to create your own Salt formulas and how to organize your formula's states in a logical and modular way, read our [Automate Static Site Deployments with Salt, Git, and Webhooks](/cloud//applications/configuration-management/automate-a-static-site-deployment-with-salt/#initialize-the-salt-minion-s-formula) guide.
+To learn how to create your own Salt formulas and how to organize your formula's states in a logical and modular way, read our [Automate Static Site Deployments with Salt, Git, and Webhooks](/cloud/guides/automate-a-static-site-deployment-with-salt/) guide.

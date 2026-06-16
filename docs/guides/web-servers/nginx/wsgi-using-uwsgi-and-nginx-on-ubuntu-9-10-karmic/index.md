@@ -183,5 +183,5 @@ In this example, we create the `uwsgicluster` upstream, which has five component
 You may wish to consult the following resources for additional information on this topic. While these are provided in the hope that they will be useful, please note that we cannot vouch for the accuracy or timeliness of externally hosted materials.
 
 - [Installing Nginx on Ubuntu 9.10 (Karmic)](/cloud/guides/websites-with-nginx-on-ubuntu-9-10-karmic/)
-- [Deploy a LEMP Server on Ubuntu 9.10 (Karmic)](/cloud/lemp-guides/ubuntu-9-10-karmic/)
+- [Deploy a LEMP Server on Ubuntu 9.10 (Karmic)](/cloud/guides/lemp-server-on-ubuntu-9-10-karmic/)
 - [Configure nginx Proxy Servers](/cloud/guides/use-nginx-as-a-front-end-proxy-and-software-load-balancer/)

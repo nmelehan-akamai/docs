@@ -18,7 +18,7 @@ aliases: ['/databases/postgresql/configure-postgresql/']
 
 ## What is PostgreSQL?
 
-[PostgreSQL](https://www.postgresql.org/) is a popular, open source relational database system. Our [PostgreSQL section](/cloud/databases/postgresql/) has detailed instructions on how to install PostgreSQL on different distributions. These basic installations will be sufficient for many use cases; however, PostgreSQL provides many advanced configuration options that can help optimize your databases's performance in a production environment.
+[PostgreSQL](https://www.postgresql.org/) is a popular, open source relational database system. Our [PostgreSQL section](/cloud/guides/databases/postgresql/) has detailed instructions on how to install PostgreSQL on different distributions. These basic installations will be sufficient for many use cases; however, PostgreSQL provides many advanced configuration options that can help optimize your databases's performance in a production environment.
 
 PostgreSQL can be configured and tuned through a series of configuration files. In this guide you will learn about the configuration files and how to fine-tune your database to fit your specific needs.
 

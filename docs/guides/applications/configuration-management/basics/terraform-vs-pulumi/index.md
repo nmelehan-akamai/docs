@@ -70,7 +70,7 @@ It is not uncommon for users to go back and forth between the writing and planni
 
 Although Terraform is not a configuration management tool, it can be used in conjunction with one to provide an end-to-end solution. Terraform provides the higher-level layout of the network, while the configuration management tool operates on the individual devices. Another approach to integrate these components is to have Terraform bootstrap a configuration management service. Terraform offers the paid Terraform Cloud service, which is free for up to five people. Cloud streamlines the Terraform workflow and adds workspaces. It is designed for teams who are working together on the same network.
 
-Linode offers several [Terraform guides](/cloud/applications/configuration-management/terraform), which explain how to install and use Terraform.
+Linode offers several [Terraform guides](/cloud/guides/applications/configuration-management/terraform/), which explain how to install and use Terraform.
 
 ## An Introduction to Pulumi
 

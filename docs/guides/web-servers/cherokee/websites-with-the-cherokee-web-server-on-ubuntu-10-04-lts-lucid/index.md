@@ -145,4 +145,4 @@ Be sure to stop `cherokee-admin` using the `killall` command shown above once yo
 You may wish to consult the following resources for additional information on this topic. While these are provided in the hope that they will be useful, please note that we cannot vouch for the accuracy or timeliness of externally hosted materials.
 
 - [Cherokee Web Server Documentation](http://www.cherokee-project.com/doc/)
-- [Host Web Apps with Cherokee and PHP-FastCGI on Ubuntu 10.04 LTS (Lucid)](/cloud/web-servers/cherokee/php-fastcgi-ubuntu-10-04-lucid)
+- [Host Web Apps with Cherokee and PHP-FastCGI on Ubuntu 10.04 LTS (Lucid)](/cloud/guides/web-apps-with-cherokee-and-phpfastcgi-on-ubuntu-10-04-lts-lucid/)

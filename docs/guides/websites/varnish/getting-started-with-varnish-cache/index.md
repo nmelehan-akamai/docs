@@ -30,7 +30,7 @@ If your web server is nginx and you plan to use Varnish cache to serve WordPress
 
 1.  Follow our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide to update your system. You may also wish to set the timezone, configure your hostname, create a limited user account, and harden SSH access.
 
-3.  Install and configure a [web server](/cloud/websites/) like Apache or nginx.
+3.  Install and configure a [web server](/cloud/guides/websites/) like Apache or nginx.
 
 {{< note >}}
 This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.

@@ -107,7 +107,7 @@ When you have finished testing, move on to the last step in migrating: updating 
 
 If you are managing your GCP instance with configuration management and orchestration tools, you can use the same tools to manage your Linode. This means you can use configuration management tools to execute a migration from GCP to Linode. At a high-level this process would entail
 
-- Using an orchestration tool, like Terraform, to [deploy a Linode instance(s)](/cloud/applications/configuration-management/how-to-build-your-infrastructure-using-terraform-and-linode/) of the required size and region. See the [Deploy a New Linode](#deploy-a-new-linode) section of this guide for tips on choosing a Linode data center and plan size.
+- Using an orchestration tool, like Terraform, to [deploy a Linode instance(s)](/cloud/guides/how-to-build-your-infrastructure-using-terraform-and-linode/) of the required size and region. See the [Deploy a New Linode](#deploy-a-new-linode) section of this guide for tips on choosing a Linode data center and plan size.
 
 - Using a configuration management tool, like Ansible, to [install system software and perform system configurations](/cloud/guides/getting-started-with-ansible/). In many cases, you could use the same configuration management files to configure your Linode. For example, if you were using an [Ansible Playbook](/cloud/guides/running-ansible-playbooks/) to deploy and configure a LAMP stack on your GCP instance, you can likely use the same Playbook to manage your Linode instance.
 

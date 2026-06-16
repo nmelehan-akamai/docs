@@ -28,7 +28,7 @@ This guide has been tested with Ubuntu 16.04 and CentOS 7. Because most of the c
 
 1.  Follow our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide to update your system. You may also wish to set the timezone, configure your hostname, create a limited user account, and harden SSH access.
 
-1.  Follow the guide on how to install MongoDB for your distribution. See [MongoDB guides](/cloud/databases/mongodb/)
+1.  Follow the guide on how to install MongoDB for your distribution. See [MongoDB guides](/cloud/guides/databases/mongodb/)
 
 {{< note >}}
 This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.

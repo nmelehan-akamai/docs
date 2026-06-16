@@ -37,7 +37,7 @@ Before you can install some components for ISPConfig, you will need to install s
 
 ## Install Postfix, Courier, MySQL, and Dependencies
 
-In order to use the email capabilities in ISPConfig, you will need to install the email applications it depends on in order to function. More information on Postfix and Courier can be found in [our documentation](/cloud/guides/email-with-postfix-courier-and-mysql-on-fedora-13/), and you are encouraged to read it to gain a better understanding of this software. MySQL is a relational database management system (RDBMS) that is commonly used for dynamic web pages and email. If you have already installed this, you will not need to install is as part of the ISPConfig installation process. You are encouraged to read the [MySQL documentation](/cloud/databases/mysql/). You will need to read the documentation for detailed installation instructions.
+In order to use the email capabilities in ISPConfig, you will need to install the email applications it depends on in order to function. More information on Postfix and Courier can be found in [our documentation](/cloud/guides/email-with-postfix-courier-and-mysql-on-fedora-13/), and you are encouraged to read it to gain a better understanding of this software. MySQL is a relational database management system (RDBMS) that is commonly used for dynamic web pages and email. If you have already installed this, you will not need to install is as part of the ISPConfig installation process. You are encouraged to read the [MySQL documentation](/cloud/guides/databases/mysql/). You will need to read the documentation for detailed installation instructions.
 
 Issue the following command:
 

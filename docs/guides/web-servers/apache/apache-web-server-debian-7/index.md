@@ -12,7 +12,7 @@ license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 aliases: ['/web-servers/apache/installation/debian-7-wheezy/','/websites/apache/how-to-install-and-configure-the-apache-web-server-on-debian-7-wheezy/','/websites/apache/apache-2-web-server-on-debian-7-wheezy/','/websites/apache/apache-web-server-debian-7/','/web-servers/apache/apache-web-server-debian-7/']
 external_resources:
  - '[Apache HTTP Server Version 2.2 Documentation](http://httpd.apache.org/docs/2.2/)'
- - '[Apache Configuration](/cloud/web-servers/apache/configuration/)'
+ - '[Apache Configuration](/cloud/guides/web-servers/apache-tips-and-tricks/)'
  - '[Tuning Your Apache Sever](/cloud/guides/tuning-your-apache-server/)'
 relations:
     platform:

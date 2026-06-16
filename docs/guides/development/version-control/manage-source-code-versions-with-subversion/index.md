@@ -281,7 +281,7 @@ In this example, `subversion-test` corresponds to the name of the repository, an
 
     This configuration forwards all requests for `http://svn.example.com/` to `mod_dav_svn`. This will provide an overview of the most recent revision of the repository within a web browser. Note that this setup provides *unencrypted* access to your repository over `http`.
 
-2.  For a secure connection, configure Apache to [serve content with SSL](/cloud/security/ssl/). Once your certificate files are in place, configure the virtual host to respond to requests on port `443` rather than `80`:
+2.  For a secure connection, configure Apache to [serve content with SSL](/cloud/guides/security/ssl/). Once your certificate files are in place, configure the virtual host to respond to requests on port `443` rather than `80`:
 
     {{< file "/etc/apache2/sites-available/svn.example.com.conf" apache >}}
 <VirtualHost *:443>

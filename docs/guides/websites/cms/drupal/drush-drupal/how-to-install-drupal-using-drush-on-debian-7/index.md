@@ -10,7 +10,7 @@ aliases: ['/websites/cms/drupal/drush-drupal/how-to-install-drupal-using-drush-o
 tags: ["debian","drupal","cms","lamp"]
 license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 external_resources:
- - '[SSL Certificates](/cloud/security/ssl/)'
+ - '[SSL Certificates](/cloud/guides/security/ssl/)'
 deprecated: true
 deprecated_link: 'websites/cms/drupal/drush-drupal/how-to-install-drupal-using-drush-on-debian-10/'
 ---

@@ -23,7 +23,7 @@ MySQL is an open source relational database management system (DBMS) which is fr
 
 ![Back Up Your MySQL Databases](back_up_your_mysql-databases.png "Back Up Your MySQL Databases")
 
-Before beginning the installation process, we assume you've followed the steps outlined in our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance). Additionally, you will need to install the [MySQL Database](/cloud/databases/mysql/). All configuration will be performed in a terminal session; make sure you're logged into your Linode as root via SSH. If you're new to Linux server administration you may be interested in our [introduction to Linux concepts guide](/cloud/guides/linux-users-and-groups/), [beginner's guide](https://techdocs.akamai.com/cloud-computing/docs/faqs-for-compute-instances) and [administration basics guide](/cloud/guides/linux-system-administration-basics/).
+Before beginning the installation process, we assume you've followed the steps outlined in our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance). Additionally, you will need to install the [MySQL Database](/cloud/guides/databases/mysql/). All configuration will be performed in a terminal session; make sure you're logged into your Linode as root via SSH. If you're new to Linux server administration you may be interested in our [introduction to Linux concepts guide](/cloud/guides/linux-users-and-groups/), [beginner's guide](https://techdocs.akamai.com/cloud-computing/docs/faqs-for-compute-instances) and [administration basics guide](/cloud/guides/linux-system-administration-basics/).
 
 ## Backup Methodology
 

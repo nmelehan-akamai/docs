@@ -241,7 +241,7 @@ You may wish to consult the following resources for additional information on th
 - [Postfix](http://postfix.org)
 - [Postfix Virtual Mail Handling](http://www.postfix.org/VIRTUAL_README.html)
 - [Introduction to the DNS System](/cloud/guides/dns-overview/)
-- [Host Email with Postfix, Dovecot and MySQL on Ubuntu 10.10 (Maverick)](/cloud/email/postfix/email-with-postfix-dovecot-and-mysql-on-ubuntu-10-10-maverick/)
+- [Host Email with Postfix, Dovecot and MySQL on Ubuntu 10.10 (Maverick)](/cloud/guides/email-with-postfix-dovecot-and-mysql-on-ubuntu-10-10-maverick/)
 
 
 

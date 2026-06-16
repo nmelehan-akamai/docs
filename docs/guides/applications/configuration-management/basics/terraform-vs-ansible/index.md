@@ -71,7 +71,7 @@ Operators typically move back and forth between the writing and planning stages 
 
 Although Terraform is not a configuration management tool, it can be used with one for a more comprehensive solution. Terraform can provide the higher-level abstraction of the network, while a configuration management application can be used on the individual devices. Terraform can additionally be used to bootstrap configuration management software. Terraform Cloud is a commercial application that streamlines processes and supplies workspace capabilities. It is very handy for teams working together on the same network.
 
-Linode has an extensive collection of [Terraform guides](/cloud/applications/configuration-management/terraform). These guides cover specific scenarios and explain how to install and use Terraform.
+Linode has an extensive collection of [Terraform guides](/cloud/guides/applications/configuration-management/terraform/). These guides cover specific scenarios and explain how to install and use Terraform.
 
 ## An Introduction to Ansible
 
@@ -128,7 +128,7 @@ Here is an example of a snippet from a playbook that updates an Apache server:
 
 Ansible can be used in one of several ways. It can work in a very simple manner, using ad-hoc commands. However it is more common to run Ansible Playbooks, which allow for a more extensive mix of instructions. Finally, there is the commercial Ansible Tower product. Tower offers features including a REST API, a web service console, scheduling operations, an access-control list (ACL), and one-button execution. Tower makes Ansible easier to use, and can serve as a hub for automation. Other commercial products include Ansible Galaxy, a repository of ready-to-use roles, and Ansible Vault, to enable encryption.
 
-Linode has several [guides](/cloud/applications/configuration-management/ansible) to help you install Ansible and start using it to run ad hoc commands and deploy Linodes.
+Linode has several [guides](/cloud/guides/applications/configuration-management/ansible/) to help you install Ansible and start using it to run ad hoc commands and deploy Linodes.
 
 ## A Comparison Between Ansible and Terraform
 

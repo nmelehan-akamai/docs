@@ -103,4 +103,4 @@ fail2ban:
 
         salt '*' cmd.run "service --status-all | grep 'apache2\|mysql\|fail2ban'"
 
-A LAMP stack and Fail2ban Salt State has been created on all listed Salt Minions. For more information on how to configure the LAMP Stack, refer to the [Salt States for Configuration of Apache, MySQL, and PHP (LAMP)](/cloud/applications/salt/salt-states-configuration-apache-mysql-php/) guide.
+A LAMP stack and Fail2ban Salt State has been created on all listed Salt Minions. For more information on how to configure the LAMP Stack, refer to the [Salt States for Configuration of Apache, MySQL, and PHP (LAMP)](/cloud/guides/use-salt-states-to-configure-a-lamp-stack-on-a-minion/) guide.

@@ -12,7 +12,7 @@ license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 aliases: ['/web-servers/apache/apache-web-server-on-centos-6/','/web-servers/apache/installation/centos-6/','/websites/apache/apache-2-web-server-on-centos-6/']
 external_resources:
  - '[Apache HTTP Server Version 2.2 Documentation](http://httpd.apache.org/docs/2.2/)'
- - '[Apache Configuration](/cloud/web-servers/apache/configuration/)'
+ - '[Apache Configuration](/cloud/guides/web-servers/apache-tips-and-tricks/)'
 relations:
     platform:
         key: install-apache-server

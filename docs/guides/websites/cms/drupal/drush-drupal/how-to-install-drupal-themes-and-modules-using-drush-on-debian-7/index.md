@@ -10,7 +10,7 @@ aliases: ['/websites/cms/drupal/themes-modules-backups-drupal-drush-on-debian-7/
 tags: ["drupal","cms","debian"]
 license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 external_resources:
- - '[SSL Certificates](/cloud/security/ssl/)'
+ - '[SSL Certificates](/cloud/guides/security/ssl/)'
 deprecated: true
 deprecated_link: 'websites/cms/drupal/drush-drupal/how-to-install-drupal-themes-and-modules-using-drush-on-debian-10/'
 ---

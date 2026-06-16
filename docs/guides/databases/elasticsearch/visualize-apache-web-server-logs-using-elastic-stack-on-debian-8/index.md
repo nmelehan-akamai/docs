@@ -44,7 +44,7 @@ This guide is written for a non-root user. Commands that require elevated privil
 
 1.  Follow our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide to update your system. You may also wish to set the timezone, configure your hostname, create a limited user account, and harden SSH access.
 
-1.  Follow the steps in our [Apache Web Server on Debian 8 (Jessie)](/cloud/web-servers/apache/apache-web-server-debian-8/) guide to set up and configure Apache on your server.
+1.  Follow the steps in our [Apache Web Server on Debian 8 (Jessie)](/cloud/guides/apache-web-server-debian-8/) guide to set up and configure Apache on your server.
 
 ## Install OpenJDK 8
 
@@ -174,7 +174,7 @@ By default, Elasticsearch will create five shards and one replica for every inde
 
 ### Logstash
 
-In order to collect Apache access logs, Logstash must be configured to watch any necessary files and then process them, eventually sending them to Elasticsearch. This configuration file assumes that a site has been set up according to the previously mentioned [Apache Web Server on Debian 8 (Jessie)](/cloud/web-servers/apache/apache-web-server-debian-8/) guide to find the correct log path.
+In order to collect Apache access logs, Logstash must be configured to watch any necessary files and then process them, eventually sending them to Elasticsearch. This configuration file assumes that a site has been set up according to the previously mentioned [Apache Web Server on Debian 8 (Jessie)](/cloud/guides/apache-web-server-debian-8/) guide to find the correct log path.
 
 1.  Create the following Logstash configuration:
 

@@ -12,7 +12,7 @@ tags: ["drupal","lamp","cms","debian"]
 license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 image: DrupalThemesMods_DrushDeb10.png
 external_resources:
- - '[SSL Certificates](/cloud/security/ssl/)'
+ - '[SSL Certificates](/cloud/guides/security/ssl/)'
  - '[Drush Commands](https://docs.drush.org/en/9.x/)'
  - '[Backup and Migrate](https://www.drupal.org/docs/8/modules/backup-and-migrate/howto-for-backup-and-migrate)'
 relations:

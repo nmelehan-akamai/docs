@@ -9,7 +9,7 @@ keywords: ["version control", "introduction to version control", "git", "introdu
 license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 aliases: ['/intro-version-control/','/applications/development/introduction-to-version-control/','/development/version-control/introduction-to-version-control/']
 external_resources:
- - '[Version Control Systems](/cloud/development/version-control/)'
+ - '[Version Control Systems](/cloud/guides/development/version-control/)'
 audiences: ["foundational"]
 tags: ["version control system"]
 ---

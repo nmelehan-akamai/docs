@@ -284,4 +284,4 @@ If you'd like to learn how to use Terraform to deploy Linodes using your Packer 
 * [A Beginner's Guide to Terraform](/cloud/guides/beginners-guide-to-terraform/)
 * [Create a Terraform Module](/cloud/guides/create-terraform-module/)
 * [Use Terraform to Provision Linode Environments](/cloud/guides/how-to-build-your-infrastructure-using-terraform-and-linode/)
-* [Introduction to HashiCorp Configuration Language (HCL)](/cloud/applications/configuration-management/introduction-to-hcl/)
+* [Introduction to HashiCorp Configuration Language (HCL)](/cloud/guides/introduction-to-hcl/)

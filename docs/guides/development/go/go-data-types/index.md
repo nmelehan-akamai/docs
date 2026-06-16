@@ -811,4 +811,4 @@ k2 : 13
 
 ## Next Steps
 
-If you haven't visited them yet, then our [Learning Go Functions, Loops, and Errors](/cloud/guides/learning-go-functions-loops-and-errors-a-tutorial/) and [Structs in Go](/cloud/guides/go-structures/) tutorials are good next steps when learning Go. Afterwards, other advanced topics are covered in the [Go](/cloud/development/go/) section of our library.
+If you haven't visited them yet, then our [Learning Go Functions, Loops, and Errors](/cloud/guides/learning-go-functions-loops-and-errors-a-tutorial/) and [Structs in Go](/cloud/guides/go-structures/) tutorials are good next steps when learning Go. Afterwards, other advanced topics are covered in the [Go](/cloud/guides/development/go/) section of our library.

@@ -239,4 +239,4 @@ In this example, `webeditor` is the name of the user of the specific site in que
 You may wish to consult the following resources for additional information on this topic. While these are provided in the hope that they will be useful, please note that we cannot vouch for the accuracy or timeliness of externally hosted materials.
 
 - [Apache HTTP Server Version 2.2 Documentation](http://httpd.apache.org/docs/2.2/)
-- [Apache Configuration](/cloud/web-servers/apache/configuration/)
+- [Apache Configuration](/cloud/guides/web-servers/apache-tips-and-tricks/)

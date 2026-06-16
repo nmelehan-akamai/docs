@@ -48,7 +48,7 @@ Before you begin installing and configuring the components described below, plea
         apt-get update
         apt-get upgrade
 
-4. You also need Nginx and MySQL software. Please refer to [Websites with Nginx on Debian 7 (Wheezy)](/cloud/web-servers/nginx/how-to-install-nginx-on-debian-7-wheezy/) and [How to Install MySQL on Debian 7](/cloud/guides/how-to-install-mysql-on-debian-7/) for their installation guides.
+4. You also need Nginx and MySQL software. Please refer to [Websites with Nginx on Debian 7 (Wheezy)](/cloud/guides/getting-started-with-nginx-part-1-installation-and-basic-setup/) and [How to Install MySQL on Debian 7](/cloud/guides/how-to-install-mysql-on-debian-7/) for their installation guides.
 
 ## Install Required Packages
 

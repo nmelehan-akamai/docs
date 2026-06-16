@@ -38,7 +38,7 @@ The steps in this guide require root privileges, and commands are run with `sudo
 
 1.  Follow our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide to update your system. You may also wish to set the timezone, configure your hostname, create a limited user account, and harden SSH access.
 
-1. Install MariaDB on your Linode by following the [How to Install MariaDB](/cloud/databases/mariadb/) guide that is appropriate for your Linode's distribution.
+1. Install MariaDB on your Linode by following the [How to Install MariaDB](/cloud/guides/databases/mariadb/) guide that is appropriate for your Linode's distribution.
 
 1.  Create an Object Storage bucket to hold your backup repository. Follow the [Create a Bucket](https://techdocs.akamai.com/cloud-computing/docs/create-and-manage-buckets) guide if you do not already have one.
 

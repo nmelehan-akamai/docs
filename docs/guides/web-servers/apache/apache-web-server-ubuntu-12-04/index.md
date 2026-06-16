@@ -12,7 +12,7 @@ license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 aliases: ['/websites/apache/apache-web-server-ubuntu-12-04/','/web-servers/apache/apache-web-server-ubuntu-12-04/','/websites/apache/how-to-install-and-configure-apache-2-web-server-on-ubuntu-12-04-lts-precise-pangolin/','/web-servers/apache/installation/ubuntu-12-04-precise-pangolin/','/websites/apache/apache-2-web-server-on-ubuntu-12-04-lts-precise-pangolin/']
 external_resources:
  - '[Apache HTTP Server Version 2.2 Documentation](http://httpd.apache.org/docs/2.2/)'
- - '[Apache Configuration](/cloud/web-servers/apache/configuration/)'
+ - '[Apache Configuration](/cloud/guides/web-servers/apache-tips-and-tricks/)'
 relations:
     platform:
         key: install-apache-server

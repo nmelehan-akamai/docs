@@ -323,7 +323,7 @@ Max: 3
 
 ## Next Steps
 
-The next guide in our Go language series is our [Go Functions, Loops, and Errors](/cloud/guides/learning-go-functions-loops-and-errors-a-tutorial/) tutorial. More advanced guides are listed in the [Go section index](/cloud/development/go/).
+The next guide in our Go language series is our [Go Functions, Loops, and Errors](/cloud/guides/learning-go-functions-loops-and-errors-a-tutorial/) tutorial. More advanced guides are listed in the [Go section index](/cloud/guides/development/go/).
 
 ### The Standard Go Library
 

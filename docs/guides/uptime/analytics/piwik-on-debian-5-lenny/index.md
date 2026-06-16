@@ -22,7 +22,7 @@ Piwik is a "downloadable, open source (GPL licensed) web analytics software prog
 
 For the purpose of this guide, we assume that you have running and functional server, and have followed the [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance). If you are new to Linux server administration, you may be interested in our [introduction to Linux concepts guide](/cloud/guides/introduction-to-linux-concepts/), [beginner's guide](https://techdocs.akamai.com/cloud-computing/docs/faqs-for-compute-instances) and [administration basics guide](/cloud/guides/linux-system-administration-basics/).
 
-Beyond the basics, Piwik requires a functioning LAMP stack, which is outlined in our [Debian 5 (Lenny) LAMP guide](/cloud/web-servers/lamp/lamp-server-on-debian-5-lenny/). Make sure you follow the steps for installing PHP and PHP-MySQL support. You will also want to be logged in over SSH as root.
+Beyond the basics, Piwik requires a functioning LAMP stack, which is outlined in our [Debian 5 (Lenny) LAMP guide](/cloud/guides/how-to-install-a-lamp-stack-on-debian-11/). Make sure you follow the steps for installing PHP and PHP-MySQL support. You will also want to be logged in over SSH as root.
 
 ## Prerequisites
 

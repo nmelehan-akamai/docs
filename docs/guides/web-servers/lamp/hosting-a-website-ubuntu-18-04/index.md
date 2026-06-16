@@ -187,7 +187,7 @@ You've configured Apache to host one or more websites on your Linode. After you 
 
 ## Hosting a Website on Ubuntu - Installing MySQL
 
-Databases store data in a structured and easily accessible manner, serving as the foundation for hundreds of web and server applications. A variety of open source database platforms exist to meet the needs of applications running on your Linode. This section helps you get started with *MySQL*, one of the most popular database platforms. For more information about MySQL and other databases, see our [database reference guides](/cloud/databases/).
+Databases store data in a structured and easily accessible manner, serving as the foundation for hundreds of web and server applications. A variety of open source database platforms exist to meet the needs of applications running on your Linode. This section helps you get started with *MySQL*, one of the most popular database platforms. For more information about MySQL and other databases, see our [database reference guides](/cloud/guides/databases/).
 
 ### Install MySQL
 

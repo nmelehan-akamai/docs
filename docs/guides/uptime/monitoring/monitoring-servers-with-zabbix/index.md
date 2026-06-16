@@ -76,7 +76,7 @@ You have successfully added the `zabbix` user.
 
 You'll first want to install MySQL on your Linode and create a MySQL user for Zabbix. Here's how:
 
-1.  If you haven't already, install and configure MySQL on your Linode. See the [MySQL reference manuals](/cloud/databases/mysql/) for more information.
+1.  If you haven't already, install and configure MySQL on your Linode. See the [MySQL reference manuals](/cloud/guides/databases/mysql/) for more information.
 2.  Log in to MySQL by entering the following command:
 
         mysql -uroot -p

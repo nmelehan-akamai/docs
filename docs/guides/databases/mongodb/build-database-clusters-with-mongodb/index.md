@@ -32,7 +32,7 @@ The commands and filepaths in this guide are based on those used in Ubuntu 16.04
 
 1.  Follow our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide to update your system. You may also wish to set the timezone, configure your hostname, create a limited user account, and harden SSH access. We recommend choosing hostnames that correspond with each Linode's role in the cluster, explained in the next section.
 
-1.  Follow our guides to [install MongoDB](/cloud/databases/mongodb/) on each Linode you want to use in your cluster.
+1.  Follow our guides to [install MongoDB](/cloud/guides/databases/mongodb/) on each Linode you want to use in your cluster.
 
 {{< note >}}
 This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.

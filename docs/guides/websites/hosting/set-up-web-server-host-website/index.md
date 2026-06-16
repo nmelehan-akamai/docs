@@ -99,7 +99,7 @@ If you are using WordPress, another option is to use Docker. All of the componen
 
 ### Other Site Types
 
-If none of these application stacks fit your situation, review our [Websites](/cloud/websites/) and [Development](/cloud/development/) sections to find a solution that works for your project.
+If none of these application stacks fit your situation, review our [Websites](/cloud/guides/websites/) and [Development](/cloud/guides/development/) sections to find a solution that works for your project.
 
 ## Test your Website
 

@@ -36,7 +36,7 @@ Make sure your package repositories and installed programs are up to date by iss
 
 In order to provide better security, this guide will install phpMyAdmin to an SSL secured apache virtual host. While you can use http to access your phpMyAdmin instance, it will send your passwords in plain text over the internet. Since you will most likely be logging in to phpMyAdmin using your MySQL root user, http is definitely not recommended.
 
-If you need to set up SSL for your host, please refer to our [SSL section](/cloud/security/ssl/). Please ensure SSL is enabled for your virtual host before proceeding.
+If you need to set up SSL for your host, please refer to our [SSL section](/cloud/guides/security/ssl/). Please ensure SSL is enabled for your virtual host before proceeding.
 
 phpMyAdmin requires the `mcrypt` PHP module. You can install it using the following command:
 
@@ -80,7 +80,7 @@ allow from 12.34.56.78
 
 ### Force SSL
 
-Since you are required to enter your MySQL credentials when using phpMyAdmin, we recommend that you use SSL to secure HTTP traffic to your phpMyAdmin installation. For more information on using SSL with your websites, please consult the guides that address [SSL certificates](/cloud/security/ssl/).
+Since you are required to enter your MySQL credentials when using phpMyAdmin, we recommend that you use SSL to secure HTTP traffic to your phpMyAdmin installation. For more information on using SSL with your websites, please consult the guides that address [SSL certificates](/cloud/guides/security/ssl/).
 
 You can force phpMyAdmin to use SSL in the phpMyAdmin configuration file `/etc/phpmyadmin/config.inc.php` by adding the following lines under the `Server(s) configuration` section:
 

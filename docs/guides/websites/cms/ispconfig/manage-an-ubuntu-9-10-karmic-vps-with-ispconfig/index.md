@@ -50,7 +50,7 @@ When you have saved this file, issue the following commands to refresh your syst
 
 ## Install Postfix, Courier, MySQL, and Dependencies
 
-In order to use the email capabilities in ISPConfig, you will need to install the email applications it depends on in order to function. More information on Postfix and Courier can be found in [our documentation](/cloud/guides/email-with-postfix-courier-and-mysql-on-ubuntu-9-10-karmic/), and you are encouraged to read it to gain a better understanding of this software. MySQL is a relational database management system (RDBMS) that is commonly used for dynamic web pages and email. If you have already installed this, you will not need to install is as part of the ISPConfig installation process. You are encouraged to read the [MySQL documentation](/cloud/databases/mysql/). You will need to read the documentation for detailed installation instructions.
+In order to use the email capabilities in ISPConfig, you will need to install the email applications it depends on in order to function. More information on Postfix and Courier can be found in [our documentation](/cloud/guides/email-with-postfix-courier-and-mysql-on-ubuntu-9-10-karmic/), and you are encouraged to read it to gain a better understanding of this software. MySQL is a relational database management system (RDBMS) that is commonly used for dynamic web pages and email. If you have already installed this, you will not need to install is as part of the ISPConfig installation process. You are encouraged to read the [MySQL documentation](/cloud/guides/databases/mysql/). You will need to read the documentation for detailed installation instructions.
 
 Issue the following command (all one line):
 
@@ -107,7 +107,7 @@ This script will configure services that you installed above to be monitored and
 
 Once it has completed, you may login to the control panel. By default, ISPConfig runs on port 8080, so you may find it at `http://12.34.56.78:8080/`. Replace `12.34.56.78` with your Linode's IP. The default login uses "admin" as the username and "admin" as the password. You will want to change these to prevent someone from accessing your system.
 
-Congratulations! You now have ISPConfig installed on your Ubuntu 9.10 (Karmic) Linode. You are highly encouraged to see the links in the "More Information" section to help you install extra applications that may help you manage your system better. Additionally, we highly recommend becoming familiar with our [SFTP guides](/cloud/networking/file-transfer), as you'll need to use this method for uploading files to your Linode.
+Congratulations! You now have ISPConfig installed on your Ubuntu 9.10 (Karmic) Linode. You are highly encouraged to see the links in the "More Information" section to help you install extra applications that may help you manage your system better. Additionally, we highly recommend becoming familiar with our [SFTP guides](/cloud/guides/tools-reference/file-transfer/), as you'll need to use this method for uploading files to your Linode.
 
 ## Monitor for Software Updates and Security Notices
 
@@ -127,7 +127,7 @@ You may wish to consult the following resources for additional information on th
 - [ISPConfig Home Page](http://www.ispconfig.org/)
 - [ISPConfig Support](http://www.ispconfig.org/page/en/support.html)
 - [ISPConfig Community](http://www.ispconfig.org/page/en/community.html)
-- [Upload Files to your Linode](/cloud/networking/file-transfer)
+- [Upload Files to your Linode](/cloud/guides/tools-reference/file-transfer/)
 - [Limit User Access with SFTP Jails](/cloud/guides/limiting-access-with-sftp-jails-on-debian-and-ubuntu/)
 
 

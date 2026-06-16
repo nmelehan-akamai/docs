@@ -35,7 +35,7 @@ This guide is written for a non-root user. Commands that require elevated privil
 
 Game servers and clients are an especially ripe target for attack. Use our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide to:
 
-1.  [Add a limited Linux user](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance#add-a-limited-user-account) to your server. Make the username `steam` to coincide with the rest of [Linode's Steam guides](/cloud/applications/game-servers/), as well as Valve's official documentation. Be sure to give the `steam` user `sudo` privileges.
+1.  [Add a limited Linux user](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance#add-a-limited-user-account) to your server. Make the username `steam` to coincide with the rest of [Linode's Steam guides](/cloud/guides/game-servers/), as well as Valve's official documentation. Be sure to give the `steam` user `sudo` privileges.
 
 1.  [Harden SSH access](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance#harden-ssh-access).
 
@@ -102,7 +102,7 @@ COMMIT
 {{< /file >}}
 
     {{< note respectIndent=false >}}
-Some Steam games require a few additional rules which can be found in our [Steam game guides](/cloud/applications/game-servers/). Steam can also use multiple port ranges for various purposes, but they should only be allowed if your game(s) make use of those services. See [this](https://support.steampowered.com/kb_article.php?ref=8571-GLVN-8711) Steam Support page for more information.
+Some Steam games require a few additional rules which can be found in our [Steam game guides](/cloud/guides/game-servers/). Steam can also use multiple port ranges for various purposes, but they should only be allowed if your game(s) make use of those services. See [this](https://support.steampowered.com/kb_article.php?ref=8571-GLVN-8711) Steam Support page for more information.
 
 Steam currently supports multiplayer play over IPv4 only, so a Steam server only needs basic IPv6 firewall rules, shown below.
 {{< /note >}}
@@ -362,4 +362,4 @@ You may encounter an error when installing or using SteamCMD. Some of these erro
 
 You're ready to install your first Steam game server. From here, certain games may need a few more i386 libraries or firewall rules, and most will need their configuration settings to be modified. The game server should allow easy administrative access with as little interruption to players as possible. Its software should frequently be updated, and players' progress should be saved when the server is properly shut down.
 
-Our [game server guides](/cloud/applications/game-servers/) cover these requirements for specific games and contain various Steam tutorials which will pick you up exactly where this page leaves off.
+Our [game server guides](/cloud/guides/game-servers/) cover these requirements for specific games and contain various Steam tutorials which will pick you up exactly where this page leaves off.

@@ -191,5 +191,5 @@ In this example, we create the `uwsgicluster` upstream, which has five component
 You may wish to consult the following resources for additional information on this topic. While these are provided in the hope that they will be useful, please note that we cannot vouch for the accuracy or timeliness of externally hosted materials.
 
 - [Installing Nginx on Ubuntu 10.10 (Maverick)](/cloud/guides/websites-with-nginx-on-ubuntu-10-10-maverick/)
-- [Deploy a LEMP Server on Ubuntu 10.10 (Maverick)](/cloud/lemp-guides/ubuntu-10-10-maverick/)
+- [Deploy a LEMP Server on Ubuntu 10.10 (Maverick)](/cloud/guides/how-to-install-a-lemp-stack-on-ubuntu-22-04/)
 - [Configure nginx Proxy Servers](/cloud/guides/use-nginx-as-a-front-end-proxy-and-software-load-balancer/)

@@ -107,6 +107,6 @@ The configuration file for Nginx is located at `/etc/nginx/nginx.conf`. This is 
 
 ## Install MySQL Support (optional)
 
-If your application uses MySQL, install the database server by following our [MySQL on Debian 7 (Wheezy) guide](/cloud/databases/mysql/debian-7-wheezy). Once it's installed and configured properly, issue the following command:
+If your application uses MySQL, install the database server by following our [MySQL on Debian 7 (Wheezy) guide](/cloud/guides/how-to-install-mysql-on-debian-7/). Once it's installed and configured properly, issue the following command:
 
     apt-get install libmysqlclient-dev libmysql-ruby

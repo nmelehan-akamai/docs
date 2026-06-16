@@ -40,7 +40,7 @@ This guide is written for a non-root user. Commands that require elevated privil
 
     The first command will output your short hostname; the second, your fully-qualified domain name (FQDN).
 
--  You have a configured web stack set up. This can be a [LAMP](/cloud/guides/web-servers/lamp/) or [LEMP](/cloud/websites/lemp/) stack.
+-  You have a configured web stack set up. This can be a [LAMP](/cloud/guides/web-servers/lamp/) or [LEMP](/cloud/guides/web-servers/lemp/) stack.
 
 
 -   MySQL has a database set up for WordPress. If you do not have a database, create it:

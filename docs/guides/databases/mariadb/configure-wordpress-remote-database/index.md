@@ -20,7 +20,7 @@ aliases: ['/databases/mariadb/configure-wordpress-remote-database/']
 
 ## Before You Begin
 
-- This guide uses two Linodes in the same data center to communicate via [private IP](https://techdocs.akamai.com/cloud-computing/docs/managing-ip-addresses-on-a-compute-instance#adding-an-ip-address) addresses. You will need to configure a [LEMP](/cloud/web-servers/lemp/) or [LAMP](/cloud/guides/web-servers/lamp/) stack on one.
+- This guide uses two Linodes in the same data center to communicate via [private IP](https://techdocs.akamai.com/cloud-computing/docs/managing-ip-addresses-on-a-compute-instance#adding-an-ip-address) addresses. You will need to configure a [LEMP](/cloud/guides/web-servers/lemp/) or [LAMP](/cloud/guides/web-servers/lamp/) stack on one.
 
 - Ensure that all packages are up to date.
 
@@ -354,4 +354,4 @@ Access the WordPress installation interface through `wp-admin`. Use a browser to
 
 ## Next Steps
 
-Now that the database is configured to communicate over a secure connection, consider using SSL/TLS for the web server itself. Our guide covering [TLS on NGINX](/cloud/guides/getting-started-with-nginx-part-3-enable-tls-for-https/) details some best practices for securing NGINX and web servers in general. Visit the [SSL Certificates](/cloud/security/ssl/) section of Linode Docs for information on other servers and Linux distributions.
+Now that the database is configured to communicate over a secure connection, consider using SSL/TLS for the web server itself. Our guide covering [TLS on NGINX](/cloud/guides/getting-started-with-nginx-part-3-enable-tls-for-https/) details some best practices for securing NGINX and web servers in general. Visit the [SSL Certificates](/cloud/guides/security/ssl/) section of Linode Docs for information on other servers and Linux distributions.

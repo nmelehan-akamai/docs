@@ -241,7 +241,7 @@ You may wish to consult the following resources for additional information on th
 - [Postfix](http://postfix.org)
 - [Postfix Virtual Mail Handling](http://www.postfix.org/VIRTUAL_README.html)
 - [Introduction to the DNS System](/cloud/guides/dns-overview/)
-- [Host Email with Postfix, Dovecot and MySQL on Debian 5 (Lenny)](/cloud/email/postfix/email-with-postfix-dovecot-and-mysql-on-debian-6-squeeze/)
+- [Host Email with Postfix, Dovecot and MySQL on Debian 5 (Lenny)](/cloud/guides/email-with-postfix-dovecot-and-mysql-on-debian-6-squeeze/)
 
 
 

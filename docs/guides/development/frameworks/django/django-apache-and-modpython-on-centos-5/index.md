@@ -54,17 +54,17 @@ This installs `mod_python`, which embeds a Python interpreter in the Apache HTTP
 
 ## Installing Database Support
 
-If you would like to use a relational [database server](/cloud/databases/) with Django, you will need to install and configure that independently of this guide. Consider one of our [database installation and configuration guides](/cloud/databases/).
+If you would like to use a relational [database server](/cloud/guides/databases/) with Django, you will need to install and configure that independently of this guide. Consider one of our [database installation and configuration guides](/cloud/guides/databases/).
 
 Whichever database system you use, you'll need to install the appropriate bindings for Python to allow Django applications to communicate with the database. The easiest database to install and use is SQLite. SQLite is easy to set up and provides a fully transactional database system inside of a single file. Such a system is likely sufficient for development purposes and deployments that won't need to scale beyond a single server. You can install SQLite support by issuing the following command:
 
     yum install python-sqlite2
 
-If you want to use the [PostgreSQL](/cloud/databases/postgresql/) database system you will need to install the Psycop2 database adapter with the following command:
+If you want to use the [PostgreSQL](/cloud/guides/databases/postgresql/) database system you will need to install the Psycop2 database adapter with the following command:
 
     yum install python-psycopg2
 
-To use the [MySQL](/cloud/databases/mysql/) engine, download and install a more recent version of the `MySQL-python` package. Django requires at least version 1.2.1p2 of the Python MySQLdb adapter. We'll download and install a later version from [the upstream project](http://sourceforge.net/projects/mysql-python/) First, install the tools needed to build this package:
+To use the [MySQL](/cloud/guides/databases/mysql/) engine, download and install a more recent version of the `MySQL-python` package. Django requires at least version 1.2.1p2 of the Python MySQLdb adapter. We'll download and install a later version from [the upstream project](http://sourceforge.net/projects/mysql-python/) First, install the tools needed to build this package:
 
     yum install python-devel mysql-devel gcc wget python-setuptools
 

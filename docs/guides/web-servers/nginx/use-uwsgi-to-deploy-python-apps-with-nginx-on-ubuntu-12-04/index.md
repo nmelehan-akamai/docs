@@ -201,6 +201,6 @@ In this example, we create the `uwsgicluster` upstream, which has five component
 
 You may wish to consult the following resources for additional information on this topic. While these are provided in the hope that they will be useful, please note that we cannot vouch for the accuracy or timeliness of externally hosted materials.
 
-- [Installing Nginx on Ubuntu 12.04 (Precise Pangolin)](/cloud/websites/apache/apache-2-web-server-on-ubuntu-12-04-lts-precise-pangolin)
-- [Deploy a LEMP Server on Ubuntu 12.04 (Precise Pangolin)](/cloud/lemp-guides/ubuntu-12-04-precise-pangolin)
+- [Installing Nginx on Ubuntu 12.04 (Precise Pangolin)](/cloud/guides/apache-web-server-ubuntu-12-04/)
+- [Deploy a LEMP Server on Ubuntu 12.04 (Precise Pangolin)](/cloud/guides/how-to-install-a-lemp-stack-on-ubuntu-22-04/)
 - [Configure nginx Proxy Servers](/cloud/guides/use-nginx-as-a-front-end-proxy-and-software-load-balancer/)

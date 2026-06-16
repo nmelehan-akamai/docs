@@ -12,7 +12,7 @@ license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 aliases: ['/websites/apache/apache-web-server-debian-8/','/web-servers/apache/apache-web-server-debian-8/']
 external_resources:
  - '[Apache HTTP Server Version 2.4 Documentation](http://httpd.apache.org/docs/2.4/)'
- - '[Apache Configuration](/cloud/web-servers/apache/configuration/)'
+ - '[Apache Configuration](/cloud/guides/web-servers/apache-tips-and-tricks/)'
 relations:
     platform:
         key: install-apache-server

@@ -153,7 +153,7 @@ SELinux is a *mandatory access control* (MAC) system that confines privileged pr
 
 ### Secure the site with SSL
 
-To add additional security to the site, consider [enabling a *secure sockets layer* (SSL) certificate](/cloud/security/ssl/ssl-apache2-centos).
+To add additional security to the site, consider [enabling a *secure sockets layer* (SSL) certificate](/cloud/guides/ssl-apache2-centos/).
 
 ### Install and Configure GlusterFS, Galera, and XtraDB for High Availability
 

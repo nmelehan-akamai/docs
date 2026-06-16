@@ -189,6 +189,6 @@ In this example, we create the `uwsgicluster` upstream, which has five component
 
 You may wish to consult the following resources for additional information on this topic. While these are provided in the hope that they will be useful, please note that we cannot vouch for the accuracy or timeliness of externally hosted materials.
 
-- [Installing Nginx on Debian 5 (Lenny)](/cloud/web-servers/nginx/installation/debian-5-lenny)
-- [Deploy a LEMP Server on Debian 5 (Lenny)](/cloud/lemp-guides/debian-5-lenny/)
+- [Installing Nginx on Debian 5 (Lenny)](/cloud/guides/websites-with-nginx-on-debian-5-lenny/)
+- [Deploy a LEMP Server on Debian 5 (Lenny)](/cloud/guides/how-to-install-the-lemp-stack-on-debian-10/)
 - [Configure nginx Proxy Servers](/cloud/guides/use-nginx-as-a-front-end-proxy-and-software-load-balancer/)

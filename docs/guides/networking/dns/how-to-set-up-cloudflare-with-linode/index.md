@@ -146,7 +146,7 @@ Certificates from Cloudflare's Origin CA are only trusted within the Cloudflare 
 
     - Cloudflare has a number of guides for installing the Origin CA certificate with different software packages. Consult their [documentation](https://support.cloudflare.com/hc/en-us/sections/207182687-Origin-CA) for instructions.
 
-    - You can also adapt instructions from Linode's various [SSL Certificate guides](/cloud/security/ssl/).
+    - You can also adapt instructions from Linode's various [SSL Certificate guides](/cloud/guides/security/ssl/).
 
 1.  Be sure to restrict the file permissions of your certificate and private key files on your Linode so that only your web server process can read them. For example, if your files are stored in the directory `/etc/ssl/certs/example.com/`, run:
 

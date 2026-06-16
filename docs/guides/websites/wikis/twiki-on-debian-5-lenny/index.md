@@ -166,7 +166,7 @@ Congratulations! You have successfully installed TWiki. You can now visit your w
 You may wish to consult the following resources for additional information on this topic. While these are provided in the hope that they will be useful, please note that we cannot vouch for the accuracy or timeliness of externally hosted materials.
 
 - [TWiki Project Upstream](http://twiki.org/)
-- [Apache HTTP Server Documentation](/cloud/web-servers/apache)
+- [Apache HTTP Server Documentation](/cloud/guides/web-servers/apache/)
 - [Exim Send Only MTA](/cloud/guides/sendonly-mail-server-with-exim-on-debian-5-lenny/)
 - [Postfix Mail Gateway MTA](/cloud/guides/basic-postfix-email-gateway-on-debian-5-lenny/)
 

@@ -235,4 +235,4 @@ You may wish to consult the following resources for additional information on th
 
 - [Apache HTTP Server Version 2.0 Documentation](http://httpd.apache.org/docs/2.0/)
 - [URL Rewriting on HTML Source](http://www.yourhtmlsource.com/sitemanagement/urlrewriting.html)
-- [Apache Configuration](/cloud/web-servers/apache/configuration/)
+- [Apache Configuration](/cloud/guides/web-servers/apache-tips-and-tricks/)

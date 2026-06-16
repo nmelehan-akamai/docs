@@ -11,7 +11,7 @@ tags: ["centos","web server","apache"]
 license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 external_resources:
  - '[Apache HTTP Server Version 2.4 Documentation](http://httpd.apache.org/docs/2.4/)'
- - '[Apache Configuration](/cloud/web-servers/apache/configuration/)'
+ - '[Apache Configuration](/cloud/guides/web-servers/apache-tips-and-tricks/)'
 image: InstallApache_CentOS8.png
 relations:
     platform:

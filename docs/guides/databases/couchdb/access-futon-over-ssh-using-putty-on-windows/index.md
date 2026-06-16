@@ -11,7 +11,7 @@ license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 aliases: ['/databases/couchdb/securely-administer-couchdb-with-an-ssh-tunnel/','/databases/couchdb/ssh-tunnel/','/databases/couchdb/access-futon-over-ssh-using-putty-on-windows/']
 external_resources:
  - '[Using PuTTY](/cloud/guides/connect-to-server-over-ssh-using-putty/)'
- - '[Linode Docs - CouchDB](/cloud/databases/couchdb/)'
+ - '[Linode Docs - CouchDB](/cloud/guides/databases/couchdb/)'
 tags: ["database"]
 ---
 

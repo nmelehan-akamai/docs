@@ -77,7 +77,7 @@ Firewalld is the default iptables controller in CentOS 7+ and Fedora. See our [g
 
 ### UFW
 
-[UFW (Uncomplicated Firewall)](/cloud/security/firewalls/configure-firewall-with-ufw/) is an iptables controller packaged with Ubuntu, but it's not installed in Debian by default.
+[UFW (Uncomplicated Firewall)](/cloud/guides/configure-firewall-with-ufw/) is an iptables controller packaged with Ubuntu, but it's not installed in Debian by default.
 
 1.  If needed, install UFW:
 

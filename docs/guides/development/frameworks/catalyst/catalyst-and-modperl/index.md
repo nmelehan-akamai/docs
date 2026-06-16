@@ -13,7 +13,7 @@ aliases: ['/development/frameworks/catalyst-and-modperl/','/websites/frameworks/
 deprecated: true
 ---
 
-The Catalyst web framework is a contemporary Perl-based MVC, or Model View Controller. Like similar projects such as [Django](/cloud/guides/development/frameworks/), [Ruby On Rails](/cloud/development/ror/), and [Seaside](/cloud/guides/deploy-smalltalk-applications-with-seaside/), Catalyst promotes efficient and rapid development, clear application logic, and web centric development paradigms. If you are used to developing applications with Perl and would like to develop modern web applications, you may consider using the Catalyst framework.
+The Catalyst web framework is a contemporary Perl-based MVC, or Model View Controller. Like similar projects such as [Django](/cloud/guides/development/frameworks/), [Ruby On Rails](/cloud/guides/development/ror/), and [Seaside](/cloud/guides/deploy-smalltalk-applications-with-seaside/), Catalyst promotes efficient and rapid development, clear application logic, and web centric development paradigms. If you are used to developing applications with Perl and would like to develop modern web applications, you may consider using the Catalyst framework.
 
 In this document, we outline deploying applications developed with Catalyst using the Apache web server and the `mod_perl` method of running Perl applications embedded in the web server process. Before installing Catalyst, we assume that you have followed our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance). If you are new to Linux server administration, you may be interested in our [introduction to Linux concepts guide](/cloud/guides/introduction-to-linux-concepts/), [beginner's guide](https://techdocs.akamai.com/cloud-computing/docs/faqs-for-compute-instances) and [administration basics guide](/cloud/guides/linux-system-administration-basics/).
 
@@ -61,7 +61,7 @@ Your application may require additional dependencies and Perl modules. You will 
 
 ### Setting up the Apache Server with mod\_perl
 
-Once the required Catalyst and database dependencies are installed, we will continue to install the Apache HTTP server and its `mod_perl` module. For more information regarding general purpose configuration, consider our more in-depth documentation for [installing Apache](/cloud/guides/apache-2-web-server-on-debian-5-lenny/) and [configuring the HTTP server](/cloud/web-servers/apache-tips-and-tricks/). If you have not already installed these packages, issue the following command:
+Once the required Catalyst and database dependencies are installed, we will continue to install the Apache HTTP server and its `mod_perl` module. For more information regarding general purpose configuration, consider our more in-depth documentation for [installing Apache](/cloud/guides/apache-2-web-server-on-debian-5-lenny/) and [configuring the HTTP server](/cloud/guides/web-servers/apache-tips-and-tricks/). If you have not already installed these packages, issue the following command:
 
     apt-get install apache2 libapache2-mod-perl2 apache2-mpm-prefork
 

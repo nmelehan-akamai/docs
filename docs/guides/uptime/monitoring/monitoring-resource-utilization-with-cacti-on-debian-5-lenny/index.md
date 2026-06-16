@@ -126,6 +126,6 @@ You may wish to consult the following resources for additional information on th
 - [Cacti Website](http://www.cacti.net/index.php)
 - [Cacti Users Plugin Community](http://cactiusers.org/index.php)
 - [Linux Security Basics](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance)
-- [Configure a Basic Firewall in Debian 5 (Lenny)](/cloud/security/firewalls/configure-a-firewall-with-arno-iptables-in-debian-5-lenny/)
+- [Configure a Basic Firewall in Debian 5 (Lenny)](/cloud/guides/configure-a-firewall-with-arno-iptables-in-debian-5-lenny/)
 
 

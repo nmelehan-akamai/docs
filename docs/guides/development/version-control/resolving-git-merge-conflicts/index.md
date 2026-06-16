@@ -245,7 +245,7 @@ The chapter on [Advanced Merging](https://git-scm.com/book/en/v2/Git-Tools-Advan
 
 ### Visual Studio Code (VS Code)
 
-[Visual Studio Code (VS Code)](/cloud/guides/vscode-marketplace-app/) is a full-featured code editor. VS Code provides a good set of conflict-resolution tools that can be invoked from the command line. You must configure Git to use VS Code as a merge tool. Use the following Git commands to set this up:
+[Visual Studio Code (VS Code)](/cloud/marketplace-docs/guides/vscode/) is a full-featured code editor. VS Code provides a good set of conflict-resolution tools that can be invoked from the command line. You must configure Git to use VS Code as a merge tool. Use the following Git commands to set this up:
 
     git config --global merge.tool code
     git config --global mergetool.code.cmd 'code --wait $MERGED'
