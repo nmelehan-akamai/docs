@@ -226,8 +226,8 @@ def get_guides():
 
                 # If the file is something else, like an image or other asset...
                 else:
-                    if "docs/guides/" in file_path:
-                        link = "/docs/guides/" + path_segments[-2] + "/" + path_segments[-1]
+                    if "cloud/guides/" in file_path:
+                        link = "/cloud/guides/" + path_segments[-2] + "/" + path_segments[-1]
                     else:
                         link = "/" + file_path
                     assets.append(Asset(file_path,link))
@@ -378,7 +378,7 @@ def check_internal_links_markdown(guides, assets):
                 # Ignore links to resources within the same directory
                 if not "/" in link and "." in link:
                     continue
-                # Log issue if link does not start with /docs/
+                # Log issue if link does not start with /cloud/
                 if not link.startswith('/cloud/'):
                     issues.append(Issue(link_unmodified,'incorrect-root'))
                     continue
