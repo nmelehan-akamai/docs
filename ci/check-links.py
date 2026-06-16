@@ -86,7 +86,6 @@ DOCS_DIR = [
     "docs/guides",
     "docs/bundles",
     "docs/assets",
-    "docs/api",
     "docs/reference-architecture",
     "docs/release-notes",
     "docs/marketplace-docs"
@@ -158,7 +157,6 @@ def get_guides():
     guides.append(Guide("docs/marketplace-docs/", "", "Marketplace Docs", "/docs/marketplace-docs/"))
     guides.append(Guide("docs/resources/", "", "Resources", "/docs/resources/"))
     guides.append(Guide("docs/topresults/?docType=community", "", "Q&A", "/docs/topresults/?docType=community"))
-    assets.append(Asset("/docs/api/openapi.yaml","/docs/api/openapi.yaml"))
 
     # Iterate through each file in each docs directory
     for dir in DOCS_DIR:
@@ -198,9 +196,6 @@ def get_guides():
                                     os.rename(old_file_path,new_file_path)
 
                             canonical_link = "/cloud/guides/" + expanded_guide['slug'] + "/"
-                        # ... If the guide is in the API section...
-                        elif "slug" in expanded_guide.keys() and "docs/api/" in file_path:
-                            canonical_link = "/docs/api/" + expanded_guide['slug'] + "/"
                         # ... If the guide is in any other section...
                         else:
                             canonical_link = "/" + file_path
