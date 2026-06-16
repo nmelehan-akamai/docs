@@ -154,7 +154,7 @@ def get_guides():
     issues = []
 
     # Add top level guides
-    guides.append(Guide("docs/","docs/_index.md", "Docs Home", "/docs/"))
+    guides.append(Guide("docs/","docs/_index.md", "Docs Home", "/cloud/"))
     guides.append(Guide("docs/marketplace-docs/", "", "Marketplace Docs", "/docs/marketplace-docs/"))
     guides.append(Guide("docs/resources/", "", "Resources", "/docs/resources/"))
     guides.append(Guide("docs/topresults/?docType=community", "", "Q&A", "/docs/topresults/?docType=community"))
