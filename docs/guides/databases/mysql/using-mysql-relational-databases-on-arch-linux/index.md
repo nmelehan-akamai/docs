@@ -18,7 +18,7 @@ tags: ["arch","database","mysql"]
 deprecated: true
 ---
 
-MySQL is a popular database management system, used as the data storage provider for thousands of web and server applications. This guide will help beginners get started with MySQL on Arch Linux. If you would like to deploy MySQL as part of an application stack, consider our [LEMP](/cloud/guides/lemp-server-on-arch-linux/) and [LAMP guides](/cloud/lamp-guides/).
+MySQL is a popular database management system, used as the data storage provider for thousands of web and server applications. This guide will help beginners get started with MySQL on Arch Linux. If you would like to deploy MySQL as part of an application stack, consider our [LEMP](/cloud/guides/lemp-server-on-arch-linux/) and [LAMP guides](/cloud/guides/web-servers/lamp/).
 
 ## System Configuration
 

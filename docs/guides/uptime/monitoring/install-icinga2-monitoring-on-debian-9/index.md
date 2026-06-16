@@ -35,7 +35,7 @@ This guide shows how to install and configure the latest version of Icinga 2 web
 
 3.  Configure a [LAMP Stack](/cloud/guides/lamp-on-debian-8-jessie/).
 
-4.  [Configure a mail server](/cloud/email/) in order to have Icinga send email alerts.
+4.  [Configure a mail server](/cloud/guides/email/) in order to have Icinga send email alerts.
 
 5.  Update your system:
 

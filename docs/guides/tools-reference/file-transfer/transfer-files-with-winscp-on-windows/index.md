@@ -69,7 +69,7 @@ You can navigate your local filesystem in the left view pane, while your Linode'
 You may wish to consult the following resources for additional information on this topic. While these are provided in the hope that they will be useful, please note that we cannot vouch for the accuracy or timeliness of externally hosted materials.
 
 - [WinSCP Documentation](http://winscp.net/eng/docs/start)
-- [Tools & Resources](/cloud/tools-reference/)
+- [Tools & Resources](/cloud/guides/tools-reference/)
 
 
 

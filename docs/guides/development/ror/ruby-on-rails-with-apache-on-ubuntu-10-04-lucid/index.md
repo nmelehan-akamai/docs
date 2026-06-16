@@ -13,7 +13,7 @@ aliases: ['/frameworks/ruby-on-rails-apache/ubuntu-10-04-lucid/','/development/r
 external_resources:
   - '[Ruby on Rails Homepage](http://rubyonrails.org/)'
   - '[mod\_rails Documentation for Apache Servers](http://www.modrails.com/documentation/Users%20guide%20Apache.html)'
-  - '[Install the Apache HTTP Server on Ubuntu 10.04 (Lucid)](/cloud/web-servers/apache/installation/ubuntu-10-04-lucid)'
+  - '[Install the Apache HTTP Server on Ubuntu 10.04 (Lucid)](/cloud/guides/apache-2-web-server-on-ubuntu-10-04-lts-lucid/)'
   - '[Install the MySQL Database System on Ubuntu 10.04 (Lucid)](/cloud/guides/use-mysql-relational-databases-on-ubuntu-10-04-lts-lucid/)'
 relations:
     platform:
@@ -79,7 +79,7 @@ Additionally, the application you deploy will likely have additional dependencie
 
 ## Configuring Apache to Work with Passenger
 
-If you configured Apache virtual hosting as outlined in the [Ubuntu 10.04 (Lucid) Apache guide](/cloud/web-servers/apache/installation/ubuntu-10-04-lucid), the public directory for your domain (e.g. `example.com`) is located in `/srv/www/example.com/public_html/`, and your `<VirtualHost >` configuration block contains a line that reads:
+If you configured Apache virtual hosting as outlined in the [Ubuntu 10.04 (Lucid) Apache guide](/cloud/guides/apache-2-web-server-on-ubuntu-10-04-lts-lucid/), the public directory for your domain (e.g. `example.com`) is located in `/srv/www/example.com/public_html/`, and your `<VirtualHost >` configuration block contains a line that reads:
 
 {{< file "Apache Virtual Host Configuration" apache >}}
 DocumentRoot /srv/www/example.com/public_html/

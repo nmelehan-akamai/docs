@@ -11,8 +11,8 @@ tags: ["http","web server","apache","security"]
 license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 aliases: ['/web-servers/apache/configuration/http-authentication/','/websites/apache/apache-access-control/','/web-servers/apache/apache-access-control/','/guides/authbased-access-control-with-apache/','/websites/apache/authbased-access-control-with-apache/','/web-servers/apache/authbased-access-control-with-apache/','/websites/authbased-access-control-with-apache/']
 external_resources:
- - '[Installation of the Apache web server](/cloud/web-servers/apache/)'
- - '[LAMP stack guides](/cloud/web-servers/lamp/)'
+ - '[Installation of the Apache web server](/cloud/guides/web-servers/apache/)'
+ - '[LAMP stack guides](/cloud/guides/web-servers/lamp/)'
  - '[Authentication and Access Control](http://httpd.apache.org/docs/2.2/howto/auth.html)'
  - '[Basic Authentication Module](http://httpd.apache.org/docs/2.2/mod/mod_auth_basic.html)'
 ---

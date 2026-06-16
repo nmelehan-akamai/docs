@@ -22,7 +22,7 @@ mod_evasive is a module for Apache that provides evasive action in the event of 
 
 ![mod_evasive on Apache](mod_evasive.png "mod_evasive on Apache")
 
-This guide assumes you already have your LAMP server configured. Guides for setting up a LAMP stack can be found in our [LAMP guides](/cloud/lamp-guides) section.
+This guide assumes you already have your LAMP server configured. Guides for setting up a LAMP stack can be found in our [LAMP guides](/cloud/guides/web-servers/lamp/) section.
 
 ## How does mod_evasive work?
 

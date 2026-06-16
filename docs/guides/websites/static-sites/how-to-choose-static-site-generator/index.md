@@ -65,7 +65,7 @@ Since static site generators are easy to set up, it's worth installing a few and
     * Note that each generator requires different meta information. Refer to the official documentation to learn more about available features.
 4.  Preview your pages if available.
 5.  Instruct your static site generator to build the site.
-6.  Move the newly built or updated pages to your [web server](/cloud/web-servers/).
+6.  Move the newly built or updated pages to your [web server](/cloud/guides/web-servers/).
 
 ## Use a CMS Front-End
 

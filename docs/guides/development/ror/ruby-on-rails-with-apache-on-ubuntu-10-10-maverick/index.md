@@ -13,7 +13,7 @@ aliases: ['/websites/ror/ruby-on-rails-with-apache-on-ubuntu-10-10-maverick/','/
 external_resources:
   - '[Ruby on Rails Homepage](http://rubyonrails.org/)'
   - '[mod\_rails Documentation for Apache Servers](http://www.modrails.com/documentation/Users%20guide%20Apache.html)'
-  - '[Install the Apache HTTP Server on Ubuntu 10.10 (Maverick)](/cloud/web-servers/apache/installation/ubuntu-10-10-maverick)'
+  - '[Install the Apache HTTP Server on Ubuntu 10.10 (Maverick)](/cloud/guides/how-to-install-apache-web-server-ubuntu-18-04/)'
   - '[Install the MySQL Database System on Ubuntu 10.10 (Maverick)](/cloud/guides/use-mysql-relational-databases-on-ubuntu-10-10-maverick/)'
 relations:
     platform:
@@ -69,7 +69,7 @@ Additionally, the application you deploy will likely have additional dependencie
 
 ## Configuring Apache to Work with Passenger
 
-If you configured Apache virtual hosting as outlined in the [Ubuntu 10.10 (Maverick) Apache guide](/cloud/web-servers/apache/installation/ubuntu-10-10-maverick), the public directory for your domain (e.g. `example.com`) is located in `/srv/www/example.com/public_html/`, and your `<VirtualHost >` configuration block contains a line that reads:
+If you configured Apache virtual hosting as outlined in the [Ubuntu 10.10 (Maverick) Apache guide](/cloud/guides/how-to-install-apache-web-server-ubuntu-18-04/), the public directory for your domain (e.g. `example.com`) is located in `/srv/www/example.com/public_html/`, and your `<VirtualHost >` configuration block contains a line that reads:
 
 {{< file "Apache Virtual Host Configuration" apache >}}
 DocumentRoot /srv/www/example.com/public_html/

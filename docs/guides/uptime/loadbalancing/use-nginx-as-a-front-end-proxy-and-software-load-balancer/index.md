@@ -23,14 +23,14 @@ The NGINX web server can act as a very capable software load balancer, in additi
 
 Using a proxy is helpful when the demands of serving a single website outgrow the capabilities of a single machine. Additionally, there are some web frameworks, like [Seaside](/cloud/guides/deploy-smalltalk-applications-with-seaside/) and Ruby On Rails's Mongrel server, that deploy applications on framework-specific web servers. While these single-purpose servers provide powerful application services, they are not suitable for hosting entire applications. In these cases, using NGINX as a front-end proxy to pass only the essential requests to the application server is a viable means of unifying dynamic content with static content and providing a stable production environment.
 
-This document provides an overview of using NGINX as a front-end proxy server for other HTTP servers, and as a software load balancer to distribute traffic across a cluster of machines providing HTTP resources. For an introductory guide to configuring NGINX, please see our [Basic NGINX Configuration](/cloud/guides/getting-started-with-nginx-part-1-installation-and-basic-setup/) guide. If you want a simple NGINX deployment with content that uses PHP or Perl scripts, consider following one of our [Installing NGINX](/cloud/web-servers/nginx/) guides.
+This document provides an overview of using NGINX as a front-end proxy server for other HTTP servers, and as a software load balancer to distribute traffic across a cluster of machines providing HTTP resources. For an introductory guide to configuring NGINX, please see our [Basic NGINX Configuration](/cloud/guides/getting-started-with-nginx-part-1-installation-and-basic-setup/) guide. If you want a simple NGINX deployment with content that uses PHP or Perl scripts, consider following one of our [Installing NGINX](/cloud/guides/web-servers/nginx/) guides.
 
 ## Before You Begin
 
 Ensure that you have completed the following:
 
 -   Follow the [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide.
--   Install the [NGINX server](/cloud/web-servers/nginx/).
+-   Install the [NGINX server](/cloud/guides/web-servers/nginx/).
 -   Familiarize yourself with [Basic NGINX Configuration](/cloud/guides/how-to-configure-nginx/).
 
 If you're new to Linux server administration, you may be interested in our [introduction to Linux basics](/cloud/guides/introduction-to-linux-concepts/) guide, [Beginner's Guide](https://techdocs.akamai.com/cloud-computing/docs/faqs-for-compute-instances) and [Administration Basics](/cloud/guides/linux-system-administration-basics/) guide.

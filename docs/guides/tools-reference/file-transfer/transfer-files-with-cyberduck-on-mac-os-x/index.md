@@ -86,7 +86,7 @@ This allows you to maintain connection information for multiple servers or user 
 You may wish to consult the following resources for additional information on this topic. While these are provided in the hope that they will be useful, please note that we cannot vouch for the accuracy or timeliness of externally hosted materials.
 
 - [Cyberduck User Forums](http://forums.cocoaforge.com/viewforum.php?f=9)
-- [Tools & Resources](/cloud/tools-reference/)
+- [Tools & Resources](/cloud/guides/tools-reference/)
 
 
 

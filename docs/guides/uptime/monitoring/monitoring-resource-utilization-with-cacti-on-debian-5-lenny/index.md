@@ -46,7 +46,7 @@ Before installing Cacti we must install a few basic dependencies that are critic
 
 You will need to create a password for the `root` user of your MySQL database during the installation. After the installation completes, be sure to run `mysql_secure_installation` to disable some of MySQL's less secure components. Also consider reading our [MySQL installation guide](/cloud/guides/use-mysql-relational-databases-on-debian-5-lenny/) for configuration recommendations.
 
-The above command will additionally install the Apache web server. Consider our documentation of [installing the Apache HTTP Server](/cloud/guides/apache-2-web-server-on-debian-5-lenny/) for more information regarding this server. Additionally Cacti can function with alternate web server configurations, including [Apache with PHP running as a CGI process](/cloud/guides/run-php-applications-under-cgi-with-apache-on-debian-5-lenny/) and with [nginx](/cloud/web-servers/nginx/) running PHP as a FastCGI process.
+The above command will additionally install the Apache web server. Consider our documentation of [installing the Apache HTTP Server](/cloud/guides/apache-2-web-server-on-debian-5-lenny/) for more information regarding this server. Additionally Cacti can function with alternate web server configurations, including [Apache with PHP running as a CGI process](/cloud/guides/run-php-applications-under-cgi-with-apache-on-debian-5-lenny/) and with [nginx](/cloud/guides/web-servers/nginx/) running PHP as a FastCGI process.
 
 ### Configuring SNMPD
 

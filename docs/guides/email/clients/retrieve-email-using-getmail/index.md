@@ -19,7 +19,7 @@ tags: ["email"]
 
 Getmail is a simple mail retriever. In many ways, the software is a response to the complexity of [fetchmail](/cloud/guides/using-fetchmail-to-retrieve-email/). Getmail provides a simple and efficient tool for downloading email from POP (Post Office Protocol) and IMAP (Internet Messaged Access Protocol) servers.
 
-You can use getmail to download email from your Linode's mail server powered by [Citadel](/cloud/email/citadel/) or [Dovecot](/cloud/email/postfix/) or you can use getmail on your Linode to download email from one or more third-party mail providers (as long as POP or IMAP is supported) and deliver it to a local email gateway.
+You can use getmail to download email from your Linode's mail server powered by [Citadel](/cloud/guides/email/citadel/) or [Dovecot](/cloud/guides/email/postfix/) or you can use getmail on your Linode to download email from one or more third-party mail providers (as long as POP or IMAP is supported) and deliver it to a local email gateway.
 
 Before getting started with Getmail, we assume that you have followed our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance). If you're new to Linux server administration, you may be interested in our [introduction to Linux concepts guide](/cloud/guides/introduction-to-linux-concepts/), [beginner's guide](https://techdocs.akamai.com/cloud-computing/docs/faqs-for-compute-instances) and the [administration basics guide](/cloud/guides/linux-system-administration-basics/).
 

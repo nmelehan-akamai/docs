@@ -39,7 +39,7 @@ Issue the following command (all one line):
 
     apt-get install postfix postfix-mysql postfix-doc mysql-client mysql-server courier-authdaemon courier-authlib-mysql courier-pop courier-pop-ssl courier-imap courier-imap-ssl libsasl2-2 libsasl2-modules libsasl2-modules-sql sasl2-bin libpam-mysql openssl maildrop getmail4 binutils
 
-You will be asked a series of questions during the installation; please refer to the [Postfix guide](/cloud/email/postfix/) to determine what the needs of your system will be. In most cases, the defaults are fine.
+You will be asked a series of questions during the installation; please refer to the [Postfix guide](/cloud/guides/email/postfix/) to determine what the needs of your system will be. In most cases, the defaults are fine.
 
 ## Install Amavisd-new and SpamAssassin
 

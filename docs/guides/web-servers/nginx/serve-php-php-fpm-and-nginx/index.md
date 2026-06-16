@@ -46,7 +46,7 @@ The [PHP Fast Process Manager](https://php-fpm.org/) is a [FastCGI](https://en.w
         /etc/php/7.0/fpm/pool.d/www.conf
         /etc/php/7.0/cli/php.ini
 
-3.  The `listen.owner` and `listen.group` directives determines owner for PHP-FPM socket. Those are set to `www-data` by default, but they need to match the user and group NGINX is running as. If you installed NGINX using our [*Getting Started with NGINX*](/cloud/web-servers/) series, then your setup will be using the `nginx` user and group. You can verify with:
+3.  The `listen.owner` and `listen.group` directives determines owner for PHP-FPM socket. Those are set to `www-data` by default, but they need to match the user and group NGINX is running as. If you installed NGINX using our [*Getting Started with NGINX*](/cloud/guides/web-servers/) series, then your setup will be using the `nginx` user and group. You can verify with:
 
         ps -aux | grep nginx
 

@@ -18,7 +18,7 @@ relations:
 deprecated: true
 ---
 
-Nginx is a lightweight and high performance HTTP web server designed with the purpose of delivering large amounts of static content quickly and with efficient use of system resources. In contrast to the [Apache HTTP server](/cloud/web-servers/apache/) that uses a threaded or process-oriented approach to handling requests, nginx uses an asynchronous event-driven model which can provide more predictable performance under load.
+Nginx is a lightweight and high performance HTTP web server designed with the purpose of delivering large amounts of static content quickly and with efficient use of system resources. In contrast to the [Apache HTTP server](/cloud/guides/web-servers/apache/) that uses a threaded or process-oriented approach to handling requests, nginx uses an asynchronous event-driven model which can provide more predictable performance under load.
 
 It is assumed that you have followed our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide. If you are new to Linux server administration, you may be interested in our [introduction to Linux concepts guide](/cloud/guides/introduction-to-linux-concepts/), [beginner's guide](https://techdocs.akamai.com/cloud-computing/docs/faqs-for-compute-instances) and [administration basics guide](/cloud/guides/linux-system-administration-basics/). You should be logged into your Linode as the "root" user before proceeding.
 
@@ -137,5 +137,5 @@ Congratulations! You now have a running and fully functional HTTP server powered
 
 You may wish to consult the following resources for additional information on this topic. While these are provided in the hope that they will be useful, please note that we cannot vouch for the accuracy or timeliness of externally hosted materials.
 
-- [Linode Docs nginx Documentation](/cloud/web-servers/nginx/)
+- [Linode Docs nginx Documentation](/cloud/guides/web-servers/nginx/)
 - [nginx Community Documentation](http://wiki.nginx.org)

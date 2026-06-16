@@ -18,7 +18,7 @@ The traditional Unix utility `sed` makes it possible to manipulate strings and s
 
 ![Manipulate Text from the Command Line with sed](manipulate_text_from_the_command_line_with_sed.png "Manipulate Text from the Command Line with sed")
 
-This document provides a gentle overview of `sed` usage, accompanied by a number of practical applications of `sed`. If you find this guide helpful, please consider our guide to [basic administration practices](/cloud/guides/linux-system-administration-basics/) or the rest of the [Tools & Reference section](/cloud/tools-reference/).
+This document provides a gentle overview of `sed` usage, accompanied by a number of practical applications of `sed`. If you find this guide helpful, please consider our guide to [basic administration practices](/cloud/guides/linux-system-administration-basics/) or the rest of the [Tools & Reference section](/cloud/guides/tools-reference/).
 
 ## Using Sed
 

@@ -36,7 +36,7 @@ Since a basic React app is static (it consists of compiled HTML, CSS, and JavaSc
 
 1.  Follow our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide to update your system. You may also wish to set the timezone, configure your hostname, create a limited user account, and harden SSH access.
 
-1.  Install and configure a [web server](/cloud/web-servers/) to host a website on your Linode. This guide's examples will use the Apache and NGINX web servers. Complete the steps in the [Installing Apache Web Server on Debian 10](/cloud/guides/how-to-install-apache-web-server-debian-10/) guide or the [Installing NGINX on Debian 10](/cloud/guides/how-to-install-nginx-debian-10/) guide.
+1.  Install and configure a [web server](/cloud/guides/web-servers/) to host a website on your Linode. This guide's examples will use the Apache and NGINX web servers. Complete the steps in the [Installing Apache Web Server on Debian 10](/cloud/guides/how-to-install-apache-web-server-debian-10/) guide or the [Installing NGINX on Debian 10](/cloud/guides/how-to-install-nginx-debian-10/) guide.
 
 1.  This guide assumes you already have a React app you'd like to deploy. If you don't have one, you can bootstrap a project quickly following the steps in the already have a React app you'd like to deploy. If you don't have one, you can quickly bootstrap a project following the steps in the [Create an Example React App](#create-an-example-react-app) section of this guide. This step should be completed on your local system.
 

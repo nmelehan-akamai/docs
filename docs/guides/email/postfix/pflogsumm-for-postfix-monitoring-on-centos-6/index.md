@@ -16,7 +16,7 @@ deprecated: true
 
 ![Header image](Pflogsumm_or_Postfix_Monitoring_on_CentOS_smg.jpg "Pflogsumm for Postfix Monitoring on CentOS 6")
 
-Pflogsumm is a simple Perl script that monitors your [Postfix](/cloud/email/postfix/) mail server's activity. This guide will show you how to install Pflogsumm on CentOS 6 and configure it to send you a daily email with your mail server stats.
+Pflogsumm is a simple Perl script that monitors your [Postfix](/cloud/guides/email/postfix/) mail server's activity. This guide will show you how to install Pflogsumm on CentOS 6 and configure it to send you a daily email with your mail server stats.
 
 {{% content "email-warning-shortguide" %}}
 
@@ -28,7 +28,7 @@ This guide is written for a non-root user. Commands that require elevated privil
 
 Make sure these prerequisites are installed:
 
--   [Postfix](/cloud/email/postfix/)
+-   [Postfix](/cloud/guides/email/postfix/)
 -   Perl 5.004
 -   Perl's Date::Calc module
 

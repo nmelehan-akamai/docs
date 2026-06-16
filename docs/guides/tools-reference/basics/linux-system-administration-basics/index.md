@@ -280,7 +280,7 @@ You can quit at any time by pressing the `F10` or `Q` keys. There are a couple o
 
 Web developers and editors often use the FTP protocol to transfer and manage files on a remote system. FTP, however, is very insecure and inefficient for managing the files on a system when you have SSH access.
 
-If you're new to Linux systems administration, consider our "[Tools & Reference](/cloud/tools-reference/)" section and articles including: [installing and using WinSCP](/cloud/guides/transfer-files-with-winscp-on-windows/), [using rsync to synchronize files](/cloud/guides/introduction-to-rsync/) and [using SSH and the terminal](/cloud/guides/using-the-terminal/).
+If you're new to Linux systems administration, consider our "[Tools & Reference](/cloud/guides/tools-reference/)" section and articles including: [installing and using WinSCP](/cloud/guides/transfer-files-with-winscp-on-windows/), [using rsync to synchronize files](/cloud/guides/introduction-to-rsync/) and [using SSH and the terminal](/cloud/guides/using-the-terminal/).
 {{< note type="alert" >}}
 If you are giving other users access to upload files to your server, consider the [security implications](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) of all additional access that you grant to third parties.
 {{< /note >}}
@@ -305,7 +305,7 @@ The syntax of `scp` follows the form `scp [source] [destination]`. You can copy 
 
 ### Protect Files on a Remote Server
 
-Because Linode servers are network accessible and often have a number of distinct users, maintaining the security of files is often an important concern. We recommend you familiarize yourself with our [basic security guide](/cloud/security/basics). Our guide on [access control with user accounts and permissions](/cloud/guides/linux-users-and-groups/) may provide additional insight.
+Because Linode servers are network accessible and often have a number of distinct users, maintaining the security of files is often an important concern. We recommend you familiarize yourself with our [basic security guide](/cloud/guides/security/basics/). Our guide on [access control with user accounts and permissions](/cloud/guides/linux-users-and-groups/) may provide additional insight.
 
 We suggest the following best practices for maintaining security:
 
@@ -613,7 +613,7 @@ This provides only the most basic outline of how to use these text editors, and 
 
 ## Web Servers and HTTP Issues
 
-Linodes do not come with a web server installed by default. You must install and configure your web server. This allows you to configure your web server in a way that makes sense for your application or website. [Linode Guides & Tutorials](/cloud/) contains a number of documents regarding the installation and maintenance of various [web servers](/cloud/web-servers/).
+Linodes do not come with a web server installed by default. You must install and configure your web server. This allows you to configure your web server in a way that makes sense for your application or website. [Linode Guides & Tutorials](/cloud/) contains a number of documents regarding the installation and maintenance of various [web servers](/cloud/guides/web-servers/).
 
 This section covers a number of basic web serving tasks and functions, as well as some guidance for users new to the world of web servers.
 
@@ -621,31 +621,31 @@ This section covers a number of basic web serving tasks and functions, as well a
 
 Web servers work by listening on a TCP port, typically port 80 for HTTP and port 443 for HTTPS. When a visitor makes a request for content, the servers respond by delivering the resource requested. Typically, resources are specified with a URL that contains the protocol, `http` or `https`; a colon and two slashes, `://`; hostname or domain, `www.example.com` or `username.example.com`; and the path to a file, `/images/avatar.jpg,` or `index.html`. A full URL would resemble `http://www.example.com/images/avatar.jpg`.
 
-In order to provide these resources to users, your Linode needs to be running a web server. There are many different HTTP servers and countless configurations to provide support for various web development frameworks. The three most popular general use web servers are the [Apache HTTP](/cloud/web-servers/apache/) server, [Lighttpd](/cloud/web-servers/lighttpd/) ("Lighty"), and [nginx](/cloud/web-servers/nginx/) ("Engine X"). Each server has its strengths and weaknesses, and your choice depends largely on your experience and your needs.
+In order to provide these resources to users, your Linode needs to be running a web server. There are many different HTTP servers and countless configurations to provide support for various web development frameworks. The three most popular general use web servers are the [Apache HTTP](/cloud/guides/web-servers/apache/) server, [Lighttpd](/cloud/guides/web-servers/lighttpd/) ("Lighty"), and [nginx](/cloud/guides/web-servers/nginx/) ("Engine X"). Each server has its strengths and weaknesses, and your choice depends largely on your experience and your needs.
 
 Once you've chosen a web server, you need to decide what (if any) scripting support you need to install. Scripting support allows you to run dynamic content with your web server and program server side scripts in languages such as Python, PHP, Ruby, and Perl.
 
-If you need a full web application stack, we encourage you to consider one of our more full-featured [LAMP stack guides](/cloud/web-servers/lamp/). If you need support for a specific web development framework, consult our tutorials for installing and using specific [web application frameworks](/cloud/development/frameworks/).
+If you need a full web application stack, we encourage you to consider one of our more full-featured [LAMP stack guides](/cloud/guides/web-servers/lamp/). If you need support for a specific web development framework, consult our tutorials for installing and using specific [web application frameworks](/cloud/guides/development/frameworks/).
 
 ### How to Choose a Web Server
 
 In most situations, end users are unaware of which web server you use. As a result, choosing a web server is often a personal decision based on the comfort of the administrator and the requirements of the deployment in question. This can be a challenge for the new systems administrator. This section offers some guidance by providing some background and information on the most popular web servers.
 
-The [Apache HTTP Server](/cloud/web-servers/apache/) is considered by some to be the *de facto* standard web server. It is the most widely deployed open-source web server, its configuration interface has been stable for many years, and its modular architecture allows it to function in many different types of deployments. Apache forms the foundation of the [LAMP stack](/cloud/web-servers/lamp/), and supports the integration of dynamic server-side applications into the web server.
+The [Apache HTTP Server](/cloud/guides/web-servers/apache/) is considered by some to be the *de facto* standard web server. It is the most widely deployed open-source web server, its configuration interface has been stable for many years, and its modular architecture allows it to function in many different types of deployments. Apache forms the foundation of the [LAMP stack](/cloud/guides/web-servers/lamp/), and supports the integration of dynamic server-side applications into the web server.
 
-By contrast, web servers like [Lighttpd](/cloud/web-servers/lighttpd/) and [nginx](/cloud/web-servers/nginx/) are optimized for efficiently serving static content. If you have a deployment where server resources are limited and are facing a great deal of demand, consider one of these servers. They are functional and stable with minimal system resources. Lighttpd and nginx can be more difficult to configure when integrating dynamic content interpreters.
+By contrast, web servers like [Lighttpd](/cloud/guides/web-servers/lighttpd/) and [nginx](/cloud/guides/web-servers/nginx/) are optimized for efficiently serving static content. If you have a deployment where server resources are limited and are facing a great deal of demand, consider one of these servers. They are functional and stable with minimal system resources. Lighttpd and nginx can be more difficult to configure when integrating dynamic content interpreters.
 
 Your choice of web servers is based on your needs. Specific choices depend on factors like the type of content you want to serve, the demand for that content, and your comfort with that software as an administrator.
 
 ### Apache Logs
 
-When there is something wrong with [Apache](/cloud/web-servers/apache/), it can be difficult to determine what the cause of the error is from the behavior of the web server. There are a number of common issues with which you might begin your [troubleshooting](/cloud/guides/troubleshooting-common-apache-issues/) efforts. When more complex issues arise, you may need to review the Apache error logs.
+When there is something wrong with [Apache](/cloud/guides/web-servers/apache/), it can be difficult to determine what the cause of the error is from the behavior of the web server. There are a number of common issues with which you might begin your [troubleshooting](/cloud/guides/troubleshooting-common-apache-issues/) efforts. When more complex issues arise, you may need to review the Apache error logs.
 
 By default, error logs are located in the `/var/log/apache2/error.log` file (on Debian-based distributions). You can track or "tail" this log with the following command:
 
     tail -F /var/log/apache2/error.log
 
-In the default virtual host configurations suggested in our [Apache installation](/cloud/web-servers/apache/) and [LAMP guides](/cloud/web-servers/lamp/), we suggest adding a custom log setting:
+In the default virtual host configurations suggested in our [Apache installation](/cloud/guides/web-servers/apache/) and [LAMP guides](/cloud/guides/web-servers/lamp/), we suggest adding a custom log setting:
 
 {{< file "Apache Virtual Host Configuration" >}}
 ErrorLog /var/www//html/example.com/logs/error.log CustomLog /var/www/html/example.com/logs/access.log combined
@@ -684,13 +684,13 @@ Follow these steps to [create and host a sub-domain](https://techdocs.akamai.com
 
 1.  First, create an [A Record](/cloud/guides/dns-overview/#a-and-aaaa) in the DNS zone for the domain. You can do this using the [Linode DNS Manager](https://techdocs.akamai.com/cloud-computing/docs/dns-manager). You may host the DNS for your domain with any provider you choose.
 
-2.  Set up a server to respond to requests sent to this domain. For web servers like [Apache](/cloud/web-servers/apache/), this requires configuring a new virtual host. For XMPP servers you must configure an additional host to receive the requests for this host. For more information, consult the documentation for the specific server you wish to deploy.
+2.  Set up a server to respond to requests sent to this domain. For web servers like [Apache](/cloud/guides/web-servers/apache/), this requires configuring a new virtual host. For XMPP servers you must configure an additional host to receive the requests for this host. For more information, consult the documentation for the specific server you wish to deploy.
 
 3.  Once configured, subdomains function almost identically to root domains on your server. If you need to, you can set up HTTP redirection for the new subdomain.
 
 ## SMTP Servers and Email Issues
 
-We provide a number of guides that cover [email-related topics](/cloud/email/). In this section, we'll explain how to choose an email setup that fits your needs and how to configure your Linode to send email.
+We provide a number of guides that cover [email-related topics](/cloud/guides/email/). In this section, we'll explain how to choose an email setup that fits your needs and how to configure your Linode to send email.
 
 {{% content "email-warning-shortguide" %}}
 
@@ -702,15 +702,15 @@ There may also be other components in the email server tool chain. These compone
 
 The most prevalent SMTP servers or MTAs in the UNIX-like world are [Postfix](http://www.postfix.org/), [Exim](https://www.exim.org/), and [Sendmail](http://www.sendmail.org/). Sendmail has the longest history and many system administrators have extensive experience with it. Postfix is robust and modern, and is compatible with many different configurations. Exim is the default MTA in Debian systems, and many consider it to be easier to use for basic tasks. For remote mailbox access, servers like [Courier](http://www.courier-mta.org/) and [Dovecot](https://www.dovecot.org/) are popular options.
 
-If you need an easy-to-install email solution, consider the [Citadel groupware server](/cloud/email/citadel/). Citadel provides an integrated "turnkey" solution that includes an SMTP server, remote mailbox access, real time collaboration tools including XMPP, and a shared calendar interface. Along similar lines, we also provide documentation for the installation of the [Zimbra groupware server](/cloud/email/zimbra/).
+If you need an easy-to-install email solution, consider the [Citadel groupware server](/cloud/guides/email/citadel/). Citadel provides an integrated "turnkey" solution that includes an SMTP server, remote mailbox access, real time collaboration tools including XMPP, and a shared calendar interface. Along similar lines, we also provide documentation for the installation of the [Zimbra groupware server](/cloud/guides/email/zimbra/).
 
-If, by contrast, you want a more simple and modular email stack, we urge you to consider one of our guides built around the [Postfix SMTP server](/cloud/email/postfix/).
+If, by contrast, you want a more simple and modular email stack, we urge you to consider one of our guides built around the [Postfix SMTP server](/cloud/guides/email/postfix/).
 
 Finally, it's possible to outsource email service to a third-party provider, such as [Google Workspace](/cloud/guides/using-google-workspace-for-email/) or [FastMail.fm](https://www.fastmail.fm). These services allows you to send and receive mail from your domain, without hosting email services on your Linode.
 
 ### Send Email From Your Server
 
-For simple configurations, you may have no need for a complete email stack like some of those documented in our [email guides](/cloud/email/). However, applications running on that server still need to be able to send mail for notifications and other routine purposes.
+For simple configurations, you may have no need for a complete email stack like some of those documented in our [email guides](/cloud/guides/email/). However, applications running on that server still need to be able to send mail for notifications and other routine purposes.
 
 The configuration of applications to send notifications and alerts is beyond the scope of this guide. Most applications rely on a simple "sendmail" interface, which is accessible via several common SMTP servers including Postfix and msmtp.
 

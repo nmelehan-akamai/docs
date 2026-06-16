@@ -66,7 +66,7 @@ So, if your website's logs indicate that a user at a certain IP address spent a 
 
 To use Bise, you should have the following:
 
-* A website running on Apache, or another web server configured to write out its access logs in the Common Log Format. Visit the [Apache section](/cloud/web-servers/apache/) for help with installing Apache.
+* A website running on Apache, or another web server configured to write out its access logs in the Common Log Format. Visit the [Apache section](/cloud/guides/web-servers/apache/) for help with installing Apache.
 
 * Access to those logs! Bise needs read-access to those log files in order to work. The [If You Don't Have Read-Access to the Logs](#if-you-don-t-have-read-access-to-the-logs) section will provide suggestions if you don't currently have read access.
 

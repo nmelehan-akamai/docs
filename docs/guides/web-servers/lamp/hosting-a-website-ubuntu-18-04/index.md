@@ -23,7 +23,7 @@ This guide is written for a non-root user. Commands that require elevated privil
 
 ## Hosting an Apache Web Server on Ubuntu 18.04
 
-Hosting a website starts with installing a *web server*, which is an application on your Linode that delivers content through the Internet. This section helps you get started with *Apache*, the world's most popular web server. For more information about Apache and other web servers, see the [guides on web servers](/cloud/web-servers/).
+Hosting a website starts with installing a *web server*, which is an application on your Linode that delivers content through the Internet. This section helps you get started with *Apache*, the world's most popular web server. For more information about Apache and other web servers, see the [guides on web servers](/cloud/guides/web-servers/).
 
 If you are using Ubuntu 18.04, instead of installing each component separately, use *Tasksel* to install a LAMP stack on your Linode. When *Tasksel* completes, skip the installation steps in each section below and continue on to the configuration steps of each part of the stack:
 

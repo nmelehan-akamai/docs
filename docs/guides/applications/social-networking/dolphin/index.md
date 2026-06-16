@@ -72,7 +72,7 @@ You have successfully modified your `php.ini` file for Dolphin.
 
 ### Setting Up Email
 
-To configure Dolphin to send email, you'll need to install either Sendmail or [Postfix](/cloud/email/postfix/). You should be able to use [send-only exim](/cloud/email/exim/) as well.
+To configure Dolphin to send email, you'll need to install either Sendmail or [Postfix](/cloud/guides/email/postfix/). You should be able to use [send-only exim](/cloud/guides/email/exim/) as well.
 
 ### Installing JRE
 
@@ -82,7 +82,7 @@ If you'd like to run the Boonex RMS (Ray Media Server), which is a required comp
 
         sudo apt-get install openjdk-6-jre
 
-2.  RMS requires ports 1935, 1936, and 5080 to be open in your firewall. For more information, see the [Securing Your Server guide](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance#configure-a-firewall) and the [Firewall reference manuals](/cloud/security/firewalls/).
+2.  RMS requires ports 1935, 1936, and 5080 to be open in your firewall. For more information, see the [Securing Your Server guide](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance#configure-a-firewall) and the [Firewall reference manuals](/cloud/guides/security/firewalls/).
 
 You have successfully installed JRE on your Linode.
 

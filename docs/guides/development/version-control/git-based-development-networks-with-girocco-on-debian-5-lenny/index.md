@@ -28,9 +28,9 @@ Now issue the following command to install the required prerequisite software:
 
     apt-get install git-core build-essential netcat-openbsd apache2 wget libwww-perl libjson-perl librpc-xml-perl
 
-The above command installs the Apache HTTP Server, and this guide depends upon running Apache. For more information regarding the setup and configuration of Apache, consider our series of [Apache guides](/cloud/web-servers/apache/).
+The above command installs the Apache HTTP Server, and this guide depends upon running Apache. For more information regarding the setup and configuration of Apache, consider our series of [Apache guides](/cloud/guides/web-servers/apache/).
 
-This guide does not include explicit instructions for downloading and installing a local send-only [mail server](/cloud/email/), which you will need to do for some operations such as sending password recovery tokens. If you do not have a local MTA installed or configured already, begin by issuing the following command:
+This guide does not include explicit instructions for downloading and installing a local send-only [mail server](/cloud/guides/email/), which you will need to do for some operations such as sending password recovery tokens. If you do not have a local MTA installed or configured already, begin by issuing the following command:
 
     apt-get install mailx
 

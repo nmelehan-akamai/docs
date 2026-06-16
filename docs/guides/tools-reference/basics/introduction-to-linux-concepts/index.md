@@ -11,7 +11,7 @@ license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 aliases: ['/tools-reference/basics/introduction-to-linux-concepts/','/tools-reference/introduction-to-linux-concepts/','/using-linux/linux-concepts/']
 external_resources:
  - '[Using the Terminal](/cloud/guides/using-the-terminal/)'
- - '[LAMP Guides](/cloud/lamp-guides/)'
+ - '[LAMP Guides](/cloud/guides/web-servers/lamp/)'
  - '[Package Management](/cloud/guides/linux-package-management-overview/)'
 tags: ["linux"]
 ---

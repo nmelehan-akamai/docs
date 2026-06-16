@@ -168,7 +168,7 @@ If you need to access your repository over the `http://` or `https://` protocols
 
 ### Install Apache and `mod_dav_svn`
 
-Developers frequently access Subversion repositories via the SSH protocol and manage permissions and authentication credentials using OpenSSH and system user accounts. This can be difficult to manage if you are hosting a large number of repositories with a large number of users on a single server. For these cases, many users provide access to their repositories using the "WebDAV" protocol over HTTP or HTTPS with the [Apache Web Server](/cloud/web-servers/apache/).
+Developers frequently access Subversion repositories via the SSH protocol and manage permissions and authentication credentials using OpenSSH and system user accounts. This can be difficult to manage if you are hosting a large number of repositories with a large number of users on a single server. For these cases, many users provide access to their repositories using the "WebDAV" protocol over HTTP or HTTPS with the [Apache Web Server](/cloud/guides/web-servers/apache/).
 
 Install the Apache module `mod_dav_svn`:
 

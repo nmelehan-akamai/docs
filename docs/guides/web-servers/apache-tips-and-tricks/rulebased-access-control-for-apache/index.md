@@ -10,8 +10,8 @@ keywords: ["apache", "access control", "security", "http", "web server"]
 license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 aliases: ['/web-servers/apache/configuration/rule-based-access-control/','/websites/apache-tips-and-tricks/rulebased-access-control-for-apache/','/web-servers/apache-tips-and-tricks/rulebased-access-control-for-apache/']
 external_resources:
- - '[LAMP Stack Guides](/cloud/lamp-guides/)'
- - '[Apache Configuration and Administration](/cloud/web-servers/apache/)'
+ - '[LAMP Stack Guides](/cloud/guides/web-servers/lamp/)'
+ - '[Apache Configuration and Administration](/cloud/guides/web-servers/apache/)'
  - '[Apache Configuration Basics](/cloud/guides/apache-configuration-basics/)'
  - '[Apache Configuration Structure](/cloud/guides/apache-configuration-structure/)'
  - '[Auth-based Access Control](/cloud/guides/apache-access-control/)'
@@ -31,7 +31,7 @@ The most basic use of rule-based access control is to place firm limits on what 
 
 Additional uses for these access rules include blocking particular IP ranges that have been responsible for malicious traffic and limiting access to a given resource or set of resources to "internal users," among a number of other possibilities.
 
-We assume that you have a working installation of Apache and have access to modify configuration files. If you have not installed Apache, you might want to follow one of our [Apache installation guides](/cloud/web-servers/apache/) or [LAMP stack installation guides](/cloud/lamp-guides/). If you want a more thorough introduction to Apache configuration, please reference our [Apache HTTP server configuration basics](/cloud/guides/apache-configuration-basics/) and [Apache configuration structure](/cloud/guides/apache-configuration-structure/) guides.
+We assume that you have a working installation of Apache and have access to modify configuration files. If you have not installed Apache, you might want to follow one of our [Apache installation guides](/cloud/guides/web-servers/apache/) or [LAMP stack installation guides](/cloud/guides/web-servers/lamp/). If you want a more thorough introduction to Apache configuration, please reference our [Apache HTTP server configuration basics](/cloud/guides/apache-configuration-basics/) and [Apache configuration structure](/cloud/guides/apache-configuration-structure/) guides.
 
 ## Examples of Rule Based Access Control
 

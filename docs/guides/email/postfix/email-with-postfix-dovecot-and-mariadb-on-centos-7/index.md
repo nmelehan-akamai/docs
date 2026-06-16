@@ -21,7 +21,7 @@ In this guide, you'll learn how to set up a secure virtual user mail server with
 
 ![Email with Postfix, Dovecot and MariaDB on CentOS 7](Email_with_Postfix_Dovecot_and_MariaDB_on_CentOS_7_smg.jpg)
 
-For a different Linux distribution or different mail server, review our [email tutorials](/cloud/email/).
+For a different Linux distribution or different mail server, review our [email tutorials](/cloud/guides/email/).
 
 {{% content "email-warning-shortguide" %}}
 

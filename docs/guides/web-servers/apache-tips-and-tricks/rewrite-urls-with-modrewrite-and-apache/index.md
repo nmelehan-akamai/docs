@@ -10,8 +10,8 @@ keywords: ["mod_rewrite", "REST", "URLs", "redirect", "apache", "httpd"]
 license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 aliases: ['/web-servers/apache-tips-and-tricks/rewrite-urls-with-modrewrite-and-apache/','/web-servers/apache/configuration/rewriting-urls/','/websites/apache-tips-and-tricks/rewrite-urls-with-modrewrite-and-apache/']
 external_resources:
- - '[Installing Apache](/cloud/web-servers/apache/)'
- - '[LAMP stack guides](/cloud/web-servers/lamp/)'
+ - '[Installing Apache](/cloud/guides/web-servers/apache/)'
+ - '[LAMP stack guides](/cloud/guides/web-servers/lamp/)'
  - '[Apache Rewrite Guide](https://httpd.apache.org/docs/current/mod/mod_rewrite.html)'
  - '[Redirect URLs with the Apache Web Server](/cloud/guides/redirect-urls-with-the-apache-web-server/)'
 tags: ["web server","apache"]
@@ -23,7 +23,7 @@ In this guide, you'll learn how to rewrite URLs with mod_rewrite and Apache. Rew
 
 ## Before You Begin
 
-1.  This guide assumes you have followed our [[Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide, and that you have already configured your Apache installation. If you haven't, refer to our [Apache guides](/cloud/web-servers/apache/) or [LAMP stack guides](/cloud/web-servers/lamp/).
+1.  This guide assumes you have followed our [[Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide, and that you have already configured your Apache installation. If you haven't, refer to our [Apache guides](/cloud/guides/web-servers/apache/) or [LAMP stack guides](/cloud/guides/web-servers/lamp/).
 
 2.  In this guide, we'll be modifying Apache configuration files, so be sure you have the proper permissions to do so.
 

@@ -20,7 +20,7 @@ aliases: ['/databases/mariadb/configure-wordpress-remote-database/']
 
 ## Before You Begin
 
-- This guide uses two Linodes in the same data center to communicate via [private IP](https://techdocs.akamai.com/cloud-computing/docs/managing-ip-addresses-on-a-compute-instance#adding-an-ip-address) addresses. You will need to configure a [LEMP](/cloud/web-servers/lemp/) or [LAMP](/cloud/web-servers/lamp/) stack on one.
+- This guide uses two Linodes in the same data center to communicate via [private IP](https://techdocs.akamai.com/cloud-computing/docs/managing-ip-addresses-on-a-compute-instance#adding-an-ip-address) addresses. You will need to configure a [LEMP](/cloud/web-servers/lemp/) or [LAMP](/cloud/guides/web-servers/lamp/) stack on one.
 
 - Ensure that all packages are up to date.
 

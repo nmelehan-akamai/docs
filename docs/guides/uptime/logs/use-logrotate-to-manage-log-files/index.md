@@ -78,7 +78,7 @@ mail <username@example.com>
 
 {{< /file >}}
 
-Your system will need a functioning [Mail Transfer Agent](/cloud/email/) to be able to send email.
+Your system will need a functioning [Mail Transfer Agent](/cloud/guides/email/) to be able to send email.
 
 {{% content "email-warning-shortguide" %}}
 

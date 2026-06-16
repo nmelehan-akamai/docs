@@ -18,7 +18,7 @@ tags: ["web server","nginx"]
 deprecated: true
 ---
 
-Nginx is a lightweight and high performance web server, designed with the purpose of delivering large amounts of static content quickly and with efficient use of system resources. In contrast to the [Apache HTTP server](/cloud/web-servers/apache/), which uses a threaded or process-oriented approach to handling requests, NGINX uses an asynchronous event-driven model to provide more predictable performance under load.
+Nginx is a lightweight and high performance web server, designed with the purpose of delivering large amounts of static content quickly and with efficient use of system resources. In contrast to the [Apache HTTP server](/cloud/guides/web-servers/apache/), which uses a threaded or process-oriented approach to handling requests, NGINX uses an asynchronous event-driven model to provide more predictable performance under load.
 
 Before you begin installing the NGINX web server, it is assumed that you have followed our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance). If you're new to Linux server administration, you may be interested in our [introduction to Linux concepts guide](/cloud/guides/introduction-to-linux-concepts/), our [beginner's guide](https://techdocs.akamai.com/cloud-computing/docs/faqs-for-compute-instances), and our [administration basics guide](/cloud/guides/linux-system-administration-basics/).
 
@@ -60,7 +60,7 @@ Congratulations! You now have a running and fully functional HTTP server powered
 
 You may wish to consult the following resources for additional information on this topic. While these are provided in the hope that they will be useful, please note that we cannot vouch for the accuracy or timeliness of externally hosted materials.
 
-- [Linode Docs NGINX Documentation](/cloud/web-servers/nginx/)
+- [Linode Docs NGINX Documentation](/cloud/guides/web-servers/nginx/)
 - [NGINX Community Documentation](http://wiki.nginx.org)
 - [Configure Perl and FastCGI with NGINX](/cloud/guides/nginx-and-perlfastcgi-on-arch-linux/)
 - [Configure PHP and FastCGI with NGINX](/cloud/guides/nginx-and-phpfastcgi-on-arch-linux/)

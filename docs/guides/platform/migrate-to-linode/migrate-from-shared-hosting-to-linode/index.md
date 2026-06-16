@@ -77,13 +77,13 @@ See [our Filezilla guide](/cloud/guides/filezilla/) to use it for your site back
 
 ## Install a Basic Web Server on Your Linode
 
-The next step is to build the software environment needed for your site to function properly. Once that's complete, you can install a content management system of your choice such as [WordPress](https://wordpress.org/) or [Drupal](https://www.drupal.com/). There are many possibilities; see our [web servers](/cloud/web-servers/) guides for available options. This guide will assume the use of a LAMP stack, one of the most common web server configurations.
+The next step is to build the software environment needed for your site to function properly. Once that's complete, you can install a content management system of your choice such as [WordPress](https://wordpress.org/) or [Drupal](https://www.drupal.com/). There are many possibilities; see our [web servers](/cloud/guides/web-servers/) guides for available options. This guide will assume the use of a LAMP stack, one of the most common web server configurations.
 
 ### LAMP Stack
 
 [LAMP](https://en.wikipedia.org/wiki/LAMP_%28software_bundle%29) stands for the following:
 
-*  **Linux:** A LAMP stack will work on most common Linux distributions. While there will be no discernible difference to your site's users, each distro has advantages and disadvantages to consider. See our [LAMP Guides](/cloud/web-servers/lamp/) section for installation instructions on various distros.
+*  **Linux:** A LAMP stack will work on most common Linux distributions. While there will be no discernible difference to your site's users, each distro has advantages and disadvantages to consider. See our [LAMP Guides](/cloud/guides/web-servers/lamp/) section for installation instructions on various distros.
 *  **Apache:** A web server that handles HTTP and HTTPS internet traffic.
 *  **MySQL:** A database server.
 *  **PHP:** A software language that allows you to create and configure dynamic website content.

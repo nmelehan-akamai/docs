@@ -103,7 +103,7 @@ The above line tells the munin-node that the master Munin server is located at I
 
 You can use Munin with the web server of your choice, simply point your web server to provide access to resources created by Munin. By default, these resources are located at `/var/cache/munin/www/`.
 
-If you are using the [Apache HTTP Server](/cloud/web-servers/apache/) you can create a Virtual Host configuration to serve the reports from Munin. In this scenario, we've created a subdomain in the DNS Manager and are now creating the virtual host file:
+If you are using the [Apache HTTP Server](/cloud/guides/web-servers/apache/) you can create a Virtual Host configuration to serve the reports from Munin. In this scenario, we've created a subdomain in the DNS Manager and are now creating the virtual host file:
 
 {{< file "/etc/apache2/sites-available/stats.example.org" >}}
 <VirtualHost 123.45.67.89:80>

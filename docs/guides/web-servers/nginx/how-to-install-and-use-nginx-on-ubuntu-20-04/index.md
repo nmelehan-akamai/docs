@@ -164,6 +164,6 @@ To learn more about NGINX's features and capabilities, check out our [A Comparis
 For more advanced configuration options, including security and performance optimizations and TLS setup, see our four-part series on NGINX.
 
 - [Part 1: Installation and Basic Setup](/cloud/guides/getting-started-with-nginx-part-1-installation-and-basic-setup/)
-- [Part 2: (Slightly More) Advanced Configurations](/cloud/web-servers/nginx/slightly-more-advanced-configurations-for-nginx/)
+- [Part 2: (Slightly More) Advanced Configurations](/cloud/guides/getting-started-with-nginx-part-2-advanced-configuration/)
 - [Part 3: Enable TLS for HTTPS Connections](/cloud/guides/getting-started-with-nginx-part-3-enable-tls-for-https/)
 - [Part 4: TLS Deployment Best Practices](/cloud/guides/getting-started-with-nginx-part-4-tls-deployment-best-practices/)

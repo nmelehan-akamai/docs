@@ -12,7 +12,7 @@ license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 aliases: ['/networking/ssh/using-sshfs-on-linux-and-macos-x/','/networking/ssh/using-sshfs-on-linux/','/networking/ssh-filesystems/']
 external_resources:
  - '[SSHFS Home Page](http://fuse.sourceforge.net/sshfs.html)'
- - '[Linux Security Basics](/cloud/security/basics)'
+ - '[Linux Security Basics](/cloud/guides/security/basics/)'
  - '[Use Public Key Authentication with SSH](/cloud/guides/use-public-key-authentication-with-ssh/)'
 ---
 

@@ -139,7 +139,7 @@ Install and configure the MTA, MDA, and IMAP/POP3 server. To help manage domains
 
 For detailed configuration instructions, see our [Postfix, Dovecot, and MySQL](/cloud/guides/email-with-postfix-dovecot-and-mysql/) guide.
 
-For more mail server guides, including guides for older software versions and other mail-related services, visit our [Email Server Guides](/cloud/email/).
+For more mail server guides, including guides for older software versions and other mail-related services, visit our [Email Server Guides](/cloud/guides/email/).
 
 ### DNS Records
 

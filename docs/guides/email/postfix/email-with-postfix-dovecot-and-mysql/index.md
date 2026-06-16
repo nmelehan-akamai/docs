@@ -36,7 +36,7 @@ This tutorial assumes that you are familiar with the following:
 
 ![Email with Postfix, Dovecot, and MySQL](email_with_postfix_dovecot_and_mysql.png "Setting up a mail server with Postfix, Dovecot, and MySQL")
 
-For a different Linux distribution or different mail server, review our [email tutorials](/cloud/email/).
+For a different Linux distribution or different mail server, review our [email tutorials](/cloud/guides/email/).
 
 {{% content "email-warning-shortguide" %}}
 

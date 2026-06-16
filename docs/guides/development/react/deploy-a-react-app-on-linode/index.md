@@ -32,7 +32,7 @@ Since a basic React app is static (it consists of compiled HTML, CSS, and JavaSc
 
 1.  Follow our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide to update your system. You may also wish to set the timezone, configure your hostname, create a limited user account, and harden SSH access.
 
-1.  You will need a [web server](/cloud/web-servers/) configured to host a website on your Linode.
+1.  You will need a [web server](/cloud/guides/web-servers/) configured to host a website on your Linode.
 
 1.  This guide assumes you already have a React app you'd like to deploy. If you don't have one, you can bootstrap a project quickly using [create-react-app](https://github.com/facebookincubator/create-react-app).
 

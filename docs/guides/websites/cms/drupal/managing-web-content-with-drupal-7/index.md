@@ -23,8 +23,8 @@ Before we begin with the Drupal installation, there are few other guides that pr
 
 - If you're new to Linux system administration, consider our [Linux System Administration Basics](/cloud/guides/linux-system-administration-basics/) guides.
 - Before you can install Drupal, please complete our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide to get a fully updated and running system.
-- Then, you will want to use one of the [LAMP](/cloud/web-servers/lamp/) guides, or for beginners, the [Hosting a Website](/cloud/guides/hosting-a-website-ubuntu-18-04/) guide to get a functioning Linux/Apache/MySQL/PHP stack installed on your Linode.
-- If you want more information about installing [Apache](/cloud/web-servers/apache/) or [the MySQL database](/cloud/databases/mysql/), our guides provide some additional information regarding these dependencies.
+- Then, you will want to use one of the [LAMP](/cloud/guides/web-servers/lamp/) guides, or for beginners, the [Hosting a Website](/cloud/guides/hosting-a-website-ubuntu-18-04/) guide to get a functioning Linux/Apache/MySQL/PHP stack installed on your Linode.
+- If you want more information about installing [Apache](/cloud/guides/web-servers/apache/) or [the MySQL database](/cloud/databases/mysql/), our guides provide some additional information regarding these dependencies.
 
 With these dependencies installed and running, we're ready to begin installing the Drupal content management system. We assume that you have a working SSH connection to your server and database credentials to access your database server.
 

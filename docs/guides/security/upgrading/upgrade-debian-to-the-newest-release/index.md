@@ -28,7 +28,7 @@ While upstream maintainers try to ensure cross-compatibility and problem-free up
 - **Back up any important data stored on your Linode!** If you subscribe to the Linode Backups service, we recommend taking a [manual snapshot](https://techdocs.akamai.com/cloud-computing/docs/take-a-manual-snapshot) before upgrading your system. If you use a different backup service or application, you should do a manual backup now.
 
     {{< note respectIndent=false >}}
-You may also want to back up your configuration files (usually located in `/etc/`) in case they have changed in later versions of the software you are using. See our [backup guides](/cloud/security/backups/) for more information.
+You may also want to back up your configuration files (usually located in `/etc/`) in case they have changed in later versions of the software you are using. See our [backup guides](/cloud/guides/security/backups/) for more information.
 {{< /note >}}
 
 

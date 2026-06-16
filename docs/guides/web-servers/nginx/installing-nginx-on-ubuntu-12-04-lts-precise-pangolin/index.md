@@ -11,7 +11,7 @@ tags: ["web server","ubuntu","nginx"]
 license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 aliases: ['/websites/nginx/websites-with-nginx-on-ubuntu-12-04-lts-precise-pangolin/index.cfm/','/websites/nginx/installing-nginx-on-ubuntu-12-04-lts-precise-pangolin/','/websites/nginx/websites-with-nginx-on-ubuntu-12-04-lts-precise-pangolin/','/web-servers/nginx/installation/ubuntu-12-04-precise-pangolin/','/web-servers/nginx/installing-nginx-on-ubuntu-12-04-lts-precise-pangolin/','/websites/nginx/install-nginx-ubuntu-12-04/']
 external_resources:
- - '[Linode nginx Documentation](/cloud/web-servers/nginx/)'
+ - '[Linode nginx Documentation](/cloud/guides/web-servers/nginx/)'
  - '[nginx Community Documentation](http://wiki.nginx.org)'
  - '[Configure Perl and FastCGI with nginx](/cloud/guides/nginx-and-perlfastcgi-on-ubuntu-10-04-lts-lucid/)'
  - '[Configure PHP and FastCGI with nginx](/cloud/guides/nginx-and-phpfastcgi-on-ubuntu-10-04-lts-lucid/)'
@@ -23,7 +23,7 @@ relations:
 deprecated: true
 ---
 
-Nginx is a lightweight, high performance web server designed to deliver large amounts of static content quickly and with efficient use of system resources. In contrast to the [Apache server](/cloud/web-servers/apache/), Nginx uses an asynchronous event-driven model which provides more predictable performance under load.
+Nginx is a lightweight, high performance web server designed to deliver large amounts of static content quickly and with efficient use of system resources. In contrast to the [Apache server](/cloud/guides/web-servers/apache/), Nginx uses an asynchronous event-driven model which provides more predictable performance under load.
 
 {{< note >}}
 This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you're not familiar with the `sudo` command, you can check our [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.

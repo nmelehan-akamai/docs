@@ -81,7 +81,7 @@ You may choose to install additional Python-related tools for your specific appl
 
 ## Configuring Apache
 
-With all of the dependencies installed, we must configure Apache for virtual hosting. If you're new to administering and configuring Apache web servers, please consider our documentation on [configuring and using the Apache HTTP server](/cloud/web-servers/apache/). If you did not previously have Apache installed, it would have been installed when you installed the `mod_python` package. In these cases, [configure Apache for virtual hosting](/cloud/guides/apache-2-web-server-on-centos-5/#configure-apache) before configuring Apache for Django.
+With all of the dependencies installed, we must configure Apache for virtual hosting. If you're new to administering and configuring Apache web servers, please consider our documentation on [configuring and using the Apache HTTP server](/cloud/guides/web-servers/apache/). If you did not previously have Apache installed, it would have been installed when you installed the `mod_python` package. In these cases, [configure Apache for virtual hosting](/cloud/guides/apache-2-web-server-on-centos-5/#configure-apache) before configuring Apache for Django.
 
 You will want to insert a `Location` block inside the virtual hosting block for the domain where you want the Django application to run. The location block looks like this:
 

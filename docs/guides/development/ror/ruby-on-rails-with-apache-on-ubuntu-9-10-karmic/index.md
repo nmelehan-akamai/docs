@@ -13,7 +13,7 @@ aliases: ['/websites/ror/ruby-on-rails-with-apache-on-ubuntu-9-10-karmic/','/fra
 external_resources:
     - '[Ruby on Rails Homepage](http://rubyonrails.org/)'
     - '[mod\_rails Documentation for Apache Servers](http://www.modrails.com/documentation/Users%20guide%20Apache.html)'
-    - '[Install the Apache HTTP Server on Ubuntu 9.10 (Karmic)](/cloud/web-servers/apache/installation/ubuntu-9-10-karmic)'
+    - '[Install the Apache HTTP Server on Ubuntu 9.10 (Karmic)](/cloud/guides/apache-2-web-server-on-ubuntu-9-10-karmic/)'
     - '[Install the MySQL Database System on Ubuntu 9.10 (Karmic)](/cloud/guides/use-mysql-relational-databases-on-ubuntu-9-10-karmic/)'
 relations:
     platform:
@@ -86,7 +86,7 @@ Additionally, the application you deploy will likely have additional dependencie
 
 ## Configuring Apache to Work with Passenger
 
-If you configured Apache virtual hosting as outlined in the [Ubuntu 9.10 (Karmic) Apache guide](/cloud/web-servers/apache/installation/ubuntu-9-10-karmic), the public directory for your domain (e.g. `example.com`) is located in `/srv/www/example.com/public_html/`, and your `<VirtualHost >` configuration block contains a line that reads:
+If you configured Apache virtual hosting as outlined in the [Ubuntu 9.10 (Karmic) Apache guide](/cloud/guides/apache-2-web-server-on-ubuntu-9-10-karmic/), the public directory for your domain (e.g. `example.com`) is located in `/srv/www/example.com/public_html/`, and your `<VirtualHost >` configuration block contains a line that reads:
 
 {{< file "Apache Virtual Host Configuration" apache >}}
 DocumentRoot /srv/www/example.com/public_html/

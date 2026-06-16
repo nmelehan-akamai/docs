@@ -22,7 +22,7 @@ Although Google Analytics provides a way to add the tracking code to your webpag
 {{< note >}}
 The steps in this guide require root privileges. Be sure to run the steps below as `root` or with the `sudo` prefix. For more information on privileges see our [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
 
-This guide also assumes you have configured your Apache server as described in our [LAMP](/cloud/websites/lamp/) guides with your publicly accessible directory located at something similar to `/var/www/example.com/public_html`. Replace all instances of `example.com` with your own domain information.
+This guide also assumes you have configured your Apache server as described in our [LAMP](/cloud/guides/web-servers/lamp/) guides with your publicly accessible directory located at something similar to `/var/www/example.com/public_html`. Replace all instances of `example.com` with your own domain information.
 {{< /note >}}
 
 ## Signing Up for Google Analytics

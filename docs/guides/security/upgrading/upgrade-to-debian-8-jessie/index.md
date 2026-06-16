@@ -38,7 +38,7 @@ You should install all available updates for Debian 7 before upgrading to Debian
 
 ### Backing Up Your Linode
 
-It's a good idea to [back up](https://techdocs.akamai.com/cloud-computing/docs/backup-service) your Linode before performing a major upgrade. If you subscribe to the Linode Backup Service, we recommend that you [take a manual snapshot](https://techdocs.akamai.com/cloud-computing/docs/take-a-manual-snapshot) before upgrading to Debian 8. If you use another backup service or application, we recommend that you make a manual backup now. You may also want to back up your configuration files (usually located in `/etc/`) in case they have changed in later versions of the software you are using. See our [backup guides](/cloud/security/backups/) for more information.
+It's a good idea to [back up](https://techdocs.akamai.com/cloud-computing/docs/backup-service) your Linode before performing a major upgrade. If you subscribe to the Linode Backup Service, we recommend that you [take a manual snapshot](https://techdocs.akamai.com/cloud-computing/docs/take-a-manual-snapshot) before upgrading to Debian 8. If you use another backup service or application, we recommend that you make a manual backup now. You may also want to back up your configuration files (usually located in `/etc/`) in case they have changed in later versions of the software you are using. See our [backup guides](/cloud/guides/security/backups/) for more information.
 
 ### Checking Your Kernel
 
