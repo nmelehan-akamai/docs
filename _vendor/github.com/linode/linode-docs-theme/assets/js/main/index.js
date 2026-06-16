@@ -33,11 +33,20 @@ import { newFileIssueButton } from './navigation/file-issue-button';
 // Set up the search configuration (as defined in config.toml).
 const searchConfig = getSearchConfig(params);
 
-// Handle consent changes.
 (function () {
+	// Handle consent changes.
 	window.OptanonWrapper = function () {
 		const e = new CustomEvent('onetrust:groups-updated', { detail: OnetrustActiveGroups });
 		window.dispatchEvent(e);
+	};
+
+	// These are placed on the window object for convenience.
+	window.docsBasePath = params.base_path || '';
+	window.docsRelUrl = function (url) {
+		if (url.startsWith('/')) {
+			return window.docsBasePath + url;
+		}
+		return url;
 	};
 })();
 
@@ -189,13 +198,6 @@ const searchConfig = getSearchConfig(params);
 		window.scrollHandledByClick = {};
 	}
 
-	function turboClick(e) {
-		if (e.detail.url.includes('/docs/api')) {
-			// Disable Turbo for the API docs to allow for edge redirects.
-			e.preventDefault();
-		}
-	}
-
 	function preserveScroll(e) {
 		document.querySelectorAll('[data-preserve-scroll]').forEach((el) => {
 			// Check if the event's target is a child of the element.
@@ -244,7 +246,6 @@ const searchConfig = getSearchConfig(params);
 	}
 
 	window.addEventListener('turbo:click', preserveScroll);
-	window.addEventListener('turbo:click', turboClick);
 	window.addEventListener('turbo:before-render', restoreScroll);
 	window.addEventListener('turbo:render', restoreScroll);
 })();
