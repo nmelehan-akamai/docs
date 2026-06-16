@@ -461,18 +461,19 @@ def main():
         {'='*40}
         """))
 
-        # Output information about each issue type and any associated issues
-        for t in issue_types:
-          if t.severity == 'failure' and not len(t.issues) == 0:
-            # Output heading for this issue type
-            print(textwrap.dedent(f"""
-              {t.title} ({(t.severity).upper()}): {str(len(t.issues))}
-                  {t.summary}
-              """))
-            # Output the list of errors if the issue severity is a failure
-            for i in t.issues:
-              print(f"    - {i.link}")
+    # Output information about each issue type and any associated issues
+    for t in issue_types:
+      # Output heading for this issue type
+      print(textwrap.dedent(f"""
+        {t.title} ({(t.severity).upper()}): {str(len(t.issues))}
+            {t.summary}
+        """))
+      # Output the list of errors if the issue severity is a failure
+      for i in t.issues:
+        print(f"    - {i.link}")
 
+
+    if test_failed:
         sys.exit(1)
 
 if __name__ == "__main__":
