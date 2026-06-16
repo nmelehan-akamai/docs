@@ -1,6 +1,6 @@
 [build]
 publish = "public"
-command = "hugo version && hugo config && hugo --gc --minify -d public/docs;"
+command = "hugo version && hugo config && hugo --gc --minify -d public/cloud;"
 
 [context.production.environment]
 HUGO_VERSION = "0.159.1"

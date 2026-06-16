@@ -161,7 +161,7 @@ export function newSearchExplorerHydrated(searchConfig) {
 				let position = 0;
 				facets.forEach((n) => {
 					// These are also indexed on its own.
-					if (n.href.startsWith('/docs/guides/') || n.href.startsWith('/docs/products/')) {
+					if (n.href.startsWith(window.docsRelUrl('/guides/')) || n.href.startsWith(window.docsRelUrl('/products/'))) {
 						position++;
 						n.hit = {
 							objectID: n.href,
@@ -259,8 +259,12 @@ export function newSearchExplorerHydrated(searchConfig) {
 			for (let i = 0; i < roots.length; i++) {
 				let n = roots[i];
 				if (n.level === 1) {
-					// Only show the current section unless on home page.
-					n.hidden = !(pageInfo.kind == 'home' || (n.href && pageInfo.href.startsWith(n.href)));
+					// Only show the current section unless on home page or the topresults page.
+					n.hidden = !(
+						pageInfo.kind == 'home' ||
+						pageInfo.href.endsWith('/topresults/') ||
+						(n.href && pageInfo.href.startsWith(n.href))
+					);
 				}
 			}
 			// return pageInfo.kind == 'home' || n.href == pageInfo.href;
@@ -305,7 +309,6 @@ export function newSearchExplorerNode(searchConfig, node) {
 		},
 
 		init: function init() {
-			debug('init', this.node.href);
 			templates = {
 				templateNode: this.$refs['templateNode'],
 				templateNodePages: this.$refs['templateNodePages'],
