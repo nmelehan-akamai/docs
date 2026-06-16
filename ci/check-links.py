@@ -155,7 +155,6 @@ def get_guides():
 
     # Add top level guides
     guides.append(Guide("docs/","docs/_index.md", "Docs Home", "/docs/"))
-    guides.append(Guide("docs/marketplace/", "", "Marketplace", "/docs/marketplace/"))
     guides.append(Guide("docs/marketplace-docs/", "", "Marketplace Docs", "/docs/marketplace-docs/"))
     guides.append(Guide("docs/resources/", "", "Resources", "/docs/resources/"))
     guides.append(Guide("docs/topresults/?docType=community", "", "Q&A", "/docs/topresults/?docType=community"))
@@ -207,6 +206,7 @@ def get_guides():
                             canonical_link = "/" + file_path
                             canonical_link = canonical_link.replace('/index.md','/')
                             canonical_link = canonical_link.replace('/_index.md','/')
+                            canonical_link = canonical_link.replace('/docs/','/cloud/') # Convert docs-prefix links to cloud-prefix links
 
                         # Construct the guide object
                         guide = Guide(root, file_path, expanded_guide['title'], canonical_link)
