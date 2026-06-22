@@ -7,10 +7,10 @@ export function newPromoCodesController(isTest) {
 	if (isTest) {
 		// localhost or Netlify.
 		// Use local resource to work around CORS issues.
-		endpoint = window.docsRelUrl('/wptestjson/promo-data.json');
+		endpoint = '/docs/wptestjson/promo-data.json';
 		// This only ever set in dev/test environments.
 		if (window.__api_shouldfail) {
-			endpoint = window.docsRelUrl('/wptestjson/promo-data-fail.json');
+			endpoint = '/docs/wptestjson/promo-data-fail.json';
 		}
 	}
 	debug('isTest:', isTest, 'endpoint:', endpoint);
