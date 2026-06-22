@@ -154,7 +154,7 @@ export function newNavStore(searchConfig, searchStore, params, Alpine) {
 			}
 
 			// We got here directly, no history. Navigate back to the home page.
-			Turbo.visit(window.docsRelUrl('/'));
+			Turbo.visit('/docs');
 		},
 
 		pushState(href) {
@@ -169,7 +169,7 @@ export function newNavStore(searchConfig, searchStore, params, Alpine) {
 			meta.name = 'robots';
 			meta.content = 'noindex';
 			document.head.appendChild(meta);
-			this.pushState(window.docsRelUrl('/topresults/' + queryString));
+			this.pushState('/docs/topresults/' + queryString);
 		},
 
 		scrollToNavBarIfPinned() {
