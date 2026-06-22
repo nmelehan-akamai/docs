@@ -1,5 +1,0 @@
-{{ $basePath := "/docs" }}
-{{ if strings.HasPrefix site.Home.RelPermalink "/cloud" }}
-  {{ $basePath = "/cloud" }}
-{{ end }}
-{{ return $basePath }}
