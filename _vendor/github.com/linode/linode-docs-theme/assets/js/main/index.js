@@ -15,7 +15,6 @@ import { toggleBooleanClass, scrollToActiveExplorerNode } from './helpers/helper
 import { leackChecker } from './helpers/leak-checker';
 import {
 	newNavController,
-	newPromoCodesController,
 	newToCController,
 	newPaginatorController,
 	newSearchExplorerInitial,
@@ -103,7 +102,6 @@ const searchConfig = getSearchConfig(params);
 		Alpine.data('lncTabs', newTabsController);
 		Alpine.data('lncDisqus', newDisqus);
 		Alpine.data('lncPaginator', newPaginatorController);
-		Alpine.data('lncPromoCodes', () => newPromoCodesController(params.is_test));
 		Alpine.data('lncFetch', fetchController);
 		Alpine.data('lnvSVGViewer', newSVGViewerController);
 		if (params.file_issue_button && params.file_issue_button.enable) {
