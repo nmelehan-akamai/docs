@@ -987,6 +987,7 @@ hebern
 Heinemeier
 Helpdesk
 heredoc
+hermes
 heroku
 hexo
 hiera
@@ -1325,6 +1326,7 @@ lambdabunker
 Laminas
 Langa
 langchain
+Langflow
 langgraph
 LANs
 laravel
