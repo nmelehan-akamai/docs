@@ -11,7 +11,7 @@ keywords: ["email", "mail", "server", "postfix", "dovecot", "mysql", "mariadb", 
 tags: ["debian","email","ubuntu","mysql","postfix", "mariadb"]
 license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 external_resources:
- - '[Troubleshooting Problems with Postfix, Dovecot, and MySQL](/cloud/guides/troubleshooting-problems-with-postfix-dovecot-and-mysql/)'
+ - '[Troubleshooting Problems with Postfix, Dovecot, and MySQL](/cloud/guides/troubleshooting-problems-with-postfix-dovecot-and-mysql)'
  - '[Postfix Basic Configuration](http://www.postfix.org/BASIC_CONFIGURATION_README.html)'
  - '[Postfix SASL Howto](http://www.postfix.org/SASL_README.html)'
  - '[Dovecot Wiki](https://wiki2.dovecot.org/)'
@@ -30,13 +30,13 @@ In this guide, you'll learn how to set up a secure email server with Postfix, Do
 This tutorial assumes that you are familiar with the following:
 
 1. You are familiar with the Linux command line.
-2. You can edit files using the Nano text editor. Refer to [Nano Commands](/cloud/guides/use-nano-text-editor-commands/) guide if you aren’t familiar with it.
+2. You can edit files using the Nano text editor. Refer to [Nano Commands](/cloud/guides/use-nano-text-editor-commands) guide if you aren’t familiar with it.
 3. You understand the basics of MySQL data.
-4. You have a basic understanding of email configurations. If not, you may wish to review the concepts in the [Running a Mail Server](/cloud/guides/running-a-mail-server/) guide.
+4. You have a basic understanding of email configurations. If not, you may wish to review the concepts in the [Running a Mail Server](/cloud/guides/running-a-mail-server) guide.
 
 ![Email with Postfix, Dovecot, and MySQL](email_with_postfix_dovecot_and_mysql.png "Setting up a mail server with Postfix, Dovecot, and MySQL")
 
-For a different Linux distribution or different mail server, review our [email tutorials](/cloud/guides/email/).
+For a different Linux distribution or different mail server, review our [email tutorials](/cloud/guides/email).
 
 {{% content "email-warning-shortguide" %}}
 
@@ -94,7 +94,7 @@ While you can generate an SSL certificate through any certificate authority, we 
 
     sudo certbot certonly --standalone
 
-You can also reference the [Install an SSL Certificate with Certbot](/cloud/guides/secure-http-traffic-certbot/) guide. Make a note of the file paths for the certificate and private key on the Linode. You will need the path to each during the [Dovecot](#dovecot) configuration steps.
+You can also reference the [Install an SSL Certificate with Certbot](/cloud/guides/secure-http-traffic-certbot) guide. Make a note of the file paths for the certificate and private key on the Linode. You will need the path to each during the [Dovecot](#dovecot) configuration steps.
 
 ## Install Packages
 
@@ -776,7 +776,7 @@ U   4 John Doe     Wed Jun 27 16:42  71/3535  Test email 4
 
     The email message header and body should display. Consider adding spam and virus filtering and a webmail client.
 
-    See [Troubleshooting problems with Postfix, Dovecot, and MySQL](/cloud/guides/troubleshooting-problems-with-postfix-dovecot-and-mysql/) for debugging steps.
+    See [Troubleshooting problems with Postfix, Dovecot, and MySQL](/cloud/guides/troubleshooting-problems-with-postfix-dovecot-and-mysql) for debugging steps.
 
 ## Configuring an Email Client
 
@@ -789,7 +789,7 @@ You can set up an email client to connect to your mail server. Many clients dete
 - **POP3:** If using POP3 instead of IMAP, set the port to `995` and require SSL.
 - **SMTP:** Set the port to `587` and the SSL/Security settings to `STARTTLS` or equivalent.
 
-See [Install SquirrelMail on Ubuntu 16.04](/cloud/guides/install-squirrelmail-on-ubuntu-16-04-or-debian-8/) for details on installing an email client.
+See [Install SquirrelMail on Ubuntu 16.04](/cloud/guides/install-squirrelmail-on-ubuntu-16-04-or-debian-8) for details on installing an email client.
 
 {{< note >}}
 The Thunderbird email client will sometimes have trouble automatically detecting account settings when using Dovecot. After it fails to detect the appropriate account settings, you can set up your email account manually. Add in the appropriate information for each setting, using the above values, leaving no setting on **Auto** or **Autodetect**. Once you have entered all the information about your mail server and account, press **Done** rather **Re-Test** and Thunderbird should accept the settings and retrieve your mail.

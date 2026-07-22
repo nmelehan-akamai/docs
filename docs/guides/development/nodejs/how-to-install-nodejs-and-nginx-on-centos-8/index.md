@@ -277,7 +277,7 @@ In this section, you will create a file named `server.js` that will use Node.js 
     console.log("Server is listening on port 3000.")      //Terminal output
     ```
 
-1.  Run a new [tmux](/cloud/guides/persistent-terminal-sessions-with-tmux/) session:
+1.  Run a new [tmux](/cloud/guides/persistent-terminal-sessions-with-tmux) session:
 
         tmux
     Press **return** when prompted.

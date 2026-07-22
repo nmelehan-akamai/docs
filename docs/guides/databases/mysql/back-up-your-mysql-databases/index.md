@@ -12,18 +12,18 @@ external_resources:
  - '[The Official MySQL Web Site](http://www.mysql.com/)'
  - '[MySQL Database Backup Methods page](http://dev.mysql.com/doc/refman/5.1/en/backup-methods.html)'
  - '[mysqldump Manual Page](http://linuxcommand.org/man_pages/mysqldump1.html)'
- - '[Schedule Tasks With Cron](/cloud/guides/schedule-tasks-with-cron/)'
+ - '[Schedule Tasks With Cron](/cloud/guides/schedule-tasks-with-cron)'
  - '[MySQL''s Grant Statement, Official Documentation](http://dev.mysql.com/doc/refman/5.1/en/grant.html)'
 tags: ["database","mysql"]
 deprecated: true
 deprecated_link: "guides/use-mysqldump-to-back-up-mysql-or-mariadb/"
 ---
 
-MySQL is an open source relational database management system (DBMS) which is frequently deployed in a wide assortment of contexts. Most frequently it is deployed as part of the [LAMP Stack](/cloud/guides/web-servers/lamp/). The database system is also easy to use and highly portable and is, in the context of many applications, extremely efficient. As MySQL is often a centralized data store for large amounts of mission critical data, making regular backups of your MySQL database is one of the most important disaster recovery tasks a system administrator can perform. This guide addresses a number of distinct methods for creating back ups of your database as well as restoring databases from backups.
+MySQL is an open source relational database management system (DBMS) which is frequently deployed in a wide assortment of contexts. Most frequently it is deployed as part of the [LAMP Stack](/cloud/guides/web-servers/lamp). The database system is also easy to use and highly portable and is, in the context of many applications, extremely efficient. As MySQL is often a centralized data store for large amounts of mission critical data, making regular backups of your MySQL database is one of the most important disaster recovery tasks a system administrator can perform. This guide addresses a number of distinct methods for creating back ups of your database as well as restoring databases from backups.
 
 ![Back Up Your MySQL Databases](back_up_your_mysql-databases.png "Back Up Your MySQL Databases")
 
-Before beginning the installation process, we assume you've followed the steps outlined in our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance). Additionally, you will need to install the [MySQL Database](/cloud/guides/databases/mysql/). All configuration will be performed in a terminal session; make sure you're logged into your Linode as root via SSH. If you're new to Linux server administration you may be interested in our [introduction to Linux concepts guide](/cloud/guides/linux-users-and-groups/), [beginner's guide](https://techdocs.akamai.com/cloud-computing/docs/faqs-for-compute-instances) and [administration basics guide](/cloud/guides/linux-system-administration-basics/).
+Before beginning the installation process, we assume you've followed the steps outlined in our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance). Additionally, you will need to install the [MySQL Database](/cloud/guides/databases/mysql). All configuration will be performed in a terminal session; make sure you're logged into your Linode as root via SSH. If you're new to Linux server administration you may be interested in our [introduction to Linux concepts guide](/cloud/guides/linux-users-and-groups), [beginner's guide](https://techdocs.akamai.com/cloud-computing/docs/faqs-for-compute-instances) and [administration basics guide](/cloud/guides/linux-system-administration-basics).
 
 ## Backup Methodology
 
@@ -81,7 +81,7 @@ These commands begin by stopping the MySQL server daemon, then creating a direct
     cd /opt/database/backup-1266872202
     tar -czfv * > /opt/mysqlBackup-1266872202.tar.gz
 
-Once the tarball is created, you can easily [transfer the file](/cloud/guides/linux-system-administration-basics/#upload-files-to-a-remote-server) in the manner that is most convenient for you. Don't forget to restart the MySQL server daemon again if needed:
+Once the tarball is created, you can easily [transfer the file](/cloud/guides/linux-system-administration-basics#upload-files-to-a-remote-server) in the manner that is most convenient for you. Don't forget to restart the MySQL server daemon again if needed:
 
     /etc/init.d/mysql start
 
@@ -181,7 +181,7 @@ You can continue using your database as normal from this point.
 
 ## Considerations for an Effective Backup Strategy
 
-Creating backups of your MySQL database should be a regular and scheduled task. You might like to consider scheduling periodic backups using `cron`, `mysqldump` and/or `mail`. Consider our documentation for more information regarding [cron](/cloud/guides/schedule-tasks-with-cron/). Implementing an automated backup solution may help minimize down time in a disaster recovery situation.
+Creating backups of your MySQL database should be a regular and scheduled task. You might like to consider scheduling periodic backups using `cron`, `mysqldump` and/or `mail`. Consider our documentation for more information regarding [cron](/cloud/guides/schedule-tasks-with-cron). Implementing an automated backup solution may help minimize down time in a disaster recovery situation.
 
 You do not need to log in as root when backing up databases. A MySQL user with read (e.g. `SELECT`) permission is able to use both the `mysqldump` and `mysql` (e.g. the MySQL client) tools to take backups, as described below. As a matter of common practice, we recommend that you not use the MySQL `root` user whenever possible to minimize security risks.
 

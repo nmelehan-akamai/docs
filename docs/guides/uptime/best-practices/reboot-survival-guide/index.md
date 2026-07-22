@@ -38,7 +38,7 @@ All critical data should be backed up, and if possible in more than one location
 
 ### Backing up Databases
 
-Proper backup knowledge for a database is important. Steps for properly backing up your MySQL or MariaDB database can be found [here](/cloud/guides/mysqldump-backups/).
+Proper backup knowledge for a database is important. Steps for properly backing up your MySQL or MariaDB database can be found [here](/cloud/guides/mysqldump-backups).
 
 ### Backing up Important Files
 
@@ -191,6 +191,6 @@ You can deploy your services to an additional Linode to enable high availability
 {{< /note >}}
 
  - [Linode NodeBalancers](https://techdocs.akamai.com/cloud-computing/docs/nodebalancer)
- - [Using Nginx for Proxy Services and Software Load Balancing](/cloud/guides/use-nginx-as-a-front-end-proxy-and-software-load-balancer/)
- - [MySQL Master-Master Replication](/cloud/guides/configure-master-master-mysql-database-replication/)
- - [MariaDB Clusters with Galera](/cloud/guides/set-up-mariadb-clusters-with-galera-debian-and-ubuntu/)
+ - [Using Nginx for Proxy Services and Software Load Balancing](/cloud/guides/use-nginx-as-a-front-end-proxy-and-software-load-balancer)
+ - [MySQL Master-Master Replication](/cloud/guides/configure-master-master-mysql-database-replication)
+ - [MariaDB Clusters with Galera](/cloud/guides/set-up-mariadb-clusters-with-galera-debian-and-ubuntu)

@@ -34,7 +34,7 @@ The format of MongoDB documents is relatively unstructured, so each document can
 
 The MongoDB Community Edition, which is designed for individuals or small businesses, is free to use. The application can be used under the *Server Side Public License* (SSPL), and the source code is freely available. However, the SSPL differs from standard open source licenses and is somewhat more restrictive. Users are advised to thoroughly understand the license before developing any software around it. MongoDB is available for most Linux distributions along with Windows and macOS.
 
-For a more in-depth introduction to MongoDB, including a comparison between MongoDB and SQL, see the Linode [Introduction to MongoDB guide](/cloud/guides/mongodb-introduction/).
+For a more in-depth introduction to MongoDB, including a comparison between MongoDB and SQL, see the Linode [Introduction to MongoDB guide](/cloud/guides/mongodb-introduction).
 
 ## Before You Begin
 
@@ -43,7 +43,7 @@ For a more in-depth introduction to MongoDB, including a comparison between Mong
 1.  Follow our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide to update your system. You may also wish to set the timezone, configure your hostname, create a limited user account, and harden SSH access.
 
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## How to Install MongoDB

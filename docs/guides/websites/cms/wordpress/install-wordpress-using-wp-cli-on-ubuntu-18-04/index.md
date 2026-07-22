@@ -35,9 +35,9 @@ This guide is written for Ubuntu 18.04. Before moving ahead, make sure you have 
 
 * [Getting Started with Linode](https://techdocs.akamai.com/cloud-computing/docs/getting-started)
 * [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance)
-* [How to Install a LAMP Stack on Ubuntu 18.04](/cloud/guides/how-to-install-a-lamp-stack-on-ubuntu-18-04/)
+* [How to Install a LAMP Stack on Ubuntu 18.04](/cloud/guides/how-to-install-a-lamp-stack-on-ubuntu-18-04)
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you're not familiar with the `sudo` command, you can check our [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you're not familiar with the `sudo` command, you can check our [Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## Install WP-CLI

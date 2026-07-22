@@ -73,10 +73,10 @@ Once everything has been configured, you can use the WSL environment by opening 
 
 ### PuTTY - Windows 8, 7, Vista, and XP
 
-There is no native SSH client in Windows 8 and earlier. Instead, you'll need to use a third party application, such as [PuTTY](/cloud/guides/connect-to-server-over-ssh-using-putty/), [Cygwin](https://www.cygwin.com/), the [Secure Shell extension for Google Chrome](/cloud/guides/connect-to-server-over-ssh-on-chrome/), or any other SSH-enabled terminal emulator:
+There is no native SSH client in Windows 8 and earlier. Instead, you'll need to use a third party application, such as [PuTTY](/cloud/guides/connect-to-server-over-ssh-using-putty), [Cygwin](https://www.cygwin.com/), the [Secure Shell extension for Google Chrome](/cloud/guides/connect-to-server-over-ssh-on-chrome), or any other SSH-enabled terminal emulator:
 
-- [Connecting to a Remote Server Over SSH using PuTTY](/cloud/guides/connect-to-server-over-ssh-using-putty/)
-- [Connecting to a Remote Server Over SSH on Chrome](/cloud/guides/connect-to-server-over-ssh-on-chrome/)
+- [Connecting to a Remote Server Over SSH using PuTTY](/cloud/guides/connect-to-server-over-ssh-using-putty)
+- [Connecting to a Remote Server Over SSH on Chrome](/cloud/guides/connect-to-server-over-ssh-on-chrome)
 
 ## Connecting to the Remote Server Over SSH from Windows
 
@@ -106,7 +106,7 @@ Once you've opened your preferred Windows SSH client (Command Prompt, PowerShell
     Are you sure you want to continue connecting (yes/no)?
     ```
 
-    You can verify the fingerprint by following the instructions on the [Verifying the Authenticity of a Remote Server](/cloud/guides/verifying-the-authenticity-of-remote-host/) guide.
+    You can verify the fingerprint by following the instructions on the [Verifying the Authenticity of a Remote Server](/cloud/guides/verifying-the-authenticity-of-remote-host) guide.
 
 1.  Accept the prompt by entering `y` or `yes`, which results in a one-time warning that is similar to:
 
@@ -114,7 +114,7 @@ Once you've opened your preferred Windows SSH client (Command Prompt, PowerShell
     Warning: Permanently added 'example' (ECDSA) to the list of known hosts.
     ```
 
-Once you have successfully connected, your terminal should be using the remote shell environment for the server. Your command prompt should now show the username and hostname configured for the server. You can now run any commands that you have available on that server. This includes many of the basic Linux commands, such as `ls`, `cd`, `rm`, and those covered in [Using the Terminal](/cloud/guides/using-the-terminal/) guide. Getting to know these commands will help you navigate around your server.
+Once you have successfully connected, your terminal should be using the remote shell environment for the server. Your command prompt should now show the username and hostname configured for the server. You can now run any commands that you have available on that server. This includes many of the basic Linux commands, such as `ls`, `cd`, `rm`, and those covered in [Using the Terminal](/cloud/guides/using-the-terminal) guide. Getting to know these commands will help you navigate around your server.
 
 ## Ending the SSH Session
 
@@ -163,6 +163,6 @@ If SSH isn't connecting you to your Linode, you may need to investigate the stat
 
 ### Increasing Security
 
-- Now that you can connect from your Linux machine to the Linode over SSH, save not only time but also make the connection even more secure by using SSH public key authentication. For more information, see [SSH add keys](/cloud/guides/use-public-key-authentication-with-ssh/).
+- Now that you can connect from your Linux machine to the Linode over SSH, save not only time but also make the connection even more secure by using SSH public key authentication. For more information, see [SSH add keys](/cloud/guides/use-public-key-authentication-with-ssh).
 
-- See the "Harden SSH Access" section of [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide to review how to secure SSH on the server's side, and the [Advanced SSH Server Security](/cloud/guides/advanced-ssh-server-security/) for more information on making it even more secure.
+- See the "Harden SSH Access" section of [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide to review how to secure SSH on the server's side, and the [Advanced SSH Server Security](/cloud/guides/advanced-ssh-server-security) for more information on making it even more secure.

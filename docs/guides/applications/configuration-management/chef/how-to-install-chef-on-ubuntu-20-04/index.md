@@ -54,7 +54,7 @@ Chef uses an idiosyncratic terminology based on cooking vocabulary. Some of the 
 - **Resource**: A resource is part of a recipe. It contains a type, name, and list of key-value pairs for a component.
 - **Test Kitchen**: This is a workstation module to help users test recipes before deployment.
 
-Linode has a helpful [Beginner's Guide to Chef](/cloud/guides/beginners-guide-chef/). For detailed information about Chef, see the [Chef documentation](https://docs.chef.io/). Chef also makes the [Learn Chef](https://learn.chef.io/) training resource available.
+Linode has a helpful [Beginner's Guide to Chef](/cloud/guides/beginners-guide-chef). For detailed information about Chef, see the [Chef documentation](https://docs.chef.io/). Chef also makes the [Learn Chef](https://learn.chef.io/) training resource available.
 
 ## Before You Begin
 
@@ -75,7 +75,7 @@ Linode has a helpful [Beginner's Guide to Chef](/cloud/guides/beginners-guide-ch
 1. Configure the host name of the Chef Server so it matches the domain name. This allows SSL certificate allocation to proceed normally. To set the host name of a Ubuntu server, use the command `sudo hostnamectl set-hostname <hostname>`, replacing `<hostname>` with the actual name of your domain.
 
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## How to Install and Configure the Chef Server

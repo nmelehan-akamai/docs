@@ -20,7 +20,7 @@ deprecated: true
 
 In the default configuration, Linode systems are configured to query DNS resolvers provided by Linode. If you don't want to use a third party DNS service on your system, you may consider running an independent DNS resolving and caching service such as [Unbound DNS resolver](http://unbound.net). Unbound is easy to install and configure, which makes it an ideal resolver for simple deployments.
 
-If you are unfamiliar with DNS, you may want to consider our [introduction to the DNS system](/cloud/guides/dns-overview/). If you simply need to configure DNS services for your domain, you may want to consider [using Linode's DNS manager](https://techdocs.akamai.com/cloud-computing/docs/common-dns-configurations). If you only need to modify the behavior of DNS for a small group of systems, consider [using /etc/hosts](/cloud/guides/linux-system-administration-basics/#configure-the-etchosts-file) to provide this functionality.
+If you are unfamiliar with DNS, you may want to consider our [introduction to the DNS system](/cloud/guides/dns-overview). If you simply need to configure DNS services for your domain, you may want to consider [using Linode's DNS manager](https://techdocs.akamai.com/cloud-computing/docs/common-dns-configurations). If you only need to modify the behavior of DNS for a small group of systems, consider [using /etc/hosts](/cloud/guides/linux-system-administration-basics#configure-the-etchosts-file) to provide this functionality.
 
 ## Install Unbound
 
@@ -112,7 +112,7 @@ You may wish to consult the following resources for additional information on th
 
 - [Unbound Home Page](http://www.unbound.net)
 - [Wikipedia article on Classless Interdomain Routing](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
-- [DNS Fundamentals](/cloud/guides/dns-overview/)
+- [DNS Fundamentals](/cloud/guides/dns-overview)
 - [Linode Manager for DNS](https://techdocs.akamai.com/cloud-computing/docs/common-dns-configurations)
 
 

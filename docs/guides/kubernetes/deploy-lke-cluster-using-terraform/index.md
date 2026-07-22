@@ -13,7 +13,7 @@ image: deploy-lke-cluster-with-terraform.png
 external_resources:
 - '[LKE Product Documentation](https://techdocs.akamai.com/cloud-computing/docs/linode-kubernetes-engine)'
 - '[LKE Enterprise Product Documentation](https://techdocs.akamai.com/cloud-computing/docs/lke-enterprise)'
-- '[Setting Up a Private Docker Registry with Linode Kubernetes Engine and Object Storage](/cloud/guides/how-to-setup-a-private-docker-registry-with-lke-and-object-storage/)'
+- '[Setting Up a Private Docker Registry with Linode Kubernetes Engine and Object Storage](/cloud/guides/how-to-setup-a-private-docker-registry-with-lke-and-object-storage)'
 - '[Linode Provider Terraform Documentation](https://www.terraform.io/docs/providers/linode/index.html)'
 aliases: []
 ---
@@ -34,13 +34,13 @@ This guide will walk you through the steps needed to deploy a Kubernetes cluster
     Ensure that your token has, at minimum, Read/Write permissions for Compute Instances, Kubernetes, NodeBalancers, and Volumes.
     {{< /note >}}
 
-1. Review the [A Beginner's Guide to Terraform](/cloud/guides/beginners-guide-to-terraform/) to familiarize yourself with Terraform concepts if you have not used the tool before. This guide assumes familiarity with Terraform and its native [HCL syntax](https://www.terraform.io/docs/configuration/syntax.html).
+1. Review the [A Beginner's Guide to Terraform](/cloud/guides/beginners-guide-to-terraform) to familiarize yourself with Terraform concepts if you have not used the tool before. This guide assumes familiarity with Terraform and its native [HCL syntax](https://www.terraform.io/docs/configuration/syntax.html).
 
 ## Prepare your Local Environment
 
 ### Install Terraform
 
-Install Terraform on your computer by following the [Install Terraform](/cloud/guides/how-to-build-your-infrastructure-using-terraform-and-linode/#install-terraform) section of our [Use Terraform to Provision Linode Environments](/cloud/guides/how-to-build-your-infrastructure-using-terraform-and-linode/#install-terraform) guide.
+Install Terraform on your computer by following the [Install Terraform](/cloud/guides/how-to-build-your-infrastructure-using-terraform-and-linode#install-terraform) section of our [Use Terraform to Provision Linode Environments](/cloud/guides/how-to-build-your-infrastructure-using-terraform-and-linode#install-terraform) guide.
 
 ### Install kubectl
 
@@ -376,7 +376,7 @@ Now that your Kubernetes cluster is deployed, you can use kubectl to connect to 
     lke4377-5673-5eb331acd6c2   Ready    <none>   17h   v1.17.0
     ```
 
-    Now that you are connected to your LKE cluster, you can begin using kubectl to deploy applications, [inspect and manage](/cloud/guides/troubleshooting-kubernetes/#kubectl-get) cluster resources, and [view logs](/cloud/guides/troubleshooting-kubernetes/#kubectl-logs).
+    Now that you are connected to your LKE cluster, you can begin using kubectl to deploy applications, [inspect and manage](/cloud/guides/troubleshooting-kubernetes#kubectl-get) cluster resources, and [view logs](/cloud/guides/troubleshooting-kubernetes#kubectl-logs).
 
 ## Destroy your Kubernetes Cluster (optional)
 

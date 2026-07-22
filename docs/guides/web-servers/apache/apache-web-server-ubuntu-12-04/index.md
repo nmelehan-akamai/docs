@@ -12,7 +12,7 @@ license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 aliases: []
 external_resources:
  - '[Apache HTTP Server Version 2.2 Documentation](http://httpd.apache.org/docs/2.2/)'
- - '[Apache Configuration](/cloud/guides/web-servers/apache-tips-and-tricks/)'
+ - '[Apache Configuration](/cloud/guides/web-servers/apache-tips-and-tricks)'
 relations:
     platform:
         key: install-apache-server
@@ -23,10 +23,10 @@ deprecated: true
 
 The *Apache HTTP Web Server* (Apache) is an open source web application for running web servers.  This guide explains how to install and configure an Apache web server on Ubuntu 12.04 LTS.
 
-If instead you would like to install a full LAMP (Linux, Apache, MySQL and PHP) stack, please see the [LAMP on Ubuntu 12.04](/cloud/guides/how-to-install-a-lamp-stack-on-ubuntu-22-04/) guide.
+If instead you would like to install a full LAMP (Linux, Apache, MySQL and PHP) stack, please see the [LAMP on Ubuntu 12.04](/cloud/guides/how-to-install-a-lamp-stack-on-ubuntu-22-04) guide.
 
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you're not familiar with the `sudo` command, you can check our [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you're not familiar with the `sudo` command, you can check our [Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## Before You Begin

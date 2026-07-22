@@ -35,7 +35,7 @@ This guide will describe the installation and configuration of HAProxy for load-
 3.  This guide uses private IP addresses in the example configurations. To set up private IPs and enable internal networking between Linodes, follow the steps in our [Linux Static IP Configuration](https://techdocs.akamai.com/cloud-computing/docs/manual-network-configuration-on-a-compute-instance) guide.
 
 {{< note >}}
-This guide is written for a non-root user. Commands requiring administrative privileges are prefixed with `sudo`. Refer to our [Users and Groups](/cloud/guides/linux-users-and-groups/) guide for more information on how to use `sudo`.
+This guide is written for a non-root user. Commands requiring administrative privileges are prefixed with `sudo`. Refer to our [Users and Groups](/cloud/guides/linux-users-and-groups) guide for more information on how to use `sudo`.
 {{< /note >}}
 
 ## Installation

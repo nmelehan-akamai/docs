@@ -25,7 +25,7 @@ The Linode Terraform Provider version 3.0.0 requires `terraform` version 1.0 or 
 
 ## Before You Begin
 
-1.  Terraform and the Linode Terraform provider should be installed in your development environment. You should also have a basic understanding of [Terraform resources](https://www.terraform.io/docs/configuration/resources.html). To install and learn about Terraform, read our [Use Terraform to Provision Linode Environments](/cloud/guides/how-to-build-your-infrastructure-using-terraform-and-linode/) guide.
+1.  Terraform and the Linode Terraform provider should be installed in your development environment. You should also have a basic understanding of [Terraform resources](https://www.terraform.io/docs/configuration/resources.html). To install and learn about Terraform, read our [Use Terraform to Provision Linode Environments](/cloud/guides/how-to-build-your-infrastructure-using-terraform-and-linode) guide.
 
 2.  To use Terraform you must have a valid API access token. For more information on creating a Linode API access token, visit our [Getting Started with the Linode API](https://techdocs.akamai.com/linode-api/reference/get-started#get-an-access-token) guide.
 
@@ -71,7 +71,7 @@ When importing your infrastructure to Terraform, failure to accurately provide y
 
 ### Create An Empty Resource Configuration
 
-1. Ensure you are in your [Terraform project directory](/cloud/guides/how-to-build-your-infrastructure-using-terraform-and-linode/#install-terraform). Create a Terraform configuration file to manage the Linode instance you import in the next section. Your file can be named anything you like, but it must end in `.tf`. Add a Linode provider block with your API access token and an empty `linode_instance` resource configuration block in the file:
+1. Ensure you are in your [Terraform project directory](/cloud/guides/how-to-build-your-infrastructure-using-terraform-and-linode#install-terraform). Create a Terraform configuration file to manage the Linode instance you import in the next section. Your file can be named anything you like, but it must end in `.tf`. Add a Linode provider block with your API access token and an empty `linode_instance` resource configuration block in the file:
 
     {{< note respectIndent=false >}}
 The example resource block defines `example_label` as the label. This can be changed to any value you prefer. This label is used to reference your Linode resource configuration within Terraform. It does not have to be the same label originally assigned to the Linode when it was created outside of Terraform.
@@ -306,7 +306,7 @@ If you have more than one [configuration profile](https://techdocs.akamai.com/cl
 
 ### Create an Empty Resource Configuration
 
-1. Ensure you are in your [Terraform project directory](/cloud/guides/how-to-build-your-infrastructure-using-terraform-and-linode/#install-terraform). Create a Terraform configuration file to manage the domain you import in the next section. Your file can be named anything you like, but must end in `.tf`. Add a Linode provider block with your API access token and an empty `linode_domain` resource configuration block to the file:
+1. Ensure you are in your [Terraform project directory](/cloud/guides/how-to-build-your-infrastructure-using-terraform-and-linode#install-terraform). Create a Terraform configuration file to manage the domain you import in the next section. Your file can be named anything you like, but must end in `.tf`. Add a Linode provider block with your API access token and an empty `linode_domain` resource configuration block to the file:
 
     {{< file "domain_import.tf" >}}
 provider "linode" {
@@ -440,7 +440,7 @@ Due to the way the Linode API accesses domain records, you need to provide both 
 
 ### Create an Empty Resource Configuration
 
-1. Ensure you are in your [Terraform project directory](/cloud/guides/how-to-build-your-infrastructure-using-terraform-and-linode/#install-terraform). Create a Terraform configuration file to manage the domain record you import in the next section. Your file can be named anything you like, but must end in `.tf`. Add a Linode provider block with your API access token and an empty `linode_domain_record` resource configuration block to the file:
+1. Ensure you are in your [Terraform project directory](/cloud/guides/how-to-build-your-infrastructure-using-terraform-and-linode#install-terraform). Create a Terraform configuration file to manage the domain record you import in the next section. Your file can be named anything you like, but must end in `.tf`. Add a Linode provider block with your API access token and an empty `linode_domain_record` resource configuration block to the file:
 
     {{< file "domain_record_import.tf" >}}
 provider "linode" {

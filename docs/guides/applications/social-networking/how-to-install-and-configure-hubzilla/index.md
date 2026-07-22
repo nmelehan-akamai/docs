@@ -74,7 +74,7 @@ For more information about Hubzilla and its features, see the [Hubzilla Document
 1.  Enable email on the Linode server to allow Hubzilla to send out registration emails containing verification codes. Hubzilla requires a working mail server to authenticate new users. For more information on setting up a mail server, see our [guides on email](/cloud/guides/email).
 
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## How to Install Hubzilla

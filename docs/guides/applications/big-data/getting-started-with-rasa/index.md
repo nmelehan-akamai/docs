@@ -24,7 +24,7 @@ In this tutorial, learn how to get started with Rasa. From installing the framew
 1. Follow our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide to update your system. You may also wish to set the timezone, configure your hostname, create a limited user account, and harden SSH access.
 
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## How to Install Rasa Open Source
@@ -227,7 +227,7 @@ The following steps walk through setting up these prerequisites and deploying an
     kubectl create namespace rasacluster
     ```
 
-1.  Follow our [Installing Apps on Kubernetes with Helm 3](/cloud/guides/how-to-install-apps-on-kubernetes-with-helm-3/#install-the-helm-client) tutorial how to install the Helm CLI client.
+1.  Follow our [Installing Apps on Kubernetes with Helm 3](/cloud/guides/how-to-install-apps-on-kubernetes-with-helm-3#install-the-helm-client) tutorial how to install the Helm CLI client.
 
     {{< note >}}
     AlmaLinux, CentOS Stream, and Rocky Linux users may need to install `git` and `tar` prior to installing Helm:

@@ -40,7 +40,7 @@ This guide demonstrates how to install and use [*PostgreSQL*](https://www.postgr
 1.  Follow our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide to update your system. You may also wish to set the timezone, configure your hostname, create a limited user account, and harden SSH access.
 
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## Advantages and Disadvantages of PostgreSQL
@@ -509,8 +509,8 @@ There is a security risk in opening up PostgreSQL to listen for remote connectio
 
 The following Linode guides provide more information on pgAdmin:
 
-- [How to Access PostgreSQL Database Remotely Using pgAdmin on Windows](/cloud/guides/how-to-access-postgresql-database-remotely-using-pgadmin-on-windows/)
-- [Securely Manage Remote PostgreSQL Servers with pgAdmin on Mac OS X](/cloud/guides/securely-manage-remote-postgresql-servers-with-pgadmin-on-macos-x/)
+- [How to Access PostgreSQL Database Remotely Using pgAdmin on Windows](/cloud/guides/how-to-access-postgresql-database-remotely-using-pgadmin-on-windows)
+- [Securely Manage Remote PostgreSQL Servers with pgAdmin on Mac OS X](/cloud/guides/securely-manage-remote-postgresql-servers-with-pgadmin-on-macos-x)
 
 ## Learn More About PostgreSQL
 

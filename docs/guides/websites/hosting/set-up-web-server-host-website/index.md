@@ -29,9 +29,9 @@ The application you use to serve your website depends on the type of site. Find 
 
 ### Static Sites
 
-If your website consists entirely of static files like HTML, CSS, JavaScript, and images, then you only need to set up a simple web server to serve the files. Static sites include everything from bare-bones HTML pages to much more complicated [React.js](/cloud/guides/how-to-deploy-a-react-app-on-ubuntu-18-04/) apps. NGINX is a good choice for hosting this type of website.
+If your website consists entirely of static files like HTML, CSS, JavaScript, and images, then you only need to set up a simple web server to serve the files. Static sites include everything from bare-bones HTML pages to much more complicated [React.js](/cloud/guides/how-to-deploy-a-react-app-on-ubuntu-18-04) apps. NGINX is a good choice for hosting this type of website.
 
-If you plan to host a simple site such as a blog or photo gallery, another option is to use a [static site generator](/cloud/guides/how-to-choose-static-site-generator/).
+If you plan to host a simple site such as a blog or photo gallery, another option is to use a [static site generator](/cloud/guides/how-to-choose-static-site-generator).
 
 1.  Install NGINX:
 
@@ -89,17 +89,17 @@ server {
 
     If NGINX loads successfully, continue to the [Test your Website](#test-your-website) section below.
 
-This configuration is sufficient to get you started. For more advanced options and optimizations, see our [series on NGINX configuration](/cloud/guides/getting-started-with-nginx-part-1-installation-and-basic-setup/).
+This configuration is sufficient to get you started. For more advanced options and optimizations, see our [series on NGINX configuration](/cloud/guides/getting-started-with-nginx-part-1-installation-and-basic-setup).
 
 ### LAMP Stack
 
-Other sites, such as [WordPress](/cloud/guides/install-wordpress-ubuntu-18-04/), need a database in addition to a web server. This combination is known as a **stack**. WordPress is often used with the extremely popular LAMP stack (Linux, Apache, MariaDB and PHP). To install a LAMP stack manually, find the guide for your distribution in our [LAMP](/cloud/guides/web-servers/lamp/) section.
+Other sites, such as [WordPress](/cloud/guides/install-wordpress-ubuntu-18-04), need a database in addition to a web server. This combination is known as a **stack**. WordPress is often used with the extremely popular LAMP stack (Linux, Apache, MariaDB and PHP). To install a LAMP stack manually, find the guide for your distribution in our [LAMP](/cloud/guides/web-servers/lamp) section.
 
-If you are using WordPress, another option is to use Docker. All of the components needed to run WordPress, along with WordPress itself, are bundled into a container that can be deployed with single command. See our [WordPress with Docker Compose](/cloud/guides/wordpress-with-docker-compose/) guide for details. Official Docker images are also available for other CMS platforms including [Ghost](https://hub.docker.com/_/ghost/) and [Joomla](https://hub.docker.com/_/joomla/).
+If you are using WordPress, another option is to use Docker. All of the components needed to run WordPress, along with WordPress itself, are bundled into a container that can be deployed with single command. See our [WordPress with Docker Compose](/cloud/guides/wordpress-with-docker-compose) guide for details. Official Docker images are also available for other CMS platforms including [Ghost](https://hub.docker.com/_/ghost/) and [Joomla](https://hub.docker.com/_/joomla/).
 
 ### Other Site Types
 
-If none of these application stacks fit your situation, review our [Websites](/cloud/guides/websites/) and [Development](/cloud/guides/development/) sections to find a solution that works for your project.
+If none of these application stacks fit your situation, review our [Websites](/cloud/guides/websites) and [Development](/cloud/guides/development) sections to find a solution that works for your project.
 
 ## Test your Website
 

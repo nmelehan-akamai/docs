@@ -11,7 +11,7 @@ keywords: ['cloud machine learning']
 license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 image: IntroMachineLearning_trainandinterference.png
 external_resources:
-- '[How to Move Your Machine Learning Model to Production](/cloud/guides/how-to-move-machine-learning-model-to-production/)'
+- '[How to Move Your Machine Learning Model to Production](/cloud/guides/how-to-move-machine-learning-model-to-production)'
 - '[Use Cases for Linode GPU Instances](https://techdocs.akamai.com/cloud-computing/docs/gpu-compute-instances)'
 ---
 

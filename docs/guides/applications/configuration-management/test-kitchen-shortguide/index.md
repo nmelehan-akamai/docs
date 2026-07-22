@@ -14,4 +14,4 @@ aliases: []
 
 ## Try This Guide Using Test Kitchen
 
-To try this guide out locally, read the [Test Salt States Locally with KitchenSalt](/cloud/guides/test-salt-locally-with-kitchen-salt/) guide and create a local testing environment.
+To try this guide out locally, read the [Test Salt States Locally with KitchenSalt](/cloud/guides/test-salt-locally-with-kitchen-salt) guide and create a local testing environment.

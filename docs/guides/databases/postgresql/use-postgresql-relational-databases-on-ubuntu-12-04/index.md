@@ -162,5 +162,5 @@ You will be prompted to enter the password for the `alison` user and given `psql
 
 PostgreSQL listens for connections on localhost, and it is not advised to reconfigure it to listen on public IP addresses. If you would like to access your databases remotely using a graphical tool, please follow one of these guides:
 
--   [Securely Manage Remote PostgreSQL Servers with pgAdmin on Windows](/cloud/guides/how-to-access-postgresql-database-remotely-using-pgadmin-on-windows/)
--   [Securely Manage Remote PostgreSQL Servers with pgAdmin on Mac OS X](/cloud/guides/securely-manage-remote-postgresql-servers-with-pgadmin-on-macos-x/)
+-   [Securely Manage Remote PostgreSQL Servers with pgAdmin on Windows](/cloud/guides/how-to-access-postgresql-database-remotely-using-pgadmin-on-windows)
+-   [Securely Manage Remote PostgreSQL Servers with pgAdmin on Mac OS X](/cloud/guides/securely-manage-remote-postgresql-servers-with-pgadmin-on-macos-x)

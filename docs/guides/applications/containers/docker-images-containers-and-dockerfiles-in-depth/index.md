@@ -16,7 +16,7 @@ external_resources:
  - '[Docker Docs](http://docs.docker.com/)'
 ---
 
-[Docker images](/cloud/guides/introduction-to-docker/#docker-images) make it easy to deploy multiple containers without having to maintain the same image across several virtual machines. You can use a Dockerfile to automate the installation and configuration of an image and its dependencies. A [Dockerfile](/cloud/guides/how-to-use-dockerfiles) is a text file of the commands (which are executed in order) used to automate installation and configuration of a Docker image. This article expands on our guide on [How to Use a Dockerfile to Build a Docker Image](/cloud/guides/how-to-use-dockerfiles) by covering in-depth utilization of Docker images, containers, and Dockerfiles.
+[Docker images](/cloud/guides/introduction-to-docker#docker-images) make it easy to deploy multiple containers without having to maintain the same image across several virtual machines. You can use a Dockerfile to automate the installation and configuration of an image and its dependencies. A [Dockerfile](/cloud/guides/how-to-use-dockerfiles) is a text file of the commands (which are executed in order) used to automate installation and configuration of a Docker image. This article expands on our guide on [How to Use a Dockerfile to Build a Docker Image](/cloud/guides/how-to-use-dockerfiles) by covering in-depth utilization of Docker images, containers, and Dockerfiles.
 
 ## Before You Begin
 

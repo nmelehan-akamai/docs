@@ -229,4 +229,4 @@ http {
 
 ## Part 2: (Slightly More) Advanced Configurations
 
-By now you should have a basic NGINX installation and a some foundational settings to get you started. For slightly more advanced configurations, yet still applicable to anyone hosting a site on a Linode, see Part 2 of this series: [(Slightly more) Advanced Configurations for NGINX](/cloud/guides/getting-started-with-nginx-part-2-advanced-configuration/)
+By now you should have a basic NGINX installation and a some foundational settings to get you started. For slightly more advanced configurations, yet still applicable to anyone hosting a site on a Linode, see Part 2 of this series: [(Slightly more) Advanced Configurations for NGINX](/cloud/guides/getting-started-with-nginx-part-2-advanced-configuration)

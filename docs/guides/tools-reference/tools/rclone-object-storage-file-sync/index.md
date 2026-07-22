@@ -26,7 +26,7 @@ This tutorial shows you how to use Rclone to sync your files to a Linode Object 
 
 ## Rclone vs Rsync
 
-For years, [rsync](/cloud/guides/introduction-to-rsync/) has been the go-to backup and sync command-line tool for Linux. With that in mind, why would you make the switch to Rclone? Although Rsync is a great tool for local and LAN-based backup and sync, it doesn't have the built-in capacity to work with cloud storage providers. It is possible to mount your cloud storage service to a local drive and then use Rsync to backup files, but without the help of another tool, you're out of luck. That's where Rclone comes into play since it was built to work with cloud services. This guide shows you how to install and use Rclone.
+For years, [rsync](/cloud/guides/introduction-to-rsync) has been the go-to backup and sync command-line tool for Linux. With that in mind, why would you make the switch to Rclone? Although Rsync is a great tool for local and LAN-based backup and sync, it doesn't have the built-in capacity to work with cloud storage providers. It is possible to mount your cloud storage service to a local drive and then use Rsync to backup files, but without the help of another tool, you're out of luck. That's where Rclone comes into play since it was built to work with cloud services. This guide shows you how to install and use Rclone.
 
 ## Download and Install Rclone on Linux and macOS
 

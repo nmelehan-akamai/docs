@@ -13,7 +13,7 @@ license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 image: HowtoConfigureHTTP-2onNGINX.jpg
 ---
 
-[*HTTP/2*](https://en.wikipedia.org/wiki/HTTP/2) updates the original *Hypertext Transfer Protocol* (HTTP) specification to offer improvements in efficiency and latency. The new version includes several other new features while maintaining compatibility with older browsers. Due to the clear advantages of HTTP/2, web servers should be upgraded to use the new version. This guide explains how to configure, use, and test HTTP/2 with an [*NGINX*](https://www.nginx.com/) server. For a deep-dive into the HTTP/2 protocol see our [An Introduction to HTTP/2](/cloud/guides/introducing-http-2/) guide.
+[*HTTP/2*](https://en.wikipedia.org/wiki/HTTP/2) updates the original *Hypertext Transfer Protocol* (HTTP) specification to offer improvements in efficiency and latency. The new version includes several other new features while maintaining compatibility with older browsers. Due to the clear advantages of HTTP/2, web servers should be upgraded to use the new version. This guide explains how to configure, use, and test HTTP/2 with an [*NGINX*](https://www.nginx.com/) server. For a deep-dive into the HTTP/2 protocol see our [An Introduction to HTTP/2](/cloud/guides/introducing-http-2) guide.
 
 ## Before You Begin
 
@@ -24,7 +24,7 @@ image: HowtoConfigureHTTP-2onNGINX.jpg
 1. Ensure you possess a Fully Qualified Domain Name (FQDN) for the website. The DNS records for the site must point to the Linode server.
 
 {{< note >}}
-The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## A Summary of the NGINX and HTTP/2 Configuration Process
@@ -37,7 +37,7 @@ The following high-level steps are necessary to configure HTTP/2 on NGINX. These
 
 ### Install NGINX
 
-The following instructions install the NGINX environment required to support HTTP/2 and encryption. If NGINX is already installed, skip this section and proceed to the [Enable HTTPS Using Certbot and Let's Encrypt Certificates](/cloud/guides/how-to-configure-http-2-on-nginx/#enable-https-using-certbot-and-lets-encrypt-certificates) step. For more information about NGINX, consult the Linode's [How to Configure NGINX](/cloud/guides/how-to-configure-nginx/) guide.
+The following instructions install the NGINX environment required to support HTTP/2 and encryption. If NGINX is already installed, skip this section and proceed to the [Enable HTTPS Using Certbot and Let's Encrypt Certificates](/cloud/guides/how-to-configure-http-2-on-nginx#enable-https-using-certbot-and-lets-encrypt-certificates) step. For more information about NGINX, consult the Linode's [How to Configure NGINX](/cloud/guides/how-to-configure-nginx) guide.
 
 1. Update the system packages to pick up the newest version of NGINX. Reboot the system if advised to do so.
 
@@ -65,7 +65,7 @@ The following instructions install the NGINX environment required to support HTT
 
         sudo ufw enable
 {{< note >}}
-You should configure a location block for the domain. This structure is mandatory if there is more than one domain on the Linode. See Linode's [How to Configure NGINX](/cloud/guides/how-to-configure-nginx/) guide for complete instructions.
+You should configure a location block for the domain. This structure is mandatory if there is more than one domain on the Linode. See Linode's [How to Configure NGINX](/cloud/guides/how-to-configure-nginx) guide for complete instructions.
 {{< /note >}}
 
 ### Enable HTTPS Using Certbot and Let's Encrypt Certificates

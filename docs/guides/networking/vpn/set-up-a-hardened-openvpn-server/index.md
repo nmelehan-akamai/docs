@@ -23,7 +23,7 @@ An OpenVPN connection consists of two flow channels between the server and clien
 
 This guide is the first of a three-part series. Part one sets up a VPN server on Debian and prepares the access credentials for client devices. This VPN can be used to host internal services such as websites, game servers or file servers.
 
-[Part two](/cloud/guides/tunnel-your-internet-traffic-through-an-openvpn-server/) shows you how to set up a routed VPN so all traffic from client devices is tunneled through your Linode to the internet. [Part three](/cloud/guides/configuring-openvpn-client-devices/) takes you through setting up the client-side software for various operating systems, including mobile platforms.
+[Part two](/cloud/guides/tunnel-your-internet-traffic-through-an-openvpn-server) shows you how to set up a routed VPN so all traffic from client devices is tunneled through your Linode to the internet. [Part three](/cloud/guides/configuring-openvpn-client-devices) takes you through setting up the client-side software for various operating systems, including mobile platforms.
 
 
 ## Before You Begin
@@ -47,7 +47,7 @@ You can manage the OpenVPN environment in [two ways](https://openvpn.net/index.p
 
 For small applications, OpenVPN Access Server is the more streamlined and user-friendly solution. The free version allows up to two simultaneous users. Although each user can have as many client devices as they like, a user's clients will all have the same keys and certificates; more can be added by buying licensing. For more advanced configurations than what the GUI offers, you would still need to edit the VPN's configuration files.
 
-If you are interested in running OpenVPN Access Server on your Linode, see our guide: [Secure Communications with OpenVPN Access Server](/cloud/guides/install-openvpn-access-server-on-linux/). **The remainder of *this* guide will focus on manual configuration using OpenVPN Community Edition.**
+If you are interested in running OpenVPN Access Server on your Linode, see our guide: [Secure Communications with OpenVPN Access Server](/cloud/guides/install-openvpn-access-server-on-linux). **The remainder of *this* guide will focus on manual configuration using OpenVPN Community Edition.**
 
 
 ## Networking Configuration
@@ -457,4 +457,4 @@ Use `sudo journalctl -f | grep vpn` to monitor the logs of your OpenVPN server i
 
 You should now have an operational OpenVPN server and a set of certificate/key pairs for your desired client devices. If you intend to use your OpenVPN server as an extension of your local network, or for hosting services you want to access from your LAN, you would need to configure the specific applications for your use.
 
-If you want your VPN server to forward and receive traffic to/from the internet on behalf of VPN clients, see part two of this series: [Tunnel Your Internet Traffic Through an OpenVPN Server](/cloud/guides/tunnel-your-internet-traffic-through-an-openvpn-server/). To set up the connecting client devices, see part three: [Configuring OpenVPN Client Devices](/cloud/guides/configuring-openvpn-client-devices/).
+If you want your VPN server to forward and receive traffic to/from the internet on behalf of VPN clients, see part two of this series: [Tunnel Your Internet Traffic Through an OpenVPN Server](/cloud/guides/tunnel-your-internet-traffic-through-an-openvpn-server). To set up the connecting client devices, see part three: [Configuring OpenVPN Client Devices](/cloud/guides/configuring-openvpn-client-devices).

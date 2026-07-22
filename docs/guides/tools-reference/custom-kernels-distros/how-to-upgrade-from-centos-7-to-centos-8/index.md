@@ -37,7 +37,7 @@ This guide will walk you through the steps to migrate from CentOS 7 to CentOS 8 
 For this guide you will need a backup of your existing CentOS 7 installation. You can back up your Linode in two ways.
 
 - You can enroll in [Linode's Backup Service](https://techdocs.akamai.com/cloud-computing/docs/backup-service). This will take automatic regular backups for you, and give you the option of taking a [Manual Snapshot](https://techdocs.akamai.com/cloud-computing/docs/take-a-manual-snapshot) at any time.
-- For alternative backups solutions, see our [Backing Up Your Data](/cloud/guides/backing-up-your-data/) guide.
+- For alternative backups solutions, see our [Backing Up Your Data](/cloud/guides/backing-up-your-data) guide.
 
 When creating your backup, it's recommended that you [Resize Your Disk](https://techdocs.akamai.com/cloud-computing/docs/manage-disks-on-a-compute-instance) to the smallest size possible in advanced in order to ensure that you are able to allocate an extra disk in a later step.
 {{< note type="alert" >}}

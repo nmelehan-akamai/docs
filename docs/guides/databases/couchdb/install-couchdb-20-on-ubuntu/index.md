@@ -27,7 +27,7 @@ This guide shows you how to install CouchDB on Ubuntu 20.04. At the end of this 
 1.  Follow our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide to update your system. You may also wish to set the timezone, configure your hostname, create a limited user account, and harden SSH access.
 
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## Set Up the Apache CouchDB Repository
@@ -84,4 +84,4 @@ See CouchDB's [Cluster Set Up](https://docs.couchdb.org/en/latest/setup/cluster.
 
 ## Get Started with CouchDB
 
-You have now successfully installed CouchDB! To get started, head over to the guide for [Using CouchDB on Ubuntu 20.04](/cloud/guides/use-couchdb-2-0-on-ubuntu-20-04/).
+You have now successfully installed CouchDB! To get started, head over to the guide for [Using CouchDB on Ubuntu 20.04](/cloud/guides/use-couchdb-2-0-on-ubuntu-20-04).

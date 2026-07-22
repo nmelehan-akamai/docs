@@ -18,7 +18,7 @@ marketplace_app_name: "PostgreSQL Cluster"
 The PostgreSQL relational database system is a powerful, scalable, and standards-compliant open-source database platform. It is designed to handle a range of workloads, from single machines to data warehouses or Web services with many concurrent users.
 
 {{< note type="warning" title="Quick Deploy App Cluster Notice" >}}
-This Quick Deploy App deploys 3 Compute Instances to create a highly available and redundant PostgreSQL cluster, each with the plan type and size that you select. Please be aware that each of these Compute Instances will appear on your invoice as separate items. To instead deploy PostgreSQL on a single Compute Instance, see [Deploy PostgreSQL](/cloud/marketplace-docs/guides/postgresql/).
+This Quick Deploy App deploys 3 Compute Instances to create a highly available and redundant PostgreSQL cluster, each with the plan type and size that you select. Please be aware that each of these Compute Instances will appear on your invoice as separate items. To instead deploy PostgreSQL on a single Compute Instance, see [Deploy PostgreSQL](/cloud/marketplace-docs/guides/postgresql).
 {{< /note >}}
 
 ## Deploying a Quick Deploy App
@@ -56,7 +56,7 @@ This Quick Deploy App deploys 3 Compute Instances to create a highly available a
 
 After your cluster has been fully provisioned, use the instructs below to obtain and save passwords that were generated on your behalf during deployment.
 
-1. Log in to your new Compute Instance through [Lish](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish) or [SSH](/cloud/guides/connect-to-server-over-ssh/) using the `root` user and the associated password you entered when creating the instance. If you opted to include your SSH keys as part of this deployment, you can also log in using those keys as either the `root` user or the limited user account you specified during deployment.
+1. Log in to your new Compute Instance through [Lish](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish) or [SSH](/cloud/guides/connect-to-server-over-ssh) using the `root` user and the associated password you entered when creating the instance. If you opted to include your SSH keys as part of this deployment, you can also log in using those keys as either the `root` user or the limited user account you specified during deployment.
 
 1. The passwords have been saved in a `.deployment-secrets.txt` file located in your user's home directory. You can view this file in your preferred text editor or through the `cat` command. In the command below, replace *[username]* with the limited sudo user you created during deployment.
 
@@ -198,4 +198,4 @@ The example commands in this section should be run as the `postgres` Linux user.
 
 For more on PostgreSQL, checkout the following guides:
 
-- [Securely Manage Remote PostgreSQL Servers](/cloud/guides/securely-manage-remote-postgresql-servers-with-pgadmin-on-macos-x/)
+- [Securely Manage Remote PostgreSQL Servers](/cloud/guides/securely-manage-remote-postgresql-servers-with-pgadmin-on-macos-x)

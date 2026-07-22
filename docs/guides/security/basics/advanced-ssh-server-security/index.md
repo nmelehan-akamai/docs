@@ -40,7 +40,7 @@ There's a good chance you've been using SSH (Secure Shell) to access your Linode
 
         sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.BACKUP
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see our [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see our [Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## Use a Stronger Diffie-Hellman Algorithm
@@ -127,7 +127,7 @@ To add the generated password to your existing private key:
 
 This assumes you keep your client's private SSH key in its default location, `~/.ssh/id_rsa`. You can modify the file location as needed and use the same command to change your password in the future.
 
-An alternative to this method is the use of a [GPG smartcard](https://en.wikipedia.org/wiki/OpenPGP_card) or [YubiKey](https://www.yubico.com/products/yubikey-hardware/) which should be stored in a different place from your laptop. You can find more information about this implementation in the guide [How to use a GPG key for SSH authentication](/cloud/guides/gpg-key-for-ssh-authentication/)
+An alternative to this method is the use of a [GPG smartcard](https://en.wikipedia.org/wiki/OpenPGP_card) or [YubiKey](https://www.yubico.com/products/yubikey-hardware/) which should be stored in a different place from your laptop. You can find more information about this implementation in the guide [How to use a GPG key for SSH authentication](/cloud/guides/gpg-key-for-ssh-authentication)
 
 ## Chroot Users
 

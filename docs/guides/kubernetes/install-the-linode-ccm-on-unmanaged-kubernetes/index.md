@@ -44,13 +44,13 @@ Instructions are shown for manually installing the Linode CCM on your unmanaged 
 
 ### Before You Begin
 
-1. Deploy a new **unmanaged** Kubernetes cluster. You can deploy an unmanaged Kubernetes cluster on Linode by following the [Getting Started with Kubernetes: Use kubeadm to Deploy a Cluster on Linode](/cloud/guides/deploy-kubernetes-cluster-using-kubeadm/)
+1. Deploy a new **unmanaged** Kubernetes cluster. You can deploy an unmanaged Kubernetes cluster on Linode by following the [Getting Started with Kubernetes: Use kubeadm to Deploy a Cluster on Linode](/cloud/guides/deploy-kubernetes-cluster-using-kubeadm)
 
     {{< note >}}
     It is recommended that you install the Linode CCM on a new Kubernetes cluster, as there are a number of issues that prevent the CCM from running on Nodes that are in the "Ready" state.
     {{< /note >}}
 
-1. Ensure you have [kubectl installed](/cloud/guides/how-to-provision-an-unmanaged-kubernetes-cluster-using-terraform/#install-kubectl) on your local computer and you can access your Kubernetes cluster with it.
+1. Ensure you have [kubectl installed](/cloud/guides/how-to-provision-an-unmanaged-kubernetes-cluster-using-terraform#install-kubectl) on your local computer and you can access your Kubernetes cluster with it.
 
 1. Generate a [Linode APIv4 token](https://techdocs.akamai.com/linode-api/reference/get-started#get-an-access-token). This is required for both methods of installing the Linode CCM in this guide.
 
@@ -92,7 +92,7 @@ For advanced configuration, one can specify their own [values.yaml](https://gith
 
 The Linode CCM's GitHub repository provides a helper script that creates a Kubernetes manifest file that you can use to install the CCM on your cluster. These steps should be run on your local computer and were tested on a macOS workstation.
 
-1. [Install Git](/cloud/guides/how-to-install-git-on-linux-mac-and-windows/) on your local computer.
+1. [Install Git](/cloud/guides/how-to-install-git-on-linux-mac-and-windows) on your local computer.
 
 1. Clone the [Linode CCM's GitHub repository](https://github.com/linode/linode-cloud-controller-manager).
 

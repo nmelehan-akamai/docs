@@ -27,7 +27,7 @@ In this tutorial, learn how to get started with Adagios on a CentOS Stream 8 or 
 1.  Your Compute Instance needs to be on the Linode 8 GB Shared CPU plan, at minimum, as these instructions require a large amount of disk space.
 
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## Getting Started with Nagios
@@ -40,7 +40,7 @@ Before diving into Adagios, you should have a base familiarity with Nagios, the 
 
 ### How to Install Nagios
 
-Before getting started with Adagios, Nagios must be installed and configured on your system. To install Nagios, follow our [How to Install Nagios on CentOS 8](/cloud/guides/install-nagios-on-centos-8/) guide.
+Before getting started with Adagios, Nagios must be installed and configured on your system. To install Nagios, follow our [How to Install Nagios on CentOS 8](/cloud/guides/install-nagios-on-centos-8) guide.
 
 Alternatively, refer to the official [installation documentation](https://support.nagios.com/kb/article/nagios-core-installing-nagios-core-from-source-96.html) for Nagios Core for details on installing Nagios on other operating systems.
 

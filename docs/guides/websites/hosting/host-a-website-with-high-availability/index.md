@@ -25,7 +25,7 @@ This guide is designed to be used in data centers that support the legacy ARP-ba
 
 When deploying a website or application, one of the most important elements to consider is availability, or the period of time for which your content is accessible to users. High availability is a term used to describe server setups that eliminate single points of failure by offering redundancy, monitoring, and failover. This ensures that even if one component of your web stack goes down, the content will still be accessible.
 
-This guide shows how to host a highly available website with WordPress. However, you can use this setup to serve other types of content as well. This guide is intended to be a tutorial on the setup of such a system. For more information on how each element in the high availability stack functions, refer to our [introduction to high availability](/cloud/guides/intro-to-high-availability-and-disaster-recovery/).
+This guide shows how to host a highly available website with WordPress. However, you can use this setup to serve other types of content as well. This guide is intended to be a tutorial on the setup of such a system. For more information on how each element in the high availability stack functions, refer to our [introduction to high availability](/cloud/guides/intro-to-high-availability-and-disaster-recovery).
 
 ## Before You Begin
 
@@ -44,7 +44,7 @@ This guide shows how to host a highly available website with WordPress. However,
 1. To create a private network among your Linodes, you'll need a [private IP address](https://techdocs.akamai.com/cloud-computing/docs/managing-ip-addresses-on-a-compute-instance#adding-an-ip-address) for each.
 
 {{< note >}}
-Most steps in this guide require root privileges. Be sure you're entering the commands as root, or using `sudo` if you're using a limited user account. If you’re not familiar with the `sudo` command, visit our [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+Most steps in this guide require root privileges. Be sure you're entering the commands as root, or using `sudo` if you're using a limited user account. If you’re not familiar with the `sudo` command, visit our [Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## GlusterFS
@@ -504,7 +504,7 @@ Install the Apache HTTPD web server package on each of your three application no
 yum install httpd
 ```
 
-At this point, you may also tune your Apache instances to optimize performance based on your site or application's needs. This step is optional, however, and is beyond the scope of this guide. Check [Tuning Your Apache Server](/cloud/guides/tuning-your-apache-server/) for more information.
+At this point, you may also tune your Apache instances to optimize performance based on your site or application's needs. This step is optional, however, and is beyond the scope of this guide. Check [Tuning Your Apache Server](/cloud/guides/tuning-your-apache-server) for more information.
 
 ### Configure SELinux Compatibility for Apache
 
@@ -605,7 +605,7 @@ The steps in this section do not work as intended in data centers that use the n
 So far, we've successfully configured a redundant web stack with three layers of nodes performing a series of tasks. Gluster automatically handles monitoring, and we configured the failover for the file system nodes in our application nodes' `/etc/fstab` files. In this section, we use Keepalived to handle database failover.
 
 {{< note >}}
-Alternatively, some users prefer to configure HAProxy instead of or in addition to Keepalived. For more information, visit our guide on [how to use HAProxy for load balancing](/cloud/guides/how-to-use-haproxy-for-load-balancing/).
+Alternatively, some users prefer to configure HAProxy instead of or in addition to Keepalived. For more information, visit our guide on [how to use HAProxy for load balancing](/cloud/guides/how-to-use-haproxy-for-load-balancing).
 {{< /note >}}
 
 Keepalived is a routing service that can be used to monitor and fail over components in a high availability configuration. In this section, you will be using the additional private IP address, or *floating IP* from your database node to fail over to the others if one should go down. A floating IP address is one that can be assigned to a different node if needed. If you didn't request an additional private IP in the Galera section, [contact support](https://techdocs.akamai.com/cloud-computing/docs/help-and-support) and do so before continuing.
@@ -854,16 +854,16 @@ If you're installing WordPress to manage your new highly available website, we'l
     systemctl restart httpd
     ```
 
-1.  In a web browser, navigate to the IP address of one of your application nodes (or the NodeBalancer) to access the WordPress admin panel. Use `wordpress` as the database name and user name, enter the password you configured in Step 2, and enter your floating IP address as the database host. For additional WordPress setup instructions, see our guide on [Installing and Configuring WordPress](/cloud/guides/how-to-install-and-configure-wordpress/#configure-wordpress).
+1.  In a web browser, navigate to the IP address of one of your application nodes (or the NodeBalancer) to access the WordPress admin panel. Use `wordpress` as the database name and user name, enter the password you configured in Step 2, and enter your floating IP address as the database host. For additional WordPress setup instructions, see our guide on [Installing and Configuring WordPress](/cloud/guides/how-to-install-and-configure-wordpress#configure-wordpress).
 
-You've successfully configured a highly available WordPress site, and you're ready to start publishing content. For more information, reference our [WordPress configuration guide](/cloud/guides/how-to-install-and-configure-wordpress/).
+You've successfully configured a highly available WordPress site, and you're ready to start publishing content. For more information, reference our [WordPress configuration guide](/cloud/guides/how-to-install-and-configure-wordpress).
 
 ## DNS Records
 
 The NodeBalancer in the above system directs all incoming traffic to the application servers. As such, its IP address will be the one you should use when configuring your DNS records. To find this information, visit the **NodeBalancers** tab in the Linode Manager and look in the *IP Address* section.
 
-For more information on DNS configuration, refer to our [introduction to DNS records](/cloud/guides/dns-overview/) and our guide on how to use the [DNS Manager](https://techdocs.akamai.com/cloud-computing/docs/dns-manager).
+For more information on DNS configuration, refer to our [introduction to DNS records](/cloud/guides/dns-overview) and our guide on how to use the [DNS Manager](https://techdocs.akamai.com/cloud-computing/docs/dns-manager).
 
 ## Configuration Management
 
-Because a high availability configuration involves so many different components, you may want to consider additional software to help you manage the cluster and create new nodes when necessary. For more information on the options available for managing your nodes, see our guides on [Salt](/cloud/guides/getting-started-with-salt-basic-installation-and-setup/), [Chef](/cloud/guides/beginners-guide-chef/), [Puppet](/cloud/guides/install-and-configure-puppet/), and [Ansible](/cloud/guides/running-ansible-playbooks/). You can also refer to our guide on [Automating Server Builds](https://techdocs.akamai.com/cloud-computing/docs/automate-cloud-resource-deployment) for an overview of how to choose a solution that is right for you.
+Because a high availability configuration involves so many different components, you may want to consider additional software to help you manage the cluster and create new nodes when necessary. For more information on the options available for managing your nodes, see our guides on [Salt](/cloud/guides/getting-started-with-salt-basic-installation-and-setup), [Chef](/cloud/guides/beginners-guide-chef), [Puppet](/cloud/guides/install-and-configure-puppet), and [Ansible](/cloud/guides/running-ansible-playbooks). You can also refer to our guide on [Automating Server Builds](https://techdocs.akamai.com/cloud-computing/docs/automate-cloud-resource-deployment) for an overview of how to choose a solution that is right for you.

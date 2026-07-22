@@ -100,4 +100,4 @@ Passwords in the Subsonic database are stored in hex format, but not encrypted.
 
 ## Next Steps
 
-Subsonic can be [configured to use SSL](http://www.subsonic.org/pages/getting-started.jsp), or you can use an [NGINX reverse proxy](/cloud/guides/use-nginx-reverse-proxy/).
+Subsonic can be [configured to use SSL](http://www.subsonic.org/pages/getting-started.jsp), or you can use an [NGINX reverse proxy](/cloud/guides/use-nginx-reverse-proxy).

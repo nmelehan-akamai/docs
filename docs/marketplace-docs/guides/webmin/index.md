@@ -49,12 +49,12 @@ Webmin has been removed from Quick Deploy Apps and can no longer be deployed. Th
 #### Additional Security Configuration
 
 - **Configure automatic security updates?** Select **Yes** to enable automatic security updates for your Linode.
-- **Use fail2ban to prevent automated instrusion attempts?** Select **Yes** to enable [SSH login protection with Fail2Ban](/cloud/guides/using-fail2ban-to-secure-your-server-a-tutorial/) as an additional security measure.
+- **Use fail2ban to prevent automated instrusion attempts?** Select **Yes** to enable [SSH login protection with Fail2Ban](/cloud/guides/using-fail2ban-to-secure-your-server-a-tutorial) as an additional security measure.
 
 {{% content "marketplace-custom-domain-fields-shortguide" %}}
 - **SOA Email for your domain** The email address to register as your Start of Authority (SOA). This field is required for creating DNS records for a new domain.
-- **Do you need an MX record for this domain?** Select **Yes** to automatically configure an [MX record](/cloud/guides/dns-overview/#mx) for the purpose of sending emails from your instance.
-- **Do you need an SPF record for this domain?** Select **Yes** to automatically configure an [SPF record](/cloud/guides/dns-overview/#spf) for the purpose of sending emails from your instance.
+- **Do you need an MX record for this domain?** Select **Yes** to automatically configure an [MX record](/cloud/guides/dns-overview#mx) for the purpose of sending emails from your instance.
+- **Do you need an SPF record for this domain?** Select **Yes** to automatically configure an [SPF record](/cloud/guides/dns-overview#spf) for the purpose of sending emails from your instance.
 
 {{% content "marketplace-special-character-limitations-shortguide" %}}
 

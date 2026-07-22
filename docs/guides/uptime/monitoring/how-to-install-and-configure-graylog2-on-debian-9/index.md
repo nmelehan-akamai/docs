@@ -27,7 +27,7 @@ Graylog uses Elasticsearch for searching and storing the log messages, and Mongo
 This guide shows you how to install and configure Graylog2 with Elasticsearch and MongoDB on a Debian 9 server.
 
 {{< note >}}
-The steps in this guide require root privileges. Be sure to run the steps below as `root` or with the `sudo` prefix. For more information on privileges, see our [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+The steps in this guide require root privileges. Be sure to run the steps below as `root` or with the `sudo` prefix. For more information on privileges, see our [Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## Before You Begin

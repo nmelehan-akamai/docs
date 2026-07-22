@@ -20,7 +20,7 @@ aliases: []
 
 [Linkerd 2](https://linkerd.io) is an ultra lightweight service mesh that monitors, reports, and encrypts connections between Kubernetes services without disturbing the existing applications. It does this by employing proxy sidecars along each instance.
 
-Unlike [Istio](/cloud/guides/how-to-deploy-istio-with-kubernetes/), another service mesh monitoring tool, it provides it's own proxies written in Rust instead of using Envoy. This makes it both lighter and more secure.
+Unlike [Istio](/cloud/guides/how-to-deploy-istio-with-kubernetes), another service mesh monitoring tool, it provides it's own proxies written in Rust instead of using Envoy. This makes it both lighter and more secure.
 
 {{< note >}}
 Linkerd 1.x is still available and is being actively developed as a separate project. However, it is built on the "Twitter stack" and is not for Kubernetes. Linkerd 2 is built in Rust and Go and only supports Kubernetes.
@@ -44,7 +44,7 @@ If you remove the resources afterward, you will only be billed for the hour(s) t
 
 ## Before You Begin
 
-Familiarize yourself with Kubernetes using our series [A Beginner's Guide to Kubernetes](/cloud/guides/beginners-guide-to-kubernetes/) and [Advantages of Using Kubernetes](/cloud/guides/kubernetes-use-cases/).
+Familiarize yourself with Kubernetes using our series [A Beginner's Guide to Kubernetes](/cloud/guides/beginners-guide-to-kubernetes) and [Advantages of Using Kubernetes](/cloud/guides/kubernetes-use-cases).
 
 ## Create an LKE Cluster
 
@@ -255,7 +255,7 @@ Linkerd comes with two dashboards, a Linkerd dashboard and the [Grafana](https:/
 
     - This command sets up a port forward from the `linkerd-web` Pod.
 
-    - If you want to expose the dashboard for others to use as well, you need to add an [ingress controller](/cloud/guides/deploy-nginx-ingress-on-lke/).
+    - If you want to expose the dashboard for others to use as well, you need to add an [ingress controller](/cloud/guides/deploy-nginx-ingress-on-lke).
 
 1.  The dashboard opens in the browser. If it does not, you can access it by going to http://localhost:50750:
 
@@ -281,7 +281,7 @@ Linkerd comes with two dashboards, a Linkerd dashboard and the [Grafana](https:/
 
 To demonstrate the full ease of use and utility of Linkerd, deploy Drupal on the cluster and monitor it using Linkerd.
 
-1.  Follow the [How to Install Drupal with Linode Kubernetes Engine](/cloud/guides/how-to-install-drupal-with-linode-kubernetes-engine/) guide to install Drupal onto your LKE cluster.
+1.  Follow the [How to Install Drupal with Linode Kubernetes Engine](/cloud/guides/how-to-install-drupal-with-linode-kubernetes-engine) guide to install Drupal onto your LKE cluster.
 
 ### Add Linkerd to Drupal
 

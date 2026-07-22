@@ -10,14 +10,14 @@ aliases: []
 tags: ["drupal","cms","debian"]
 license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 external_resources:
- - '[SSL Certificates](/cloud/guides/security/ssl/)'
+ - '[SSL Certificates](/cloud/guides/security/ssl)'
 deprecated: true
 deprecated_link: 'websites/cms/drupal/drush-drupal/how-to-install-drupal-themes-and-modules-using-drush-on-debian-10/'
 ---
 
 Drush is a command line tool, which can be used for various Drupal projects. This tutorial uses Drush to install themes, modules, and a manual backup system, covering some basic administration tasks for Drupal websites.
 
-Linode has another guide for installing Drush and creating a Drupal website, [Installing & Using Drupal Drush on Debian 7](/cloud/guides/how-to-install-drush-on-ubuntu-18-04/). Depending on your experience level with Drush, you may want to start with that guide.
+Linode has another guide for installing Drush and creating a Drupal website, [Installing & Using Drupal Drush on Debian 7](/cloud/guides/how-to-install-drush-on-ubuntu-18-04). Depending on your experience level with Drush, you may want to start with that guide.
 
 ## Prerequisites
 
@@ -27,12 +27,12 @@ Before installing themes, modules, and a backup system with Drush, make sure tha
 
 1.  Follow our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide to update your system. You may also wish to set the timezone, configure your hostname, create a limited user account, and harden SSH access.
 
-3.  Configure a LAMP stack using the [Hosting a Website](/cloud/guides/hosting-a-website-ubuntu-18-04/) guide.
+3.  Configure a LAMP stack using the [Hosting a Website](/cloud/guides/hosting-a-website-ubuntu-18-04) guide.
 
-4.  Install Drush and a Drupal website core with the [Installing & Using Drupal Drush on Debian 7](/cloud/guides/how-to-install-drush-on-ubuntu-18-04/) guide.
+4.  Install Drush and a Drupal website core with the [Installing & Using Drupal Drush on Debian 7](/cloud/guides/how-to-install-drush-on-ubuntu-18-04) guide.
 
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with ``sudo``. If you're not familiar with the ``sudo`` command, you can check our [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with ``sudo``. If you're not familiar with the ``sudo`` command, you can check our [Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## Installing Themes with Drush
@@ -148,7 +148,7 @@ rsync -avz /home/local-user/drush-backups/archive-dump/ remote-user@remote-ip-ad
 {{< /file >}}
 
 
-    This back up configuration creates a saved version once a week. The Cron timer is set for 12:01 a.m. every Sunday. There are many ways to configure a back up with additional options to consider. Check our [Cron](/cloud/guides/schedule-tasks-with-cron/) guide for more information.
+    This back up configuration creates a saved version once a week. The Cron timer is set for 12:01 a.m. every Sunday. There are many ways to configure a back up with additional options to consider. Check our [Cron](/cloud/guides/schedule-tasks-with-cron) guide for more information.
 
     This backup system leaves saved versions of the site and database on both the local and remote Linodes. Depending on the disk size of your Linode, you may want to occasionally delete older backup versions. The deletion task could be automated within the Bash script above. Since the Cron timer is only set for once a week, disk usage is probably not a large concern. There are many configuration options to consider.
 

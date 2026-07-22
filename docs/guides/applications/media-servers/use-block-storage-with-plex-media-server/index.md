@@ -24,7 +24,7 @@ Plex is a media server that allows you to store your media on a remote server an
 
 ## Before You Begin
 
-The examples in this guide assume the Plex Server is installed and running on a Linode. See how to [Install Plex Media Server on Ubuntu 16.04](/cloud/guides/install-plex-media-server-on-ubuntu-18-04/) if it is not already installed. After installation, follow the steps in the [Configuring Plex](/cloud/guides/install-plex-media-server-on-ubuntu-18-04/#configuring-plex-media-server-on-ubuntu-1804) section to create an SSH tunnel to your Linode and configure the Plex server.
+The examples in this guide assume the Plex Server is installed and running on a Linode. See how to [Install Plex Media Server on Ubuntu 16.04](/cloud/guides/install-plex-media-server-on-ubuntu-18-04) if it is not already installed. After installation, follow the steps in the [Configuring Plex](/cloud/guides/install-plex-media-server-on-ubuntu-18-04#configuring-plex-media-server-on-ubuntu-1804) section to create an SSH tunnel to your Linode and configure the Plex server.
 
 This guide also assumes you already have a Plex account since Plex Media Player will require login.
 
@@ -87,7 +87,7 @@ Moving media to the Volume can be done with `scp` using the following syntax:
 Depending on the file size(s), this may take a few minutes.
 
 {{< note >}}
-There are other ways to upload files to a remote server. See our section in [Linux System Administration Basics](/cloud/guides/linux-system-administration-basics/#upload-files-to-a-remote-server) for more information.
+There are other ways to upload files to a remote server. See our section in [Linux System Administration Basics](/cloud/guides/linux-system-administration-basics#upload-files-to-a-remote-server) for more information.
 {{< /note >}}
 
 ## Scan for New Media on the Volume

@@ -91,11 +91,11 @@ users:
 
 However, the example is incomplete, since the user does not have a password or SSH key. You can create a password using the `passwd` option, but this is not recommended. Instead, you should set up an SSH key for the user, as shown in the next section.
 
-For more on creating and managing users with cloud-init, refer to our guide [Use Cloud-Init to Manage Users on New Servers](/cloud/guides/manage-users-with-cloud-init/). The guide includes more information on setting up user passwords, should you need to.
+For more on creating and managing users with cloud-init, refer to our guide [Use Cloud-Init to Manage Users on New Servers](/cloud/guides/manage-users-with-cloud-init). The guide includes more information on setting up user passwords, should you need to.
 
 ## Add an SSH Key to Your Limited User Account
 
-Rather than using a password for access, the more secure approach is setting up your limited user, or users, with SSH key authentication. If you do not yet have an SSH key pair, get one by following the relevant section of our guide on how to [Use SSH Public Key Authentication](/cloud/guides/use-public-key-authentication-with-ssh/#generate-an-ssh-key-pair).
+Rather than using a password for access, the more secure approach is setting up your limited user, or users, with SSH key authentication. If you do not yet have an SSH key pair, get one by following the relevant section of our guide on how to [Use SSH Public Key Authentication](/cloud/guides/use-public-key-authentication-with-ssh#generate-an-ssh-key-pair).
 
 Once you have an SSH key pair, you can add an SSH public key to a user defined in the cloud-config with the `ssh_authorized_keys` option. The option accepts a list of SSH public keys to authorize for access to this user.
 
@@ -116,9 +116,9 @@ users:
 
 To increase the security of SSH connections into your Compute Instance, you should generally disable password authentication and root logins via SSH. This way, access is restricted to limited users and connections authenticated by SSH key pairs.
 
-By default, the cloud-config `users` setup assumes `lock_passwd: true`, automatically disabling password authentication. You can learn more about user setup and managing such features in our guide [Use Cloud-Init to Manage Users on New Servers](/cloud/guides/manage-users-with-cloud-init/).
+By default, the cloud-config `users` setup assumes `lock_passwd: true`, automatically disabling password authentication. You can learn more about user setup and managing such features in our guide [Use Cloud-Init to Manage Users on New Servers](/cloud/guides/manage-users-with-cloud-init).
 
-To disable root logins, you need to modify the SSH configuration file. Cloud-config does not have a direct option for this, but you can use its versatile `runcmd` key to automate the necessary commands. Learn more about the `runcmd` option in our guide [Use Cloud-Init to Run Commands and Bash Scripts on First Boot](/cloud/guides/run-shell-commands-with-cloud-init/).
+To disable root logins, you need to modify the SSH configuration file. Cloud-config does not have a direct option for this, but you can use its versatile `runcmd` key to automate the necessary commands. Learn more about the `runcmd` option in our guide [Use Cloud-Init to Run Commands and Bash Scripts on First Boot](/cloud/guides/run-shell-commands-with-cloud-init).
 
 The example below removes any existing `PermitRootLogin` configuration and adds a new configuration disabling `PermitRootLogin`. The last command restarts the `sshd` service for the changes to take effect.
 
@@ -141,9 +141,9 @@ service sshd restart
 
 ## Install Any Additional Required Software
 
-With cloud-config's `packages` key, you can automate software installation and management as part of server initialization. For thorough coverage of cloud-init's package management features, and examples of how to use it, see our guide [Use Cloud-Init to Install and Update Software on New Servers](/cloud/guides/install-and-update-software-with-cloud-init/).
+With cloud-config's `packages` key, you can automate software installation and management as part of server initialization. For thorough coverage of cloud-init's package management features, and examples of how to use it, see our guide [Use Cloud-Init to Install and Update Software on New Servers](/cloud/guides/install-and-update-software-with-cloud-init).
 
-As a basic illustration, the snippet below shows how to install a set of software during instance initialization. The example installs software for a LEMP web stack (NGINX, MySQL, and PHP) a popular setup for web applications. You can learn more about LEMP stacks in our guide on how to [Install a LEMP Stack](/cloud/guides/how-to-install-a-lemp-stack-on-ubuntu-22-04/).
+As a basic illustration, the snippet below shows how to install a set of software during instance initialization. The example installs software for a LEMP web stack (NGINX, MySQL, and PHP) a popular setup for web applications. You can learn more about LEMP stacks in our guide on how to [Install a LEMP Stack](/cloud/guides/how-to-install-a-lemp-stack-on-ubuntu-22-04).
 
 ```file {title="cloud-config.yaml" lang="yaml"}
 packages:
@@ -220,7 +220,7 @@ There are three paths to deploy a new Compute Instance using your cloud-config i
       --metadata.user_data "$cloudconfigvar"
     ```
 
--   **Linode API**: Within the `instances/` endpoint of the API, you have access to a `metadata.user_data` option for inputting a cloud-config. Using this, you can initialize a new Compute Instance in a convenient `POST` request. Learn more about the Linode API in our documentation on the [Linode API](https://techdocs.akamai.com/linode-api/reference/api) and the [Linode Instances API](/cloud/api/linode-instances/) documentation.
+-   **Linode API**: Within the `instances/` endpoint of the API, you have access to a `metadata.user_data` option for inputting a cloud-config. Using this, you can initialize a new Compute Instance in a convenient `POST` request. Learn more about the Linode API in our documentation on the [Linode API](https://techdocs.akamai.com/linode-api/reference/api) and the [Linode Instances API](/cloud/api/linode-instances) documentation.
 
     With versatility being one of its main advantages, there are numerous ways to use the Linode API to deploy a server. The steps below show a simple approach using just the command line. This example is easily adaptable for other contexts as well.
 

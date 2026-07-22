@@ -63,7 +63,7 @@ It can be challenging to run and maintain a web server. To maintain a positive r
 1.  Postal requires at least four GB of RAM, two CPU cores, and at least 100GB of disk space. For best performance, run Postal on a dedicated server that is not handling other tasks.
 
 {{< note >}}
-The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## How to Install Postal
@@ -215,7 +215,7 @@ Postal requires some additional configuration before it can be used. Several uti
 1.  Use the `postal bootstrap` tool to generate several configuration files. Supply the domain name for Postal as an argument. In the following command, replace `postal.example.com` with the actual domain name.
 
     {{< note >}}
-    This is the domain created in the "A/AAAA Record(s)" step of [How to Configure DNS Records for the Postal Mail Server](/cloud/guides/how-to-install-and-use-postal/#how-to-configure-dns-records-for-postal) section.
+    This is the domain created in the "A/AAAA Record(s)" step of [How to Configure DNS Records for the Postal Mail Server](/cloud/guides/how-to-install-and-use-postal#how-to-configure-dns-records-for-postal) section.
     {{< /note >}}
 
     ```command

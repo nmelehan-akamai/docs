@@ -53,4 +53,4 @@ The PostgreSQL databases are implemented as an active-active cluster, using [Buc
 
 ## Diagrams
 
-[![Thumbnail of Cloud-base document management system reference architecture](document-management-diagram-thumbnail.png)](/cloud/reference-architecture/cloud-based-document-management-system/diagrams/)
+[![Thumbnail of Cloud-base document management system reference architecture](document-management-diagram-thumbnail.png)](/cloud/reference-architecture/cloud-based-document-management-system/diagrams)

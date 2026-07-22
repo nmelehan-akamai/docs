@@ -45,15 +45,15 @@ Using Twilio, you can also build a custom text message notification system for y
 
     After you create your Linode, follow our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide to reduce the threat of a system compromise. Specifically, make sure you [Add a Limited User Account](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance#add-a-limited-user-account) to the Linode. The notification system in this guide should be installed under a limited Linux user.
 
-1.  Another guide in our library, [How to Use the Linode API with Twilio](/cloud/guides/how-to-use-the-linode-api-with-twilio/), shows the prerequisite steps for using the Linode API and Twilio API together. Follow this guide, starting with its [Before You Begin](/cloud/guides/how-to-use-the-linode-api-with-twilio/#before-you-begin) section, up to and including the [Install the Python Bindings for the Linode API](/cloud/guides/how-to-use-the-linode-api-with-twilio/#install-the-python-bindings-for-the-linode-api) section.
+1.  Another guide in our library, [How to Use the Linode API with Twilio](/cloud/guides/how-to-use-the-linode-api-with-twilio), shows the prerequisite steps for using the Linode API and Twilio API together. Follow this guide, starting with its [Before You Begin](/cloud/guides/how-to-use-the-linode-api-with-twilio#before-you-begin) section, up to and including the [Install the Python Bindings for the Linode API](/cloud/guides/how-to-use-the-linode-api-with-twilio#install-the-python-bindings-for-the-linode-api) section.
 
     The guide instructs you to install the Linode API and Twilio API clients for Python. When following these instructions, run the commands under the limited Linux user on your Linode instance.
 
     {{< note respectIndent=false >}}
-The prerequisite guide instructs you to select the **Account** resource [when creating the Linode API key](/cloud/guides/how-to-use-the-linode-api-with-twilio/#get-a-linode-api-token). This resource is also used for the [Network Transfer View endpoint](https://techdocs.akamai.com/linode-api/reference/api-summary#network-transfer-view) that's accessed by the network transfer usage notification system in the current guide.
+The prerequisite guide instructs you to select the **Account** resource [when creating the Linode API key](/cloud/guides/how-to-use-the-linode-api-with-twilio#get-a-linode-api-token). This resource is also used for the [Network Transfer View endpoint](https://techdocs.akamai.com/linode-api/reference/api-summary#network-transfer-view) that's accessed by the network transfer usage notification system in the current guide.
 {{< /note >}}
 
-1. This guide instructs you to create a Python script from within an SSH session on your Linode. You need to install and use a terminal text editor to write the script on your Linode. Common text editors include [nano](/cloud/guides/use-nano-to-edit-files-in-linux/) (the easiest option for terminal beginners), [emacs](https://www.gnu.org/software/emacs/), and [vim](https://www.vim.org/).
+1. This guide instructs you to create a Python script from within an SSH session on your Linode. You need to install and use a terminal text editor to write the script on your Linode. Common text editors include [nano](/cloud/guides/use-nano-to-edit-files-in-linux) (the easiest option for terminal beginners), [emacs](https://www.gnu.org/software/emacs/), and [vim](https://www.vim.org/).
 
 ## Send Network Transfer Usage in a Text Message
 
@@ -63,7 +63,7 @@ The last part of this section shows how to run the script manually to deliver a 
 
 ### Import Modules and Initialize Service Credentials
 
-1.  Log into your Linode under your limited Linux user [using SSH](/cloud/guides/connect-to-server-over-ssh/).
+1.  Log into your Linode under your limited Linux user [using SSH](/cloud/guides/connect-to-server-over-ssh).
 
 1.  Create a new file named `transfer-pool-notification-twilio.py` with your preferred terminal text editor. For example, when using `nano`, run:
 
@@ -209,7 +209,7 @@ The code example is now complete. Your script should now look like the code in [
 
 ### Run the Code
 
-1.  Before you run the script, set the [environment variables](/cloud/guides/how-to-set-linux-environment-variables/) that the script expects in your terminal. In your SSH session with your Linode, run the following commands. After the `=` symbol in each command, insert the corresponding value:
+1.  Before you run the script, set the [environment variables](/cloud/guides/how-to-set-linux-environment-variables) that the script expects in your terminal. In your SSH session with your Linode, run the following commands. After the `=` symbol in each command, insert the corresponding value:
 
         export TWILIO_ACCOUNT_SID=
         export TWILIO_AUTH_TOKEN=
@@ -231,11 +231,11 @@ export LINODE_API_TOKEN=bKfoAoV8Awo8e9CVTFTYKEdojkpHdD8BNU6UvV66izq6KjduPikfQTGH
 
     | Variable | Value |
     |----------|-------|
-    | TWILIO_ACCOUNT_SID | The Twilio account SID [located in your Twilio console](/cloud/guides/how-to-use-the-linode-api-with-twilio/#locate-your-twilio-api-credentials) |
-    | TWILIO_AUTH_TOKEN | The Twilio auth token [located in your Twilio console](/cloud/guides/how-to-use-the-linode-api-with-twilio/#locate-your-twilio-api-credentials). The phone number needs to be entered using [E.164](https://www.twilio.com/docs/glossary/what-e164) formatting. |
-    | TWILIO_FROM_PHONE_NUMBER | The new number that you selected in the Twilio console [when you first signed up](/cloud/guides/how-to-use-the-linode-api-with-twilio/#sign-up-for-twilio) |
+    | TWILIO_ACCOUNT_SID | The Twilio account SID [located in your Twilio console](/cloud/guides/how-to-use-the-linode-api-with-twilio#locate-your-twilio-api-credentials) |
+    | TWILIO_AUTH_TOKEN | The Twilio auth token [located in your Twilio console](/cloud/guides/how-to-use-the-linode-api-with-twilio#locate-your-twilio-api-credentials). The phone number needs to be entered using [E.164](https://www.twilio.com/docs/glossary/what-e164) formatting. |
+    | TWILIO_FROM_PHONE_NUMBER | The new number that you selected in the Twilio console [when you first signed up](/cloud/guides/how-to-use-the-linode-api-with-twilio#sign-up-for-twilio) |
     | TWILIO_TO_PHONE_NUMBER | Your personal or testing phone number that you signed up to Twilio with. The phone number needs to be entered using [E.164](https://www.twilio.com/docs/glossary/what-e164) formatting. |
-    | LINODE_API_TOKEN | [The Linode API token that you generated](/cloud/guides/how-to-use-the-linode-api-with-twilio/#get-a-linode-api-token) and recorded |
+    | LINODE_API_TOKEN | [The Linode API token that you generated](/cloud/guides/how-to-use-the-linode-api-with-twilio#get-a-linode-api-token) and recorded |
 
 1.  Run the script:
 
@@ -265,7 +265,7 @@ https://www.linode.com/docs/products/platform/get-started/guides/network-transfe
 
 The notification system should be set up to run periodically on its own. By sending periodic notifications, you can be informed of your transfer usage throughout the month.
 
-To run the Python script automatically, set up a cron job on your Linode. [Cron](/cloud/guides/schedule-tasks-with-cron/) is a Linux tool that runs processes at different time intervals that you specify.
+To run the Python script automatically, set up a cron job on your Linode. [Cron](/cloud/guides/schedule-tasks-with-cron) is a Linux tool that runs processes at different time intervals that you specify.
 
 1.  In your SSH session, start the *crontab* editor:
 
@@ -311,7 +311,7 @@ You might want to be informed of your network transfer usage more frequently, or
 
 - Using `* * * * *` would run the task every minute. This is useful if you're testing the script to make sure it works as expected. You probably would not want to keep this schedule after you've finished testing.
 
-Our [Schedule Tasks with Cron](/cloud/guides/schedule-tasks-with-cron/) guide shows how other scheduled times can be set.
+Our [Schedule Tasks with Cron](/cloud/guides/schedule-tasks-with-cron) guide shows how other scheduled times can be set.
 
 After changing the scheduling string, save the crontab file in your text editor and exit the editor.
 
@@ -541,7 +541,7 @@ When testing, it can also be helpful to change the cron job schedule to run ever
 
 ## Troubleshooting
 
-Several troubleshooting scenarios are outlined in the [Troubleshooting](/cloud/guides/how-to-use-the-linode-api-with-twilio/#troubleshooting) section of the [How to Use the Linode API with Twilio](/cloud/guides/how-to-use-the-linode-api-with-twilio/) guide. Review that section for possible solutions.
+Several troubleshooting scenarios are outlined in the [Troubleshooting](/cloud/guides/how-to-use-the-linode-api-with-twilio#troubleshooting) section of the [How to Use the Linode API with Twilio](/cloud/guides/how-to-use-the-linode-api-with-twilio) guide. Review that section for possible solutions.
 
 As well, the following possible solution may help:
 

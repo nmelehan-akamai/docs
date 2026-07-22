@@ -31,7 +31,7 @@ nftables uses a *tables -> chains -> rules* structure for managing network rules
 
 Because nftables has superseded iptables, you should opt to use it when possible. The main exception is older Linux systems, many of which do not support nftables. Alternatively, you may prefer a high-level tool like those covered [below](#high-level-firewall-configuration-managers).
 
-You can learn more about nftables and its usage in our [Getting Started with nftables](/cloud/guides/how-to-use-nftables/) guide.
+You can learn more about nftables and its usage in our [Getting Started with nftables](/cloud/guides/how-to-use-nftables) guide.
 
 ### iptables
 
@@ -39,7 +39,7 @@ You can learn more about nftables and its usage in our [Getting Started with nft
 
 Even though nftables has replaced iptables as the default, some systems, particularly ones using older Linux versions, only support iptables. Unless you are looking for higher-level firewall configuration (see [High-Level Firewall Configuration Managers](#high-Level-firewall-configuration-managers) section below), you need to use iptables in those cases.
 
-You can learn more about iptables and how to configure network rules with them in our [Controlling Network Traffics with iptables](/cloud/guides/control-network-traffic-with-iptables/) guide.
+You can learn more about iptables and how to configure network rules with them in our [Controlling Network Traffics with iptables](/cloud/guides/control-network-traffic-with-iptables) guide.
 
 ## High-Level Firewall Configuration Managers
 
@@ -51,7 +51,7 @@ To some users, low-level tools may prove overly cumbersome. High-level tools off
 
 What especially sets UFW apart is the simplicity its commands bring to firewall configuration. Setting up your desired firewall rules and enabling the firewall follows an *uncomplicated* set of commands.
 
-See more on UFW and steps for getting started in our [How to Configure a Firewall with UFW](/cloud/guides/configure-firewall-with-ufw/) guide.
+See more on UFW and steps for getting started in our [How to Configure a Firewall with UFW](/cloud/guides/configure-firewall-with-ufw) guide.
 
 ### Firewalld
 
@@ -59,7 +59,7 @@ See more on UFW and steps for getting started in our [How to Configure a Firewal
 
 Firewalld supports most Linux distributions, and it is included by default on RHEL-related systems (e.g., CentOS, Fedora, AlmaLinux, Rocky Linux) and openSUSE.
 
-Take a look at our [Configure a Firewall with Firewalld](/cloud/guides/introduction-to-firewalld-on-centos/) guide to find out more about using firewalld.
+Take a look at our [Configure a Firewall with Firewalld](/cloud/guides/introduction-to-firewalld-on-centos) guide to find out more about using firewalld.
 
 ## Managed Cloud Firewall Service
 

@@ -10,7 +10,7 @@ keywords: ['machine learning cyber attacks','evasion attacks against machine lea
 license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 ---
 
-[Machine learning (ML)](/cloud/guides/history-of-machine-learning/) algorithms and models ingest large amounts of data and use pattern recognition to make predictions and adjustments based on that data. ML powers chatbots, product recommendation systems, self-driving cars, and assists in decision-making in the health and financial sectors. Due to the prevalence of tools and frameworks like [TensorFlow](/cloud/guides/how-to-install-tensorflow/) and [PyTorch](/cloud/guides/pytorch-installation-ubuntu-2004/), developers are now able to add ML to their applications with less effort. Before getting started with machine learning, you should be aware of the most common machine learning cyber attacks. When thinking about the security of your ML application, you must consider the following areas:
+[Machine learning (ML)](/cloud/guides/history-of-machine-learning) algorithms and models ingest large amounts of data and use pattern recognition to make predictions and adjustments based on that data. ML powers chatbots, product recommendation systems, self-driving cars, and assists in decision-making in the health and financial sectors. Due to the prevalence of tools and frameworks like [TensorFlow](/cloud/guides/how-to-install-tensorflow) and [PyTorch](/cloud/guides/pytorch-installation-ubuntu-2004), developers are now able to add ML to their applications with less effort. Before getting started with machine learning, you should be aware of the most common machine learning cyber attacks. When thinking about the security of your ML application, you must consider the following areas:
 
 - **Data**: If your data is corrupted in any way, you will not obtain reliable our useful results from your machine learning models.
 - **Application**: When a model becomes corrupted, even the most perfect data produces incorrect results.
@@ -72,6 +72,6 @@ Fraud occurs when hackers rely on various techniques, such as phishing or commun
 
 ## Conclusion
 
-Before adding ML to your project, you should know about the types of cyber attacks that are frequently targeted at machine learning powered applications. Evasion, poisoning, and inference are some of the most common attacks targeted at ML applications. Trojans, backdoors, and espionage are used to attack all types of applications, but they are used in specialized ways against machine learning. Now that you are familiar with the cyber attacks to look out for, you can get started creating an ML powered application, by [installing TensorFlow on Ubuntu 20.04](/cloud/guides/how-to-install-tensorflow/).
+Before adding ML to your project, you should know about the types of cyber attacks that are frequently targeted at machine learning powered applications. Evasion, poisoning, and inference are some of the most common attacks targeted at ML applications. Trojans, backdoors, and espionage are used to attack all types of applications, but they are used in specialized ways against machine learning. Now that you are familiar with the cyber attacks to look out for, you can get started creating an ML powered application, by [installing TensorFlow on Ubuntu 20.04](/cloud/guides/how-to-install-tensorflow).
 
 

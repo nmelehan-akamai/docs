@@ -58,13 +58,13 @@ After your LAMP stack has finished deploying, you can:
 
 - Consult the following guides to learn more about working with the various components of the LAMP stack:
 
-    - [Secure HTTP Traffic with Certbot](/cloud/guides/secure-http-traffic-certbot/)
-    - [Apache Configuration Basics](/cloud/guides/apache-configuration-basics/)
-    - [How to Optimize MySQL Performance Using MySQLTuner](/cloud/guides/how-to-optimize-mysql-performance-using-mysqltuner/)
+    - [Secure HTTP Traffic with Certbot](/cloud/guides/secure-http-traffic-certbot)
+    - [Apache Configuration Basics](/cloud/guides/apache-configuration-basics)
+    - [How to Optimize MySQL Performance Using MySQLTuner](/cloud/guides/how-to-optimize-mysql-performance-using-mysqltuner)
 
--   Upload files to your web root directory with an SFTP application like [FileZilla](/cloud/guides/filezilla/). Use the same root credentials that you would use for SSH.
+-   Upload files to your web root directory with an SFTP application like [FileZilla](/cloud/guides/filezilla). Use the same root credentials that you would use for SSH.
 
--   Assign a domain name to your Linode's IP address. Review the [DNS Manager](https://techdocs.akamai.com/cloud-computing/docs/dns-manager) guide for instructions on setting up your DNS records in Cloud Manager, and read through [DNS Records: An Introduction](/cloud/guides/dns-overview/) for general information about how DNS works.
+-   Assign a domain name to your Linode's IP address. Review the [DNS Manager](https://techdocs.akamai.com/cloud-computing/docs/dns-manager) guide for instructions on setting up your DNS records in Cloud Manager, and read through [DNS Records: An Introduction](/cloud/guides/dns-overview) for general information about how DNS works.
 
 ## Software Included
 

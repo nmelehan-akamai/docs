@@ -140,7 +140,7 @@ Media on your Volume is now accessible through the Plex web interface at the mou
 Your Plex Server is set up to access media files in the `~/plex/media` directory. You have many options for uploading or downloading media to your Plex Server. This section shows you how to organize and upload files to your Plex Server using the `scp` command.
 
 {{< note >}}
-This section directs you to run commands either on your Plex Server Linode through an SSH connection as your [Limited User](#plex-options), or from the workstation [terminal](/cloud/guides/using-the-terminal/) where the media files you wish to upload are stored.
+This section directs you to run commands either on your Plex Server Linode through an SSH connection as your [Limited User](#plex-options), or from the workstation [terminal](/cloud/guides/using-the-terminal) where the media files you wish to upload are stored.
 {{< /note >}}
 
 1.  On your Plex Server Linode, create a subdirectory within `~/plex/media` to store your media files. Plex recommends [organizing media by type](https://support.plex.tv/articles/naming-and-organizing-your-movie-media-files/), so pick a subdirectory name that matches the type of media you plan to upload. For example, to create a directory to store movie files, enter the following command:
@@ -154,7 +154,7 @@ This section directs you to run commands either on your Plex Server Linode throu
     Depending on the files' size, this may take a few minutes.
 
     {{< note >}}
-    There are other ways to upload files to your Plex Server Linode. See our section in [Linux System Administration Basics](/cloud/guides/linux-system-administration-basics/#upload-files-to-a-remote-server) for more information.
+    There are other ways to upload files to your Plex Server Linode. See our section in [Linux System Administration Basics](/cloud/guides/linux-system-administration-basics#upload-files-to-a-remote-server) for more information.
     {{< /note >}}
 
 ### Adding Media Libraries
@@ -193,8 +193,8 @@ The Plex Quick Deploy App installs the following required software on your Linod
 
 | **Software** | **Description** |
 |:--------------|:------------|
-| [**NGINX**](https://www.nginx.com/) | Open Source webserver and reverse proxy. See our guide on [Getting Started with NGINX](/cloud/guides/getting-started-with-nginx-part-1-installation-and-basic-setup/) for more information. |
-| [**UFW**](https://wiki.ubuntu.com/UncomplicatedFirewall) | Firewall utility. Ports 22/tcp, 80/tcp, and 443/tcp for IPv4 and IPv6 are enabled with installation of this app. Additional ports must be opened to send email from your Linode for use with this app. To learn more, see [How to Configure a Firewall with UFW](/cloud/guides/configure-firewall-with-ufw/). |
+| [**NGINX**](https://www.nginx.com/) | Open Source webserver and reverse proxy. See our guide on [Getting Started with NGINX](/cloud/guides/getting-started-with-nginx-part-1-installation-and-basic-setup) for more information. |
+| [**UFW**](https://wiki.ubuntu.com/UncomplicatedFirewall) | Firewall utility. Ports 22/tcp, 80/tcp, and 443/tcp for IPv4 and IPv6 are enabled with installation of this app. Additional ports must be opened to send email from your Linode for use with this app. To learn more, see [How to Configure a Firewall with UFW](/cloud/guides/configure-firewall-with-ufw). |
 | [**Plex Media Server**](https://hub.docker.com/r/plexinc/pms-docker/) | The Plex Media Server transmits locally-stored media files, enabling you to stream your personal media collection to any device that can support a [Plex Client](https://www.plex.tv/apps-devices/). The Latest release in Plex's Public Main branch is installed by this deployment. |
 
 

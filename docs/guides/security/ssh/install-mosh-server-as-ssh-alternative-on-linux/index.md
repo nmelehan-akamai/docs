@@ -98,7 +98,7 @@ Now you need to install Mosh on your desktop computer. Find the instructions for
 
 ### Linux
 
-Follow the instructions for your distribution listed in the [Installing Mosh on Your Linode](/cloud/guides/install-mosh-server-as-ssh-alternative-on-linux/#install-mosh-on-your-linode) section, or see the [Mosh website](http://mosh.mit.edu/).
+Follow the instructions for your distribution listed in the [Installing Mosh on Your Linode](/cloud/guides/install-mosh-server-as-ssh-alternative-on-linux#install-mosh-on-your-linode) section, or see the [Mosh website](http://mosh.mit.edu/).
 
 ### Mac OS X
 

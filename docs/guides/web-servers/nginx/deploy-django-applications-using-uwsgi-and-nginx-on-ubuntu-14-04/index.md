@@ -13,7 +13,7 @@ external_resources:
   - '[Writing your first Django app Tutorial](https://docs.djangoproject.com/en/dev/intro/tutorial01/#intro-tutorial01)'
   - '[virtualenvwrapper Documentation](https://virtualenvwrapper.readthedocs.org/en/latest/)'
   - '[WSGI/Python Quickstart Guide](https://uwsgi-docs.readthedocs.org/en/latest/WSGIquickstart.html)'
-  - '[nginx Configuration](/cloud/guides/how-to-configure-nginx/)'
+  - '[nginx Configuration](/cloud/guides/how-to-configure-nginx)'
 deprecated: True
 ---
 
@@ -29,7 +29,7 @@ deprecated: True
 
         sudo apt-get update && sudo apt-get upgrade
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you're not familiar with the `sudo` command, you can check our [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you're not familiar with the `sudo` command, you can check our [Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## Install nginx, Python Tools and uWSGI
