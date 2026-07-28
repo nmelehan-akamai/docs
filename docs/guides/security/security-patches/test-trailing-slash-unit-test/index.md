@@ -37,3 +37,8 @@ Link ends without slash, with anchor:
 - [/cloud/marketplace-docs/guides/galera-cluster#galera-options](/cloud/marketplace-docs/guides/galera-cluster#galera-options)
 - [/cloud/reference-architecture/auto-scaling-prometheus#technologies-used](/cloud/reference-architecture/auto-scaling-prometheus#technologies-used)
 
+
+
+Links to aliases:
+- [/cloud/guides/test-aliases-link-checker-2](/cloud/guides/test-aliases-link-checker-2)
+- [/cloud/guides/test-aliases-link-checker-2/](/cloud/guides/test-aliases-link-checker-2/)
