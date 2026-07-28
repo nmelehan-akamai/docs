@@ -373,7 +373,7 @@ def check_internal_links_markdown(guides, assets):
                 link_unmodified = link
 
                 # Log issue if link contains "linode.com/docs/"
-                if "linode.com/docs" or "akamai.com/cloud/guides" or "akamai.com/cloud/marketplace-docs" or "akamai.com/cloud/reference-architecture" in link:
+                if "linode.com/docs" in link or "akamai.com/cloud/guides" in link or "akamai.com/cloud/marketplace-docs" in link or "akamai.com/cloud/reference-architecture" in link:
                     issues.append(Issue(link_unmodified,'docs-domain-name'))
                     continue
                 # Ignore links that start with common protocols
