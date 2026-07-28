@@ -13,6 +13,12 @@ external_resources:
 - '[Link Title 2](http://www.example.net)'
 ---
 
+Link is missing:
+- [/cloud/guides/guide-doesnt-exist](/cloud/guides/guide-doesnt-exist)
+- [/cloud/guides/guide-doesnt-exist](/cloud/guides/guide-doesnt-exist#test-anchor)
+- [/cloud/guides/guide-doesnt-exist/](/cloud/guides/guide-doesnt-exist/)
+- [/cloud/guides/guide-doesnt-exist/](/cloud/guides/guide-doesnt-exist/#test-anchor)
+
 Link ends with slash:
 - [/cloud/](/cloud/)
 - [/cloud/guides/](/cloud/guides/)
