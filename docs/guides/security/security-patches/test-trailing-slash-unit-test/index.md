@@ -13,6 +13,20 @@ external_resources:
 - '[Link Title 2](http://www.example.net)'
 ---
 
+Domain in link:
+
+- [https://www.linode.com/docs](https://www.linode.com/docs)
+- [https://www.linode.com/docs/guides](https://www.linode.com/docs/guides)
+- [https://www.linode.com/docs/guides/test](https://www.linode.com/docs/guides/test)
+- [https://www.akamai.com/cloud](https://www.akamai.com/cloud)
+- [https://www.akamai.com/cloud/unrelated-content](https://www.akamai.com/cloud/unrelated-content)
+- [https://www.akamai.com/cloud/guides](https://www.akamai.com/cloud/guides)
+- [https://www.akamai.com/cloud/guides/test](https://www.akamai.com/cloud/guides/test)
+- [https://www.akamai.com/cloud/marketplace-docs](https://www.akamai.com/cloud/marketplace-docs)
+- [https://www.akamai.com/cloud/marketplace-docs/test](https://www.akamai.com/cloud/marketplace-docs/test)
+- [https://www.akamai.com/cloud/reference-architecture](https://www.akamai.com/cloud/reference-architecture)
+- [https://www.akamai.com/cloud/reference-architecture/test](https://www.akamai.com/cloud/reference-architecture/test)
+
 Link is missing:
 - [/cloud/guides/guide-doesnt-exist](/cloud/guides/guide-doesnt-exist)
 - [/cloud/guides/guide-doesnt-exist](/cloud/guides/guide-doesnt-exist#test-anchor)
