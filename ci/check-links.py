@@ -156,7 +156,7 @@ issue_types.append(IssueType(
 def normalize_link(link):
 
     # Internal /cloud/ links are written without a trailing slash, while a
-    # guide's canonical link and its aliases are stored with one. Strip the
+    # guide's aliases may be stored with one. Strip the
     # trailing slash so the two forms can be compared.
     stripped = link.rstrip('/')
 
