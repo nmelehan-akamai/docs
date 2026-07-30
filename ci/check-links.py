@@ -218,13 +218,13 @@ def get_guides():
                                     #print("New file path: " + new_file_path)
                                     os.rename(old_file_path,new_file_path)
 
-                            canonical_link = "/cloud/guides/" + expanded_guide['slug'] + "/"
+                            canonical_link = "/cloud/guides/" + expanded_guide['slug']
                         # ... If the guide is in any other section...
                         else:
                             canonical_link = "/" + file_path
-                            canonical_link = canonical_link.replace('/index.md','/')
-                            canonical_link = canonical_link.replace('/_index.md','/')
-                            canonical_link = canonical_link.replace('/docs/','/cloud/') # Convert docs-prefix links to cloud-prefix links
+                            canonical_link = canonical_link.replace('/index.md','')
+                            canonical_link = canonical_link.replace('/_index.md','')
+                            canonical_link = canonical_link.replace('/docs','/cloud') # Convert docs-prefix links to cloud-prefix links
 
                         # Construct the guide object
                         guide = Guide(root, file_path, expanded_guide['title'], canonical_link)
