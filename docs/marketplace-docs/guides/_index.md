@@ -5,7 +5,7 @@ description: "A collection of guides to help you learn how to deploy each Quick 
 modified: 2024-04-29
 tab_group_main:
     weight: 30
-aliases: ['/products/tools/marketplace/guides/','/products/tools/marketplace-one-click-apps/guides/']
+aliases: []
 ---
 
 ## Basics
@@ -30,6 +30,7 @@ aliases: ['/products/tools/marketplace/guides/','/products/tools/marketplace-one
 - [Couchbase Cluster](/cloud/marketplace-docs/guides/couchbase-cluster/)
 - [Counter-Strike Global Offensive](/cloud/marketplace-docs/guides/counter-strike-go/)
 - [cPanel](/cloud/marketplace-docs/guides/cpanel/)
+- [CrewAI](/cloud/marketplace-docs/guides/crewai/)
 - [CyberPanel](/cloud/marketplace-docs/guides/cyberpanel/)
 - [Discourse](/cloud/marketplace-docs/guides/discourse/)
 - [Django](/cloud/marketplace-docs/guides/django/)
@@ -49,6 +50,8 @@ aliases: ['/products/tools/marketplace/guides/','/products/tools/marketplace-one
 - [Harbor](/cloud/marketplace-docs/guides/harbor/)
 - [HashiCorp Nomad](/cloud/marketplace-docs/guides/hashicorp-nomad/)
 - [HashiCorp Vault](/cloud/marketplace-docs/guides/hashicorp-vault/)
+- [Hermes Agent](/cloud/marketplace-docs/guides/hermes/)
+- [Haystack](/cloud/marketplace-docs/guides/haystack/)
 - [InfluxDB](/cloud/marketplace-docs/guides/influxdb/)
 - [Jenkins](/cloud/marketplace-docs/guides/jenkins/)
 - [JetBackup](/cloud/marketplace-docs/guides/jetbackup/)
@@ -59,6 +62,7 @@ aliases: ['/products/tools/marketplace/guides/','/products/tools/marketplace-one
 - [JupyterLab](/cloud/marketplace-docs/guides/jupyterlab/)
 - [Kali Linux](/cloud/marketplace-docs/guides/kali-linux/)
 - [LAMP Stack](/cloud/marketplace-docs/guides/lamp-stack/)
+- [Langflow](/cloud/marketplace-docs/guides/langflow/)
 - [LEMP Stack](/cloud/marketplace-docs/guides/lemp-stack/)
 - [LinuxGSM](/cloud/marketplace-docs/guides/linuxgsm/)
 - [LiteSpeed cPanel](/cloud/marketplace-docs/guides/litespeed-cpanel/)
@@ -66,16 +70,19 @@ aliases: ['/products/tools/marketplace/guides/','/products/tools/marketplace-one
 - [Mastodon](/cloud/marketplace-docs/guides/mastodon/)
 - [MEAN Stack](/cloud/marketplace-docs/guides/mean-stack/)
 - [MERN Stack](/cloud/marketplace-docs/guides/mern-stack/)
+- [Microsoft Agent Framework](/cloud/marketplace-docs/guides/microsoft-agent-framework/)
 - [Microweber](/cloud/marketplace-docs/guides/microweber/)
-- [Minecraft ](/cloud/marketplace-docs/guides/minecraft/)
+- [Minecraft](/cloud/marketplace-docs/guides/minecraft/)
 - [Moodle](/cloud/marketplace-docs/guides/moodle/)
 - [MySQL/MariaDB](/cloud/marketplace-docs/guides/mysql/)
 - [NATS Single Node](/cloud/marketplace-docs/guides/nats-single-node/)
+- [NemoClaw](/cloud/marketplace-docs/guides/nemoclaw/)
 - [Nextcloud](/cloud/marketplace-docs/guides/nextcloud/)
 - [Node.js](/cloud/marketplace-docs/guides/nodejs/)
 - [Odoo](/cloud/marketplace-docs/guides/odoo/)
 - [ONLYOFFICE](/cloud/marketplace-docs/guides/onlyoffice/)
 - [Openbao](/cloud/marketplace-docs/guides/openbao/)
+- [OpenClaw](/cloud/marketplace-docs/guides/openclaw/)
 - [OpenLiteSpeed Django](/cloud/marketplace-docs/guides/openlitespeed-django/)
 - [OpenLiteSpeed Node.js](/cloud/marketplace-docs/guides/openlitespeed-nodejs/)
 - [OpenLiteSpeed Rails](/cloud/marketplace-docs/guides/openlitespeed-rails/)
