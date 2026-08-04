@@ -10,7 +10,7 @@ keywords: ["cloudflare", "dns"]
 license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 external_resources:
   - '[Cloudflare Support](https://support.cloudflare.com/hc/en-us)'
-  - '[DNS Records: An Introduction](/cloud/guides/dns-overview/)'
+  - '[DNS Records: An Introduction](/cloud/guides/dns-overview)'
 tags: ["dns","networking"]
 aliases: []
 ---
@@ -77,7 +77,7 @@ Cloudflare offers a free tier of service which enables the benefits described in
 
     The table displays an *orange cloud* icon for hostnames that will be routed through Cloudflare's network. A *gray cloud* denotes hostnames which bypass Cloudflare's network. You can toggle between these two options. Consult [Cloudflare's documentation](https://support.cloudflare.com/hc/en-us/articles/200169626-What-subdomains-are-appropriate-for-orange-gray-clouds-) to determine which services you should route through their network.
 
-1.  Change the [name servers](/cloud/guides/dns-overview/#name-servers) configured with your domain registrar to the ones listed under the *To* heading. This sets Cloudflare's nameservers as the [*authoritative name servers*](https://en.wikipedia.org/wiki/Name_server#Authoritative_name_server) for your domain:
+1.  Change the [name servers](/cloud/guides/dns-overview#name-servers) configured with your domain registrar to the ones listed under the *To* heading. This sets Cloudflare's nameservers as the [*authoritative name servers*](https://en.wikipedia.org/wiki/Name_server#Authoritative_name_server) for your domain:
 
     ![Cloudflare setup - authoritative name servers](cloudflare-setup-name-servers.png "Cloudflare setup - authoritative name servers")
 
@@ -115,7 +115,7 @@ In total, there are four different SSL modes:
 If your web server is configured to redirect all HTTP requests to HTTPS while using Cloudflare's Flexible SSL mode, visitors may encounter a redirect loop when attempting to view your site.
 {{< /note >}}
 
--   **Full SSL**: All connections between your site visitors and the edge servers will be redirected to HTTPS, and the edge servers will open HTTPS connections to your origin server. This option requires that you set up SSL on your origin web server with, at minimum, a [self-signed certificate](/cloud/guides/create-a-self-signed-tls-certificate/). The certificate you use on the origin server will not be validated by Cloudflare.
+-   **Full SSL**: All connections between your site visitors and the edge servers will be redirected to HTTPS, and the edge servers will open HTTPS connections to your origin server. This option requires that you set up SSL on your origin web server with, at minimum, a [self-signed certificate](/cloud/guides/create-a-self-signed-tls-certificate). The certificate you use on the origin server will not be validated by Cloudflare.
 
 -   **Full SSL (strict)**: All connections between your site visitors and the edge servers will be redirected to HTTPS, and the edge servers will open HTTPS connections to your origin server. This option requires that you set up SSL on your origin web server with a certificate authority that Cloudflare can validate. A valid certificate can be obtained through [Let's Encrypt](https://letsencrypt.org), or directly from [Cloudflare](https://blog.cloudflare.com/cloudflare-ca-encryption-origin/).
 
@@ -140,13 +140,13 @@ Certificates from Cloudflare's Origin CA are only trusted within the Cloudflare 
 
     Copy the contents of each into two separate files on your computer: name the certificate file `example.com.pem`, and the private key file `example.com.key`. Substitute your domain name for `example.com` in those filenames.
 
-1.  Upload these files to your Linode. You can upload files by using an SFTP client like [FileZilla](/cloud/guides/filezilla/) or you can use the command line tool [rsync](/cloud/guides/introduction-to-rsync/).
+1.  Upload these files to your Linode. You can upload files by using an SFTP client like [FileZilla](/cloud/guides/filezilla) or you can use the command line tool [rsync](/cloud/guides/introduction-to-rsync).
 
 1.  Configure your Linode's web server software to listen on port `443` (HTTPS) to use the new certificate and private key. Instructions for doing this can vary depending on which web server software you use:
 
     - Cloudflare has a number of guides for installing the Origin CA certificate with different software packages. Consult their [documentation](https://support.cloudflare.com/hc/en-us/sections/207182687-Origin-CA) for instructions.
 
-    - You can also adapt instructions from Linode's various [SSL Certificate guides](/cloud/guides/security/ssl/).
+    - You can also adapt instructions from Linode's various [SSL Certificate guides](/cloud/guides/security/ssl).
 
 1.  Be sure to restrict the file permissions of your certificate and private key files on your Linode so that only your web server process can read them. For example, if your files are stored in the directory `/etc/ssl/certs/example.com/`, run:
 

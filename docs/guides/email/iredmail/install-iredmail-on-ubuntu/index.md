@@ -41,7 +41,7 @@ The steps required in this guide require root privileges. Be sure to run the ste
 
 ### MX Record
 
-A DNS MX record tells the internet where to send email directed at you domain. Before your Linode can receive email for addresses at a domain, an MX record must be created for that domain, pointing to your Linode's IP address. An example MX record can be found on the Linode [Introduction to DNS records](/cloud/guides/dns-overview/) page.
+A DNS MX record tells the internet where to send email directed at you domain. Before your Linode can receive email for addresses at a domain, an MX record must be created for that domain, pointing to your Linode's IP address. An example MX record can be found on the Linode [Introduction to DNS records](/cloud/guides/dns-overview) page.
 
 ## Install iRedMail
 
@@ -152,7 +152,7 @@ iRedMail is packaged with a mail server account configuration called iRedAdmin. 
 
 By default, iRedMail generates a key and self-signed certificate for the mail server, and web server. To avoid other email servers marking email from our server as spam, we install a trusted certificate.
 
-The process of obtaining a trusted certificate is outside the scope of this guide. You can follow the [Obtaining a Commercial TLS Certificate](/cloud/guides/obtain-a-commercially-signed-tls-certificate/) guide to obtain a certificate.
+The process of obtaining a trusted certificate is outside the scope of this guide. You can follow the [Obtaining a Commercial TLS Certificate](/cloud/guides/obtain-a-commercially-signed-tls-certificate) guide to obtain a certificate.
 
 The next section assumes you have the .key and .crt (or .pem) file in hand and are ready to go.
 

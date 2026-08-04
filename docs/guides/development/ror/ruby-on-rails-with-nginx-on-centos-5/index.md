@@ -128,7 +128,7 @@ The configuration file for Nginx is located at `/opt/nginx/conf/nginx.conf`. Thi
 
 ## Install MySQL Support (optional)
 
-If your application uses MySQL, install the database server by following our [MySQL on CentOS 5 guide](/cloud/guides/use-mysql-relational-databases-on-centos-5/). Once it's installed and configured properly, issue the following commands:
+If your application uses MySQL, install the database server by following our [MySQL on CentOS 5 guide](/cloud/guides/use-mysql-relational-databases-on-centos-5). Once it's installed and configured properly, issue the following commands:
 
     yum install mysql-devel
     gem install mysql --no-rdoc --no-ri -- --with-mysql-dir=/usr/bin --with-mysql-lib=/usr/lib/mysql --with-mysql-include=/usr/include/mysql
@@ -141,7 +141,7 @@ You may wish to consult the following resources for additional information on th
 - [Ruby on Rails Documentation](http://rubyonrails.org/documentation)
 - [Nginx Home Page](http://nginx.org/)
 - [Nginx Documentation](http://nginx.org/en/docs/)
-- [Nginx Configuration](/cloud/guides/how-to-configure-nginx/)
+- [Nginx Configuration](/cloud/guides/how-to-configure-nginx)
 
 
 

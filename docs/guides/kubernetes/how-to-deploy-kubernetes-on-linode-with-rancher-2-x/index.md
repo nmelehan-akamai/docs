@@ -64,7 +64,7 @@ The Rancher web application will run on a Linode in your Cloud Manager account. 
     {{< /note >}}
 
 1.  The Rancher web application is run inside a Docker container, so you will also need to install Docker CE on your Linode. Follow the instructions for [Installing and Using Docker on Ubuntu and Debian
-](/cloud/guides/installing-and-using-docker-on-ubuntu-and-debian/) and then return to this guide.
+](/cloud/guides/installing-and-using-docker-on-ubuntu-and-debian) and then return to this guide.
 
 You will also need to generate an API token and prepare a domain zone:
 
@@ -127,7 +127,7 @@ Rancher includes two kinds of integrations with hosting providers:
 
 ## Deploy an LKE Cluster on Rancher
 
-The [Linode Kubernetes Engine](https://techdocs.akamai.com/cloud-computing/docs/linode-kubernetes-engine) is a fully-managed orchestration Engine that can simplify the management of Kubernetes on Linode, capable of being supported by the Rancher platform. If an unmanaged option for Kubernetes is preferred, skip to the Deploying an [Unmanaged Kubernetes Cluster](/cloud/guides/how-to-deploy-kubernetes-on-linode-with-rancher-2-x/#the-linode-node-driver-for-rancher) section.
+The [Linode Kubernetes Engine](https://techdocs.akamai.com/cloud-computing/docs/linode-kubernetes-engine) is a fully-managed orchestration Engine that can simplify the management of Kubernetes on Linode, capable of being supported by the Rancher platform. If an unmanaged option for Kubernetes is preferred, skip to the Deploying an [Unmanaged Kubernetes Cluster](/cloud/guides/how-to-deploy-kubernetes-on-linode-with-rancher-2-x#the-linode-node-driver-for-rancher) section.
 
 ### The LKE Cluster Driver for Rancher
 

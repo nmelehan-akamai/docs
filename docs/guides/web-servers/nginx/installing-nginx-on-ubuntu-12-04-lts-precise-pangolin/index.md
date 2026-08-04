@@ -11,10 +11,10 @@ tags: ["web server","ubuntu","nginx"]
 license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 aliases: []
 external_resources:
- - '[Linode nginx Documentation](/cloud/guides/web-servers/nginx/)'
+ - '[Linode nginx Documentation](/cloud/guides/web-servers/nginx)'
  - '[nginx Community Documentation](http://wiki.nginx.org)'
- - '[Configure Perl and FastCGI with nginx](/cloud/guides/nginx-and-perlfastcgi-on-ubuntu-10-04-lts-lucid/)'
- - '[Configure PHP and FastCGI with nginx](/cloud/guides/nginx-and-phpfastcgi-on-ubuntu-10-04-lts-lucid/)'
+ - '[Configure Perl and FastCGI with nginx](/cloud/guides/nginx-and-perlfastcgi-on-ubuntu-10-04-lts-lucid)'
+ - '[Configure PHP and FastCGI with nginx](/cloud/guides/nginx-and-phpfastcgi-on-ubuntu-10-04-lts-lucid)'
 relations:
     platform:
         key: how-to-install-nginx
@@ -23,10 +23,10 @@ relations:
 deprecated: true
 ---
 
-Nginx is a lightweight, high performance web server designed to deliver large amounts of static content quickly and with efficient use of system resources. In contrast to the [Apache server](/cloud/guides/web-servers/apache/), Nginx uses an asynchronous event-driven model which provides more predictable performance under load.
+Nginx is a lightweight, high performance web server designed to deliver large amounts of static content quickly and with efficient use of system resources. In contrast to the [Apache server](/cloud/guides/web-servers/apache), Nginx uses an asynchronous event-driven model which provides more predictable performance under load.
 
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you're not familiar with the `sudo` command, you can check our [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you're not familiar with the `sudo` command, you can check our [Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## Before You Begin
@@ -256,4 +256,4 @@ Regardless of installation source or method, Nginx can be tested by navigating t
 
 ![Nginx welcome](nginx-welcome.png)
 
-Continue reading our introduction to [Basic NGINX Configuration](/cloud/guides/how-to-configure-nginx/) for more information about using and setting up a web server.
+Continue reading our introduction to [Basic NGINX Configuration](/cloud/guides/how-to-configure-nginx) for more information about using and setting up a web server.

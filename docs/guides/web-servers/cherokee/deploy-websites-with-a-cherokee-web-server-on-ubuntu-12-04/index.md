@@ -11,7 +11,7 @@ license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 aliases: []
 external_resources:
  - '[Cherokee Web Server Documentation](http://www.cherokee-project.com/doc/)'
- - '[Host Web Apps with Cherokee and PHP-FastCGI on Ubuntu 10.04 LTS (Lucid)](/cloud/guides/web-apps-with-cherokee-and-phpfastcgi-on-ubuntu-10-04-lts-lucid/)'
+ - '[Host Web Apps with Cherokee and PHP-FastCGI on Ubuntu 10.04 LTS (Lucid)](/cloud/guides/web-apps-with-cherokee-and-phpfastcgi-on-ubuntu-10-04-lts-lucid)'
 relations:
     platform:
         key: install-cherokee-server

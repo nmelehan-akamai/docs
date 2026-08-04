@@ -269,9 +269,9 @@ This section takes you through the process of creating a new guide, using the to
 
 ## Write and Submit
 
-1.  Make edits or write new content using any text editor, though we recommend a code editor like [Visual Studio Code](https://code.visualstudio.com/). Your local Hugo development server has live preview functionality, so you will be able to view changes to your guide as you save them. Review our [Linode Writer's Formatting guide](https://www.linode.com/docs/linode-writers-formatting-guide/) for more information on how to make edits and for formatting / style guidelines.
+1.  Make edits or write new content using any text editor, though we recommend a code editor like [Visual Studio Code](https://code.visualstudio.com/). Your local Hugo development server has live preview functionality, so you will be able to view changes to your guide as you save them. Review our [Linode Writer's Formatting guide](https://www.akamai.com/cloud/linode-writers-formatting-guide/) for more information on how to make edits and for formatting / style guidelines.
 
-    Any images that you include in the guide should be added inside the same directory as the new `index.md` file. Images should be linked to using their filename as the relative URL: `![Image Title](image.png)`. See the [Images](https://www.linode.com/docs/guides/linode-writers-formatting-guide/#images) section of the writer's formatting guide.
+    Any images that you include in the guide should be added inside the same directory as the new `index.md` file. Images should be linked to using their filename as the relative URL: `![Image Title](image.png)`. See the [Images](https://www.akamai.com/cloud/guides/linode-writers-formatting-guide/#images) section of the writer's formatting guide.
 
 1.  Stage your changes to your local branch. As a best practice, use a command like `git status` to verify you're working out of the correct branch and view a list of files that have been changed. If the output shows only the files that you've explicitly edited, you can stage them all at once using `git add .` Otherwise, add each one individually by referencing the file path in that command.
 

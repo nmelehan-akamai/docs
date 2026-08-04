@@ -63,7 +63,7 @@ This guide uses Kubernetes services which are private by default. Local listener
     kubectl config get-contexts
     ```
 
-1.  Set up Helm in the Kubernetes cluster by following the [Install Helm](/cloud/guides/how-to-install-apps-on-kubernetes-with-helm-3/#install-helm) section in the *How to Install Apps on Kubernetes with Helm 3* guide.
+1.  Set up Helm in the Kubernetes cluster by following the [Install Helm](/cloud/guides/how-to-install-apps-on-kubernetes-with-helm-3#install-helm) section in the *How to Install Apps on Kubernetes with Helm 3* guide.
 
 ## Configure Helm
 

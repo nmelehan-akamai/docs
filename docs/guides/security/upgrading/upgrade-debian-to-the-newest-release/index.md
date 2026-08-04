@@ -28,7 +28,7 @@ While upstream maintainers try to ensure cross-compatibility and problem-free up
 - **Back up any important data stored on your Linode!** If you subscribe to the Linode Backups service, we recommend taking a [manual snapshot](https://techdocs.akamai.com/cloud-computing/docs/take-a-manual-snapshot) before upgrading your system. If you use a different backup service or application, you should do a manual backup now.
 
     {{< note respectIndent=false >}}
-You may also want to back up your configuration files (usually located in `/etc/`) in case they have changed in later versions of the software you are using. See our [backup guides](/cloud/guides/security/backups/) for more information.
+You may also want to back up your configuration files (usually located in `/etc/`) in case they have changed in later versions of the software you are using. See our [backup guides](/cloud/guides/security/backups) for more information.
 {{< /note >}}
 
 
@@ -105,7 +105,7 @@ N or O  : keep your currently-installed version
 D     : show the differences between the versions
 {{< /output >}}
 
-    -  If your system is running Fail2ban, the upgrade will end with the error shown below. This is a [known issue](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=860397). See the [troubleshooting](/cloud/guides/upgrade-debian-to-the-newest-release/#fail2ban) section of this page to fix before proceeding further.
+    -  If your system is running Fail2ban, the upgrade will end with the error shown below. This is a [known issue](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=860397). See the [troubleshooting](/cloud/guides/upgrade-debian-to-the-newest-release#fail2ban) section of this page to fix before proceeding further.
 
         {{< output >}}
 Errors were encountered while processing:
@@ -155,4 +155,4 @@ maxretry = 6
 
 ### Upgrading Apache 2.2 to 2.4
 
-Upgrading from Debian 7 to 8 moves Apache from version 2.2 to 2.4. This version change can break existing websites if you're already running Apache and requires adjusting configuration files. See our [Upgrading Apache](/cloud/guides/updating-virtual-host-settings-from-apache-2-2-to-apache-2-4/) guide for more information.
+Upgrading from Debian 7 to 8 moves Apache from version 2.2 to 2.4. This version change can break existing websites if you're already running Apache and requires adjusting configuration files. See our [Upgrading Apache](/cloud/guides/updating-virtual-host-settings-from-apache-2-2-to-apache-2-4) guide for more information.

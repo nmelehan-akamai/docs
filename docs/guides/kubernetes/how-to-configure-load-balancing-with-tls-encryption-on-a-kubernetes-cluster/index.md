@@ -19,14 +19,14 @@ aliases: []
 This guide will use an example Kubernetes Deployment and Service to demonstrate how to route external traffic to a Kubernetes application over HTTPS. This is accomplished using the [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/deploy/#using-helm), [cert-manager](https://cert-manager.io/docs/) and [Linode NodeBalancers](https://techdocs.akamai.com/cloud-computing/docs/nodebalancer). The NGINX Ingress Controller uses Linode NodeBalancers, which are Linode's load balancing service, to route a Kubernetes Service's traffic to the appropriate backend Pods over HTTP and HTTPS. The cert-manager tool creates a Transport Layer Security (TLS) certificate from the [Let’s Encrypt](https://letsencrypt.org/) certificate authority (CA) providing secure HTTPS access to a Kubernetes Service.
 
 {{< note >}}
-The [*Linode Cloud Controller Manager*](https://github.com/linode/linode-cloud-controller-manager) provides a way for a Kubernetes cluster to create, configure, and delete Linode NodeBalancers. The Linode CCM is installed by default on clusters deployed with the [Linode Kubernetes Engine](https://techdocs.akamai.com/cloud-computing/docs/linode-kubernetes-engine) and the [Linode Terraform K8s module](/cloud/guides/how-to-provision-an-unmanaged-kubernetes-cluster-using-terraform/).
+The [*Linode Cloud Controller Manager*](https://github.com/linode/linode-cloud-controller-manager) provides a way for a Kubernetes cluster to create, configure, and delete Linode NodeBalancers. The Linode CCM is installed by default on clusters deployed with the [Linode Kubernetes Engine](https://techdocs.akamai.com/cloud-computing/docs/linode-kubernetes-engine) and the [Linode Terraform K8s module](/cloud/guides/how-to-provision-an-unmanaged-kubernetes-cluster-using-terraform).
 
 To learn about the various configurations available for Linode NodeBalancers via [Kubernetes annotations](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/), see [Getting Started with Load Balancing on a Linode Kubernetes Engine (LKE) Cluster](https://techdocs.akamai.com/cloud-computing/docs/get-started-with-load-balancing-on-an-lke-cluster).
 {{< /note >}}
 
 ## Before You Begin
 
-1.  Review the [Beginner's Guide to Kubernetes](/cloud/guides/beginners-guide-to-kubernetes/) series to gain an understanding of key concepts within Kubernetes, including master and worker nodes, Pods, Deployments, and Services.
+1.  Review the [Beginner's Guide to Kubernetes](/cloud/guides/beginners-guide-to-kubernetes) series to gain an understanding of key concepts within Kubernetes, including master and worker nodes, Pods, Deployments, and Services.
 
 1.  Purchase a domain name from a reliable domain registrar. In a later section, you will use Linode's DNS Manager to [create a new Domain](https://techdocs.akamai.com/cloud-computing/docs/create-a-domain) and to [add a DNS "A" record](https://techdocs.akamai.com/cloud-computing/docs/manage-dns-records) for two subdomains: one named `blog` and another named `shop`. Your subdomains will point to the example Kubernetes Services you will create in this guide. The example domain names used throughout this guide are `blog.example.com` and `shop.example.com`.
 
@@ -40,11 +40,11 @@ To learn about the various configurations available for Linode NodeBalancers via
 
     - [Cloud Manager LKE instructions](https://techdocs.akamai.com/cloud-computing/docs/linode-kubernetes-engine)
     - [Linode API LKE instructions](https://techdocs.akamai.com/cloud-computing/docs/deploy-and-manage-a-kubernetes-cluster-with-the-api)
-    - [Terraform instructions](/cloud/guides/deploy-lke-cluster-using-terraform/)
+    - [Terraform instructions](/cloud/guides/deploy-lke-cluster-using-terraform)
 
-    You can also use an unmanaged Kubernetes cluster (that's not deployed through LKE). The instructions within this guide depend on the Linode Cloud Controller Manager (CCM), which is installed by default on LKE clusters but needs to be manually installed on unmanaged clusters. To learn how to install the Linode CCM on a cluster that was not deployed through LKE, see the [Installing the Linode CCM on an Unmanaged Kubernetes Cluster](/cloud/guides/install-the-linode-ccm-on-unmanaged-kubernetes/) guide.
+    You can also use an unmanaged Kubernetes cluster (that's not deployed through LKE). The instructions within this guide depend on the Linode Cloud Controller Manager (CCM), which is installed by default on LKE clusters but needs to be manually installed on unmanaged clusters. To learn how to install the Linode CCM on a cluster that was not deployed through LKE, see the [Installing the Linode CCM on an Unmanaged Kubernetes Cluster](/cloud/guides/install-the-linode-ccm-on-unmanaged-kubernetes) guide.
 
-1.  **Setup your local environment** by installing [Helm 3](/cloud/guides/how-to-install-apps-on-kubernetes-with-helm-3/#install-helm) and [kubectl](https://techdocs.akamai.com/cloud-computing/docs/manage-a-cluster-with-kubectl) on your computer (or whichever system you intend to use to manage your Kubernetes Cluster).
+1.  **Setup your local environment** by installing [Helm 3](/cloud/guides/how-to-install-apps-on-kubernetes-with-helm-3#install-helm) and [kubectl](https://techdocs.akamai.com/cloud-computing/docs/manage-a-cluster-with-kubectl) on your computer (or whichever system you intend to use to manage your Kubernetes Cluster).
 
 1.  **Configure kubectl** to use the new Kubernetes cluster by downloading the kubeconfig YAML file and adding it to kubectl. See the instructions within the [Download Your kubeconfig](https://techdocs.akamai.com/cloud-computing/docs/manage-a-cluster-with-kubectl) guide.
 
@@ -164,7 +164,7 @@ Each example manifest file creates three Pods to serve the application.
 In this section you will use Helm to install the NGINX Ingress Controller on your Kubernetes Cluster. Installing the NGINX Ingress Controller will create Linode NodeBalancers that your cluster can make use of to load balance traffic to your example application.
 
 {{< note >}}
-If you would like a slightly deeper dive into the NGINX Ingress Controller, see our guide [Deploying NGINX Ingress on Linode Kubernetes Engine](/cloud/guides/deploy-nginx-ingress-on-lke/).
+If you would like a slightly deeper dive into the NGINX Ingress Controller, see our guide [Deploying NGINX Ingress on Linode Kubernetes Engine](/cloud/guides/deploy-nginx-ingress-on-lke).
 {{< /note >}}
 
 1.  Add the following Helm ingress-nginx repository to your Helm repos.
@@ -239,7 +239,7 @@ To enable HTTPS on your example application, you will create a Transport Layer S
 In this section you will install cert-manager using Helm and the required cert-manager [CustomResourceDefinitions](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) (CRDs). Then, you will create a [ClusterIssuer](https://cert-manager.io/docs/concepts/issuer/) resource to assist in creating a cluster's TLS certificate.
 
 {{< note >}}
-If you would like a deeper dive into cert-manager, see our guide [What is Kubernetes cert-manager](/cloud/guides/what-is-kubernetes-cert-manager/).
+If you would like a deeper dive into cert-manager, see our guide [What is Kubernetes cert-manager](/cloud/guides/what-is-kubernetes-cert-manager).
 {{< /note >}}
 
 ### Install cert-manager

@@ -25,10 +25,10 @@ Backing up the data stored in a MongoDB database is an important step to maintai
 
 1. Create a pair of [Access Keys](https://techdocs.akamai.com/cloud-computing/docs/manage-access-keys) for your Linode Object Storage bucket.
 
-1. Install [MongoDB](/cloud/guides/install-mongodb-on-ubuntu-16-04/) on your Linux system.
+1. Install [MongoDB](/cloud/guides/install-mongodb-on-ubuntu-16-04) on your Linux system.
 
 {{< note >}}
-The steps in this guide are written for a non-root user account. For any commands that require elevated privileges, `sudo` is prefixed at the start of the command syntax. If you’re unfamiliar with the `sudo` command workflow, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+The steps in this guide are written for a non-root user account. For any commands that require elevated privileges, `sudo` is prefixed at the start of the command syntax. If you’re unfamiliar with the `sudo` command workflow, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## Install Cyberduck CLI
@@ -117,7 +117,7 @@ Refer to the comments in the code to learn what each line in the code does.
 
 ## Run the Bash Script
 
-Before setting the above script to run automatically, execute the script to configure your Linode bucket's access key pair. You need to set the appropriate permissions for this script to be executed. For more information on Linux file permissions, review our guide on [Modifying File Permissions with chmod](/cloud/guides/modify-file-permissions-with-chmod/).
+Before setting the above script to run automatically, execute the script to configure your Linode bucket's access key pair. You need to set the appropriate permissions for this script to be executed. For more information on Linux file permissions, review our guide on [Modifying File Permissions with chmod](/cloud/guides/modify-file-permissions-with-chmod).
 
 Modify the script's permissions, then execute the script with the following commands:
 

@@ -68,7 +68,7 @@ For users, DoT offers greater transparency. Any attempt to block or tamper with 
 
 [Bind 9](https://www.isc.org/bind/), the most widely used DNS server software, natively supports both DoT (starting in version 9.17.7) and DoH (starting in version 9.17.10). This support covers Linodes running Ubuntu 22.04 LTS, since this distribution includes Bind version 9.18.1.
 
-To add DoT support to a recursive server running Bind 9, add these lines to `/etc/bind/named.conf`. This example assumes you’ve used [Let’s Encrypt to generate a TLS certificate and key for your DNS server](/cloud/guides/install-lets-encrypt-to-create-ssl-certificates/). Substitute the full paths and names of your certificate and key files as appropriate:
+To add DoT support to a recursive server running Bind 9, add these lines to `/etc/bind/named.conf`. This example assumes you’ve used [Let’s Encrypt to generate a TLS certificate and key for your DNS server](/cloud/guides/install-lets-encrypt-to-create-ssl-certificates). Substitute the full paths and names of your certificate and key files as appropriate:
 
 ```file {title="/etc/bind/named.conf" lang="aconf"}
 tls mytls {

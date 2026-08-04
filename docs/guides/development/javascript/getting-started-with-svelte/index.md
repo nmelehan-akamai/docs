@@ -25,7 +25,7 @@ Through this guide, learn more about what sets the Svelte framework apart and ho
 1. Follow our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide to update your system. You may also wish to set the timezone, configure your hostname, create a limited user account, and harden SSH access.
 
 {{< note >}}
-The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## What Is the Svelte Framework?
@@ -50,7 +50,7 @@ To install Svelte, the recommended approach in the official documentation is to 
 
 With the SvelteKit installed, your project compiles `.svelte` files into the appropriate JavaScript and CSS at build time. SvelteKit also brings ready access to convenient frontend development features like routing.
 
-1. Install NPM to manage your Svelte project and install its dependencies. Follow the relevant section of our guide on [How to Install and Use the Node Package Manager (NPM) on Linux](/cloud/guides/install-and-use-npm-on-linux/#how-to-install-npm).
+1. Install NPM to manage your Svelte project and install its dependencies. Follow the relevant section of our guide on [How to Install and Use the Node Package Manager (NPM) on Linux](/cloud/guides/install-and-use-npm-on-linux#how-to-install-npm).
 
 1. Create a new NPM project using the SvelteKit template. This example names the project `exampleApp`, and this name gets used for the Svelte project throughout the rest of this guide:
 
@@ -91,7 +91,7 @@ npm run dev
 
 To access this URL from a remote machine, you can use an SSH tunnel. Set up the SSH tunnel using one of the methods below, depending on your operating system.
 
-- On **Windows**, you can use the PuTTY tool to set up your SSH tunnel. Follow the PuTTY section of our guide on how to [Create an SSH Tunnel for MySQL Remote Access](/cloud/guides/create-an-ssh-tunnel-for-mysql-remote-access/#how-to-access-mysql-remotely-by-creating-an-ssh-tunnel-with-putty). Use `5173` as the **Source port** and `127.0.0.1:5173` as the **Destination**.
+- On **Windows**, you can use the PuTTY tool to set up your SSH tunnel. Follow the PuTTY section of our guide on how to [Create an SSH Tunnel for MySQL Remote Access](/cloud/guides/create-an-ssh-tunnel-for-mysql-remote-access#how-to-access-mysql-remotely-by-creating-an-ssh-tunnel-with-putty). Use `5173` as the **Source port** and `127.0.0.1:5173` as the **Destination**.
 
 - On **macOS** or **Linux**, use the following command to set up the SSH tunnel. Replace `example-user` with your username on the remote server and `192.0.2.0` with the remote server's IP address:
 

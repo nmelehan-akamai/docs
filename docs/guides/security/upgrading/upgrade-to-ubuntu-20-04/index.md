@@ -19,7 +19,7 @@ aliases: []
 
 Ubuntu 20.04 is a Long-Term Support (LTS) release that is supported by Canonical until April 2025. Use this guide to upgrade your Linode from Ubuntu 18.04 (Bionic Beaver) or Ubuntu 19.10 (Eoan Ermine) to Ubuntu 20.04 (Focal Fossa).
 {{< note type="alert" >}}
-Inline distribution upgrades can yield unpredictable results. Before continuing, read through [Upgrading to the Latest Distribution (Clean Install)](/cloud/guides/manually-upgrading-to-latest-distribution-version/) guide to learn more about your upgrade options. This guide also provides instructions to perform a clean install of the latest distribution version.
+Inline distribution upgrades can yield unpredictable results. Before continuing, read through [Upgrading to the Latest Distribution (Clean Install)](/cloud/guides/manually-upgrading-to-latest-distribution-version) guide to learn more about your upgrade options. This guide also provides instructions to perform a clean install of the latest distribution version.
 
 The upgrade may be incomplete or your system may be corrupted if your internet connection is interrupted. Use [Lish](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish) or [Glish](https://techdocs.akamai.com/cloud-computing/docs/access-your-desktop-environment-using-glish) to perform this upgrade in a stable environment that does not rely on an active internet connection to your Linode.
 

@@ -31,6 +31,6 @@ This reference architecture showcases a [Jenkins](https://www.jenkins.io/) CI/CD
 
 ## Diagrams
 
-[![Thumbnail of Jenkins pipeline example reference architecture](jenkins-pipeline-diagram-thumnail-1.png)](/cloud/reference-architecture/jenkins-ci-cd-on-linode-to-any-hyperscaler/diagrams/#jenkins-pipeline)
+[![Thumbnail of Jenkins pipeline example reference architecture](jenkins-pipeline-diagram-thumnail-1.png)](/cloud/reference-architecture/jenkins-ci-cd-on-linode-to-any-hyperscaler/diagrams#jenkins-pipeline)
 
-[![Thumbnail of entire CI/CD reference architecture](jenkins-cicd-diagram-thumnail.png)](/cloud/reference-architecture/jenkins-ci-cd-on-linode-to-any-hyperscaler/diagrams/#cicd-infrastructure)
+[![Thumbnail of entire CI/CD reference architecture](jenkins-cicd-diagram-thumnail.png)](/cloud/reference-architecture/jenkins-ci-cd-on-linode-to-any-hyperscaler/diagrams#cicd-infrastructure)

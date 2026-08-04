@@ -53,7 +53,7 @@ To get started, use the Akamai Cloud Compute platform to deploy multiple Compute
 
 1.  Confirm that [Network Helper](https://techdocs.akamai.com/cloud-computing/docs/automatically-configure-networking) is enabled and reboot each Compute Instance for the changes to take effect.
 
-1.  Log in to each instance and test the connectivity on each Compute Instance to ensure proper configuration. To do this, you can use [SSH](/cloud/guides/connect-to-server-over-ssh/), or [Lish](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish) if utilizing an Akamai Cloud Compute Instance.
+1.  Log in to each instance and test the connectivity on each Compute Instance to ensure proper configuration. To do this, you can use [SSH](/cloud/guides/connect-to-server-over-ssh), or [Lish](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish) if utilizing an Akamai Cloud Compute Instance.
 
     -   Ping the VLAN IPv4 address of another system within the same VLAN:
 
@@ -104,7 +104,7 @@ Forwarding is disabled on most Linux systems by default. However, this must be e
     ```
     {{< /note >}}
 
-1.  Open the `/etc/sysctl.conf` file using a command-line text editor with `sudo` permissions such as [nano](/cloud/guides/use-nano-to-edit-files-in-linux/):
+1.  Open the `/etc/sysctl.conf` file using a command-line text editor with `sudo` permissions such as [nano](/cloud/guides/use-nano-to-edit-files-in-linux):
 
     ```command {title="Router Instance"}
     sudo nano /etc/sysctl.conf
@@ -330,7 +330,7 @@ Linux network utilities like nftables, iptables, and Firewalld can serve as both
 
     By default, iptables rules are ephemeral. To make your configuration changes persistent, install the `iptables-persistent` package. When you do this, the rules saved within `/etc/iptables/rules.v4` (and `rules.v6` for IPv6) are loaded when the system boots up.
 
-    You can continue making changes to iptables as normal. When you are ready to save, save the output of [iptables-save](https://linux.die.net/man/8/iptables-save) to the `/etc/iptables/rules.v4` (or `rules.v6`) file. For more information, see the relevant section in the [Controlling Network Traffic with iptables](/cloud/guides/control-network-traffic-with-iptables/#introduction-to-iptables-persistent) guide.
+    You can continue making changes to iptables as normal. When you are ready to save, save the output of [iptables-save](https://linux.die.net/man/8/iptables-save) to the `/etc/iptables/rules.v4` (or `rules.v6`) file. For more information, see the relevant section in the [Controlling Network Traffic with iptables](/cloud/guides/control-network-traffic-with-iptables#introduction-to-iptables-persistent) guide.
 
     ```command {title="Router Instance"}
     sudo mkdir /etc/iptables | sudo iptables-save | sudo tee /etc/iptables/rules.v4
@@ -368,7 +368,7 @@ The last step is to manually adjust the network configuration settings for each 
 
 1.  Log in to the [Cloud Manager](https://cloud.linode.com) and disable [Network Helper](https://techdocs.akamai.com/cloud-computing/docs/automatically-configure-networking#enable-or-disable-network-helper) for each non-router Compute Instance you've deployed. While Network Helper was useful for automatically configuring the VLAN IP addresses, the configuration files controlled by Network Helper now need to be manually edited.
 
-1.  Log in to each Linux system that is *not* designated as the router. To do so, you can use [SSH](/cloud/guides/connect-to-server-over-ssh/) from the router, or [Lish](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish) if using an Akamai Cloud Compute Instance.
+1.  Log in to each Linux system that is *not* designated as the router. To do so, you can use [SSH](/cloud/guides/connect-to-server-over-ssh) from the router, or [Lish](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish) if using an Akamai Cloud Compute Instance.
 
 1.  Edit the configuration file that contains the settings for the private VLAN interface. The name and location of this file depends on the Linux distribution you are using. See the [Manual Network Configuration on a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/manual-network-configuration-on-a-compute-instance) series of guides and select the specific guide for your distribution. For a system running [ifupdown](https://techdocs.akamai.com/cloud-computing/docs/network-configuration-using-ifupdown) on Debian 12, the network configuration is typically stored within `/etc/network/interfaces`:
 

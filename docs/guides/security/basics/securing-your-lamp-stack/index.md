@@ -27,9 +27,9 @@ In order to secure a LAMP stack, you need to have a Linux server with the follow
 - MySQL
 - PHP
 
-For a quick an easy way to install a LAMP stack on Linode, check out our guide on [How to Deploy a LAMP Stack with Quick Deploy Apps](/cloud/marketplace-docs/guides/lamp-stack/).
+For a quick an easy way to install a LAMP stack on Linode, check out our guide on [How to Deploy a LAMP Stack with Quick Deploy Apps](/cloud/marketplace-docs/guides/lamp-stack).
 
-Otherwise, you can find instructions on how to manually install a LAMP stack in our guide on [How to Install a LAMP Stack on Ubuntu 18.04](/cloud/guides/how-to-install-a-lamp-stack-on-ubuntu-18-04/). Installation instructions for several other Linux distributions are also accessible from this guide.
+Otherwise, you can find instructions on how to manually install a LAMP stack in our guide on [How to Install a LAMP Stack on Ubuntu 18.04](/cloud/guides/how-to-install-a-lamp-stack-on-ubuntu-18-04). Installation instructions for several other Linux distributions are also accessible from this guide.
 
 {{< note >}}
 This demonstration has been performed on Ubuntu 18.04. However, all techniques demonstrated are distribution agnostic with the exception of package names and package managers.
@@ -233,7 +233,7 @@ Permission denied, please try again.
 
 Key-based authentication utilizes asymmetric encryption to generate two keys that are used for the encryption and decryption of data. These two keys are called the public key and the private key. Together, they are called a public-private key-pair.
 
-The public key is used to encrypt data which only the corresponding private key can decrypt. This process can also be repeated vice versa. As a result, the private key must be kept private and secure, whereas the public key can be shared. For more information, see [SSH add keys](/cloud/guides/use-public-key-authentication-with-ssh/).
+The public key is used to encrypt data which only the corresponding private key can decrypt. This process can also be repeated vice versa. As a result, the private key must be kept private and secure, whereas the public key can be shared. For more information, see [SSH add keys](/cloud/guides/use-public-key-authentication-with-ssh).
 
 SSH key-pairs can be generated on your local machine by using the `ssh-keygen` utility, Then, you can upload the public key to your LAMP stack machine.
 
@@ -249,7 +249,7 @@ If you accidentally lock yourself out of the SSH service on your Linode, you can
 
         ssh-keygen -b 4096
 
-1.  Enter the default names and directories for the private key `id_rsa` and the public key `id_rsa.pub`. You can optionally set a [private key passphrase](/cloud/guides/use-public-key-authentication-with-ssh/#ssh-private-key-passphrases) for an additional layer of security.
+1.  Enter the default names and directories for the private key `id_rsa` and the public key `id_rsa.pub`. You can optionally set a [private key passphrase](/cloud/guides/use-public-key-authentication-with-ssh#ssh-private-key-passphrases) for an additional layer of security.
 
 1.  The key-pair is generated and saved in your ssh directory in  `~/.ssh`.
 
@@ -450,7 +450,7 @@ Data read: 0.95 MB (ratio 2.55:1)
 Time: 68.775 sec (1 m 8 s)
     {{< /output >}}
 
-For more instructions on using ClamAV, see our guide on [Scanning for Vulnerabilities with ClamAV](/cloud/guides/scanning-your-linode-for-malware/).
+For more instructions on using ClamAV, see our guide on [Scanning for Vulnerabilities with ClamAV](/cloud/guides/scanning-your-linode-for-malware).
 
 ## Configuring ModSecurity on Apache2
 
@@ -555,7 +555,7 @@ To begin using ModSecurity, enable it in the Apache configuration file by follow
 </VirtualHost>
     {{< /file >}}
 
-    If you are running a website that uses SSL, add `SecRuleEngine` directive to that website's configuration file as well. See our guide on [SSL Certificates with Apache on Debian & Ubuntu](/cloud/guides/ssl-apache2-debian-ubuntu/#configure-apache-to-use-the-ssl-certificate) for more information.
+    If you are running a website that uses SSL, add `SecRuleEngine` directive to that website's configuration file as well. See our guide on [SSL Certificates with Apache on Debian & Ubuntu](/cloud/guides/ssl-apache2-debian-ubuntu#configure-apache-to-use-the-ssl-certificate) for more information.
 
 1.  Restart the apache2 service to apply the configuration:
 

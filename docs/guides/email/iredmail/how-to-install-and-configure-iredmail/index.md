@@ -50,7 +50,7 @@ iRedMail includes the following features and enhancements:
 1.  iRedMail requires at least 4 GB of RAM, but high-volume production servers require even more. Ensure enough storage is available for the number of users and storage policies you intend to support. For best results, install iRedMail on a fresh server with no other components or configuration. Otherwise, conflicts might occur. Ensure the user and group IDs `2000`, `2001`, and `2002` are not in use.
 
 {{< note >}}
-The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## How to Install iRedMail
@@ -241,7 +241,7 @@ To run the iRedMail installation script and configure iRedMail, follow these ste
 
 The iRedMail administration panel is now accessible, but any attempt to use it results in a security warning. This is because the server does not yet support HTTPS.
 
-To activate this protocol, first, install a TLS certificate. Let's Encrypt provides a free certificate service that is easy to use. To install the certificate, use the [Certbot](https://certbot.eff.org/) application to automate the granting process. For more information about Certbot, Let's Encrypt certificates, and HTTPS, review the [Linode guide to Using Certbot on NGINX](/cloud/guides/enabling-https-using-certbot-with-nginx-on-ubuntu/).
+To activate this protocol, first, install a TLS certificate. Let's Encrypt provides a free certificate service that is easy to use. To install the certificate, use the [Certbot](https://certbot.eff.org/) application to automate the granting process. For more information about Certbot, Let's Encrypt certificates, and HTTPS, review the [Linode guide to Using Certbot on NGINX](/cloud/guides/enabling-https-using-certbot-with-nginx-on-ubuntu).
 
 To enable HTTPS on the server, follow these steps.
 

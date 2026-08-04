@@ -74,7 +74,7 @@ For more information about Hubzilla and its features, see the [Hubzilla Document
 1.  Enable email on the Linode server to allow Hubzilla to send out registration emails containing verification codes. Hubzilla requires a working mail server to authenticate new users. For more information on setting up a mail server, see our [guides on email](/cloud/guides/email).
 
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## How to Install Hubzilla
@@ -317,7 +317,7 @@ The LAMP stack is now fully configured and ready for Hubzilla. Use `git` to down
     sudo chmod -R 755 /var/www/html/hubzilla/
     ```
 
-6.  **Optional** To access Hubzilla using HTTPS, which Hubzilla recommends, install `certbot` and use it to request and install a Let's Encrypt certificate. For further instructions, see the Linode guide on [How to Use Certbot to Enable HTTPS](https://www.linode.com/docs/guides/enabling-https-using-certbot-with-apache-on-ubuntu/).
+6.  **Optional** To access Hubzilla using HTTPS, which Hubzilla recommends, install `certbot` and use it to request and install a Let's Encrypt certificate. For further instructions, see the Linode guide on [How to Use Certbot to Enable HTTPS](/cloud/guides/enabling-https-using-certbot-with-apache-on-ubuntu/).
 
 6.  Add a `cron` task to update the site every 10 minutes. Run the `crontab -e` command to edit the list of `root` cron jobs.
 

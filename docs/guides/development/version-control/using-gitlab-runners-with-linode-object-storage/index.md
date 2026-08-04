@@ -41,11 +41,11 @@ You can also use a GitLab SaaS (GitLab.com) instance. The steps for the GitLab R
 
 With Linode, you have three options effective for creating your own self-hosted GitLab instance.
 
-- Use Akamai Quick Deploy Apps to deploy a ready instance with GitLab installed. This method requires the fewest manual steps and provides the surest and quickest way to get a GitLab instance running. You can follow along with our [Deploy Gitlab through Akamai Quick Deploy Apps](/cloud/marketplace-docs/guides/gitlab/) guide.
+- Use Akamai Quick Deploy Apps to deploy a ready instance with GitLab installed. This method requires the fewest manual steps and provides the surest and quickest way to get a GitLab instance running. You can follow along with our [Deploy Gitlab through Akamai Quick Deploy Apps](/cloud/marketplace-docs/guides/gitlab) guide.
 
-- Use the default package manager for your Linux distribution. GitLab maintains official installation packages for CentOS, Debian, Ubuntu, and others, and you can follow the instructions in their [official documentation](https://about.gitlab.com/install/). You may also refer to our [Install GitLab on Ubuntu 18.04](/cloud/guides/install-gitlab-on-ubuntu-18-04/) for additional details on the installation process.
+- Use the default package manager for your Linux distribution. GitLab maintains official installation packages for CentOS, Debian, Ubuntu, and others, and you can follow the instructions in their [official documentation](https://about.gitlab.com/install/). You may also refer to our [Install GitLab on Ubuntu 18.04](/cloud/guides/install-gitlab-on-ubuntu-18-04) for additional details on the installation process.
 
-- Use Docker to deploy your GitLab instance. This option requires the most effort and setup. But the option can be a boon for those familiar with Docker and wanting the benefits of a containerized instance. You can follow our [Install GitLab with Docker](/cloud/guides/install-gitlab-with-docker/) guide to set up your GitLab instance with Docker.
+- Use Docker to deploy your GitLab instance. This option requires the most effort and setup. But the option can be a boon for those familiar with Docker and wanting the benefits of a containerized instance. You can follow our [Install GitLab with Docker](/cloud/guides/install-gitlab-with-docker) guide to set up your GitLab instance with Docker.
 
 The rest of the guide assumes you have your GitLab instance up and running. This guide uses an instance deployed through Akamai Quick Deploy Apps, but the steps should be compatible with any of the options above.
 
@@ -62,7 +62,7 @@ These next steps refer you to guides for creating, updating, and securing a new 
 1. Follow our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide to update the instance. You may also wish to set the timezone, configure your hostname, create a limited user account, and harden SSH access.
 
 {{< note >}}
-Throughout the rest of this guide, commands are provided for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+Throughout the rest of this guide, commands are provided for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ### Install GitLab Runner
@@ -267,7 +267,7 @@ Your Runner Manager thus needs to have both Docker and Docker Manager installed 
 Docker Machine has been deprecated by Docker. However, GitLab maintains its own fork of the Docker Machine project to support GitLab Runners, until GitLab can mobilize another solution. The steps here install GitLab's fork of Docker Machine.
 {{< /note >}}
 
-1. Follow our [Installing and Using Docker](/cloud/guides/installing-and-using-docker-on-ubuntu-and-debian/) guide to set up Docker on your Runner Manager instance. Use the dropdown at the top of the guide to select the appropriate distribution for your instance.
+1. Follow our [Installing and Using Docker](/cloud/guides/installing-and-using-docker-on-ubuntu-and-debian) guide to set up Docker on your Runner Manager instance. Use the dropdown at the top of the guide to select the appropriate distribution for your instance.
 
 1. Use the commands here to download the Docker Machine executable, move it to your instance's path, and give it executable permissions.
 

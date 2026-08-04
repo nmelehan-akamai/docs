@@ -25,7 +25,7 @@ This tutorial walks through installing YunoHost on a base Debian server and outl
     Be sure to also add an [A and AAA record](https://techdocs.akamai.com/cloud-computing/docs/a-and-aaaa-records) pointing to the remote IP address of your Compute Instance.
 
 {{< note >}}
-The steps in this guide require root privileges. Be sure to run the steps below as `root`. For more information on privileges, see our [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+The steps in this guide require root privileges. Be sure to run the steps below as `root`. For more information on privileges, see our [Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## What Is YunoHost?

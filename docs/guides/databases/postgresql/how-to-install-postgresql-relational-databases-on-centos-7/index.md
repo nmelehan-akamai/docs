@@ -34,7 +34,7 @@ The [PostgreSQL](http://www.postgresql.org/) relational database system is a pow
         sudo yum update
 
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, visit the [Users and Groups guide](/cloud/guides/linux-users-and-groups/) for more information.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, visit the [Users and Groups guide](/cloud/guides/linux-users-and-groups) for more information.
 {{< /note >}}
 
 ## Install PostgreSQL
@@ -109,7 +109,7 @@ The `postgres` user should not be used for other purposes (e.g., connecting to o
 
     Note that this user is distinct from the `postgres` Linux user. The Linux user is used to access the database, and the PostgreSQL user is used to perform administrative tasks on the databases.
 
-    The password set in this step will be used to connect to the database via the network. Peer authentication will be used by default for local connections. See the [Secure Local PostgreSQL Access section](/cloud/guides/how-to-install-postgresql-relational-databases-on-centos-7/#secure-local-access) for information about changing this setting.
+    The password set in this step will be used to connect to the database via the network. Peer authentication will be used by default for local connections. See the [Secure Local PostgreSQL Access section](/cloud/guides/how-to-install-postgresql-relational-databases-on-centos-7#secure-local-access) for information about changing this setting.
 
 ### Access the PostgreSQL Shell
 
@@ -474,5 +474,5 @@ If you installed PostgreSQL from the [Postgres repositories](#install-from-the-p
 
 PostgreSQL listens for connections on `localhost` by default, and it is not advised to reconfigure it to listen on public IP addresses. If you wish to make PostgreSQL externally accessible, it's recommended that you follow the Postgres documentation for [using SSL](https://www.postgresql.org/docs/9.2/static/ssl-tcp.html) to secure your remote connections. Alternatively, you could connect to PostgreSQL over an [SSH tunnel](https://www.postgresql.org/docs/9.2/static/ssh-tunnels.html). To access your databases remotely using a graphical tool, please follow one of these guides:
 
--   [Securely Manage Remote PostgreSQL Servers with pgAdmin on Windows](/cloud/guides/how-to-access-postgresql-database-remotely-using-pgadmin-on-windows/)
--   [Securely Manage Remote PostgreSQL Servers with pgAdmin on Mac OS X](/cloud/guides/securely-manage-remote-postgresql-servers-with-pgadmin-on-macos-x/)
+-   [Securely Manage Remote PostgreSQL Servers with pgAdmin on Windows](/cloud/guides/how-to-access-postgresql-database-remotely-using-pgadmin-on-windows)
+-   [Securely Manage Remote PostgreSQL Servers with pgAdmin on Mac OS X](/cloud/guides/securely-manage-remote-postgresql-servers-with-pgadmin-on-macos-x)

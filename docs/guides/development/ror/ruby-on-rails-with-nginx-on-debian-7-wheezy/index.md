@@ -15,7 +15,7 @@ external_resources:
  - '[Ruby on Rails Documentation](http://rubyonrails.org/documentation)'
  - '[Nginx Home Page](http://nginx.org/)'
  - '[Nginx Documentation](http://nginx.org/en/docs/)'
- - '[Nginx Configuration](/cloud/guides/how-to-configure-nginx/)'
+ - '[Nginx Configuration](/cloud/guides/how-to-configure-nginx)'
 audiences: ["beginner"]
 concentrations: ["Web Applications"]
 languages: ["ruby"]
@@ -107,6 +107,6 @@ The configuration file for Nginx is located at `/etc/nginx/nginx.conf`. This is 
 
 ## Install MySQL Support (optional)
 
-If your application uses MySQL, install the database server by following our [MySQL on Debian 7 (Wheezy) guide](/cloud/guides/how-to-install-mysql-on-debian-7/). Once it's installed and configured properly, issue the following command:
+If your application uses MySQL, install the database server by following our [MySQL on Debian 7 (Wheezy) guide](/cloud/guides/how-to-install-mysql-on-debian-7). Once it's installed and configured properly, issue the following command:
 
     apt-get install libmysqlclient-dev libmysql-ruby

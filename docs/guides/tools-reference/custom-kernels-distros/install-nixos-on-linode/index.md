@@ -219,7 +219,7 @@ To secure your system, change this setting to `"no"` after creating a limited us
 
 ### Disable Predictable Interface Names
 
-1.  Most of Linode's default images have had systemd's predictable interface names disabled. Because of this, most of [Linode's networking guides](/cloud/networking/) assume an interface of `eth0`. Since your Linode runs in a virtual environment and will have a single interface, it won't encounter the issues that predictable interface names were designed to solve. This change is optional, but may help troubleshooting later; add the following line:
+1.  Most of Linode's default images have had systemd's predictable interface names disabled. Because of this, most of [Linode's networking guides](/cloud/networking) assume an interface of `eth0`. Since your Linode runs in a virtual environment and will have a single interface, it won't encounter the issues that predictable interface names were designed to solve. This change is optional, but may help troubleshooting later; add the following line:
 
     ```file {title="/mnt/etc/nixos/configuration.nix"}
     networking.usePredictableInterfaceNames = false;

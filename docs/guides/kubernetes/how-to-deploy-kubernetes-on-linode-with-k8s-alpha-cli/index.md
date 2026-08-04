@@ -52,7 +52,7 @@ These nodes will all exist as billable services on your account. You can specify
 
 Another easy way to create clusters is with [Rancher](https://rancher.com). Rancher is a web application that provides a GUI interface for cluster creation and for management of clusters. Rancher also provides easy interfaces for deploying and scaling apps on your clusters, and it has a built-in catalog of curated apps to choose from.
 
-To get started with Rancher, review our [How to Deploy Kubernetes on Linode with Rancher](/cloud/guides/how-to-deploy-kubernetes-on-linode-with-rancher-2-x/) guide. Rancher is capable of importing clusters that were created outside of it, so you can still use it even if you create your clusters through the k8s-alpha CLI or some other means.
+To get started with Rancher, review our [How to Deploy Kubernetes on Linode with Rancher](/cloud/guides/how-to-deploy-kubernetes-on-linode-with-rancher-2-x) guide. Rancher is capable of importing clusters that were created outside of it, so you can still use it even if you create your clusters through the k8s-alpha CLI or some other means.
 
 #### Linode Kubernetes Engine (LKE)
 
@@ -64,25 +64,25 @@ When you deploy an LKE cluster, you receive a Kubernetes Master at no additional
 
 If you haven't used Kubernetes before, we recommend reading through our introductory guides on the subject:
 
--   [Beginner's Guide to Kubernetes](/cloud/guides/beginners-guide-to-kubernetes/): this guide explains the concepts and architecture of Kubernetes.
+-   [Beginner's Guide to Kubernetes](/cloud/guides/beginners-guide-to-kubernetes): this guide explains the concepts and architecture of Kubernetes.
 
--   [Getting Started with Kubernetes - Basic Installation and Setup](/cloud/guides/deploy-kubernetes-cluster-using-kubeadm/): this guide shows how to create a Kubernetes cluster manually. While you wouldn't normally set your clusters up in this way, doing it once can help provide a better understanding for how a cluster's components fit together.
+-   [Getting Started with Kubernetes - Basic Installation and Setup](/cloud/guides/deploy-kubernetes-cluster-using-kubeadm): this guide shows how to create a Kubernetes cluster manually. While you wouldn't normally set your clusters up in this way, doing it once can help provide a better understanding for how a cluster's components fit together.
 
 ## Before You Begin
 
 1.  You will need to have a personal access token for Linode's API. If you don't have one already, follow the [Get an Access Token](https://techdocs.akamai.com/linode-api/reference/get-started#get-an-access-token) section of our API guide and create a token with read/write permissions.
 
-1.  If you do not already have a public-private SSH key pair, you will need to generate one. Follow the [Generate a Key Pair](/cloud/guides/use-public-key-authentication-with-ssh/#generate-an-ssh-key-pair) section of our [Public Key Authentication](/cloud/guides/use-public-key-authentication-with-ssh/) guide for instructions.
+1.  If you do not already have a public-private SSH key pair, you will need to generate one. Follow the [Generate a Key Pair](/cloud/guides/use-public-key-authentication-with-ssh#generate-an-ssh-key-pair) section of our [Public Key Authentication](/cloud/guides/use-public-key-authentication-with-ssh) guide for instructions.
 
     {{< note >}}
-    If you're unfamiliar with the concept of public-private key pairs, the introduction to our [Public Key Authentication](/cloud/guides/use-public-key-authentication-with-ssh/) guide explains what they are.
+    If you're unfamiliar with the concept of public-private key pairs, the introduction to our [Public Key Authentication](/cloud/guides/use-public-key-authentication-with-ssh) guide explains what they are.
     {{< /note >}}
 
 ## Install the k8s-alpha CLI
 
 The k8s-alpha CLI is bundled with the Linode CLI, and using it requires the installation and configuration of a few dependencies:
 
--   [Terraform](#install-terraform): The k8s-alpha CLI creates clusters by defining a resource *plan* in Terraform and then having Terraform create those resources. If you're interested in how Terraform works, you can review our [Beginner's Guide to Terraform](/cloud/guides/beginners-guide-to-terraform/), but doing so is not required to use the k8s-alpha CLI.
+-   [Terraform](#install-terraform): The k8s-alpha CLI creates clusters by defining a resource *plan* in Terraform and then having Terraform create those resources. If you're interested in how Terraform works, you can review our [Beginner's Guide to Terraform](/cloud/guides/beginners-guide-to-terraform), but doing so is not required to use the k8s-alpha CLI.
 
     {{< note >}}
     The k8s-alpha CLI requires [Terraform version 0.12.0+](https://www.hashicorp.com/blog/announcing-terraform-0-12).
@@ -102,7 +102,7 @@ pip install --upgrade linode-cli
 
 ### Install Terraform
 
-Follow the instructions in the [Install Terraform](/cloud/guides/how-to-build-your-infrastructure-using-terraform-and-linode/#install-terraform) section of our [Use Terraform to Provision Linode Environments](/cloud/guides/how-to-build-your-infrastructure-using-terraform-and-linode/) guide.
+Follow the instructions in the [Install Terraform](/cloud/guides/how-to-build-your-infrastructure-using-terraform-and-linode#install-terraform) section of our [Use Terraform to Provision Linode Environments](/cloud/guides/how-to-build-your-infrastructure-using-terraform-and-linode) guide.
 
 ### Install kubectl
 
@@ -304,5 +304,5 @@ kubectl config unset users.example-cluster-kat7BqBBgU8
 
 Now that you have a cluster up and running, you're ready to start deploying apps to it. Review our other Kubernetes guides for help with deploying software and managing your cluster:
 
-- [Installing Apps on Kubernetes with Helm 3](/cloud/guides/how-to-install-apps-on-kubernetes-with-helm-3/)
-- [Linode Container Storage Interface](/cloud/guides/deploy-volumes-with-the-linode-block-storage-csi-driver/)
+- [Installing Apps on Kubernetes with Helm 3](/cloud/guides/how-to-install-apps-on-kubernetes-with-helm-3)
+- [Linode Container Storage Interface](/cloud/guides/deploy-volumes-with-the-linode-block-storage-csi-driver)

@@ -53,7 +53,7 @@ To obtain credentials:
 1.  Log in to your new Compute Instance using one of the methods below:
 
     - **Lish Console**: Log in to Cloud Manager, click the **Linodes** link in the left menu, and select the Compute Instance you just deployed. Click **Launch LISH Console**. Log in as the `root` user. To learn more, see [Using the Lish Console](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish).
-    - **SSH**: Log in to your Compute Instance over SSH using the `root` user. To learn how, see [Connecting to a Remote Server Over SSH](/cloud/guides/connect-to-server-over-ssh/).
+    - **SSH**: Log in to your Compute Instance over SSH using the `root` user. To learn how, see [Connecting to a Remote Server Over SSH](/cloud/guides/connect-to-server-over-ssh).
 
 1.  Run the following command to access the credentials file:
 
@@ -79,13 +79,13 @@ To get started:
 
 In addition to installing Flask, this Quick Deploy App app installs and configures software to support running Flask in a production environment. Below is a list of the installed software:
 
-- The [NGINX](/cloud/guides/getting-started-with-nginx-part-1-installation-and-basic-setup/) web server is installed with a basic NGINX configuration, located in `/etc/nginx/sites-enabled/$DOMAIN`. The $DOMAIN will be the domain entered during deployment or the default rDNS address that comes with each instance.
+- The [NGINX](/cloud/guides/getting-started-with-nginx-part-1-installation-and-basic-setup) web server is installed with a basic NGINX configuration, located in `/etc/nginx/sites-enabled/$DOMAIN`. The $DOMAIN will be the domain entered during deployment or the default rDNS address that comes with each instance.
 - An sample Flask application is downloaded to your Linode's `/var/www/flask_project` directory.
 
 - [Gunicorn](https://gunicorn.org/), a Python WSGI (web server gateway interface) HTTP Server for UNIX, is installed and running. It is used to forward requests from your NGINX web server to your Flask application.
 
 {{< note >}}
-Many configuration files can be overwritten to support a new configuration instead of deleted outright. For more information on the default configuration, see our [Flask Installation Guide](/cloud/guides/flask-and-gunicorn-on-ubuntu/) and the [Installed Software Section](/cloud/marketplace-docs/guides/flask/#installed-software) of this guide.
+Many configuration files can be overwritten to support a new configuration instead of deleted outright. For more information on the default configuration, see our [Flask Installation Guide](/cloud/guides/flask-and-gunicorn-on-ubuntu) and the [Installed Software Section](/cloud/marketplace-docs/guides/flask#installed-software) of this guide.
 {{< /note >}}
 
 ### Next Steps
@@ -95,6 +95,6 @@ Many configuration files can be overwritten to support a new configuration inste
 Now that you are familiar with all the software installed on your Linode with the Flask Quick Deploy App app, you can explore the following steps:
 
 - [Connect to your Linode via SSH](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance#connect-to-the-instance). You will need your Linode's root password to proceed. You can explore the installed programs and update any configurations as needed. Consider following the steps in the [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide to continue hardening your Linode's security.
-- Read through our [Deploy a Flask Application on Ubuntu](/cloud/guides/flask-and-gunicorn-on-ubuntu/) guide, which takes a deeper dive into the example Flask app that is deployed by the Quick Deploy App app.
-- Visit our [Create a GIS Application using Flask, Stadia Maps, and MongoDB](/cloud/guides/how-to-create-a-gis-app-using-flask-stadia-maps-and-mongodb/) guide to learn how to create your own GIS application.
-- Consult our [How To Create an OAuth App with the Linode Python API Library](/cloud/guides/create-an-oauth-app-with-the-python-api-library/) to learn how to develop a Flask app using Linode's API to automate creating Linode resources.
+- Read through our [Deploy a Flask Application on Ubuntu](/cloud/guides/flask-and-gunicorn-on-ubuntu) guide, which takes a deeper dive into the example Flask app that is deployed by the Quick Deploy App app.
+- Visit our [Create a GIS Application using Flask, Stadia Maps, and MongoDB](/cloud/guides/how-to-create-a-gis-app-using-flask-stadia-maps-and-mongodb) guide to learn how to create your own GIS application.
+- Consult our [How To Create an OAuth App with the Linode Python API Library](/cloud/guides/create-an-oauth-app-with-the-python-api-library) to learn how to develop a Flask app using Linode's API to automate creating Linode resources.

@@ -34,7 +34,7 @@ MySQL is an open-source relational database management system. This guide will s
         sudo yum update
 
     {{< note respectIndent=false >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you're not familiar with the `sudo` command, you can check our [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you're not familiar with the `sudo` command, you can check our [Users and Groups](/cloud/guides/linux-users-and-groups) guide.
     {{< /note >}}
 
 1. In order to secure and audit  MySQL, you need to have a Linux server with the `MySQL Server` services running. For information about installing MySQL please see [Install MySQL ](/cloud/guides/install-mysql-on-ubuntu-14-04)

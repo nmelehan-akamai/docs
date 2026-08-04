@@ -18,7 +18,7 @@ marketplace_app_name: "HashiCorp Nomad Cluster"
 {{< note type="warning" title="Quick Deploy App Cluster Notice" >}}
 This Quick Deploy App deploys 6 Compute Instances to create a highly available, redundant Hashicorp Nomad Cluster. The plan type and size you select is applied to each individual instance.
 
-Please be aware that each Compute Instance will appear on your invoice as a separate item. If you would rather deploy Hashicorp Nomad on a single Compute Instance, see [Deploy Hashicorp Nomad](/cloud/marketplace-docs/guides/hashicorp-nomad/).
+Please be aware that each Compute Instance will appear on your invoice as a separate item. If you would rather deploy Hashicorp Nomad on a single Compute Instance, see [Deploy Hashicorp Nomad](/cloud/marketplace-docs/guides/hashicorp-nomad).
 {{< /note >}}
 
 ## Deploying a Quick Deploy App
@@ -96,6 +96,6 @@ Please be aware that each Compute Instance will appear on your invoice as a sepa
 
 The HashiCorp Nomad Cluster provides default configurations to get you started. We recommend reviewing HashiCorp's [Configuration](https://www.nomadproject.io/docs/configuration) and [Job Spec](https://www.nomadproject.io/docs/job-specification) documentation to customize your Nomad Cluster for your specific workload.
 
-If you find that you need additional Clients for your Nomad Cluster, the [Nomad Clients Cluster](/cloud/marketplace-docs/guides/hashicorp-nomad-clients-cluster/) deployment lets you scale horizontally by deploying 3, 5, or 7 additional Compute Instances as Clients.
+If you find that you need additional Clients for your Nomad Cluster, the [Nomad Clients Cluster](/cloud/marketplace-docs/guides/hashicorp-nomad-clients-cluster) deployment lets you scale horizontally by deploying 3, 5, or 7 additional Compute Instances as Clients.
 
 {{% content "marketplace-update-note-shortguide" %}}

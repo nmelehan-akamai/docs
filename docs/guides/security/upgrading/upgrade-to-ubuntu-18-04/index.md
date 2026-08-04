@@ -21,7 +21,7 @@ image: upgrade-ubuntu-18-title.jpg
 
 Ubuntu 18.04 is a Long-Term Support (LTS) release that is supported by Canonical until April 2023. This guide shows how to upgrade your Linode from Ubuntu 16.04 (Xenial Xerus) or Ubuntu 17.10 (Artful Aardvark) to Ubuntu 18.04 (Bionic Beaver).
 {{< note type="alert" >}}
-Inline distribution upgrades can yield unpredictable results. Before continuing, read through our [Upgrading to the Latest Distribution (Clean Install)](/cloud/guides/manually-upgrading-to-latest-distribution-version/) guide to learn more about your upgrade options, including performing a clean install of the latest distribution version.
+Inline distribution upgrades can yield unpredictable results. Before continuing, read through our [Upgrading to the Latest Distribution (Clean Install)](/cloud/guides/manually-upgrading-to-latest-distribution-version) guide to learn more about your upgrade options, including performing a clean install of the latest distribution version.
 
 The upgrade may be incomplete or your system may be corrupted if your internet connection is interrupted. Use [Lish](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish) or [Glish](https://techdocs.akamai.com/cloud-computing/docs/access-your-desktop-environment-using-glish) to perform this upgrade in a stable environment that does not rely on an active internet connection to your Linode.
 

@@ -12,7 +12,7 @@ tags: ["drupal","lamp","cms","debian"]
 license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 image: DrupalThemesMods_DrushDeb10.png
 external_resources:
- - '[SSL Certificates](/cloud/guides/security/ssl/)'
+ - '[SSL Certificates](/cloud/guides/security/ssl)'
  - '[Drush Commands](https://docs.drush.org/en/9.x/)'
  - '[Backup and Migrate](https://www.drupal.org/docs/8/modules/backup-and-migrate/howto-for-backup-and-migrate)'
 relations:
@@ -25,7 +25,7 @@ aliases: []
 
 Drush is a command line tool, which can be used for various Drupal projects. This tutorial uses Drush to install themes, modules, and covering some basic administration tasks such as backup and migrate for Drupal websites.
 
-Linode has another guide for installing Drush and creating a Drupal website, [Install Drupal using Drush on Debian 10](/cloud/guides/how-to-install-drupal-using-drush-on-debian-10/). Depending on your experience level with Drush, you may want to start with that guide.
+Linode has another guide for installing Drush and creating a Drupal website, [Install Drupal using Drush on Debian 10](/cloud/guides/how-to-install-drupal-using-drush-on-debian-10). Depending on your experience level with Drush, you may want to start with that guide.
 
 ## Before You Begin
 
@@ -37,9 +37,9 @@ Before installing themes, modules, and a backup system with Drush, make sure tha
 
     {{% content "limited-user-note-shortguide" %}}
 
-1.  Install and configure a [LAMP stack on Debian 10](/cloud/guides/how-to-install-a-lamp-stack-on-debian-10/)
+1.  Install and configure a [LAMP stack on Debian 10](/cloud/guides/how-to-install-a-lamp-stack-on-debian-10)
 
-1.  Install [Composer and Drush on Debian 10](/cloud/guides/how-to-install-drush-on-debian-10/)
+1.  Install [Composer and Drush on Debian 10](/cloud/guides/how-to-install-drush-on-debian-10)
 
 
 1.  Make sure that your system is up to date, using:
@@ -64,7 +64,7 @@ In this section you will download, enable, and set a Drupal theme using Drush.
          composer require drupal/bootstrap
 
     {{< note respectIndent=false >}}
-If you receive an error related to not being able to write to the `composer.json` file, see the [Setting the Site’s Ownership and Permissions](/cloud/guides/how-to-install-drupal-using-drush-on-debian-10/#setting-the-sites-ownership-and-permissions) section of the [Install Drupal using Drush on Debian 10](/cloud/guides/how-to-install-drupal-using-drush-on-debian-10/) guide.
+If you receive an error related to not being able to write to the `composer.json` file, see the [Setting the Site’s Ownership and Permissions](/cloud/guides/how-to-install-drupal-using-drush-on-debian-10#setting-the-sites-ownership-and-permissions) section of the [Install Drupal using Drush on Debian 10](/cloud/guides/how-to-install-drupal-using-drush-on-debian-10) guide.
 
 Ensure that your `/var/www/html/example.com/public_html` directory has user and group read, write, and execute permissions.
 

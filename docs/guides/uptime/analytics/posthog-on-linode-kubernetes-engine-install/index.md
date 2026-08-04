@@ -60,7 +60,7 @@ Even though Google Analytics is the industry standard, there are many advantages
     ```
 
 {{< note >}}
-The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see our [Linux Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see our [Linux Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## Install PostHog on the Linode Kubernetes Engine
@@ -75,7 +75,7 @@ To install PostHog on an LKE cluster, the system must satisfy the following requ
 - The cluster must have enough resources to run PostHog. A minimum of four virtual CPUs and 8GB of memory is recommended.
 - The `kubectl` client must be installed. `kubectl` allows users to install applications on a cluster, view and manage Kubernetes resources, and access log files. `kubectl` can be installed using a package manager or directly downloaded using the `curl` command. More information about `kubectl` is also available in the [Linode Kubernetes Engine Documentation](https://techdocs.akamai.com/cloud-computing/docs/linode-kubernetes-engine) or on the [Kubernetes installation page](https://kubernetes.io/docs/tasks/tools/#install-kubectl-on-linux).
 - PostHog works best in conjunction with a registered domain name. This name is used to set up PostHog and access the dashboard. For instructions on how to register a domain name and configure the associated DNS records, see the [Linode guide to DNS Configuration](https://techdocs.akamai.com/cloud-computing/docs/common-dns-configurations).
-- To install PostHog, first install [Helm v3](https://helm.sh/), which can be used to download, install, and upgrade applications on a cluster. Applications are installed using a Helm chart, which describes the essential resources using a common format. See the [Linode guide to Helm](/cloud/guides/how-to-install-apps-on-kubernetes-with-helm-3/) for more information about Helm.
+- To install PostHog, first install [Helm v3](https://helm.sh/), which can be used to download, install, and upgrade applications on a cluster. Applications are installed using a Helm chart, which describes the essential resources using a common format. See the [Linode guide to Helm](/cloud/guides/how-to-install-apps-on-kubernetes-with-helm-3) for more information about Helm.
 
 To install Helm, follow the steps below:
 

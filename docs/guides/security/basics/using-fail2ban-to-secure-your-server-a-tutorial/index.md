@@ -240,7 +240,7 @@ action_mwl = %(banaction)s...
 
 For example, if you set the `usedns` setting to `no`, Fail2ban does not use reverse DNS to set its bans, and instead bans the IP address. When set as `warn`, Fail2ban performs a reverse lookup of the hostname and uses it to perform a ban.
 
-The `chain` setting refers to the series of [iptables](/cloud/guides/what-is-iptables/) rules where jumps should be added in ban-actions. By default, this is set to the `INPUT` chain. You can read more about iptables chains in our [What is iptables](/cloud/guides/what-is-iptables/#chains) guide.
+The `chain` setting refers to the series of [iptables](/cloud/guides/what-is-iptables) rules where jumps should be added in ban-actions. By default, this is set to the `INPUT` chain. You can read more about iptables chains in our [What is iptables](/cloud/guides/what-is-iptables#chains) guide.
 
 ### Fail2ban Chain Traffic Drop Configuration
 

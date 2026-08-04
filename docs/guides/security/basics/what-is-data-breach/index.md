@@ -48,7 +48,7 @@ The longer an attacker has unfettered access, the longer it is going to take you
 
 Despite all your good intentions, a data breach can still happen. What should you do upon discovering a data breach? Don’t panic.
 
-When a data breach is reported to IT, be ready to implement your incident response plan. For most businesses this means [ramping up the incident response team](/cloud/guides/information-security-risk-management/#developing-an-isrm-plan), your group of IT personnel who have specific roles focused on quickly shutting down potential problems. The speed of your response may have a major impact on the effects of the breach.
+When a data breach is reported to IT, be ready to implement your incident response plan. For most businesses this means [ramping up the incident response team](/cloud/guides/information-security-risk-management#developing-an-isrm-plan), your group of IT personnel who have specific roles focused on quickly shutting down potential problems. The speed of your response may have a major impact on the effects of the breach.
 
 Specific roles and plans to make use of personnel should already be in place. Networking teams should be ready to identify and isolate impacted systems, and data management specialists should be in place to secure company databases and data repositories. IT staff responsible for backup and data protection should be checking that data backups are intact and uncorrupted. Cloud specialists should be in a position to check on the integrity of cloud stored data.
 

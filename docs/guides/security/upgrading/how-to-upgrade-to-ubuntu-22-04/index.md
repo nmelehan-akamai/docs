@@ -67,7 +67,7 @@ The pros and cons of a clean install are as follows:
 - This method takes a lot more effort and is more error prone. It is easy to forget to port over important applications and application data.
 - This method is a better choice if the system is running a much older release of Ubuntu or if the configuration is very convoluted. It is also a good choice for systems under the control of an *Infrastructure as Code* (IaC) application, like Terraform or Chef. These applications allow administrators to automatically provision a new remote node with a standard configuration.
 
-For an in-depth explanation of the clean install method, see the [Linode guide to manually upgrading a node](/cloud/guides/manually-upgrading-to-latest-distribution-version/).
+For an in-depth explanation of the clean install method, see the [Linode guide to manually upgrading a node](/cloud/guides/manually-upgrading-to-latest-distribution-version).
 
 ## Before You Begin
 
@@ -78,14 +78,14 @@ For an in-depth explanation of the clean install method, see the [Linode guide t
 1.  Ensure there is at least 20 GB of disk space available. Verify the amount of disk space availability using the `df -Th` command.
 
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## How to Upgrade to Ubuntu 22.04 LTS
 
 This guide is designed for users who want to upgrade from Ubuntu 20.04 LTS to Ubuntu 22.04 LTS. However, it is generally applicable for upgrades to Ubuntu 22.04 from any release of Ubuntu 20.xx or 21.xx.
 
-If the Linode is running Ubuntu 18.xx or any earlier release, first upgrade it to Ubuntu 20.04 LTS. Then perform the steps in this guide to upgrade from Ubuntu 20.04 LTS to the 22.04 LTS. See the [Linode guide to Upgrade to Ubuntu 20.04](/cloud/guides/upgrade-to-ubuntu-20-04/) for more information. Alternatively, if the Ubuntu software and applications are very old, it might make more sense to perform a clean install instead.
+If the Linode is running Ubuntu 18.xx or any earlier release, first upgrade it to Ubuntu 20.04 LTS. Then perform the steps in this guide to upgrade from Ubuntu 20.04 LTS to the 22.04 LTS. See the [Linode guide to Upgrade to Ubuntu 20.04](/cloud/guides/upgrade-to-ubuntu-20-04) for more information. Alternatively, if the Ubuntu software and applications are very old, it might make more sense to perform a clean install instead.
 
 {{< note type="alert" >}}
 This operation cannot be canceled after it is started. Ensure there is a stable connection to the Linode and backup power is available.

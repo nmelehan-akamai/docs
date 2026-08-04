@@ -17,10 +17,10 @@ One feature found in ownCloud is the ability to connect an instance to Linode Ob
 
 ## Before You Begin
 
-1. Ensure you have a [running instance of ownCloud](/cloud/guides/install-and-configure-owncloud-on-ubuntu-20-04/) deployed on your Linode.
+1. Ensure you have a [running instance of ownCloud](/cloud/guides/install-and-configure-owncloud-on-ubuntu-20-04) deployed on your Linode.
 
     {{< note >}}
-    To automatically install ownCloud on a Compute Instance, consider deploying [ownCloud Server through Akamai Quick Deploy Apps](/cloud/marketplace-docs/guides/owncloud/).
+    To automatically install ownCloud on a Compute Instance, consider deploying [ownCloud Server through Akamai Quick Deploy Apps](/cloud/marketplace-docs/guides/owncloud).
     {{< /note >}}
 
 1. Purchase an [enterprise license for ownCloud](https://doc.owncloud.com/server/admin_manual/enterprise/installation/install.html) (to enable the necessary external storage app).

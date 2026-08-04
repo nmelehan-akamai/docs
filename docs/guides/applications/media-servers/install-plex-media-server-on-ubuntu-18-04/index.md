@@ -26,7 +26,7 @@ relations:
 ![Install Plex Media Server on Ubuntu 18.04](install-plex-media-server-on-ubuntu-18-04.png)
 
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## Prerequisites to Install Plex Media Server on Ubuntu 18.04
@@ -131,7 +131,7 @@ Now that your server is set up, you’re ready to connect to it from a Plex clie
 
 ## Configuring Plex Media Server Firewall on Ubuntu 18.04
 
-In this section you set up a firewall on your Plex Media Server using the [Uncomplicated Firewall (UFW)](/cloud/guides/configure-firewall-with-ufw/).
+In this section you set up a firewall on your Plex Media Server using the [Uncomplicated Firewall (UFW)](/cloud/guides/configure-firewall-with-ufw).
 
 1. UFW is usually pre-installed on Ubuntu. If UFW isn’t installed, run the following command to install it on your Ubuntu system:
 

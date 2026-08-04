@@ -68,7 +68,7 @@ Akamai's Metadata service requires that an instance have cloud-init version 23.3
     ```
 
     {{< note >}}
-    The [PEP 668](https://peps.python.org/pep-0668/) specification attempts to prevent conflicts between Python packages installed via the OS package manager and PIP. The specification recommends installing packages with Pip in Python virtual environments, like [Virtualenv](/cloud/guides/how-to-manage-packages-and-virtual-environments-on-linux/#manage-virtual-environments-in-linux).
+    The [PEP 668](https://peps.python.org/pep-0668/) specification attempts to prevent conflicts between Python packages installed via the OS package manager and PIP. The specification recommends installing packages with Pip in Python virtual environments, like [Virtualenv](/cloud/guides/how-to-manage-packages-and-virtual-environments-on-linux#manage-virtual-environments-in-linux).
 
     That approach does not work well with the cloud-init installer, so the steps here recommend overriding the specification. In our tests, this did not result in any issues, but be aware that the use of this option can impact the behavior of some Python packages.
     {{< /note >}}
@@ -149,7 +149,7 @@ What follows is a summary of steps you can use to create a base image from the i
 
 ## Deploy an Instance with User-Data
 
-With a base cloud-init image ready, you can deploy a new instance of the Metadata service and cloud-init user data whenever you need. Refer to our guide on how to [Deploy an Image to a New Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/deploy-an-image-to-a-new-compute-instance) for image deployment. Refer to our guide on how to [Use Cloud-Init to Automatically Configure and Secure Your Servers](/cloud/guides/configure-and-secure-servers-with-cloud-init/) for more on adding user data to new instances.
+With a base cloud-init image ready, you can deploy a new instance of the Metadata service and cloud-init user data whenever you need. Refer to our guide on how to [Deploy an Image to a New Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/deploy-an-image-to-a-new-compute-instance) for image deployment. Refer to our guide on how to [Use Cloud-Init to Automatically Configure and Secure Your Servers](/cloud/guides/configure-and-secure-servers-with-cloud-init) for more on adding user data to new instances.
 
 The steps that follow walk you through a simple new deployment from a base cloud-init image. This includes a simple cloud-init user data script modeled on our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide.
 
@@ -215,4 +215,4 @@ Newly deployed Compute Instances do not have network access during boot. This pr
     reboot
     ```
 
-Once the instance boots back up, you can verify cloud-init execution by logging in as a created user — `example-user` in the example above. You can also use the steps in our [Use Cloud-Init to Install and Update Software on New Servers](https://www.linode.com/docs/guides/install-and-update-software-with-cloud-init/#verify-update-and-installation) guide to verify system package updates.
+Once the instance boots back up, you can verify cloud-init execution by logging in as a created user — `example-user` in the example above. You can also use the steps in our [Use Cloud-Init to Install and Update Software on New Servers](/cloud/guides/install-and-update-software-with-cloud-init/#verify-update-and-installation) guide to verify system package updates.

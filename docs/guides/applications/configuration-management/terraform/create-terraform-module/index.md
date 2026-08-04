@@ -34,7 +34,7 @@ This guide covers the creation of a Terraform module used to deploy a Linode ins
 
 ## Before You Begin
 
-1. Install Terraform on your local computer using the steps found in the **Install Terraform** section of the [Use Terraform to Provision Linode Environments](/cloud/guides/how-to-build-your-infrastructure-using-terraform-and-linode/#install-terraform) guide. Your Terraform project directory should be named `linode_stackscripts`.
+1. Install Terraform on your local computer using the steps found in the **Install Terraform** section of the [Use Terraform to Provision Linode Environments](/cloud/guides/how-to-build-your-infrastructure-using-terraform-and-linode#install-terraform) guide. Your Terraform project directory should be named `linode_stackscripts`.
 
     {{< note title ="Linode Provider Version 3.0.0" >}}
     As of June, 2025, the [Linode Terraform Provider](https://github.com/linode/terraform-provider-linode/) version is 3.0.0. To determine the current version, see the [Linode Namespace](https://registry.terraform.io/namespaces/linode) in the Terraform Registry.
@@ -44,9 +44,9 @@ This guide covers the creation of a Terraform module used to deploy a Linode ins
 
 2. Terraform requires an API access token. Follow the [Getting Started with the Linode API](https://techdocs.akamai.com/linode-api/reference/get-started#get-an-access-token) guide to obtain a token.
 
-3. Complete the steps in the **Configure Git** section of the [Getting Started with Git](/cloud/guides/how-to-configure-git/#configure-git) guide.
+3. Complete the steps in the **Configure Git** section of the [Getting Started with Git](/cloud/guides/how-to-configure-git#configure-git) guide.
 
-4. Review [Deploy a WordPress Site using Terraform and StackScripts](/cloud/guides/deploy-a-wordpress-site-using-terraform-and-linode-stackscripts/) to familiarize yourself with the Linode provider's StackScript resource.
+4. Review [Deploy a WordPress Site using Terraform and StackScripts](/cloud/guides/deploy-a-wordpress-site-using-terraform-and-linode-stackscripts) to familiarize yourself with the Linode provider's StackScript resource.
 
 ## Standard Terraform Module Structure
 
@@ -602,7 +602,7 @@ Whenever a new provider is used in a Terraform configuration, it must first be i
 
 ## Version Control Your Terraform Module
 
-To make the `linode_stackscripts` module available to other team members, you can version control it using [GitHub](https://github.com/). Before completing the steps in this section, ensure you have completed the steps in the **Configure Git** section of the [Getting Started with Git](/cloud/guides/how-to-configure-git/#configure-git) guide.
+To make the `linode_stackscripts` module available to other team members, you can version control it using [GitHub](https://github.com/). Before completing the steps in this section, ensure you have completed the steps in the **Configure Git** section of the [Getting Started with Git](/cloud/guides/how-to-configure-git#configure-git) guide.
 
 1. In the `linode_stackscripts` directory create a `.gitignore` file:
 

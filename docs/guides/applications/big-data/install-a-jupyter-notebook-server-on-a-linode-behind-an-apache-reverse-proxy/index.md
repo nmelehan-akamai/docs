@@ -52,7 +52,7 @@ Anaconda is a package manager with built-in support for virtual environments. It
 
 ## Create a Self-Signed Certificate
 
-The official documentation recommends generating a self-signed SSL certificate to prevent sending unencrypted passwords in the Notebook from the browser. This is especially important because Jupyter Notebooks can run bash scripts. If you have a domain name, consider using [Certbot](/cloud/guides/secure-http-traffic-certbot/) rather than a self-signed certificate.
+The official documentation recommends generating a self-signed SSL certificate to prevent sending unencrypted passwords in the Notebook from the browser. This is especially important because Jupyter Notebooks can run bash scripts. If you have a domain name, consider using [Certbot](/cloud/guides/secure-http-traffic-certbot) rather than a self-signed certificate.
 
 1.  Create a self-signed certificate valid for 365 days:
 

@@ -46,7 +46,7 @@ LiteSpeed offers both free and paid plans. Visit [LiteSpeed's website](https://w
 
 ## Verify Installation
 
-To determine if the installation has completed successfully, log in to your instance through [SSH](/cloud/guides/connect-to-server-over-ssh/) or [Lish](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish) and run:
+To determine if the installation has completed successfully, log in to your instance through [SSH](/cloud/guides/connect-to-server-over-ssh) or [Lish](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish) and run:
 
 ```command
 tail -3 /var/log/stackscript.log
@@ -106,7 +106,7 @@ Now that you’ve accessed your LiteSpeed instance, check out [the official Lite
 
 ### Accessing the LiteSpeed WebAdmin Interface
 
-1. Log in to your instance through [SSH](/cloud/guides/connect-to-server-over-ssh/) or [Lish](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish).
+1. Log in to your instance through [SSH](/cloud/guides/connect-to-server-over-ssh) or [Lish](https://techdocs.akamai.com/cloud-computing/docs/access-your-system-console-using-lish).
 
 1. Run the following script to reset the password:
 

@@ -85,7 +85,7 @@ The chain of trust is a key concept in DNSSEC. It establishes that each DNSSEC-e
 1.  Follow our Introduction to [DNS on Linux](/cloud/guides/introduction-to-dns-on-linux) guide to set up a functional primary name server.
 
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## How to Enable DNSSEC Using NSD
@@ -134,7 +134,7 @@ This guide uses the `yourdomianhere.com` domain as an example. Replace this addr
     export KSK=`/usr/bin/ldns-keygen -k -a ECDSAP256SHA256 -b 2048 yourdomainehere.com`
     ```
 
-1.  **Optional**: Capture the ZSK and KSK variables for later reuse in the [Zone Maintenance](/cloud/guides/dnssec/#zone-maintenance) section.
+1.  **Optional**: Capture the ZSK and KSK variables for later reuse in the [Zone Maintenance](/cloud/guides/dnssec#zone-maintenance) section.
 
     ```command
     echo $ZSK > yourdomainhere.com.zsk

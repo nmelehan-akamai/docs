@@ -14,7 +14,7 @@ marketplace_app_id: 985372
 marketplace_app_name: "Joomla"
 ---
 
-[Joomla](https://www.joomla.org/) is an advanced CMS (content management system) used to facilitate the easy creation and ongoing maintenance of dynamic websites. Comparable in some respects to other web applications like [Drupal](https://www.drupal.org/) and [WordPress](https://wordpress.org/), Joomla also has advanced features that resemble web-development frameworks like [Ruby On Rails](https://rubyonrails.org/) and [Django](https://www.djangoproject.com/). Deployed on top of the industry standard [LAMP Stack](/cloud/guides/web-servers/lamp/), Joomla is designed to be both easy to use and manage from the end user's perspective and easy to administer and host.
+[Joomla](https://www.joomla.org/) is an advanced CMS (content management system) used to facilitate the easy creation and ongoing maintenance of dynamic websites. Comparable in some respects to other web applications like [Drupal](https://www.drupal.org/) and [WordPress](https://wordpress.org/), Joomla also has advanced features that resemble web-development frameworks like [Ruby On Rails](https://rubyonrails.org/) and [Django](https://www.djangoproject.com/). Deployed on top of the industry standard [LAMP Stack](/cloud/guides/web-servers/lamp), Joomla is designed to be both easy to use and manage from the end user's perspective and easy to administer and host.
 
 ## Deploying a Quick Deploy App
 

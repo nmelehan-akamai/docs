@@ -14,7 +14,7 @@ deprecated: true
 
 MyBB is a popular alternative to large forum systems like SMF and phpBB. It is designed to be lightweight yet fully customizable, and can be modified to suit your needs. While MyBB will work with MySQL and SQLite, this guide will use MySQL as the database engine.
 
-Before we begin, we assume you have followed the steps outlined in the [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance). You will also need a working [LAMP stack](/cloud/guides/web-servers/lamp/).
+Before we begin, we assume you have followed the steps outlined in the [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance). You will also need a working [LAMP stack](/cloud/guides/web-servers/lamp).
 
 ## Prerequisites
 

@@ -316,6 +316,6 @@ Once you've accessed the WordPress UI, you can begin modifying your site using W
 
 - [WordPress Support](https://wordpress.org/support/): Learn the basic workflows for using WordPress.
 
-- [Securing WordPress](https://www.linode.com/docs/guides/how-to-secure-wordpress/): Advice on securing WordPress through HTTPS, using a secure password, changing the admin username, and more.
+- [Securing WordPress](/cloud/guides/how-to-secure-wordpress/): Advice on securing WordPress through HTTPS, using a secure password, changing the admin username, and more.
 
 - [WordPress Themes](https://wordpress.org/themes/#): A collection of thousands of available WordPress themes.
