@@ -111,9 +111,9 @@ There are two different configuration files for SSH: One for client configuratio
 
 Client configuration files are found in two places. The client configuration file for the current user is located in `~/.SSH/config`, while the host SSH configuration file is located in `/etc/SSH/SSH_config`.
 
-It’s suggested to harden the OpenSSH server [immediately after installation or before first use](https://www.linode.com/docs/guides/advanced-ssh-server-security/).
+It’s suggested to harden the OpenSSH server [immediately after installation or before first use](/cloud/guides/advanced-ssh-server-security/).
 
-Additional software can be used to harden SSH servers and protect against various authentication attacks. One such application, [fail2ban](https://www.linode.com/docs/guides/how-to-use-fail2ban-for-ssh-brute-force-protection/), adds a layer of protection to applications like SSH and other commonly used Linux applications.
+Additional software can be used to harden SSH servers and protect against various authentication attacks. One such application, [fail2ban](/cloud/guides/how-to-use-fail2ban-for-ssh-brute-force-protection/), adds a layer of protection to applications like SSH and other commonly used Linux applications.
 
 ## Summary
 

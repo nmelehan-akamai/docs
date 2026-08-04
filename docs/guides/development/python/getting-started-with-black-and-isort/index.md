@@ -72,7 +72,7 @@ The web application above is able to do much more. Enter any Python code in the 
 
 ### Installing Black and isort Locally
 
-While the web-based tools are easily accessible, frequent use of Black and isort deserves a local installation. Despite the extra effort involved, a local installation integrated within your working environment is far more efficient. This might entail configuration of an [Integrated Development Environment (IDE)](https://www.linode.com/docs/guides/development/), a [Continuous Integration (CI)](https://www.linode.com/docs/guides/development/ci/) platform, or other minor complexities.
+While the web-based tools are easily accessible, frequent use of Black and isort deserves a local installation. Despite the extra effort involved, a local installation integrated within your working environment is far more efficient. This might entail configuration of an [Integrated Development Environment (IDE)](/cloud/guides/development/), a [Continuous Integration (CI)](/cloud/guides/development/ci/) platform, or other minor complexities.
 
 Any environment with [Package Installer for Python (pip)](https://pypi.org/project/pip/) can immediately install Black and isort.
 
@@ -152,7 +152,7 @@ However, the two utilities assume different responsibilities:
 
 ### Who Uses Black and isort?
 
-Many of the most celebrated open source [Python projects use Black](https://github.com/psf/black#used-by), including such recognizable names as Twisted, [Django](https://www.linode.com/marketplace/apps/linode/django/), and [Pytest](https://www.linode.com/docs/guides/python-testing-frameworks-for-software-unit-testing/). Mozilla, Facebook, and Tesla are among the thousands of commercial Python users that count on Black.
+Many of the most celebrated open source [Python projects use Black](https://github.com/psf/black#used-by), including such recognizable names as Twisted, [Django](https://www.linode.com/marketplace/apps/linode/django/), and [Pytest](/cloud/guides/python-testing-frameworks-for-software-unit-testing/). Mozilla, Facebook, and Tesla are among the thousands of commercial Python users that count on Black.
 
 ### When to Use Black and isort
 
@@ -330,6 +330,6 @@ Make sure to align any line length setting for both Black and isort, along with 
 
 Part of the enthusiasm for Black and isort has to do with their role in transforming source code reviews. In the absence of automated formatters, human reviewers take responsibility for enforcement of organizational style guides and policies. The conversations which result are a big part of what gives source reviews their [reputation for dysfunction](https://blog.submain.com/code-review-horror-stories/).
 
-Automatic source formatting transforms those conversations. When Black and isort are part of [Continuous Integration (CI)](https://www.linode.com/docs/guides/development/ci/) pipelines, automatic processes take care of most formatting matters.
+Automatic source formatting transforms those conversations. When Black and isort are part of [Continuous Integration (CI)](/cloud/guides/development/ci/) pipelines, automatic processes take care of most formatting matters.
 
 Black and isort are straightforward command line tools that are already widely used in CI. Whether your platform of choice is GitHub, GitLab, or Jenkins, plugins for Black and isort are likely available.

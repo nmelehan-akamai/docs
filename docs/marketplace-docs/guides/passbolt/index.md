@@ -84,7 +84,7 @@ Postfix is installed as part of the Quick Deploy App, allowing you to send a tes
 {{< note >}}
 To make the most out of Passbolt you need a working email setup for email notifications (e.g. - account registration, password recovery and other critical notifications). For more information on setting this up, see the [Configure Email Providers](https://help.passbolt.com/configure/email/setup) page on Passbolt's website.
 
-Regardless of how you configure your mail server, we suggest that you follow the best practices to ensure mail deliverability. For more information, see the [Running a Mail Server](https://www.linode.com/docs/guides/running-a-mail-server/) guide.
+Regardless of how you configure your mail server, we suggest that you follow the best practices to ensure mail deliverability. For more information, see the [Running a Mail Server](/cloud/guides/running-a-mail-server/) guide.
 {{< /note >}}
 
 ### Account Recovery

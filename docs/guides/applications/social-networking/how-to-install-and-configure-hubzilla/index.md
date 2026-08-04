@@ -317,7 +317,7 @@ The LAMP stack is now fully configured and ready for Hubzilla. Use `git` to down
     sudo chmod -R 755 /var/www/html/hubzilla/
     ```
 
-6.  **Optional** To access Hubzilla using HTTPS, which Hubzilla recommends, install `certbot` and use it to request and install a Let's Encrypt certificate. For further instructions, see the Linode guide on [How to Use Certbot to Enable HTTPS](https://www.linode.com/docs/guides/enabling-https-using-certbot-with-apache-on-ubuntu/).
+6.  **Optional** To access Hubzilla using HTTPS, which Hubzilla recommends, install `certbot` and use it to request and install a Let's Encrypt certificate. For further instructions, see the Linode guide on [How to Use Certbot to Enable HTTPS](/cloud/guides/enabling-https-using-certbot-with-apache-on-ubuntu/).
 
 6.  Add a `cron` task to update the site every 10 minutes. Run the `crontab -e` command to edit the list of `root` cron jobs.
 

@@ -215,4 +215,4 @@ Newly deployed Compute Instances do not have network access during boot. This pr
     reboot
     ```
 
-Once the instance boots back up, you can verify cloud-init execution by logging in as a created user — `example-user` in the example above. You can also use the steps in our [Use Cloud-Init to Install and Update Software on New Servers](https://www.linode.com/docs/guides/install-and-update-software-with-cloud-init/#verify-update-and-installation) guide to verify system package updates.
+Once the instance boots back up, you can verify cloud-init execution by logging in as a created user — `example-user` in the example above. You can also use the steps in our [Use Cloud-Init to Install and Update Software on New Servers](/cloud/guides/install-and-update-software-with-cloud-init/#verify-update-and-installation) guide to verify system package updates.

@@ -103,7 +103,7 @@ Linux is the largest open-source project in existence. Linux is an open-source k
 
 Open-source software is an integral piece of almost everything you do electronically—from refrigerators, cars, phones, televisions, smart speakers, home hubs, lighting, digital display boards, kiosks, banks, and the cloud, open-source is probably powering it. Although you might not be using open-source software directly on your computer, you are using it via the accounts and services you depend on daily.
 
-For more information on open-source solutions, start with [our documentation library](https://www.linode.com/docs), where there is plenty of information on open-source software.
+For more information on open-source solutions, start with [our documentation library](/cloud), where there is plenty of information on open-source software.
 
 
 
