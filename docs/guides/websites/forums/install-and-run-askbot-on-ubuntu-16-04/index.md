@@ -34,7 +34,7 @@ In this guide, you'll install AskBot and deploy with **NGINX** as a web server, 
 4.  A Fully-Qualified Domain Name configured to point to your Linode. You can learn how to point domain names to Linode by following the [DNS Manager > Get Started](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-dns-manager) guide.
 
 {{< note >}}
-Throughout this guide, replace `example_user` with a non-root user with `sudo` access. If you’re not familiar with Linux user permissions and the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+Throughout this guide, replace `example_user` with a non-root user with `sudo` access. If you’re not familiar with Linux user permissions and the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## Install Dependencies and Create a Database
@@ -160,7 +160,7 @@ WantedBy=multi-user.target
         sudo systemctl daemon-reload
         sudo systemctl restart nginx
 
-5.  Use [Let's Encrypt](/cloud/guides/install-lets-encrypt-to-create-ssl-certificates/) to obtain an SSL certificate for your domain:
+5.  Use [Let's Encrypt](/cloud/guides/install-lets-encrypt-to-create-ssl-certificates) to obtain an SSL certificate for your domain:
 
         sudo letsencrypt certonly -a webroot --agree-tos --email admin@example.com --webroot-path=/var/www/html -d example.com -d www.example.com
 

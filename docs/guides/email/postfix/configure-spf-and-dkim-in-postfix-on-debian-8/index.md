@@ -24,7 +24,7 @@ aliases: []
 deprecated: true
 ---
 {{< note >}}
-We have created a [new version of this guide](/cloud/guides/configure-spf-and-dkim-in-postfix-on-debian-9/) to run on Debian 9.
+We have created a [new version of this guide](/cloud/guides/configure-spf-and-dkim-in-postfix-on-debian-9) to run on Debian 9.
 {{< /note >}}
 
 ![SPF and DKIM with Postfix](Configure_SPF_and_DKIM_with_Postfix_on_Debian_8_smg.jpg)
@@ -40,10 +40,10 @@ SPF (Sender Policy Framework) is a system that identifies to mail servers what h
 The DNS instructions for setting up SPF, DKIM and DMARC are generic. The instructions for configuring the SPF policy agent and OpenDKIM into Postfix should work on any distribution after making respective code adjustments for the package tool, and identifying the exact path to the Unix socket file.
 
 {{< note >}}
-The steps required in this guide require root privileges. Be sure to run the steps below as **root** or with the `sudo` prefix. For more information on privileges see our [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+The steps required in this guide require root privileges. Be sure to run the steps below as **root** or with the `sudo` prefix. For more information on privileges see our [Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 {{< note type="alert" >}}
-You must already have Postfix installed, configured and working. Refer to the [Linode Postfix Guides](/cloud/guides/email/postfix/) for assistance.
+You must already have Postfix installed, configured and working. Refer to the [Linode Postfix Guides](/cloud/guides/email/postfix) for assistance.
 
 Publishing an SPF DNS record without having the SPF policy agent configured within Postfix is safe; however, publishing DKIM DNS records without having OpenDKIM working correctly within Postfix can result in your email being discarded by the recipient's email server.
 {{< /note >}}

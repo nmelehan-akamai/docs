@@ -14,7 +14,7 @@ external_resources:
 - '[Use Linode domain API (acme.sh wiki)](https://github.com/acmesh-official/acme.sh/wiki/dnsapi#14-use-linode-domain-api)'
 - '[Let''s Encrypt](https://letsencrypt.org/)'
 ---
-[*acme.sh*](https://acme.sh/) is a client application for ACME-compatible services, like those used by [Let's Encrypt](https://letsencrypt.org/). It is an alternative to the popular [Certbot](/cloud/guides/quick-answers/websites/) application with two big benefits:
+[*acme.sh*](https://acme.sh/) is a client application for ACME-compatible services, like those used by [Let's Encrypt](https://letsencrypt.org/). It is an alternative to the popular [Certbot](/cloud/guides/quick-answers/websites) application with two big benefits:
 
 - It is written in the Shell language, so it has no dependencies
 
@@ -26,7 +26,7 @@ If you use Linode for your website's DNS, you can use acme.sh to obtain both sin
 
 1. Deploy a Linode by following the [Creating a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/create-a-compute-instance) and the [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guides.
 
-1. Ensure that either NGINX or the Apache web server is installed and pre-configured on your distro by following our [web server documentation](/cloud/guides/web-servers/). Ensure that port 443 is open on your firewall to allow for SSL/TLS resolution.
+1. Ensure that either NGINX or the Apache web server is installed and pre-configured on your distro by following our [web server documentation](/cloud/guides/web-servers). Ensure that port 443 is open on your firewall to allow for SSL/TLS resolution.
 
 1. Decide which system user you want to issue and renew your certificates and [connect to your Linode as this user via SSH](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance#connect-to-the-instance). If you want to automatically restart a web server, or write certificates to a restricted folder, you likely want to install acme.sh under root.
 

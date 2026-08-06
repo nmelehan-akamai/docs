@@ -36,7 +36,7 @@ If you remove the resources afterward, you will only be billed for the hour(s) t
 
 ## Before You Begin
 
-Familiarize yourself with Kubernetes using our series [A Beginner's Guide to Kubernetes](/cloud/guides/beginners-guide-to-kubernetes/) and [Advantages of Using Kubernetes](/cloud/guides/kubernetes-use-cases/).
+Familiarize yourself with Kubernetes using our series [A Beginner's Guide to Kubernetes](/cloud/guides/beginners-guide-to-kubernetes) and [Advantages of Using Kubernetes](/cloud/guides/kubernetes-use-cases).
 
 ## Create Your Kubernetes Cluster
 
@@ -45,7 +45,7 @@ Familiarize yourself with Kubernetes using our series [A Beginner's Guide to Kub
 There are many ways to create a Kubernetes cluster. This guide will use the Linode k8s-alpha CLI.
 
 1. To set it up the Linode k8s-alpha CLI, see the
-[How to Deploy Kubernetes on Linode with the k8s-alpha CLI](/cloud/guides/how-to-deploy-kubernetes-on-linode-with-k8s-alpha-cli/) guide and stop before the "Create a Cluster" section.
+[How to Deploy Kubernetes on Linode with the k8s-alpha CLI](/cloud/guides/how-to-deploy-kubernetes-on-linode-with-k8s-alpha-cli) guide and stop before the "Create a Cluster" section.
 
 1. Now that your Linode K8s-alpha CLI is set up, You are ready to create your Kubernetes cluster. You will need **3 worker nodes** and **one master** for this guide. Create your cluster using the following command:
 
@@ -70,7 +70,7 @@ There are many ways to create a Kubernetes cluster. This guide will use the Lino
 
 ### Install Helm
 
-Follow the instructions in the [How to Install Apps on Kubernetes with Helm](/cloud/guides/how-to-install-apps-on-kubernetes-with-helm-3/) guide to install Helm on your cluster. Stop before the section on "Using Helm Charts to Install Apps".
+Follow the instructions in the [How to Install Apps on Kubernetes with Helm](/cloud/guides/how-to-install-apps-on-kubernetes-with-helm-3) guide to install Helm on your cluster. Stop before the section on "Using Helm Charts to Install Apps".
 
 ## Install Istio
 

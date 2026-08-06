@@ -25,7 +25,7 @@ This tutorial introduces the Nginx Proxy Manager and illustrates how to start us
 1.  Follow our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide to update your system. You may also wish to set the timezone, configure your hostname, create a limited user account, and harden SSH access.
 
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## What Is the Nginx Proxy Manager?
@@ -207,7 +207,7 @@ With the prerequisites in place, start up the Nginx Proxy Manager. This calls fo
 
 The Docker Compose configuration above contains an optional feature. The `proxiable` network allows you to run the Nginx Proxy Manager within the same Docker network as other services. This gives you the option of easy and secure communications between the proxy manager and your Docker services.
 
-The example Grafana setup in the [How to Expose a Service through the Nginx Proxy Manager](/cloud/guides/using-nginx-proxy-manager/#how-to-expose-a-service-through-the-nginx-proxy-manager) section later in this guide leverages this feature. See the included Docker Compose configuration for how the network is included in the service.
+The example Grafana setup in the [How to Expose a Service through the Nginx Proxy Manager](/cloud/guides/using-nginx-proxy-manager#how-to-expose-a-service-through-the-nginx-proxy-manager) section later in this guide leverages this feature. See the included Docker Compose configuration for how the network is included in the service.
 
 ### Accessing the Nginx Proxy Manager Interface
 
@@ -304,7 +304,7 @@ GRAFANA_ADMIN_PASSWORD=adminpass
 
 With your service running, return to the Nginx Proxy Manager interface. There, add a proxy host for the service, creating a reverse proxy that forwards traffic from the domain to the service.
 
-1.  Access the Nginx Proxy Manager interface as previously shown in the [Accessing the Nginx Proxy Manager Interface](/cloud/guides/using-nginx-proxy-manager/#accessing-the-nginx-proxy-manager-interface) section.
+1.  Access the Nginx Proxy Manager interface as previously shown in the [Accessing the Nginx Proxy Manager Interface](/cloud/guides/using-nginx-proxy-manager#accessing-the-nginx-proxy-manager-interface) section.
 
 1.  Navigate to the **Proxy Hosts** page. Get there either using the **Proxy Hosts** button from the **Dashboard** or via the **Hosts > Proxy Hosts** option from the top menu bar.
 

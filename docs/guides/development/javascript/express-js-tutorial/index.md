@@ -36,7 +36,7 @@ There are plenty of similar frameworks out there. What sets Express JS apart is 
 1. Throughout, this guide uses `example-app` as the name of the Express JS application and `example.com` as the server domain name. Replace these with your preferred application name and your server's domain name, respectively.
 
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## Install Express JS
@@ -45,7 +45,7 @@ These steps walk you through setting up a basic Express JS application. It uses 
 
 If you want to manually lay out your application's design, you can follow the [Express JS installation guide](https://expressjs.com/en/starter/installing.html), which shows how to create a minimal Node.js application and add Express JS as a dependency. Node.js is a prerequisite, so use one of the links in the first step below to get instructions for installing it.
 
-1. First, you need to install Node.js. You can follow either the guide for [How to Install Node.js and NGINX](/cloud/guides/how-to-install-nodejs-and-nginx-on-debian-10/) (just select the appropriate Linux distribution from the drop down) or the [How to Install and Use the Node Version Manager NVM](/cloud/guides/how-to-install-use-node-version-manager-nvm/) guide.
+1. First, you need to install Node.js. You can follow either the guide for [How to Install Node.js and NGINX](/cloud/guides/how-to-install-nodejs-and-nginx-on-debian-10) (just select the appropriate Linux distribution from the drop down) or the [How to Install and Use the Node Version Manager NVM](/cloud/guides/how-to-install-use-node-version-manager-nvm) guide.
 
 1. Change into the directory where you would like your application to live. This guide's example app lives in the current user's home directory. Then, use the Express application generator to create an application skeleton.
 

@@ -17,7 +17,7 @@ This guide extends the LLM (Large Language Model) inference architecture built i
 
 Follow the steps in this tutorial to enable Kubeflow Pipelines and deploy a RAG pipeline using App Platform for LKE. The data set you use may vary depending on your use case. For example purposes, this guide uses a sample data set from Akamai Techdocs that includes documentation about all Akamai Cloud services.
 
-If you prefer a manual installation rather than one using App Platform for LKE, see our [Deploy a Chatbot and RAG Pipeline for AI Inference on LKE](/cloud/guides/ai-chatbot-and-rag-pipeline-for-inference-on-lke/) guide.
+If you prefer a manual installation rather than one using App Platform for LKE, see our [Deploy a Chatbot and RAG Pipeline for AI Inference on LKE](/cloud/guides/ai-chatbot-and-rag-pipeline-for-inference-on-lke) guide.
 
 ## Diagram
 
@@ -560,7 +560,7 @@ The agent pipeline requires access to the PGvector database. For configure this,
 
 1.  Click on **Create Workload**.
 
-1.  Select the _open-webui_ Helm chart from the catalog. This Helm chart should have been added in the previous [Deploy an LLM for AI Inference with App Platform for LKE](/cloud/guides/deploy-llm-for-ai-inferencing-on-apl/#add-the-open-webui-helm-chart-to-the-catalog) guide.
+1.  Select the _open-webui_ Helm chart from the catalog. This Helm chart should have been added in the previous [Deploy an LLM for AI Inference with App Platform for LKE](/cloud/guides/deploy-llm-for-ai-inferencing-on-apl#add-the-open-webui-helm-chart-to-the-catalog) guide.
 
 1.  Click on **Values**.
 

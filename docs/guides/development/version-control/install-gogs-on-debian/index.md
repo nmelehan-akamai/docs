@@ -30,7 +30,7 @@ deprecated: true
 This tutorial shows you how to install and configure Gogs, using PostgreSQL for the database server and nginx for the reverse proxy server. We will use `example.com` as the domain name for the site. Hosting your own software projects could benefit from large amounts of disk space, so consider using our [Block Storage](https://techdocs.akamai.com/cloud-computing/docs/block-storage) service with this setup.
 
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you're not familiar with the `sudo` command, you can check our [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you're not familiar with the `sudo` command, you can check our [Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## Before Installing Gogs
@@ -164,7 +164,7 @@ CREATE DATABASE gogs OWNER gogs;
 
 We will use nginx as the reverse proxy for Gogs, so we can access Gogs using our domain name rather than using our host's IP address. In addition, we will let nginx handle the HTTPS connections for our Gogs site.
 
-1.  Create a [self-signed SSL certificate](/cloud/guides/create-a-self-signed-tls-certificate/) or buy a [commercial SSL certificate](/cloud/guides/obtain-a-commercially-signed-tls-certificate/) from a certificate authority (CA).
+1.  Create a [self-signed SSL certificate](/cloud/guides/create-a-self-signed-tls-certificate) or buy a [commercial SSL certificate](/cloud/guides/obtain-a-commercially-signed-tls-certificate) from a certificate authority (CA).
 
 2.  Install nginx from the repository:
 

@@ -37,7 +37,7 @@ Learn more about `zoxide` in this guide, including how to install and get starte
             sudo yum update
 
 {{< note >}}
-The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## What is zoxide?
@@ -138,4 +138,4 @@ If you have `fzf` installed, `zoxide` can use it to let you select from a list o
 
 ![zoxide uses fzf for interactive selection](zoxide-interactive-selection.png)
 
-Take a look at the [Set Up fzf Integration](/cloud/guides/how-to-use-zoxide/#set-up-fzf-integration-optional) section above to learn how to install `fzf` if you don't have it already.
+Take a look at the [Set Up fzf Integration](/cloud/guides/how-to-use-zoxide#set-up-fzf-integration-optional) section above to learn how to install `fzf` if you don't have it already.

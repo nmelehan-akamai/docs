@@ -30,7 +30,7 @@ For this guide we will install Asterisk from source rather than from Ubuntu's re
 **Please note:** Because of the special configuration options required for this setup, you should not run other services on the Linode you intend to use Asterisk on. It is also worth noting that this guide will walk you through using PV-GRUB. Any alterations to the steps in this guide will fall outside the scope of support.
 
 {{< note >}}
-The steps required in this guide require root privileges. Be sure to run the steps below as `root` or with the **sudo** prefix. For more information on privileges see our [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+The steps required in this guide require root privileges. Be sure to run the steps below as `root` or with the **sudo** prefix. For more information on privileges see our [Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## Terms
@@ -48,9 +48,9 @@ The diagram below shows the relationship between each of the components that all
 
 ## Prerequisites
 
-Before you begin, you need to make sure a few things are in order. We assume you have followed the [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide and have set the hostname and timezone, and have configured networking for the Linode. These last steps are of particular importance for ensuring your Asterisk installation functions normally. If you plan on using Asterisk's email features, you may also wish to [add an A record](/cloud/guides/dns-overview/#types-of-dns-records) for your domain.
+Before you begin, you need to make sure a few things are in order. We assume you have followed the [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide and have set the hostname and timezone, and have configured networking for the Linode. These last steps are of particular importance for ensuring your Asterisk installation functions normally. If you plan on using Asterisk's email features, you may also wish to [add an A record](/cloud/guides/dns-overview#types-of-dns-records) for your domain.
 
-There are quite a few prerequisites to satisfy before you can begin installing Asterisk and FreePBX. Most notably, you will need to install a kernel module and change your Linode's configuration profile. We're going to outline the instructions for doing so in this document. If you want a more detailed explanation, you may wish to take a look at the in-depth information contained in the [PV-GRUB guide](/cloud/guides/run-a-distributionsupplied-kernel-with-pvgrub/).
+There are quite a few prerequisites to satisfy before you can begin installing Asterisk and FreePBX. Most notably, you will need to install a kernel module and change your Linode's configuration profile. We're going to outline the instructions for doing so in this document. If you want a more detailed explanation, you may wish to take a look at the in-depth information contained in the [PV-GRUB guide](/cloud/guides/run-a-distributionsupplied-kernel-with-pvgrub).
 
 This guide includes instructions for integrating a Google Voice account. You will need a Google account that's already configured with a [Google Voice](https://www.google.com/voice) number to complete these steps.
 
@@ -217,7 +217,7 @@ FreePBX is a PHP application that allows you to control your Asterisk installati
 
 ### Set Up LAMP Stack
 
-Before you can use FreePBX, you will need to set up a LAMP stack. An basic step-by-step how-to is provided here, but you may wish to consult our [LAMP documentation](/cloud/guides/lamp-server-on-ubuntu-9-10-karmic/) for more information.
+Before you can use FreePBX, you will need to set up a LAMP stack. An basic step-by-step how-to is provided here, but you may wish to consult our [LAMP documentation](/cloud/guides/lamp-server-on-ubuntu-9-10-karmic) for more information.
 
 1.  Begin by installing Apache:
 

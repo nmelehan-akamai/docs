@@ -62,7 +62,7 @@ If you wish to run another Linux distribution as your master server, the initial
 
 `wget https://apt.puppet.com/puppetlabs-release-pc1-VERSION.deb`
 
-Any Ubuntu-specific commands will then have to be amended for the proper distribution. More information can be found in [Puppet's Installation Documentation](https://docs.puppet.com/puppet/4.0/reference/install_linux.html#install-a-release-package-to-enable-puppet-labs-package-repositories) or our guide to [package management](/cloud/guides/linux-package-management-overview/).
+Any Ubuntu-specific commands will then have to be amended for the proper distribution. More information can be found in [Puppet's Installation Documentation](https://docs.puppet.com/puppet/4.0/reference/install_linux.html#install-a-release-package-to-enable-puppet-labs-package-repositories) or our guide to [package management](/cloud/guides/linux-package-management-overview).
 {{< /note >}}
 
 2.  Install the `puppetmaster-passenger` package:

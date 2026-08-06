@@ -13,7 +13,7 @@ external_resources:
  - '[The nginx Homepage](http://nginx.org/)'
  - '[FastCGI Project Homepage](http://www.fastcgi.com/)'
  - '[PHP Documentation](http://www.php.net/docs.php)'
- - '[Basic Ngnix Configuration](/cloud/guides/how-to-configure-nginx/)'
+ - '[Basic Ngnix Configuration](/cloud/guides/how-to-configure-nginx)'
 relations:
     platform:
         key: nginx-php-fastcgi

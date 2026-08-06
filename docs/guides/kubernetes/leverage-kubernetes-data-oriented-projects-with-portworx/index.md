@@ -30,11 +30,11 @@ A limited version of the Portworx Storage Platform is available for free. It all
 
 Portworx integrates with widely known software systems such as Kubernetes, Kafka, and Cassandra:
 
--   [**Kubernetes**](/cloud/guides/kubernetes/) serves as the foundation of most Portworx implementations. However, Portworx is also compatible with other container orchestration systems.
+-   [**Kubernetes**](/cloud/guides/kubernetes) serves as the foundation of most Portworx implementations. However, Portworx is also compatible with other container orchestration systems.
 
--   [**Cassandra**](/cloud/guides/databases/cassandra/) is an open source distributed database management system that emphasizes economical operation, high availability, and wide-column semantics. Portworx addresses several of the challenges involved in configuring and operating Cassandra. For example, when running Cassandra in containers managed by Kubernetes, Portworx can effectively control memory, resource quotas, and/or CPU cores per Kubernetes cluster.
+-   [**Cassandra**](/cloud/guides/databases/cassandra) is an open source distributed database management system that emphasizes economical operation, high availability, and wide-column semantics. Portworx addresses several of the challenges involved in configuring and operating Cassandra. For example, when running Cassandra in containers managed by Kubernetes, Portworx can effectively control memory, resource quotas, and/or CPU cores per Kubernetes cluster.
 
--   [**Kafka**](/cloud/guides/what-is-apache-kafka/) is a widely used open source distributed event store and stream-processing platform. In much the same way a traditional database system manages **records** of data, Kafka manages **events**. For Kafka to perform optimally, it needs a high-performance underlying storage system, and Portworx is a good choice. Teams and individuals often initially adopt Portworx to meet requirements for hosting or upgrading Kafka. Portworx also offers white papers specifically on the [operation of Kafka in a Kubernetes environment](https://portworx.com/blog/deploying-kafka-on-kubernetes-using-portworx-data-services/).
+-   [**Kafka**](/cloud/guides/what-is-apache-kafka) is a widely used open source distributed event store and stream-processing platform. In much the same way a traditional database system manages **records** of data, Kafka manages **events**. For Kafka to perform optimally, it needs a high-performance underlying storage system, and Portworx is a good choice. Teams and individuals often initially adopt Portworx to meet requirements for hosting or upgrading Kafka. Portworx also offers white papers specifically on the [operation of Kafka in a Kubernetes environment](https://portworx.com/blog/deploying-kafka-on-kubernetes-using-portworx-data-services/).
 
 ## Before You Begin
 
@@ -45,7 +45,7 @@ Portworx integrates with widely known software systems such as Kubernetes, Kafka
 1.  Sign up for a personal account on [Portworx Central](https://central.portworx.com).
 
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## Portworx Installation

@@ -72,13 +72,13 @@ Rebuild your production server's configuration on the new Linode.
 The next task is to copy your data to the new Linode, and make sure that all compromised portions have been purged.
 
 1.  Create a temporary directory on the new Linode.
-2.  Copy any needed user and configuration data from the compromised Linode using [rsync](/cloud/guides/introduction-to-rsync/) or `scp`.
+2.  Copy any needed user and configuration data from the compromised Linode using [rsync](/cloud/guides/introduction-to-rsync) or `scp`.
 
     {{< note type="alert" respectIndent=false >}}
 Do not log in to the new Linode from the compromised Linode. Files should be pulled from the compromised server to your new setup instead.
 {{< /note >}}
 
-3.  Audit your data using tools such as `rkhunter` and [`clamav`](/cloud/guides/scanning-your-linode-for-malware/). You can use additional malware scanners to be certain you aren't retaining tainted files. Examine all system scripts manually for contaminated code, and replace all suspicious executable files with known good copies.
+3.  Audit your data using tools such as `rkhunter` and [`clamav`](/cloud/guides/scanning-your-linode-for-malware). You can use additional malware scanners to be certain you aren't retaining tainted files. Examine all system scripts manually for contaminated code, and replace all suspicious executable files with known good copies.
 
 If you're not comfortable copying from the compromised system prior to auditing the data, you can instead use the [Finnix rescue environment](https://techdocs.akamai.com/cloud-computing/docs/rescue-and-rebuild) to examine your old disks. Once you have verified the integrity of your data, copy it to the appropriate location on your new server.
 

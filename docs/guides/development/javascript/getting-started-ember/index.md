@@ -40,7 +40,7 @@ With this guide, learn what Ember has to offer and how it structures its applica
         ```
 
 {{< note >}}
-The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## What is the Ember Framework?
@@ -79,7 +79,7 @@ But Ember does have tools that you likely want to install to make working with E
 
 These steps walk you through installing the Ember tooling.
 
-1. Follow our tutorial on how to [Install and Use the Node Package Manager (NPM) on Linux](/cloud/guides/install-and-use-npm-on-linux/).
+1. Follow our tutorial on how to [Install and Use the Node Package Manager (NPM) on Linux](/cloud/guides/install-and-use-npm-on-linux).
 
 1. Install the Ember command-line (CLI) tool as a global NPM package:
 
@@ -138,9 +138,9 @@ Ember serves the application on port `4200` by default. You can access the appli
 {{< note >}}
 To access this remotely, you may first need to open the port in your system's firewall. You can learn about how to do that in one of the guides linked below, depending on your system's Linux distribution.
 
-- For **Debian** and **Ubuntu**, refer to our guide on [How to Configure a Firewall with UFW](/cloud/guides/configure-firewall-with-ufw/).
+- For **Debian** and **Ubuntu**, refer to our guide on [How to Configure a Firewall with UFW](/cloud/guides/configure-firewall-with-ufw).
 
-- For **AlmaLinux**, **CentOS**, and **Fedora**, refer to our guide on [Enabling and Configuring FirewallD on CentOS](/cloud/guides/introduction-to-firewalld-on-centos/)
+- For **AlmaLinux**, **CentOS**, and **Fedora**, refer to our guide on [Enabling and Configuring FirewallD on CentOS](/cloud/guides/introduction-to-firewalld-on-centos)
 {{< /note >}}
 
 ![Ember welcome page](ember-default-app.png)

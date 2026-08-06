@@ -85,7 +85,7 @@ As an additional resource, community nodes and third-party integrations are avai
 1.  **Optional**. To access n8n using a domain name, create a DNS `A` record for the subdomain `n8n.example.com`, replacing `example.com` with the actual domain name. Point the record at the IP address of the system hosting n8n.
 
 {{< note >}}
-The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+The steps in this guide are written for non-root users. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Linux Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## How to Install, Configure, and Run n8n

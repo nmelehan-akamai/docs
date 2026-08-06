@@ -20,7 +20,7 @@ deprecated: true
 
 NSD is a lightweight yet full-featured open source name server daemon created to provide an alternative to BIND.
 
-Before beginning, you should be familiar with basic [DNS terminology and records](/cloud/guides/dns-overview/). You will also need to ensure that your current Linode plan has enough memory to run the NSD daemon. Use the developer's [memory usage calculator](http://www.nlnetlabs.nl/projects/nsd/nsd-memsize.html) to determine the memory requirement for your NSD deployment.
+Before beginning, you should be familiar with basic [DNS terminology and records](/cloud/guides/dns-overview). You will also need to ensure that your current Linode plan has enough memory to run the NSD daemon. Use the developer's [memory usage calculator](http://www.nlnetlabs.nl/projects/nsd/nsd-memsize.html) to determine the memory requirement for your NSD deployment.
 
 ## Set the Hostname
 
@@ -113,7 +113,7 @@ Rebuild the NSD database and restart the daemon with following command sequence:
 
 Rebuild the database and restart NSD each time you edit an existing zone or create a new one.
 
-Test the configuration and functionality of the DNS server using `dig`, which provides a [command line DNS client](/cloud/guides/use-dig-to-perform-manual-dns-queries/). If `dig` is not installed, install the utility by issuing the following command:
+Test the configuration and functionality of the DNS server using `dig`, which provides a [command line DNS client](/cloud/guides/use-dig-to-perform-manual-dns-queries). If `dig` is not installed, install the utility by issuing the following command:
 
     apt-get install dnsutils
 

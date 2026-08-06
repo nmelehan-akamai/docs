@@ -132,7 +132,7 @@ Your Linode is now running Ubuntu 12.04 LTS.
 
 ## Upgrading from Previous Ubuntu Releases
 
-If your Linode is running an release of Ubuntu older than 10.04 LTS, use the upgrade guides in the [Troubleshooting](/cloud/bundles/troubleshooting/) section to upgrade to Ubuntu 10.04 LTS or Ubuntu 11.10 first. You may then upgrade your Linode to Ubuntu 12.04 LTS.
+If your Linode is running an release of Ubuntu older than 10.04 LTS, use the upgrade guides in the [Troubleshooting](/cloud/bundles/troubleshooting) section to upgrade to Ubuntu 10.04 LTS or Ubuntu 11.10 first. You may then upgrade your Linode to Ubuntu 12.04 LTS.
 
 
 

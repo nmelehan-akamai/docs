@@ -30,9 +30,9 @@ This guide assumes that you are running Apache2 on CentOS or Fedora. Prior to st
 
 -  Familiarize yourself with our [Getting Started](https://techdocs.akamai.com/cloud-computing/docs/getting-started) guide and complete the steps for setting your Linode's hostname and timezone.
 
--  Complete our [LAMP on CentOS 7](/cloud/guides/how-to-install-a-lamp-stack-on-centos-7/) guide, and create a site that you wish to secure with SSL.
+-  Complete our [LAMP on CentOS 7](/cloud/guides/how-to-install-a-lamp-stack-on-centos-7) guide, and create a site that you wish to secure with SSL.
 
--  Follow our guide for obtaining either a [self-signed](/cloud/guides/create-a-self-signed-tls-certificate/) or [commercial](/cloud/guides/obtain-a-commercially-signed-tls-certificate/) SSL certificate.
+-  Follow our guide for obtaining either a [self-signed](/cloud/guides/create-a-self-signed-tls-certificate) or [commercial](/cloud/guides/obtain-a-commercially-signed-tls-certificate) SSL certificate.
 
 -  In order to configure your Linode to function with SSL, you will need to ensure that the Apache `mod_ssl` module is installed on your system.  You can do so by running the following command:
 

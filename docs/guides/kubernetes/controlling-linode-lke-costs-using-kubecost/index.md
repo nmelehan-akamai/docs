@@ -96,7 +96,7 @@ The following components must be in place prior to installing Kubecost:
     ```command
     export KUBECONFIG={{< placeholder "~/Downloads/kubeconfig.yaml" >}}
     ```
--   The [Helm](https://helm.sh/) Kubernetes package manager installed and configured on your local system. See our guide on [Installing Apps on Kubernetes with Helm 3](/cloud/guides/how-to-install-apps-on-kubernetes-with-helm-3/).
+-   The [Helm](https://helm.sh/) Kubernetes package manager installed and configured on your local system. See our guide on [Installing Apps on Kubernetes with Helm 3](/cloud/guides/how-to-install-apps-on-kubernetes-with-helm-3).
 
 ### Installing Kubecost
 

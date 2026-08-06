@@ -32,7 +32,7 @@ aliases: []
 
         sudo apt-get update && sudo apt-get upgrade
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 
 {{< /note >}}
 
@@ -128,7 +128,7 @@ nightmare
 
         xvfb-run node linode.js
 
-    The script visits the [Linode docs](/cloud/) page, enters 'Ubuntu' into the input box, and clicks the submit button. It then waits for the results to load and prints the url and title each entry on the first page of results.
+    The script visits the [Linode docs](/cloud) page, enters 'Ubuntu' into the input box, and clicks the submit button. It then waits for the results to load and prints the url and title each entry on the first page of results.
 
     The output will resemble the following:
 
@@ -144,7 +144,7 @@ nightmare
 
 This example automates the script to run once every hour. It changes to the `~/automation/` directory, runs the scraping script, and saves the output to a file with a unique filename that includes the date and time it ran.
 
-For more information about using Cron, see our [Schedule Tasks with Cron](/cloud/guides/schedule-tasks-with-cron/) guide.
+For more information about using Cron, see our [Schedule Tasks with Cron](/cloud/guides/schedule-tasks-with-cron) guide.
 
 1.  Open the crontab file:
 

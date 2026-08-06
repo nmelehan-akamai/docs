@@ -84,6 +84,6 @@ To obtain your OpenVPN password, run this command:
 
 ### Open a Connection to your VPN
 
-To open a connection to your OpenVPN server from your computer, you'll need to install the OpenVPN client software. Follow the instructions in the [Client Software Installation](/cloud/guides/install-openvpn-access-server-on-linux/#client-software-installation) section of our [OpenVPN](/cloud/guides/install-openvpn-access-server-on-linux/#client-software-installation) guide for a detailed explanation of how to install and use this software.
+To open a connection to your OpenVPN server from your computer, you'll need to install the OpenVPN client software. Follow the instructions in the [Client Software Installation](/cloud/guides/install-openvpn-access-server-on-linux#client-software-installation) section of our [OpenVPN](/cloud/guides/install-openvpn-access-server-on-linux#client-software-installation) guide for a detailed explanation of how to install and use this software.
 
 {{% content "marketplace-update-note-shortguide" %}}

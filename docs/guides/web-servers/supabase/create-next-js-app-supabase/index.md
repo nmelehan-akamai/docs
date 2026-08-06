@@ -37,7 +37,7 @@ This tutorial covers everything you need to get started using these two tools to
     ```
 
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## How to Create a Supabase Backend
@@ -52,7 +52,7 @@ You have two options when it comes to setting up your Supabase instance:
 
 -   The first is the cloud-hosted option provided by Supabase. To begin, navigate to the [Supabase project creation](https://app.supabase.com/) page and create an account. From there, select **New Project** to get started.
 
--   The other option is self-hosted. To get started with your own self-hosted Supabase instance follow section two of our guide on [How to Self-host Supabase with Docker](/cloud/guides/installing-supabase/). Ensure that your self-hosted instance is up and running by executing the following command from its base directory:
+-   The other option is self-hosted. To get started with your own self-hosted Supabase instance follow section two of our guide on [How to Self-host Supabase with Docker](/cloud/guides/installing-supabase). Ensure that your self-hosted instance is up and running by executing the following command from its base directory:
 
     ```command
     sudo docker compose up -d
@@ -115,7 +115,7 @@ The following steps show you how to initialize a Next.js application with NPM an
 
 This guide uses JavaScript code for the Next.js application. However, you can configure Next.js for TypeScript. With that configuration, all of your Next.js application can be managed using TypeScript code instead of JavaScript. You can learn more about setting up a Next.js project with TypeScript in our guide **Building a Next.js App with TypeScript** .
 
-1.  Follow our tutorial on how to [Install and Use the Node Package Manager (NPM) on Linux](/cloud/guides/install-and-use-npm-on-linux/). NPM handles the project's dependencies and runs the Next.js frontend. It also includes `npx`, which the next step uses to bootstrap a template Next.js project.
+1.  Follow our tutorial on how to [Install and Use the Node Package Manager (NPM) on Linux](/cloud/guides/install-and-use-npm-on-linux). NPM handles the project's dependencies and runs the Next.js frontend. It also includes `npx`, which the next step uses to bootstrap a template Next.js project.
 
 1.  Create the Next.js project, using `create-next-app` to bootstrap a template application. This example names the new project `example-app`.
 
@@ -372,9 +372,9 @@ To start up your Next.js frontend, you should first specify what port you want i
 
 -   Open the chosen port on your system's firewall to access the application remotely.
 
-    -   For Debian and Ubuntu, refer to our guide on [How to Configure a Firewall with UFW](/cloud/guides/configure-firewall-with-ufw/).
+    -   For Debian and Ubuntu, refer to our guide on [How to Configure a Firewall with UFW](/cloud/guides/configure-firewall-with-ufw).
 
-    -   For AlmaLinux, CentOS Stream, Fedora, and Rocky Linux refer to our guide on [Enabling and Configuring FirewallD on CentOS](/cloud/guides/introduction-to-firewalld-on-centos/).
+    -   For AlmaLinux, CentOS Stream, Fedora, and Rocky Linux refer to our guide on [Enabling and Configuring FirewallD on CentOS](/cloud/guides/introduction-to-firewalld-on-centos).
 
 Once you have the port set up, start the Next.js development server with the following command:
 

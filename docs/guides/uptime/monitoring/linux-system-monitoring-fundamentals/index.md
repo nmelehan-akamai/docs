@@ -41,7 +41,7 @@ A server's system load – a term you hear often in these discussions – usuall
 
 ## Getting started with Linux system monitoring tools
 
-Dozens of Linux server system monitoring commands are built into the operating system. They include very simple commands like [top](/cloud/guides/top-htop-iotop/), which by default displays Linux processes in CPU activity order. These tools also can be highly complex, such as sar, which collects, reports, and saves a wide variety of system activity information.
+Dozens of Linux server system monitoring commands are built into the operating system. They include very simple commands like [top](/cloud/guides/top-htop-iotop), which by default displays Linux processes in CPU activity order. These tools also can be highly complex, such as sar, which collects, reports, and saves a wide variety of system activity information.
 
 There are, of course, many higher-level system monitoring programs for all distributions that permit you to monitor any Linux server. These include [Glance](https://nicolargo.github.io/glances/), a Python-based cross-platform system monitoring tool; [htop](https://htop.dev/), another cross-platform system monitor, which uses [ncurses](http://www.gnu.org/software/ncurses/) for its display; and [Netdata](https://www.netdata.cloud/), a distributed server system monitoring program. However, as useful as these can be, they all rely on lower-level programs.
 

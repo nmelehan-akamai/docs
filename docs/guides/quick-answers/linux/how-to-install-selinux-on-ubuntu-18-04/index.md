@@ -25,7 +25,7 @@ Ubuntu has a Mandatory Access Control (MAC) system similar to [SELinux](https://
 
 1.  Ensure that you have followed the [Getting Started](https://techdocs.akamai.com/cloud-computing/docs/getting-started) and [Securing Your Server](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guides.
     {{< note respectIndent=false >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you're not familiar with the `sudo` command, you can check the [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you're not familiar with the `sudo` command, you can check the [Users and Groups](/cloud/guides/linux-users-and-groups) guide.
     {{< /note >}}
 
 1.  Update the system:
@@ -276,4 +276,4 @@ If you wish to permanently disable SELinux even when the system reboots, make ch
 And, now if you restart the system, SELinux and its policies won’t be in place anymore.
 
 ## Next Steps
-After installing SELinux on the system, use the [Getting Started with SELinux Guide](/cloud/guides/a-beginners-guide-to-selinux-on-centos-7/) to learn the basics of SELinux security.
+After installing SELinux on the system, use the [Getting Started with SELinux Guide](/cloud/guides/a-beginners-guide-to-selinux-on-centos-7) to learn the basics of SELinux security.

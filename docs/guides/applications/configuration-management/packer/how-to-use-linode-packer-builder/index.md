@@ -17,7 +17,7 @@ aliases: []
 
 [Packer](https://www.packer.io/) is a HashiCorp maintained open source tool that is used to create machine images. A machine image provides the operating system, applications, application configurations, and data files that a virtual machine instance will run once it's deployed. Packer can be used in conjunction with common configuration management tools like Chef, Puppet, or Ansible to install software to your Linode and include those configurations into your image.
 
-Packer *templates* store the configuration parameters used for building an image. This standardizes the imaging building process and ensures that everyone using that template file will always create an identical image. For instance, this can help your team maintain an [immutable infrastructure](/cloud/guides/what-is-immutable-infrastructure/) within your [continuous delivery](/cloud/guides/introduction-ci-cd/#what-is-continuous-delivery) pipeline.
+Packer *templates* store the configuration parameters used for building an image. This standardizes the imaging building process and ensures that everyone using that template file will always create an identical image. For instance, this can help your team maintain an [immutable infrastructure](/cloud/guides/what-is-immutable-infrastructure) within your [continuous delivery](/cloud/guides/introduction-ci-cd#what-is-continuous-delivery) pipeline.
 
 ## The Linode Packer Builder
 
@@ -202,7 +202,7 @@ Once the Packer build process completes, a new [Custom Image](https://techdocs.a
 
 Packer is extremely powerful and customizable tool for creating images. The first template outlined in this guide is a minimalist example and doesn't showcase the true potential of Packer. To take things further, this section will cover integrating Packer with Ansible. Ansible is one of many different options available for customizing an image in Packer.
 
-Ansible is an automation tool for server provisioning, configuration, and management. Before continuing, follow the [Getting Started With Ansible - Basic Installation and Setup](/cloud/guides/getting-started-with-ansible/) guide to install Ansible and familiarize yourself with basic Ansible concepts.
+Ansible is an automation tool for server provisioning, configuration, and management. Before continuing, follow the [Getting Started With Ansible - Basic Installation and Setup](/cloud/guides/getting-started-with-ansible) guide to install Ansible and familiarize yourself with basic Ansible concepts.
 
 ### Creating the Ansible Playbook
 
@@ -281,7 +281,7 @@ Follow the previous sections for [building the image](#building-the-image) and [
 
 If you'd like to learn how to use Terraform to deploy Linodes using your Packer created image, you can follow our Terraform guides to get started:
 
-* [A Beginner's Guide to Terraform](/cloud/guides/beginners-guide-to-terraform/)
-* [Create a Terraform Module](/cloud/guides/create-terraform-module/)
-* [Use Terraform to Provision Linode Environments](/cloud/guides/how-to-build-your-infrastructure-using-terraform-and-linode/)
-* [Introduction to HashiCorp Configuration Language (HCL)](/cloud/guides/introduction-to-hcl/)
+* [A Beginner's Guide to Terraform](/cloud/guides/beginners-guide-to-terraform)
+* [Create a Terraform Module](/cloud/guides/create-terraform-module)
+* [Use Terraform to Provision Linode Environments](/cloud/guides/how-to-build-your-infrastructure-using-terraform-and-linode)
+* [Introduction to HashiCorp Configuration Language (HCL)](/cloud/guides/introduction-to-hcl)

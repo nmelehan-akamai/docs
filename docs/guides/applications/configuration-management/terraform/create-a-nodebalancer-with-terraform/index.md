@@ -30,7 +30,7 @@ If you would like to stop billing for the resources created in this guide, [remo
 
 ## Before You Begin
 
-1.  You should have Terraform installed in your development environment, and have a working knowledge of Terraform resource configuration and the [Linode provider](https://www.terraform.io/docs/providers/linode/index.html). For more information on how to install and use Terraform, check out our [Use Terraform to Provision Linode Environments](/cloud/guides/how-to-build-your-infrastructure-using-terraform-and-linode/) guide.
+1.  You should have Terraform installed in your development environment, and have a working knowledge of Terraform resource configuration and the [Linode provider](https://www.terraform.io/docs/providers/linode/index.html). For more information on how to install and use Terraform, check out our [Use Terraform to Provision Linode Environments](/cloud/guides/how-to-build-your-infrastructure-using-terraform-and-linode) guide.
 
     {{< note title ="Linode Provider Version 3.0.0" >}}
     As of June, 2025, the [Linode Terraform Provider](https://github.com/linode/terraform-provider-linode/) version is 3.0.0. To determine the current version, see the [Linode Namespace](https://registry.terraform.io/namespaces/linode) in the Terraform Registry.
@@ -42,7 +42,7 @@ If you would like to stop billing for the resources created in this guide, [remo
 
 1.  Terraform requires an API access token. Follow the [Getting Started with the Linode API](https://techdocs.akamai.com/linode-api/reference/get-started#get-an-access-token) guide to obtain a token.
 
-1.  Create a `terraform_nodebalancer` directory on your computer for the Terraform project you will create in this guide. All files you create in this guide should be placed in this directory, and you should run all commands from this directory. This new project should not be created inside another Terraform project directory, including the one you may have made when previously following [Use Terraform to Provision Linode Environments](/cloud/guides/how-to-build-your-infrastructure-using-terraform-and-linode/).
+1.  Create a `terraform_nodebalancer` directory on your computer for the Terraform project you will create in this guide. All files you create in this guide should be placed in this directory, and you should run all commands from this directory. This new project should not be created inside another Terraform project directory, including the one you may have made when previously following [Use Terraform to Provision Linode Environments](/cloud/guides/how-to-build-your-infrastructure-using-terraform-and-linode).
 
 ## Create a Terraform Configuration File
 
@@ -89,7 +89,7 @@ The `linode_nodebalancer` resource supplies two labels. The first label, `exampl
 
 ### Create NodeBalancer Config Resources
 
-In addition to the NodeBalancer resource, you must supply at least one NodeBalancer Configuration resource. This resource defines ports, protocol, health checks, and session stickiness, among other options, that the NodeBalancer might use. For this example, you will create a NodeBalancer configuration for HTTP access on port 80, but you could also create one for HTTPS access on port 443 if you have [SSL/TLS certificates](/cloud/guides/install-lets-encrypt-to-create-ssl-certificates/):
+In addition to the NodeBalancer resource, you must supply at least one NodeBalancer Configuration resource. This resource defines ports, protocol, health checks, and session stickiness, among other options, that the NodeBalancer might use. For this example, you will create a NodeBalancer configuration for HTTP access on port 80, but you could also create one for HTTPS access on port 443 if you have [SSL/TLS certificates](/cloud/guides/install-lets-encrypt-to-create-ssl-certificates):
 
 {{< file "nodebalancer.tf" >}}
 ...

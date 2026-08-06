@@ -28,10 +28,10 @@ You must install Paramiko on your system before being able to use it in your Pyt
 
     pip install paramiko
 {{< note >}}
-If you are not familiar with Pip or do not have it installed on your system, see our [How to Manage Python Packages and Virtual Environments on Linux](/cloud/guides/how-to-manage-packages-and-virtual-environments-on-linux/#how-pip-works) guide.
+If you are not familiar with Pip or do not have it installed on your system, see our [How to Manage Python Packages and Virtual Environments on Linux](/cloud/guides/how-to-manage-packages-and-virtual-environments-on-linux#how-pip-works) guide.
 {{< /note >}}
 
-If your system is [configured to use Anaconda](/cloud/guides/how-to-install-anaconda/), you can use the following command to install Paramiko:
+If your system is [configured to use Anaconda](/cloud/guides/how-to-install-anaconda), you can use the following command to install Paramiko:
 
     conda install -c anaconda paramiko
 
@@ -81,7 +81,7 @@ The file above provides a high-level example that you can use to incorporate Par
 
 ## Second Paramiko Example: Connect to your Server Using SSH Keys
 
-One of Paramiko’s specific strengths is the correct handling of [SSH add keys](/cloud/guides/use-public-key-authentication-with-ssh/). The introductory example above depended on the use of your limited user account's password. It is more secure, however, to use SSH keys for server authentication. The example file below, provides a report that alerts you of any logins by users that are not included in your list of `expected` users. The Python script relies on Paramiko (notice the `key_based_connect()` function) to use SSHv2 authentication to connect to any of the servers provided in the code's `server_list` list.
+One of Paramiko’s specific strengths is the correct handling of [SSH add keys](/cloud/guides/use-public-key-authentication-with-ssh). The introductory example above depended on the use of your limited user account's password. It is more secure, however, to use SSH keys for server authentication. The example file below, provides a report that alerts you of any logins by users that are not included in your list of `expected` users. The Python script relies on Paramiko (notice the `key_based_connect()` function) to use SSHv2 authentication to connect to any of the servers provided in the code's `server_list` list.
 
 {{< file "key_based_login.py">}}
 # This is a small tool to report on successful logins

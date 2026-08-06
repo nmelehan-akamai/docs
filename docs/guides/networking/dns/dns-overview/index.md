@@ -106,7 +106,7 @@ An *AAAA record* is just like an A record, but for IPv6 IP addresses. A typical 
 
 An *AXFR record* is a type of DNS record used for DNS replication, although there are more modern ways to do DNS replication. AXFR records are not used in ordinary zone files. Rather, they are used on a slave DNS server to replicate the zone file from a master DNS server.
 
-For an example of how to configure Linode's nameservers as slave DNS servers using AXFR, see our [guide on configuring DNS in cPanel](/cloud/guides/set-up-dns-services-on-cpanel/#using-linodes-dns-manager-as-a-secondary-server).
+For an example of how to configure Linode's nameservers as slave DNS servers using AXFR, see our [guide on configuring DNS in cPanel](/cloud/guides/set-up-dns-services-on-cpanel#using-linodes-dns-manager-as-a-secondary-server).
 
 ### CAA
 
@@ -144,7 +144,7 @@ An *MX record* or *mail exchanger record* sets the mail delivery destination for
 
 The above records direct mail for *example.com* to the *mail.example.com* server. The target domain (`mail.example.com` above) needs to have its own A record that resolves to your Linode. An MX record should ideally point to a domain that is also the [hostname](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance#configure-a-custom-hostname) for its server.
 
-Your MX records don't necessarily have to point to your Linode. If you're using a third-party mail service like [Google Workspace](/cloud/guides/using-google-workspace-for-email/), you should use the MX records they provide.
+Your MX records don't necessarily have to point to your Linode. If you're using a third-party mail service like [Google Workspace](/cloud/guides/using-google-workspace-for-email), you should use the MX records they provide.
 
 *Priority* is another component of MX records. This is the number written between the record type and the target server (10 in the example above). Priority allows you to designate a fallback server (or servers) for mail for a particular domain. Lower numbers have a higher priority. Here's an example of a domain that has two fallback mail servers:
 

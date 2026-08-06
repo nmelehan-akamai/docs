@@ -129,6 +129,13 @@ issue_types.append(IssueType(
     weight = 30
 ))
 issue_types.append(IssueType(
+    id = 'trailing-slash',
+    title = "Trailing slash",
+    summary = "The link ends with a trailing slash (/cloud/ links must not have one).",
+    severity = 'failure',
+    weight = 35
+))
+issue_types.append(IssueType(
     id = 'other',
     title = "Other issues",
     summary = "The link contains other unspecified issues, like extra characters or incorrect formatting.",
@@ -142,6 +149,22 @@ issue_types.append(IssueType(
     severity = 'warning',
     weight = 50
 ))
+
+# ------------------
+# Normalize a link for comparison
+# ------------------
+def normalize_link(link):
+
+    # Internal /cloud/ links are written without a trailing slash, while a
+    # guide's aliases may be stored with one. Strip the
+    # trailing slash so the two forms can be compared.
+    stripped = link.rstrip('/')
+
+    # Never reduce the site root to an empty string
+    if stripped == "":
+        return link
+
+    return stripped
 
 # ------------------
 # Build a list of all guides
@@ -195,13 +218,13 @@ def get_guides():
                                     #print("New file path: " + new_file_path)
                                     os.rename(old_file_path,new_file_path)
 
-                            canonical_link = "/cloud/guides/" + expanded_guide['slug'] + "/"
+                            canonical_link = "/cloud/guides/" + expanded_guide['slug']
                         # ... If the guide is in any other section...
                         else:
                             canonical_link = "/" + file_path
-                            canonical_link = canonical_link.replace('/index.md','/')
-                            canonical_link = canonical_link.replace('/_index.md','/')
-                            canonical_link = canonical_link.replace('/docs/','/cloud/') # Convert docs-prefix links to cloud-prefix links
+                            canonical_link = canonical_link.replace('/index.md','')
+                            canonical_link = canonical_link.replace('/_index.md','')
+                            canonical_link = canonical_link.replace('/docs','/cloud') # Convert docs-prefix links to cloud-prefix links
 
                         # Construct the guide object
                         guide = Guide(root, file_path, expanded_guide['title'], canonical_link)
@@ -350,7 +373,7 @@ def check_internal_links_markdown(guides, assets):
                 link_unmodified = link
 
                 # Log issue if link contains "linode.com/docs/"
-                if "linode.com/docs/" in link:
+                if "linode.com/docs" in link or "akamai.com/cloud/guides" in link or "akamai.com/cloud/marketplace-docs" in link or "akamai.com/cloud/reference-architecture" in link:
                     issues.append(Issue(link_unmodified,'docs-domain-name'))
                     continue
                 # Ignore links that start with common protocols
@@ -373,8 +396,8 @@ def check_internal_links_markdown(guides, assets):
                 # Ignore links to resources within the same directory
                 if not "/" in link and "." in link:
                     continue
-                # Log issue if link does not start with /cloud/
-                if not link.startswith('/cloud/'):
+                # Log issue if link does not point to the /cloud root
+                if not link.startswith('/cloud/') and not link == '/cloud':
                     issues.append(Issue(link_unmodified,'incorrect-root'))
                     continue
                 # Log issue if link ends with two slashes /
@@ -382,14 +405,14 @@ def check_internal_links_markdown(guides, assets):
                     # Log issue if link ends with two slashes /
                     issues.append(Issue(link_unmodified,'formatting'))
                     link = link.replace('//','/')
-                if not link.endswith('/'):
-                    # Log warning if link does not end with a slash /
-                    issues.append(Issue(link_unmodified,'formatting'))
-                    link = link + '/'
+                if link.endswith('/'):
+                    # Log issue if link ends with a slash /
+                    issues.append(Issue(link_unmodified,'trailing-slash'))
+                    link = normalize_link(link)
                 # Check if link points to a canonical internal link
-                if not next((x for x in guides if x.link == link), None):
+                if not next((x for x in guides if normalize_link(x.link) == link), None):
                     # Checks if the link matches an alias or not
-                    if next((x for x in guides if link.replace('/cloud/','/') in x.aliases), None) is not None:
+                    if next((x for x in guides if link.replace('/cloud/','/') in [normalize_link(a) for a in x.aliases]), None) is not None:
                         issues.append(Issue(link_unmodified,'points-to-alias'))
                     else:
                         issues.append(Issue(link_unmodified,'not-found'))

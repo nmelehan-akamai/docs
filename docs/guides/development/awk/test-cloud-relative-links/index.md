@@ -18,7 +18,7 @@ build:
 
 Test for relative link with `cloud` prefix:
 
-- [Deploy a RAG-Powered Chatbot with LangChain on LKE](/cloud/guides/deploy-rag-powered-chatbot-langchain-lke/)
-- [Awk section](/cloud/guides/development/awk/)
-- [Cloud Guides & Tutorials](/cloud/guides/)
+- [Deploy a RAG-Powered Chatbot with LangChain on LKE](/cloud/guides/deploy-rag-powered-chatbot-langchain-lke)
+- [Awk section](/cloud/guides/development/awk)
+- [Cloud Guides & Tutorials](/cloud/guides)
 

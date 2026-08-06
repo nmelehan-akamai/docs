@@ -21,7 +21,7 @@ On Linode's Ubuntu 20.04 LTS instances, the installation of `ssh` (client) and `
 1.  Follow our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide to update your system. You may also wish to set the timezone, configure your hostname, create a limited user account, and harden SSH access.
 
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you’re not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## What is SSH?
@@ -111,9 +111,9 @@ There are two different configuration files for SSH: One for client configuratio
 
 Client configuration files are found in two places. The client configuration file for the current user is located in `~/.SSH/config`, while the host SSH configuration file is located in `/etc/SSH/SSH_config`.
 
-It’s suggested to harden the OpenSSH server [immediately after installation or before first use](https://www.linode.com/docs/guides/advanced-ssh-server-security/).
+It’s suggested to harden the OpenSSH server [immediately after installation or before first use](/cloud/guides/advanced-ssh-server-security/).
 
-Additional software can be used to harden SSH servers and protect against various authentication attacks. One such application, [fail2ban](https://www.linode.com/docs/guides/how-to-use-fail2ban-for-ssh-brute-force-protection/), adds a layer of protection to applications like SSH and other commonly used Linux applications.
+Additional software can be used to harden SSH servers and protect against various authentication attacks. One such application, [fail2ban](/cloud/guides/how-to-use-fail2ban-for-ssh-brute-force-protection/), adds a layer of protection to applications like SSH and other commonly used Linux applications.
 
 ## Summary
 

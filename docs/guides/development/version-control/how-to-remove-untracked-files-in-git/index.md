@@ -50,12 +50,12 @@ To summarize, all files in a Git repository should eventually be handled in one 
 
 1.  Follow our [Setting Up and Securing a Compute Instance](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance) guide to update your system. You may also wish to set the timezone, configure your hostname, create a limited user account, and harden SSH access.
 
-1.  It's also helpful to consult our guides on [Getting Started with Git](/cloud/guides/how-to-configure-git/) and [How to Navigate the Linux Terminal and File System](/cloud/guides/linux-navigation-commands/).
+1.  It's also helpful to consult our guides on [Getting Started with Git](/cloud/guides/how-to-configure-git) and [How to Navigate the Linux Terminal and File System](/cloud/guides/linux-navigation-commands).
 
 1.  **Optional** Git must already be installed on the Linode before trying out the examples in this guide. The `git` package is often already pre-installed. To see if it is present, run the command `git --version`. If Git is already installed, this command displays the current version. If Git has not already been installed, use the command `sudo apt install git` to install it.
 
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you are not familiar with the `sudo` command, see the [Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 {{< /note >}}
 
 ## How to Remove Untracked Files Using Git Clean

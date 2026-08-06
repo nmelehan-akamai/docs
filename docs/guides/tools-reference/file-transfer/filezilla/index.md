@@ -20,7 +20,7 @@ external_resources:
 
 ## Before You Begin
 
-- You will need root access to your Linode, or a user account with `sudo` privilege. Note that if you transfer files as `root`, you may need to change file [ownership and permissions](/cloud/guides/linux-users-and-groups/) afterwards.
+- You will need root access to your Linode, or a user account with `sudo` privilege. Note that if you transfer files as `root`, you may need to change file [ownership and permissions](/cloud/guides/linux-users-and-groups) afterwards.
 - Set your system's [hostname](https://techdocs.akamai.com/cloud-computing/docs/set-up-and-secure-a-compute-instance#configure-a-custom-hostname).
 - Update your system.
 
@@ -57,7 +57,7 @@ If you followed our [Securing Your Server](https://techdocs.akamai.com/cloud-com
 If you are using macOS, the passphrase for your key will need to be stored in your keychain to successfully connect using an SSH keypair. FileZilla will not be able to use a key that was generated without a passphrase to connect to your Linode.
 {{< /note >}}
 
-If you are using Windows, you'll need to follow a few additional steps to enable key based authentication. The instructions below assume that you have already completed the guide for [generating your SSH key with Putty](/cloud/guides/use-public-key-authentication-with-ssh/#public-key-authentication-with-putty-on-windows).
+If you are using Windows, you'll need to follow a few additional steps to enable key based authentication. The instructions below assume that you have already completed the guide for [generating your SSH key with Putty](/cloud/guides/use-public-key-authentication-with-ssh#public-key-authentication-with-putty-on-windows).
 
 1.  Install Pageant from the [Putty site](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
 

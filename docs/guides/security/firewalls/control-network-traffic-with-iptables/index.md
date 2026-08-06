@@ -133,7 +133,7 @@ Deleting a rule is also done using the rule number. For example, to delete the r
 
     sudo iptables -D INPUT 7
 {{< note type="alert" >}}
-Editing rules does not automatically save them. See our section on [deploying rulesets](/cloud/guides/control-network-traffic-with-iptables/#deploy-your-iptables-rulesets) for the specific instructions for your distribution.
+Editing rules does not automatically save them. See our section on [deploying rulesets](/cloud/guides/control-network-traffic-with-iptables#deploy-your-iptables-rulesets) for the specific instructions for your distribution.
 {{< /note >}}
 
 ### View Your Current iptables Rules
@@ -394,7 +394,7 @@ The process for deploying iptables rulesets varies depending on which Linux dist
 
 ### Debian / Ubuntu
 
-UFW is the iptables controller included with Ubuntu, but it is also available in Debian's repositories. If you prefer to use UFW instead of iptables, see our guide: [How to Configure a Firewall with UFW](/cloud/guides/configure-firewall-with-ufw/).
+UFW is the iptables controller included with Ubuntu, but it is also available in Debian's repositories. If you prefer to use UFW instead of iptables, see our guide: [How to Configure a Firewall with UFW](/cloud/guides/configure-firewall-with-ufw).
 
 1.  Create the files `/tmp/v4` and `/tmp/v6`. Paste the [above rulesets](#basic-iptables-rulesets-for-ipv4-and-ipv6) into their respective files.
 
@@ -403,13 +403,13 @@ UFW is the iptables controller included with Ubuntu, but it is also available in
         sudo iptables-restore < /tmp/v4
         sudo ip6tables-restore < /tmp/v6
 
-3.  To apply your iptables rules automatically on boot, see our section on configuring [iptables-persistent](/cloud/guides/control-network-traffic-with-iptables/#introduction-to-iptables-persistent).
+3.  To apply your iptables rules automatically on boot, see our section on configuring [iptables-persistent](/cloud/guides/control-network-traffic-with-iptables#introduction-to-iptables-persistent).
 
 ### CentOS / Fedora
 
 **CentOS 7 or Fedora 20 and above**
 
-In these distros, FirewallD is used to implement firewall rules instead of using the iptables command. If you prefer to use it over iptables, see our guide: [Introduction to FirewallD on CentOS](/cloud/guides/introduction-to-firewalld-on-centos/).
+In these distros, FirewallD is used to implement firewall rules instead of using the iptables command. If you prefer to use it over iptables, see our guide: [Introduction to FirewallD on CentOS](/cloud/guides/introduction-to-firewalld-on-centos).
 
 1.  If you prefer to use iptables, FirewallD must first be stopped and disabled.
 

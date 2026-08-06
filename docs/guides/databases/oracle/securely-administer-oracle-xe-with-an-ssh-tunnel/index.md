@@ -10,7 +10,7 @@ keywords: ["Oracle tunnel", "Oracle over SSH", "SSH tunnel"]
 license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 aliases: []
 external_resources:
- - '[Using PuTTY](/cloud/guides/connect-to-server-over-ssh-using-putty/)'
+ - '[Using PuTTY](/cloud/guides/connect-to-server-over-ssh-using-putty)'
  - '[Oracle XE Documentation](http://www.oracle.com/pls/xe102/homepage)'
 tags: ["ssh","database"]
 deprecated: true

@@ -450,7 +450,7 @@ When using the web UI, rules must be created one at a time. With the Linode CLI,
 
 You can attach multiple Linodes or NodeBalancers to the Cloud Firewall. Note that inbound and outbound rules apply to Linode instances, whereas only inbound rules apply to NodeBalancers.
 
-See our additional [migration documentation](https://www.linode.com/docs/guides/platform/migrate-to-linode/) for guidance on migrating other services -- such as compute instances -- to Akamai Cloud.
+See our additional [migration documentation](/cloud/guides/platform/migrate-to-linode/) for guidance on migrating other services -- such as compute instances -- to Akamai Cloud.
 
 {{< tabs >}}
 {{< tab "Cloud Manager" >}}

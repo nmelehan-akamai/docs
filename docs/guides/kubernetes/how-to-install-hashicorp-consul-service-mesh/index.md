@@ -14,7 +14,7 @@ external_resources:
 - '[Helm Chart Configuration](https://www.consul.io/docs/k8s/helm)'
 ---
 
-[Consul](https://www.consul.io/) is a service mesh offered by HashiCorp, with robust service discovery and diagnostic features for managing your application's services. You can learn more about service meshes in our guide [What Is a Service Mesh?](/cloud/guides/what-is-a-service-mesh/). Consul offers a balanced approach between flexibility and usability that makes it a compelling option for managing your service-oriented applications.
+[Consul](https://www.consul.io/) is a service mesh offered by HashiCorp, with robust service discovery and diagnostic features for managing your application's services. You can learn more about service meshes in our guide [What Is a Service Mesh?](/cloud/guides/what-is-a-service-mesh). Consul offers a balanced approach between flexibility and usability that makes it a compelling option for managing your service-oriented applications.
 
 In this guide, you can see how to install and get started using the Consul service mesh with a Kubernetes cluster. You can get started with Kubernetes with our [Linode Kubernetes Engine](https://www.linode.com/products/kubernetes/) (LKE).
 

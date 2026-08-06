@@ -115,7 +115,7 @@ You may wish to create a test HTML page under `/srv/www/www.example.com/public_h
 
 ## Configure spawn-fcgi
 
-Install the Perl module for FastCGI using the [CPAN Minus](/cloud/guides/manage-cpan-modules-with-cpan-minus/) interface for CPAN. Install CPAN Minus and FCGI by issuing the following sequence of commands:
+Install the Perl module for FastCGI using the [CPAN Minus](/cloud/guides/manage-cpan-modules-with-cpan-minus) interface for CPAN. Install CPAN Minus and FCGI by issuing the following sequence of commands:
 
     cd /opt/
     curl https://github.com/miyagawa/cpanminus/raw/master/cpanm > cpanm
@@ -172,5 +172,5 @@ You may wish to consult the following resources for additional information on th
 - [The NGINX Homepage](http://nginx.org/)
 - [FastCGI Project Homepage](http://www.fastcgi.com/)
 - [Perl Documentation](http://perldoc.perl.org/)
-- [Installing NGINX on Ubuntu 9.10 (Karmic)](/cloud/guides/websites-with-nginx-on-ubuntu-9-10-karmic/)
-- [Basic NGINX Configuration](/cloud/guides/how-to-configure-nginx/)
+- [Installing NGINX on Ubuntu 9.10 (Karmic)](/cloud/guides/websites-with-nginx-on-ubuntu-9-10-karmic)
+- [Basic NGINX Configuration](/cloud/guides/how-to-configure-nginx)

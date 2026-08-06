@@ -11,8 +11,8 @@ tags: ["http","web server","apache","security"]
 license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 aliases: []
 external_resources:
- - '[Installation of the Apache web server](/cloud/guides/web-servers/apache/)'
- - '[LAMP stack guides](/cloud/guides/web-servers/lamp/)'
+ - '[Installation of the Apache web server](/cloud/guides/web-servers/apache)'
+ - '[LAMP stack guides](/cloud/guides/web-servers/lamp)'
  - '[Authentication and Access Control](http://httpd.apache.org/docs/2.2/howto/auth.html)'
  - '[Basic Authentication Module](http://httpd.apache.org/docs/2.2/mod/mod_auth_basic.html)'
 ---
@@ -35,9 +35,9 @@ This guide provides an overview of both credential-based and rule-based access c
     The first command should show your short hostname, and the second should show your fully qualified domain name (FQDN) if you have one assigned.
 
 {{< note >}}
-This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you're not familiar with the `sudo` command, you can check our [Users and Groups](/cloud/guides/linux-users-and-groups/) guide.
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you're not familiar with the `sudo` command, you can check our [Users and Groups](/cloud/guides/linux-users-and-groups) guide.
 
-This guide uses the same example file paths as our [Apache on Debian 8](/cloud/guides/apache-web-server-debian-8/) guide. Be sure to adjust for your distribution.
+This guide uses the same example file paths as our [Apache on Debian 8](/cloud/guides/apache-web-server-debian-8) guide. Be sure to adjust for your distribution.
 {{< /note >}}
 
 ## Apache Access Control

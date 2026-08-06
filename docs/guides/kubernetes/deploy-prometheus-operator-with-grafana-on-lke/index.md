@@ -46,7 +46,7 @@ This guide was written using [Kubernetes version 1.17](https://v1-17.docs.kubern
 
 1. [Deploy an LKE Cluster](https://techdocs.akamai.com/cloud-computing/docs/linode-kubernetes-engine). This guide was written using an example node pool with three [2 GB Linodes](https://www.linode.com/pricing/). Depending on the workloads you will be deploying on your cluster, you may consider using Linodes with more available resources.
 
-1. Install [Helm 3](/cloud/guides/how-to-install-apps-on-kubernetes-with-helm-3/#install-helm) to your local environment.
+1. Install [Helm 3](/cloud/guides/how-to-install-apps-on-kubernetes-with-helm-3#install-helm) to your local environment.
 
 1. Install [kubectl](https://techdocs.akamai.com/cloud-computing/docs/manage-a-cluster-with-kubectl) to your local environment and [connect to your cluster](https://techdocs.akamai.com/cloud-computing/docs/manage-a-cluster-with-kubectl).
 
